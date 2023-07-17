@@ -1,0 +1,21 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.MainBanner img{
+    width: 100%;
+    background-image: url('../img/BannerOficial.png');
+}
+input{
+    border-color: black;
+    border-radius: 11px;
+    font-size: large;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+::placeholder{
+    color: black;
+    font-size: 16px;
+}
