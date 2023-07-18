@@ -37,7 +37,7 @@
 }
 
 .desplegable{
-    width: 10%;
+    width: 25%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -45,6 +45,10 @@
 }
 
 select{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 30px;
     height: 30px;
     outline: none;
@@ -52,13 +56,14 @@ select{
     box-shadow: none;
     background-color: transparent;
     cursor: pointer;
+    border-radius: 10px;
 }
+
 
 #opcion{
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
     bottom: 0;
     width: 30px;
     pointer-events: none;
@@ -122,7 +127,7 @@ label img{
     
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 460px) {
 
     .menu{
         width: 100%;

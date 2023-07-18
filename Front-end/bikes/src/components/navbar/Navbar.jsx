@@ -37,6 +37,7 @@ const Navbar = () => {
                         <option value="">CATEGORIAS</option>
                         <option value="">Ruta</option>
                         <option value="">Montaña</option>
+                        <option value="">hibridas</option>
                         <option value="">Bmx</option>
 
                     </select></li>
