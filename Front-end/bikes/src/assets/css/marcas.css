@@ -6,7 +6,7 @@
 }
 
 .titulo-marcas{
-    margin: 10px;
+    margin: 30px;
 }
 
 .section-marcas{
@@ -17,8 +17,107 @@
 }
 
 .marca1{
-    width: 200px;
-    height: 280px;
-    background-image: url('../../assets/img/Marcas/scott.png');
+    margin: 5PX;
 }
 
+.marca2{
+    margin: 5PX;
+}
+
+.marca3{
+    margin: 5PX;
+}
+
+.marca4{
+    margin: 5PX;
+}
+
+@media (max-width:1320px){
+    #cot{
+        width: 200px;
+    }
+
+    .GW{
+        width: 200px;
+    }
+
+    .giant{
+        width: 200px;
+    }
+
+    .trek{
+        width: 200px;
+    }
+}
+
+@media (max-width:865px){
+    #cot{
+        width: 150px;
+    }
+
+    .GW{
+        width: 150px;
+    }
+
+    .giant{
+        width: 150px;
+    }
+
+    .trek{
+        width: 150px;
+    }
+}
+
+@media (max-width:660px){
+    #cot{
+        width: 130px;
+    }
+
+    .GW{
+        width: 130px;
+    }
+
+    .giant{
+        width: 130px;
+    }
+
+    .trek{
+        width: 130px;
+    }
+}
+
+@media (max-width:560px){
+    #cot{
+        width: 110px;
+    }
+
+    .GW{
+        width: 110px;
+    }
+
+    .giant{
+        width: 110px;
+    }
+
+    .trek{
+        width: 110px;
+    }
+}
+
+@media (max-width:500px){
+    #cot{
+        width: 80px;
+    }
+
+    .GW{
+        width: 80px;
+    }
+
+    .giant{
+        width: 80px;
+    }
+
+    .trek{
+        width: 80px;
+    }
+}

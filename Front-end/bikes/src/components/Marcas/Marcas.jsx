@@ -12,16 +12,16 @@ export const Marcas = () => {
 
             <main className='section-marcas'>
                 <div className='marca1'>
-
+                    <img src={scott} alt="Scott" id='cot' />
                 </div>
                 <div className='marca2'>
-
+                    <img src={gw} alt="GW" className='GW' />
                 </div>
                 <div className='marca3'>
-
+                    <img src={giant} alt="Giant" className='giant'/>
                 </div>
                 <div className='marca4'>
-
+                    <img src={trek} alt="Trek" className='trek'/>
                 </div>
             </main>
         </>
