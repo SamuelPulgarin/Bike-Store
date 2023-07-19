@@ -7,8 +7,8 @@ const Banner_search = () => {
         <>
             <div className='Container'>
                 <div className='Search'>
-                    <input type="text" placeholder='    Buscar' className='search'/>
-                    <button id='lupa'><img src={Lupa} alt="Lupa"/></button>
+                    <input type="text" placeholder='    Buscar' className='search' />
+                    <button id='lupa'><img src={Lupa} alt="Lupa" /></button>
                 </div>
             </div>
         </>
