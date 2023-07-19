@@ -1,9 +1,9 @@
-import Navbar from "../components/navbar/Navbar.jsx"
+import Navbar from "../components/navbar/Navbar.jsx";
 
 const home = () => {
   return (
     <>
-        <Navbar/>
+        <h1>soy homecenter</h1>
     </>
   )
 }

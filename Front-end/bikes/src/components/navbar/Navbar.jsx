@@ -24,8 +24,8 @@ const Navbar = () => {
   <>
     <nav className="navbar">
         <div className="logos">
-            <img src={logo1} alt="Aqui va nuestro precioso loguito" id="logo1"/>
-            <img src={logo2} alt="Aqui va nuestro precioso loguito" id="logo2"/>
+            <a href="/home" ><img src={logo1} alt="Aqui va nuestro precioso loguito" id="logo1"/></a>
+            <a href="/home" ><img src={logo2} alt="Aqui va nuestro precioso loguito" id="logo2"/></a>
         </div>
         <input type="checkbox" id="toggler" />
         <label htmlFor="toggler"><i className="ri-menu-list"><img src={toggler} alt="toggler" /></i></label>
@@ -39,10 +39,9 @@ const Navbar = () => {
                         <option value="">Montaña</option>
                         <option value="">hibridas</option>
                         <option value="">Bmx</option>
-
                     </select></li>
                 </div>
-                <li><a href="#"><img src={carrito} alt="Hola soy una imagen" id="carrito"/></a></li>
+                <li><a href="/Carrito"><img src={carrito} alt="Hola soy una imagen" id="carrito"/></a></li>
                 <li><a href="#"><img src={peril} alt="Hola soy una imagen" id="perfil"/></a></li>
             </ul>
         </div>
