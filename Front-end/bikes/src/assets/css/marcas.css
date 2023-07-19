@@ -121,3 +121,46 @@
         width: 80px;
     }
 }
+
+@media (max-width:480px){
+    #cot{
+        width: 110px;
+    }
+
+    .GW{
+        width: 110px;
+    }
+
+    .giant{
+        width: 110px;
+    }
+
+    .trek{
+        width: 110px;
+    }
+
+    .section-marcas{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        justify-items: center;
+    }
+}
+
+@media (max-width:280px){
+    #cot{
+        width: 80px;
+    }
+
+    .GW{
+        width: 80px;
+    }
+
+    .giant{
+        width: 80px;
+    }
+
+    .trek{
+        width: 80px;
+    }
+}
