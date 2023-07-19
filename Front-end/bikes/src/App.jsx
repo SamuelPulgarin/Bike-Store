@@ -1,10 +1,11 @@
-import { Home } from './pages/Home/Home'
+import { Home } from './pages/Home'
+import { Inicio_Registro } from './pages/Inicio_Registro'
 
 function App() {
 
   return (
     <>
-      <Home></Home>
+      <Inicio_Registro></Inicio_Registro>
     </>
   )
 }
