@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 600px;
+    height: 60vh;
     background-image: url('../img/bannerOficial.jpg');
     background-size: 110% 120%;
     background-repeat: no-repeat;
@@ -53,6 +53,102 @@
     cursor: pointer;
 }
 
+@media (max-width: 1210px){
+    .Container{
+        height: 70vh;
+    }
+}
+
+@media (max-width: 1200px){
+    .Container{
+        height: 50vh;
+    }
+}
+
+@media (max-width:  1000px){
+    .Container{
+        height: 60vh;
+    }
+}
+
+@media (max-width: 900px){
+    .Container{
+        height: 50vh;
+    }
+}
+
+@media (max-width: 810px) {
+    .search {
+        width: 400px;
+    }
+
+    .Container{
+        height: 50vh;
+    }
+}
+
+@media (max-width: 670px){
+    .search{
+        width: 350px;
+    }
+}
+
+@media (max-width: 540px){
+    .search{
+        width: 300px;
+    }
+
+    .Container {
+        background-image: url('../img/bannerMovil_adobe_express.svg');
+        background-position: -100% -25%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        height: 250px;
+    }
+}
+
+@media (max-width: 500px){
+    .search{
+        width: 300px;
+    }
+
+    .Search{
+        margin-top:-10px;
+    }
+
+    .Container {
+        background-image: url('../img/bannerMovil_adobe_express.svg');
+        background-position: -100% -25%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        height: 220px;
+    }
+}
+
+@media (max-width: 460px){
+    .search{
+        width: 300px;
+    }
+
+    .Search{
+        margin-top:-10px;
+    }
+
+    .Container {
+        background-image: url('../img/bannerMovil_adobe_express.svg');
+        background-position: -100% -25%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        height: 190px;
+    }
+}
+
 @media (max-width: 414px) {
     .Container {
         background-image: url('../img/bannerMovil_adobe_express.svg');
@@ -66,17 +162,11 @@
 
     .search {
         width: 300px;
-        margin-right: 3px;
     }
 
     .Search {
+        width: 310px;
         height: 35px;
         margin-top: 20px;
-    }
-}
-
-@media (max-width: 810px) {
-    .search {
-        width: 300px;
     }
 }
