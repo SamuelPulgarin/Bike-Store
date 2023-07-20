@@ -34,11 +34,11 @@ const Navbar = () => {
                 <div className="desplegable">
                     <li><a href="#"><img src={options} alt="Hola soy una imagen" id="opcion"/></a></li>
                     <li><select id="">
-                        <option value="">CATEGORIAS</option>
-                        <option value="">Ruta</option>
-                        <option value="">Montaña</option>
-                        <option value="">hibridas</option>
-                        <option value="">Bmx</option>
+                        <option value="" disabled="true">CATEGORIAS</option>
+                        <option value="1">Ruta</option>
+                        <option value="2">Montaña</option>
+                        <option value="3">hibridas</option>
+                        <option value="4">Bmx</option>
                     </select></li>
                 </div>
                 <li><a href="/Carrito"><img src={carrito} alt="Hola soy una imagen" id="carrito"/></a></li>

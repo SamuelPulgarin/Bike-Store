@@ -4,12 +4,19 @@
 }
 
 .navbar {
+    position: fixed;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     background-color: #262626;
-    padding: 8px;
+    padding: 5px;
+    z-index: 100;
+}
+
+.menu{
+    margin-right: 30px;
 }
 
 .logos {
