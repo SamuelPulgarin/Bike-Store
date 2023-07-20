@@ -28,7 +28,9 @@ export const Signin_Signup = () => {
                             
                             <input type="email" placeholder='E-mail'/>
                             <input type="password" placeholder='Contraseña'/>
-                            <button>Iniciar Sesión</button>
+                            <div className="container__btn">
+                                <button className='btn__f' >Iniciar Sesión</button>
+                            </div>
 
                         </form>
                         {/*Registro*/}
@@ -40,7 +42,9 @@ export const Signin_Signup = () => {
                             <input type="email" placeholder='E-mail'/>
                             <input type="password" placeholder='Contraseña'/>
                             <input type="password" placeholder='Confirmar Contraseña'/>
-                            <button>Regístrarse</button>
+                            <div className="container__btn">
+                                <button className='btn__f'>Regístrarse</button>     
+                            </div>
 
                         </form>
                     </div>
