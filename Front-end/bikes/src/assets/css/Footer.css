@@ -1,7 +1,8 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
@@ -13,33 +14,57 @@ body {
 .FooterContain {
   background-color: #262626;
   width: 100%;
-  height: 37vh;
+  height: 50vh;
   margin-top: auto;
-
 }
 
 .fa-brands {
   color: white;
-  font-size: 40px;
+  font-size: 20px;
   margin: 10px;
-
 }
 
-.fa-instagram:hover{
-  background: linear-gradient(70deg, blue, pink);
+.fa-facebook:hover {
+  color: #1f7bf2;
+}
+
+.fa-instagram:hover {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(
+    135deg,
+    #c70996 0%,
+    #eb0824 50%,
+    #fcca13 100%
+  );
+}
+
+.fa-twitter:hover {
+  color: #249ef1;
+}
+
+.fa-youtube:hover {
+  color: #ff0909;
+}
+
+.Follow_us {
+  display: flex;
+  justify-content: center;
 }
 
 .Follow_us h2 {
-  margin-top: 15px;
+  margin-top: 13px;
   margin-right: 10px;
   color: white;
+  font-size: 13px;
 }
 
 .Logo img {
   margin: 0 auto;
   display: block;
-  width: 50%;
-  height: 25vh;
+  width: 30%;
+  height: 31vh;
 }
 
 .Copy {
@@ -51,9 +76,338 @@ body {
 
 .Copy img {
   margin-right: 10px;
+  margin-top: 2px;
+  width: 15px;
 }
 
-.Follow_us {
-  display: flex;
-  justify-content: center;
+/*Responsive*/
+
+ @media (max-width: 1400px) {
+  .Logo img {
+    width: 70%;
+    height: 35vh;
+  }
+
+  .Follow_us {
+    margin-top: 10px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 40px;
+  }
+
+  .Follow_us h2 {
+    font-size: 25px;
+  }
+
+  .Copy h5 {
+    margin-top: 8px;
+    font-size: 20px;
+  }
+
+  .Copy img {
+    width: 20px;
+    margin-top: 10px;
+  }
+
+  .FooterContain{
+    height: fit-content;
+  }
+} 
+
+@media (max-width: 1300px) {
+  .Logo img {
+    width: 70%;
+    height: 35vh;
+  }
+
+  .Follow_us {
+    margin-top: 10px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 40px;
+  }
+
+  .Follow_us h2 {
+    font-size: 25px;
+  }
+
+  .Copy h5 {
+    font-size: 20px;
+  }
+
+  .Copy img {
+    width: 20px;
+  }
+} 
+
+@media (max-width: 1200px) {
+  .Logo img {
+    width: 70%;
+    height: 35vh;
+  }
+
+  .Follow_us {
+    margin-top: 10px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 40px;
+  }
+
+  .Follow_us h2 {
+    font-size: 25px;
+  }
+
+  .Copy h5 {
+    font-size: 20px;
+  }
+
+  .Copy img {
+    width: 20px;
+  }
+} 
+
+ @media (max-width: 1100px) {
+  .Logo img {
+    width: 70%;
+    height: 35vh;
+  }
+
+  .Follow_us {
+    margin-top: 10px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 40px;
+  }
+
+  .Follow_us h2 {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+
+  .Copy {
+    margin-top: 10px;
+  }
+
+  .Copy h5 {
+    font-size: 20px;
+  }
+} 
+
+ @media (max-width: 1000px) {
+  .Logo img {
+    width: 60%;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 35px;
+  }
+
+  .Follow_us h2 {
+    margin-top: 8px;
+    font-size: 25px;
+  }
+
+  .Copy h5 {
+    font-size: 20px;
+  }
+
+  .Copy img {
+    width: 20px;
+  }
+
+  .FooterContain {
+    height: fit-content;
+  }
+} 
+
+ @media (max-width: 800px) {
+  .FooterContain {
+    height: fit-content;
+  }
+
+  .Logo img {
+    width: 60%;
+    height: 25vh;
+    margin-top: 1px;
+  }
+
+  .Follow_us {
+    margin-top:1px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 30px;
+  }
+
+  .Follow_us h2 {
+    margin-top: 15px;
+    font-size: 20px;
+  }
+
+  .Copy {
+    margin-top: 10px;
+  }
+
+  .Copy h5 {
+    font-size: 20px;
+  }
+
+  .Copy img {
+    width: 20px;
+  }
 }
+
+@media (max-width: 700px) {
+  .FooterContain {
+    height: fit-content;
+  }
+
+  .Logo img {
+    height: 20vh;
+    width: 100%;
+  }
+
+  .Follow_us {
+    margin-top: 5px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 30px;
+  }
+
+  .Follow_us h2 {
+    margin-top: 11px;
+  }
+
+  .Copy h5 {
+    font-size: 20px;
+  }
+
+  .Copy img {
+    width: 20px;
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 600px) {
+  .FooterContain {
+    height: fit-content;
+  }
+
+  .Logo img {
+    width: 60%;
+    height: 25vh;
+    margin-top: -2px;
+  }
+
+  .Follow_us {
+    margin-top: 5px;
+  }
+
+  .Follow_us h2 {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 25px;
+  }
+
+  .Copy {
+    margin-top: 5px;
+  }
+
+  .Copy h5 {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+
+  .Copy img {
+    width: 20px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  .Logo img {
+    width: 80%;
+  }
+
+  .Follow_us {
+    margin-top: 10px;
+  }
+
+  .Copy {
+    margin-top: 3px;
+  }
+
+  .Copy h5 {
+    font-size: 17px;
+  }
+
+  .Copy img {
+    width: 15px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .FooterContain {
+    height: fit-content;
+  }
+
+  .Logo img {
+    width: 80%;
+    height: 20vh;
+  }
+
+  .Follow_us {
+    margin-top: 10px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 20px;
+    margin-top: 5px;
+  }
+
+  .Follow_us h2 {
+    margin-top: 5px;
+    font-size: 15px;
+  }
+
+  .Copy h5 {
+    font-size: 12px;
+  }
+
+  .Copy img {
+    width: 10px;
+    margin-top: 10px;
+  }
+
+  .Copy {
+    margin-top: 7px;
+  }
+}
+
+@media (max-width: 300px) {
+  .Logo img {
+    width: 80%;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 15px;
+  }
+
+  .Follow_us h2 {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+
+  .Copy h5 {
+    font-size: 11px;
+  }
+} 

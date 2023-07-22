@@ -29,7 +29,7 @@ const Footer = () => {
         </div>
         <div className="Copy">
           <img src={Copy} alt="Imagen de Copyright" />
-          <h3>2023 Bike Store. Todos los derechos reservados</h3>
+          <h5>2023 Bike Store. Todos los derechos reservados</h5>
         </div>
       </div>
     </body>
