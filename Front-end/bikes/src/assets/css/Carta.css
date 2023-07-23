@@ -1,0 +1,30 @@
+.contenedor-cartas-producto{
+    padding-left: 300px;
+    padding-top: 100px;
+    color: white;
+}
+
+.cartas-producto{
+    margin: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 90px;
+}
+
+.cartap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: aliceblue;
+    width: min-content;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 5px 5px 5px  grey;
+    cursor: pointer;
+
+    & img{
+        width: 240px;
+    }
+}
