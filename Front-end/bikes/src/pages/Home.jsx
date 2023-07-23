@@ -1,11 +1,15 @@
+import React from 'react';
+import { CardsCategory } from '../components/Category-Cards/CardsCategory';
+import { Marcas } from '../components/Marcas/Marcas';
 import Navbar from "../components/navbar/Navbar.jsx";
 
-const home = () => {
+export const Home = () => {
   return (
     <>
-        <h1>soy homecenter</h1>
+        <Navbar/>
+        <CardsCategory></CardsCategory>
+        <Marcas></Marcas>
     </>
   )
 }
 
-export default home

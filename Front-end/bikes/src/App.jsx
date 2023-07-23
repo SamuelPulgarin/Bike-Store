@@ -1,3 +1,5 @@
+import { Home } from './pages/Home'
+import { Inicio_Registro } from './pages/Inicio_Registro'
 import Home from './pages/Home.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Carrito from './pages/Carrito.jsx';
@@ -8,6 +10,7 @@ function App() {
 
   return (
     <>
+      <Inicio_Registro></Inicio_Registro>
     <Productos/>
     
         {/*
