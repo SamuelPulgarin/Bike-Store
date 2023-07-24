@@ -9,8 +9,7 @@ function App() {
 
   return (
     <>
-    <Productos/>
-    {/*
+
       <Navbar></Navbar>
       <Router>
         <Routes>
@@ -20,7 +19,7 @@ function App() {
           <Route />
         </Routes>
       </Router>
-  */}
+      
     </>
 
   )

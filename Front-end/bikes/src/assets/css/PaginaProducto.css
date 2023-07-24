@@ -1,4 +1,4 @@
-body{
+/*body{
     position: relative;
     width: 100%;
     background-image: url("../../assets/img/supra-performance-header.jpg");
@@ -19,6 +19,7 @@ body::before{
     z-index: -1;
 }
 
+*/
 
 *{
     margin: 0;

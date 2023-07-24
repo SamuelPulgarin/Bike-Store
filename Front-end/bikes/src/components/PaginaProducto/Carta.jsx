@@ -7,6 +7,7 @@ const Carta = () => {
     <>
         <div className='contenedor-cartas-producto'>
             <h1>Bicicletas {}:</h1>
+
             <div className='cartas-producto'>
                 <div className="cartap">
                     <img src={imgexample} alt="" />
@@ -110,6 +111,7 @@ const Carta = () => {
                 </div>
 
             </div>
+
         </div>
     </>
   )
