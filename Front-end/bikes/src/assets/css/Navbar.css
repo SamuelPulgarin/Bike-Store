@@ -41,10 +41,11 @@
 }
 #perfil{
     width: 35px;
+    margin-left: 10px;
 }
 
 .desplegable{
-    width: 25%;
+    width: 35px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -145,6 +146,7 @@ label img{
     .list{
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         padding: 20px;
     }
 
@@ -156,4 +158,8 @@ label img{
     #toggler:checked ~ .menu{
         max-height: 100%;
     }
+    label img{
+        margin-right: 20px;
+    }
+
 }

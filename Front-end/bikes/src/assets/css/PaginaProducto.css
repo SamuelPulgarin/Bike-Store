@@ -1,4 +1,5 @@
-body{
+/*body{
+    position: relative;
     width: 100%;
     background-image: url("../../assets/img/supra-performance-header.jpg");
     background-position: top left center;
@@ -7,6 +8,18 @@ body{
     background-attachment: fixed;
 }
 
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+*/
 
 *{
     margin: 0;
@@ -64,4 +77,30 @@ body{
     padding: 20px;
     transform: scale(1.8);
     cursor: pointer;
+}
+
+@media screen and (max-width: 1380px) {
+
+    .contenedor-filtros{
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 950px){
+
+    .contenedor-filtros h1{
+        font-size: 150%;
+    }
+
+}
+
+@media screen and (max-width: 750px){
+
+    .contenedor-filtros{
+        display: none;
+    }
+
+    body{
+        background-position: center;
+    }
 }
