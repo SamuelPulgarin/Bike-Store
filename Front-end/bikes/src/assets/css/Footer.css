@@ -82,6 +82,39 @@ body {
 
 /*Responsive*/
 
+@media (max-width: 1920px){
+  .Logo img {
+    width: 70%;
+    height: 35vh;
+  }
+
+  .Follow_us {
+    margin-top: 10px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 40px;
+  }
+
+  .Follow_us h2 {
+    font-size: 25px;
+  }
+
+  .Copy h5 {
+    margin-top: 8px;
+    font-size: 20px;
+  }
+
+  .Copy img {
+    width: 20px;
+    margin-top: 10px;
+  }
+
+  .FooterContain{
+    height: fit-content;
+  }
+}
+
  @media (max-width: 1400px) {
   .Logo img {
     width: 70%;
@@ -183,11 +216,6 @@ body {
     font-size: 40px;
   }
 
-  .Follow_us h2 {
-    font-size: 20px;
-    margin-top: 15px;
-  }
-
   .Copy {
     margin-top: 10px;
   }
@@ -244,7 +272,7 @@ body {
   }
 
   .Follow_us h2 {
-    margin-top: 15px;
+    margin-top: 12px;
     font-size: 20px;
   }
 
@@ -299,7 +327,7 @@ body {
   }
 
   .Logo img {
-    width: 60%;
+    width: 70%;
     height: 25vh;
     margin-top: -2px;
   }
@@ -355,6 +383,12 @@ body {
   }
 }
 
+@media (max-width: 420px){
+  .Copy h5{
+    font-size: 15px;
+  }
+}
+
 @media (max-width: 400px) {
   .FooterContain {
     height: fit-content;
@@ -370,12 +404,50 @@ body {
   }
 
   .Follow_us .fa-brands {
-    font-size: 20px;
-    margin-top: 5px;
+    font-size: 25px;
+    margin-top: 7px;
   }
 
   .Follow_us h2 {
     margin-top: 5px;
+    font-size: 20px;
+  }
+
+  .Copy h5 {
+    font-size: 16px;
+  }
+
+  .Copy img {
+    width: 10px;
+    margin-top: 12px;
+  }
+
+  .Copy {
+    margin-top: 7px;
+  }
+}
+
+@media (max-width: 375px){
+  .FooterContain {
+    height: fit-content;
+  }
+
+  .Logo img {
+    width: 80%;
+    height: 20vh;
+  }
+
+  .Follow_us {
+    margin-top: 10px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 17px;
+    margin-top: 7px;
+  }
+
+  .Follow_us h2 {
+    margin-top: 6px;
     font-size: 15px;
   }
 
@@ -385,7 +457,7 @@ body {
 
   .Copy img {
     width: 10px;
-    margin-top: 10px;
+    margin-top: 12px;
   }
 
   .Copy {
@@ -393,18 +465,24 @@ body {
   }
 }
 
+
 @media (max-width: 300px) {
   .Logo img {
-    width: 80%;
+    width: 100%;
+  }
+
+  .Follow_us{
+    margin-left: 10px;
   }
 
   .Follow_us .fa-brands {
-    font-size: 15px;
+    font-size: 18px;
+
   }
 
   .Follow_us h2 {
-    font-size: 10px;
-    margin-top: 6px;
+    font-size: 12px;
+    margin-top: 8px;
   }
 
   .Copy h5 {

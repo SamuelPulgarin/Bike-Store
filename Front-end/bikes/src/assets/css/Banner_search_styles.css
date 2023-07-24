@@ -23,6 +23,11 @@
     width: 490px;
     height: 35px;
     margin-left: 10px;
+    outline: none;
+    padding: 0 20px;
+    font-size: 18px;
+    color: black;
+    border: 1px solid silver;
 }
 
 ::placeholder {
@@ -44,7 +49,7 @@
     border: none;
     box-shadow: none;
     background-color: transparent;
-    margin-top: 4px;
+    margin-top: 5px;
     margin-right: 8px;
 }
 
@@ -53,26 +58,26 @@
     cursor: pointer;
 }
 
-@media (max-width: 1210px){
-    .Container{
+@media (max-width: 1210px) {
+    .Container {
         height: 70vh;
     }
 }
 
-@media (max-width: 1200px){
-    .Container{
+@media (max-width: 1200px) {
+    .Container {
         height: 50vh;
     }
 }
 
-@media (max-width:  1000px){
-    .Container{
+@media (max-width: 1000px) {
+    .Container {
         height: 60vh;
     }
 }
 
-@media (max-width: 900px){
-    .Container{
+@media (max-width: 900px) {
+    .Container {
         height: 50vh;
     }
 }
@@ -82,25 +87,31 @@
         width: 400px;
     }
 
-    .Container{
+    .Container {
         height: 50vh;
     }
 }
 
-@media (max-width: 670px){
-    .search{
+@media (max-width: 670px) {
+    .search {
         width: 350px;
     }
 }
 
-@media (max-width: 540px){
-    .search{
+@media (max-width: 600px) {
+    .search {
         width: 300px;
+    }
+}
+
+@media (max-width: 540px) {
+    .search {
+        width: 270px;
     }
 
     .Container {
         background-image: url('../img/bannerMovil_adobe_express.svg');
-        background-position: -100% -25%;
+        background-position: 20% -12%;
         background-size: contain;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -109,18 +120,18 @@
     }
 }
 
-@media (max-width: 500px){
-    .search{
-        width: 300px;
+@media (max-width: 500px) {
+    .search {
+        width: 250px;
     }
 
-    .Search{
-        margin-top:-10px;
+    .Search {
+        margin-top: -10px;
     }
 
     .Container {
         background-image: url('../img/bannerMovil_adobe_express.svg');
-        background-position: -100% -25%;
+        background-position: 20% -13%;
         background-size: contain;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -129,30 +140,46 @@
     }
 }
 
-@media (max-width: 460px){
-    .search{
-        width: 300px;
+@media (max-width: 460px) {
+    .search {
+        width: 230px;
     }
 
-    .Search{
-        margin-top:-10px;
+    .Search {
+        margin-top: -10px;
     }
 
     .Container {
         background-image: url('../img/bannerMovil_adobe_express.svg');
-        background-position: -100% -25%;
+        background-position: 20% -12%;
         background-size: contain;
         background-repeat: no-repeat;
         background-attachment: fixed;
         width: 100%;
-        height: 190px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 420px) {
+    .search {
+        width: 220px;
+    }
+
+    .Container {
+        background-image: url('../img/bannerMovil_adobe_express.svg');
+        background-position: 20% -10%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        height: 200px;
     }
 }
 
 @media (max-width: 414px) {
     .Container {
         background-image: url('../img/bannerMovil_adobe_express.svg');
-        background-position: top;
+        background-position: 20% -7%;
         background-size: contain;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -161,12 +188,81 @@
     }
 
     .search {
-        width: 300px;
+        width: 220px;
     }
 
     .Search {
         width: 310px;
         height: 35px;
-        margin-top: 20px;
+        margin-top: -30px;
+    }
+
+    #lupa {
+        margin-right: 43px;
+    }
+}
+
+@media (max-width: 400px) {
+    .Search {
+        margin-top: -50px;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 360px){
+    .search{
+        width: 180px;
+    }
+
+    .Search{
+        margin-left: 70px;
+        margin-top: -80px;
+    }
+     
+    #lupa{
+        margin-right: 85px;
+    }
+}
+
+@media (max-width: 320px){
+    .search{
+        width: 150px;
+    }
+
+    .Search{
+        margin-left: 100px;
+        margin-top: -110px;
+    }
+
+    #lupa{
+        margin-right: 135px;
+        width: 10px;
+    }
+
+    ::placeholder{
+        font-size:15px;
+        margin-top: -10px;
+    }
+}
+
+@media (max-width: 300px){
+    .Search{
+        margin-top: -130px;
+    }
+}
+
+@media (max-width: 280px){
+    .Container {
+        background-image: url('../img/bannerMovil_adobe_express.svg');
+        background-position: 20% -6%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment:local;
+        width:100%;
+        height: 244px;
+    }
+
+    .Search{
+        margin-top: -60px;
     }
 }
