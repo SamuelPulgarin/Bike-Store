@@ -1,0 +1,152 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.contenedor-cartas-producto{
+    padding-left: 300px;
+    padding-top: 100px;
+    color: white;
+    background-image: url("../../assets/img/supra-performance-header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 1000%;
+}
+
+.cartas-producto{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 90px;
+}
+
+.cartap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: aliceblue;
+    width: min-content;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 5px 5px 5px  grey;
+    cursor: pointer;
+
+    & img{
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 1380px){
+
+    .contenedor-cartas-producto{
+        padding-left: 230px;
+    }
+}
+
+@media screen and (max-width: 1075px){
+
+    .cartas-producto{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 950px){
+
+    .contenedor-cartas-producto h1{
+        font-size: 170%;
+        
+    }
+    .cartas-producto{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 750px){
+
+    .contenedor-cartas-producto{
+        display: grid;
+        justify-items: center;
+        padding: 100px 10px;
+
+        & h1{
+            justify-self: start;
+            margin-left: 50px;
+        }
+    }
+    .cartap{
+        margin: 50px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .cartap{
+        opacity: 0.9;
+
+        & h3{
+            font-size: 80%;
+        }
+
+        & img{
+            width: 130px;
+        }
+
+        & p{
+            font-size: 80%;
+        }
+    } 
+
+    .cartas-producto{
+        row-gap: 10px;
+    }
+}
+
+@media screen and (max-width: 580px){
+
+    .cartap{
+        margin: 0;
+
+        & h3{
+            font-size: 60%;
+        }
+
+        & img{
+            width: 100px;
+        }
+
+        & p{
+            font-size: 60%;
+        }
+    }
+
+    .cartas-producto{
+        row-gap: 50px;
+        column-gap: 50px;
+    }
+
+    .contenedor-cartas-producto{
+        padding: 80px 0px;
+    }
+}
+
+@media screen and (max-width: 370px){
+    
+    .cartas-producto{
+        row-gap: 50px;
+        column-gap: 30px;
+        justify-items: start;
+        padding: 30px 0;
+    }
+
+    .contenedor-cartas-producto h1{
+        font-size: 120%;
+        margin-left: 30px;   
+    }
+}

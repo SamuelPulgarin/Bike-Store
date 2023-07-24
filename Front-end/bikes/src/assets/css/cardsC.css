@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.titulo1{
+    margin: 20px;
+}
+
+.main-cards{
+    margin: 20px 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.Carta1{
+    width: 200px;
+    height: 300px;
+    border-radius: 15px;
+    background-image: url('../../assets/img/ruta.jpg');
+    background-size: cover;
+    box-shadow: 10px 8px 5px rgb(187, 187, 187);
+    cursor: pointer;
+}
+
+.content1{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    color: white;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.texto1{
+    width: 100%;
+    background:  #3A3A3A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 0px 15px 15px;
+    height: 40px;
+}
+
+.content1:hover{
+    opacity: 1;
+}
+
+.Carta2{
+    width: 200px;
+    height: 300px;
+    border-radius: 15px;
+    background-image: url('../../assets/img/montaña.jpg');
+    background-size: cover;
+    box-shadow: 10px 8px 5px rgb(187, 187, 187);
+}
+
+.Carta3{
+    width: 200px;
+    height: 300px;
+    border-radius: 15px;
+    background-image: url('../../assets/img/Bmx.jpg');
+    background-size: cover;
+    box-shadow: 10px 8px 5px rgb(187, 187, 187);
+}
+
+.Carta4{
+    width: 200px;
+    height: 300px;
+    border-radius: 15px;
+    background-image: url('../../assets/img/hibrida.jpg');
+    background-size: cover;
+    box-shadow: 10px 8px 5px rgb(187, 187, 187);
+}
+
+@media (max-width:1260px){
+    .main-cards{
+        margin: 20px 100px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
+}
+
+@media (max-width:1030px){
+    .main-cards{
+        margin: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+    }
+}
+
+@media (max-width:900px){
+    .Carta1{
+        width: 170px;
+        height: 250px;
+    }
+
+    .Carta2{
+        width: 170px;
+        height: 250px;
+    }
+    
+    .Carta3{
+        width: 170px;
+        height: 250px;
+    }
+    
+    .Carta4{
+        width: 170px;
+        height: 250px;
+    }
+}
+
+@media (max-width:760px){
+    .Carta1{
+        width: 150px;
+        height: 220px;
+    }
+
+    .Carta2{
+        width: 150px;
+        height: 220px;
+    }
+    
+    .Carta3{
+        width: 150px;
+        height: 220px;
+    }
+    
+    .Carta4{
+        width: 150px;
+        height: 220px;
+    }
+
+    .texto1{
+        height: 30px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width:670px){
+    .Carta1{
+        width: 120px;
+        height: 190px;
+    }
+
+    .Carta2{
+        width: 120px;
+        height: 190px;
+    }
+    
+    .Carta3{
+        width: 120px;
+        height: 190px;
+    }
+    
+    .Carta4{
+        width: 120px;
+        height: 190px;
+    }
+}
+
+@media (max-width:560px){
+    .Carta1{
+        width: 100px;
+        height: 160px;
+    }
+
+    .Carta2{
+        width: 100px;
+        height: 160px;
+    }
+    
+    .Carta3{
+        width: 100px;
+        height: 160px;
+    }
+    
+    .Carta4{
+        width: 100px;
+        height: 160px;
+    }
+
+    .texto1{
+        height: 25px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width:480px){
+    .content1{
+        opacity: 1;
+        transition: 0.5s;
+    }
+
+    .main-cards{
+        margin: 20px;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .Carta1{
+        width: 150px;
+        height: 220px;
+    }
+
+    .Carta2{
+        width: 150px;
+        height: 220px;
+    }
+    
+    .Carta3{
+        width: 150px;
+        height: 220px;
+    }
+    
+    .Carta4{
+        width: 150px;
+        height: 220px;
+    }
+
+    .texto1{
+        height: 30px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width:370px){
+    .Carta1{
+        width: 125px;
+        height: 190px;
+    }
+
+    .Carta2{
+        width: 125px;
+        height: 190px;
+    }
+    
+    .Carta3{
+        width: 125px;
+        height: 190px;
+    }
+    
+    .Carta4{
+        width: 125px;
+        height: 190px;
+    }
+}
+
+@media (max-width:310px){
+    .Carta1{
+        width: 100px;
+        height: 160px;
+    }
+
+    .Carta2{
+        width: 100px;
+        height: 160px;
+    }
+    
+    .Carta3{
+        width: 100px;
+        height: 160px;
+    }
+    
+    .Carta4{
+        width: 100px;
+        height: 160px;
+    }
+
+    .texto1{
+        height: 25px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width:250px){
+    .Carta1{
+        width: 90px;
+        height: 125px;
+    }
+
+    .Carta2{
+        width: 90px;
+        height: 125px;
+    }
+    
+    .Carta3{
+        width: 90px;
+        height: 125px;
+    }
+    
+    .Carta4{
+        width: 90px;
+        height: 125px;
+    }
+
+    .texto1{
+        height: 20px;
+        font-size: 12px;
+    }
+}
