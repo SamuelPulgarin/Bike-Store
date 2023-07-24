@@ -6,6 +6,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+/*
 body{
     background-image: url('../img/fondo_login_register.jpg');
     background-size: cover;
@@ -15,6 +16,7 @@ body{
     width: 100%;
     height: 100%;
 }
+*/
 
 .Login__Register{
     width: 100%;

@@ -1,24 +1,38 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from "react"
 import '../../assets/css/Navbar.css';
-import { useNavbar } from "../../hooks/useNavbar";
+
 import carrito from "../../assets/img/agregar-carrito.png";
 import peril from "../../assets/img/sesion.png";
 import logo1 from "../../assets/img/Logo-circle.png";
 import logo2 from "../../assets/img/Logo-short.png";
 import toggler from "../../assets/img/menu.png";
 import options from "../../assets/img/option.png";
+import { useNavigate } from "react-router-dom";
 
 
 const Navbar = () => {
 
-  const { prueba, prueba2, prueba3, prueba4 } = useNavbar();
+  const navigate = useNavigate();
 
+  //const { prueba, prueba2, prueba3, prueba4} = useNavbar();
+  
+  const categorias = (e)=>{
+
+
+    //console.log(e?.target?.value);
+    
+    navigate("/productos");
+  }
+
+/*
   useEffect(() => {
-    prueba();
-    prueba2();
-    prueba3();
-    prueba4();
+    prueba,
+    prueba2,
+    prueba3,
+    prueba4.
   }, []);
+
+*/
 
   return (
   <>
@@ -33,16 +47,16 @@ const Navbar = () => {
             <ul className="list">
                 <div className="desplegable">
                     <li><a href="#"><img src={options} alt="Hola soy una imagen" id="opcion"/></a></li>
-                    <li><select id="">
-                        <option value="" disabled="true">CATEGORIAS</option>
-                        <option value="1">Ruta</option>
-                        <option value="2">Montaña</option>
-                        <option value="3">hibridas</option>
-                        <option value="4">Bmx</option>
+                    <li><select id="categorias" onChange={categorias}>
+                        <option disabled="true">CATEGORIAS</option>
+                        <option value={"1"}>Ruta</option>
+                        <option value={"2"}>Montaña</option>
+                        <option value={"3"}>hibridas</option>
+                        <option value={"4"}>Bmx</option>
                     </select></li>
                 </div>
                 <li><a href="/Carrito"><img src={carrito} alt="Hola soy una imagen" id="carrito"/></a></li>
-                <li><a href="#"><img src={peril} alt="Hola soy una imagen" id="perfil"/></a></li>
+                <li><a href="/perfil"><img src={peril} alt="Hola soy una imagen" id="perfil"/></a></li>
             </ul>
         </div>
     </nav>
@@ -50,4 +64,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar
