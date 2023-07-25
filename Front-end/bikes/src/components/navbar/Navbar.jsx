@@ -1,6 +1,6 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import '../../assets/css/Navbar.css';
-
+import { useNavbar } from "../../hooks/useNavbar";
 import carrito from "../../assets/img/agregar-carrito.png";
 import peril from "../../assets/img/sesion.png";
 import logo1 from "../../assets/img/Logo-circle.png";
@@ -8,20 +8,57 @@ import logo2 from "../../assets/img/Logo-short.png";
 import toggler from "../../assets/img/menu.png";
 import options from "../../assets/img/option.png";
 import { useNavigate } from "react-router-dom";
+import Carta from "../PaginaProducto/Carta";
 
 
-const Navbar = () => {
+const Navbar = (props, {addMensaje}) => {
+
+  const {cate1, cate2, cate3, cate4} = props;
+  const [valorSelect, setValorSelect] = useState('');
 
   const navigate = useNavigate();
 
+  let mensaje = '';
+
+  const enviarMensaje = ()=>{
+    addMensaje(mensaje)
+  }
+
   //const { prueba, prueba2, prueba3, prueba4} = useNavbar();
   
-  const categorias = (e)=>{
+  const categorias = ( e )=>{
+    setValorSelect(e.target.value)
 
+    switch(e.target.value){
+      case "1":
+        console.log(cate1)
+        mensaje = cate1
+      break;
+
+      case "2":
+        console.log(cate2)
+        mensaje = cate2
+      break;
+
+      case "3":
+        console.log(cate3)
+        mensaje = cate3
+      break;
+
+      case "4":
+        console.log(cate4)
+        mensaje = cate4
+      break;
+
+      default:
+        console.log('No hay mensaje');
+      break;
+    }
+
+    navigate("/productos");
 
     //console.log(e?.target?.value);
-    
-    navigate("/productos");
+
   }
 
 /*

@@ -1,0 +1,33 @@
+# Carpeta de dependencias
+node_modules/
+
+# Carpeta de construcción
+/dist/
+
+# Archivo de configuración de Vite
+.vite/
+
+# Archivos de respaldo generados por el editor
+# (pueden variar dependiendo del editor que uses)
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*~
+
+# Archivo de entorno local
+.env.local
+
+# Archivo de entorno de desarrollo
+.env.development.local
+
+# Archivo de entorno de producción
+.env.production.local
+
+# Archivos de registro
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
