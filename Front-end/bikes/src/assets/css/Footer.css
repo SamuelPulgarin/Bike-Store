@@ -32,12 +32,10 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(
-    135deg,
-    #c70996 0%,
-    #eb0824 50%,
-    #fcca13 100%
-  );
+  background-image: linear-gradient(135deg,
+      #c70996 0%,
+      #eb0824 50%,
+      #fcca13 100%);
 }
 
 .fa-twitter:hover {
@@ -82,7 +80,7 @@ body {
 
 /*Responsive*/
 
-@media (max-width: 1920px){
+@media (max-width: 1920px) {
   .Logo img {
     width: 70%;
     height: 35vh;
@@ -90,144 +88,6 @@ body {
 
   .Follow_us {
     margin-top: 10px;
-  }
-
-  .Follow_us .fa-brands {
-    font-size: 40px;
-  }
-
-  .Follow_us h2 {
-    font-size: 25px;
-  }
-
-  .Copy h5 {
-    margin-top: 8px;
-    font-size: 20px;
-  }
-
-  .Copy img {
-    width: 20px;
-    margin-top: 10px;
-  }
-
-  .FooterContain{
-    height: fit-content;
-  }
-}
-
- @media (max-width: 1400px) {
-  .Logo img {
-    width: 70%;
-    height: 35vh;
-  }
-
-  .Follow_us {
-    margin-top: 10px;
-  }
-
-  .Follow_us .fa-brands {
-    font-size: 40px;
-  }
-
-  .Follow_us h2 {
-    font-size: 25px;
-  }
-
-  .Copy h5 {
-    margin-top: 8px;
-    font-size: 20px;
-  }
-
-  .Copy img {
-    width: 20px;
-    margin-top: 10px;
-  }
-
-  .FooterContain{
-    height: fit-content;
-  }
-} 
-
-@media (max-width: 1300px) {
-  .Logo img {
-    width: 70%;
-    height: 35vh;
-  }
-
-  .Follow_us {
-    margin-top: 10px;
-  }
-
-  .Follow_us .fa-brands {
-    font-size: 40px;
-  }
-
-  .Follow_us h2 {
-    font-size: 25px;
-  }
-
-  .Copy h5 {
-    font-size: 20px;
-  }
-
-  .Copy img {
-    width: 20px;
-  }
-} 
-
-@media (max-width: 1200px) {
-  .Logo img {
-    width: 70%;
-    height: 35vh;
-  }
-
-  .Follow_us {
-    margin-top: 10px;
-  }
-
-  .Follow_us .fa-brands {
-    font-size: 40px;
-  }
-
-  .Follow_us h2 {
-    font-size: 25px;
-  }
-
-  .Copy h5 {
-    font-size: 20px;
-  }
-
-  .Copy img {
-    width: 20px;
-  }
-} 
-
- @media (max-width: 1100px) {
-  .Logo img {
-    width: 70%;
-    height: 35vh;
-  }
-
-  .Follow_us {
-    margin-top: 10px;
-  }
-
-  .Follow_us .fa-brands {
-    font-size: 40px;
-  }
-
-  .Copy {
-    margin-top: 10px;
-  }
-
-  .Copy h5 {
-    font-size: 20px;
-  }
-} 
-
- @media (max-width: 1000px) {
-  .Logo img {
-    width: 60%;
   }
 
   .Follow_us .fa-brands {
@@ -235,52 +95,83 @@ body {
   }
 
   .Follow_us h2 {
-    margin-top: 8px;
+    margin-top: 10px;
     font-size: 25px;
   }
 
   .Copy h5 {
+    margin-top: 8px;
     font-size: 20px;
   }
 
   .Copy img {
     width: 20px;
+    margin-top: 10px;
   }
 
   .FooterContain {
     height: fit-content;
   }
-} 
-
-/*Surface Pro 7*/
-@media (max-width:912px){
-  .Logo Img{
-    width: 700px;
-  }
-
-.Follow_us{
-  margin-top: -20px;
 }
 
-  .Follow_us .fa-brands{
+/*Nest Hub Max*/
+@media (max-width:1280px) {
+  .Follow_us .fa-brands {
+    font-size: 35px;
+  }
+
+  .Follow_us h2 {
+    margin-top: 10px;
+    font-size: 24px;
+  }
+
+  .Follow_us {
+    margin-top: 5px;
+  }
+}
+
+/*Nest Hub*/
+@media (max-width:1024px) {
+  .Follow_us .fa-brands {
+    font-size: 35px;
+  }
+
+  .Follow_us h2 {
+    font-size: 25px;
+    margin-top: 10px;
+  }
+}
+
+/*Surface Pro 7*/
+@media (max-width:912px) {
+  .Logo Img {
+    width: 700px;
+    height: 35vh;
+  }
+
+  .Follow_us {
+    margin-top: -25px;
+  }
+
+  .Follow_us .fa-brands {
     font-size: 45px;
   }
 
-  .Follow_us h2{
+  .Follow_us h2 {
     font-size: 30px;
     margin-top: 12px;
   }
 
-  .Copy h5{
-    font-size: 25px;
+  .Copy h5 {
+    font-size: 26px;
   }
 }
 
 /*IPad Air*/
-@media (max-width:820px){
+@media (max-width:820px) {
   .Logo img {
-    width: 80%;
-    margin-top: 20px;
+    width: 70%;
+    margin-top: -20px;
     height: 35vh;
   }
 
@@ -306,45 +197,8 @@ body {
   }
 }
 
- @media (max-width: 800px) {
-  .FooterContain {
-    height: fit-content;
-  }
-
-  .Logo img {
-    width: 60%;
-    height: 25vh;
-    margin-top: 1px;
-  }
-
-  .Follow_us {
-    margin-top:1px;
-  }
-
-  .Follow_us .fa-brands {
-    font-size: 30px;
-  }
-
-  .Follow_us h2 {
-    margin-top: 12px;
-    font-size: 20px;
-  }
-
-  .Copy {
-    margin-top: 10px;
-  }
-
-  .Copy h5 {
-    font-size: 20px;
-  }
-
-  .Copy img {
-    width: 20px;
-  }
-}
-
 /*IPad Mini*/
-@media (max-width:768px){
+@media (max-width:768px) {
   .FooterContain {
     height: fit-content;
   }
@@ -356,7 +210,7 @@ body {
   }
 
   .Follow_us {
-    margin-top:10px;
+    margin-top: 10px;
   }
 
   .Follow_us .fa-brands {
@@ -381,107 +235,34 @@ body {
   }
 }
 
-@media (max-width: 700px) {
-  .FooterContain {
-    height: fit-content;
-  }
+/*Surface Duo*/
+@media (max-width:540px) {
 
   .Logo img {
-    height: 20vh;
-    width: 100%;
+    height: 30vh;
   }
 
   .Follow_us {
-    margin-top: 5px;
-  }
-
-  .Follow_us .fa-brands {
-    font-size: 30px;
-  }
-
-  .Follow_us h2 {
-    margin-top: 11px;
-  }
-
-  .Copy h5 {
-    font-size: 20px;
-  }
-
-  .Copy img {
-    width: 20px;
-    margin-top: 2px;
+    margin-top: 10px;
   }
 }
 
-@media (max-width: 600px) {
-  .FooterContain {
-    height: fit-content;
+/*IPhone XR*/
+@media (max-width:414px) {
+  .Follow_us {
+    margin-top: -10px;
   }
+}
 
+/*Samsung Galaxy A51/71 and Facebook for Android v407 on Pixel 6*/
+@media (max-width:412px) {
   .Logo img {
-    width: 70%;
     height: 25vh;
-    margin-top: -2px;
-  }
-
-  .Follow_us {
-    margin-top: 5px;
-  }
-
-  .Follow_us h2 {
-    font-size: 20px;
-    margin-top: 8px;
-  }
-
-  .Follow_us .fa-brands {
-    font-size: 25px;
-  }
-
-  .Copy {
-    margin-top: 5px;
-  }
-
-  .Copy h5 {
-    margin-top: 10px;
-    font-size: 20px;
-  }
-
-  .Copy img {
-    width: 20px;
-    margin-top: 15px;
   }
 }
 
-@media (max-width: 500px) {
-  .Logo img {
-    width: 80%;
-  }
-
-  .Follow_us {
-    margin-top: 10px;
-  }
-
-  .Copy {
-    margin-top: 3px;
-  }
-
-  .Copy h5 {
-    font-size: 17px;
-  }
-
-  .Copy img {
-    width: 15px;
-    margin-top: 10px;
-  }
-}
-
-@media (max-width: 420px){
-  .Copy h5{
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 400px) {
+/*Pixel 5*/
+@media (max-width:393px) {
   .FooterContain {
     height: fit-content;
   }
@@ -519,7 +300,8 @@ body {
   }
 }
 
-@media (max-width: 375px){
+/*IPhone 12 Pro*/
+@media (max-width: 390px) {
   .FooterContain {
     height: fit-content;
   }
@@ -534,17 +316,17 @@ body {
   }
 
   .Follow_us .fa-brands {
-    font-size: 17px;
+    font-size: 25px;
     margin-top: 7px;
   }
 
   .Follow_us h2 {
-    margin-top: 6px;
-    font-size: 15px;
+    margin-top: 5px;
+    font-size: 20px;
   }
 
   .Copy h5 {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .Copy img {
@@ -557,34 +339,74 @@ body {
   }
 }
 
-
-@media (max-width: 300px) {
-  .Logo img {
-    width: 100%;
+/*IPhone SE*/
+@media (max-width: 375px) {
+  .FooterContain {
+    height: fit-content;
   }
 
-  .Follow_us{
-    margin-left: 10px;
+  .Logo img {
+    width: 80%;
+    height: 20vh;
+  }
+
+  .Follow_us {
+    margin-top: 10px;
   }
 
   .Follow_us .fa-brands {
-    font-size: 18px;
-
+    font-size: 20px;
+    margin-top: 7px;
   }
 
   .Follow_us h2 {
-    font-size: 12px;
-    margin-top: 8px;
+    margin-top: 5px;
+    font-size: 16px;
   }
 
   .Copy h5 {
-    font-size: 11px;
+    font-size: 14px;
   }
-} 
+
+  .Copy img {
+    width: 10px;
+    margin-top: 12px;
+  }
+
+  .Copy {
+    margin-top: 7px;
+  }
+}
+
+/*Samsung Galaxy S8+*/
+@media (max-width:360px) {
+  .Follow_us .fa-brands {
+    font-size: 25px;
+  }
+
+  .Follow_us h2 {
+    font-size: 18px;
+    margin-top: 7px;
+  }
+}
 
 /*Galaxy Fold*/
-@media (max-width:280px){
-  .Logo img{
-    width:100%;
+@media (max-width:280px) {
+  .Logo img {
+    width: 100%;
+    height: 23vh;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 20px;
+  }
+
+  .Follow_us h2 {
+    font-size: 13px;
+    margin-top: 8px;
+  }
+
+  .Copy h5{
+    font-size: 11px;
   }
 }
