@@ -10,17 +10,7 @@ function App() {
 
   return (
     <>
-
-      <Navbar></Navbar>
-      <Router>
-        <Routes>
-          <Route path='/home' element={<Home />}/>
-          <Route path='/Carrito' element={<Carrito />} />
-          <Route path='/productos' element={<Productos/>}/>
-          <Route />
-        </Routes>
-      </Router>
-      
+      <Footer/>
     </>
 
   )
