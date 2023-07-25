@@ -252,6 +252,60 @@ body {
   }
 } 
 
+/*Surface Pro 7*/
+@media (max-width:912px){
+  .Logo Img{
+    width: 700px;
+  }
+
+.Follow_us{
+  margin-top: -20px;
+}
+
+  .Follow_us .fa-brands{
+    font-size: 45px;
+  }
+
+  .Follow_us h2{
+    font-size: 30px;
+    margin-top: 12px;
+  }
+
+  .Copy h5{
+    font-size: 25px;
+  }
+}
+
+/*IPad Air*/
+@media (max-width:820px){
+  .Logo img {
+    width: 80%;
+    margin-top: 20px;
+    height: 35vh;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 40px;
+  }
+
+  .Follow_us h2 {
+    margin-top: 10px;
+    font-size: 30px;
+  }
+
+  .Copy h5 {
+    font-size: 25px;
+  }
+
+  .Copy img {
+    width: 20px;
+  }
+
+  .FooterContain {
+    height: fit-content;
+  }
+}
+
  @media (max-width: 800px) {
   .FooterContain {
     height: fit-content;
@@ -282,6 +336,44 @@ body {
 
   .Copy h5 {
     font-size: 20px;
+  }
+
+  .Copy img {
+    width: 20px;
+  }
+}
+
+/*IPad Mini*/
+@media (max-width:768px){
+  .FooterContain {
+    height: fit-content;
+  }
+
+  .Logo img {
+    width: 70%;
+    height: 26vh;
+    margin-top: 1px;
+  }
+
+  .Follow_us {
+    margin-top:10px;
+  }
+
+  .Follow_us .fa-brands {
+    font-size: 35px;
+  }
+
+  .Follow_us h2 {
+    margin-top: 10px;
+    font-size: 25px;
+  }
+
+  .Copy {
+    margin-top: 10px;
+  }
+
+  .Copy h5 {
+    font-size: 22px;
   }
 
   .Copy img {
@@ -489,3 +581,10 @@ body {
     font-size: 11px;
   }
 } 
+
+/*Galaxy Fold*/
+@media (max-width:280px){
+  .Logo img{
+    width:100%;
+  }
+}
