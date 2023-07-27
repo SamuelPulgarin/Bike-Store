@@ -7,7 +7,7 @@
 }
 
 .contenedor-cartas-producto{
-    padding-left: 300px;
+    padding-left: 320px;
     padding-top: 100px;
     color: white;
     background-image: url("../../assets/img/supra-performance-header.jpg");
@@ -46,7 +46,7 @@
 @media screen and (max-width: 1380px){
 
     .contenedor-cartas-producto{
-        padding-left: 230px;
+        padding-left: 260px;
     }
 }
 
@@ -88,7 +88,7 @@
 @media screen and (max-width: 650px) {
 
     .cartap{
-        opacity: 0.9;
+        opacity: 1;
 
         & h3{
             font-size: 80%;

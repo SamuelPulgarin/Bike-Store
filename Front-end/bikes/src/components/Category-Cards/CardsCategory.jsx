@@ -1,5 +1,5 @@
-import React from 'react'
-import '../../assets/css/cardsC.css'
+import React from 'react';
+import '../../assets/css/cardsC.css';
 
 
 export const CardsCategory = () => {

@@ -111,7 +111,6 @@ const Carta = () => {
                 </div>
 
             </div>
-
         </div>
     </>
   )

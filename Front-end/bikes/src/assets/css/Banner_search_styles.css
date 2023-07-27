@@ -13,21 +13,16 @@
   background-image: url("../img/bannerOficial.jpg");
   background-size: 110% 120%;
   background-repeat: no-repeat;
-  background-position: unset;
+  background-position: top center;
   position: relative;
 }
 
 .search {
-  border: 0px;
-  border-radius: 10px;
-  width: 490px;
-  height: 35px;
-  margin-left: 10px;
-  outline: none;
-  padding: 0 20px;
-  font-size: 18px;
-  color: black;
-  border: 1px solid silver;
+    border: 0px;
+    border-radius: 10px;
+    width: 490px;
+    height: 35px;
+    margin-left: 10px;
 }
 
 ::placeholder {
