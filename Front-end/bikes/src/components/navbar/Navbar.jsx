@@ -14,7 +14,6 @@ import Carta from "../PaginaProducto/Carta";
 const Navbar = (props, {addMensaje}) => {
 
   const {cate1, cate2, cate3, cate4} = props;
-  const [valorSelect, setValorSelect] = useState('');
 
   const navigate = useNavigate();
 
@@ -27,7 +26,6 @@ const Navbar = (props, {addMensaje}) => {
   //const { prueba, prueba2, prueba3, prueba4} = useNavbar();
   
   const categorias = ( e )=>{
-    setValorSelect(e.target.value)
 
     switch(e.target.value){
       case "1":
