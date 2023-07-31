@@ -115,12 +115,12 @@
 /*Surface Duo*/
 @media (max-width: 540px) {
   .search {
-    width: 400px;
+    width: 350px;
   }
 
   .Search{
     margin-top: 40px;
-    margin-left: 5px;
+    margin-right: 60px;
   }
 
   .Container {
