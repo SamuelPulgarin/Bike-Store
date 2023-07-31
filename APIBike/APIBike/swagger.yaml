@@ -6,6 +6,6 @@ paths:
   /:
     get:
       summary: Obtener todos los datos
-      responses: 
-        '200':
+      responses:
+        "200":
           description: Respuesta exitosa

@@ -1,10 +1,10 @@
 const {  Pool } = require('pg');
-const { CONFIG_BD } = require('../config/db')
+const { CONFIG_DB } = require('../config/db');
 
-const pool = new Pool(CONFIG_BD)
+const pool = new Pool(CONFIG_DB);
 
 const getProducts = (req, res) =>{
-    pool.query('SELECT * FROM producto', (error,result)=>{
+    pool.query('select * from producto', (error,result)=>{
         if(error){
             console.error('Error al obtener los datos', error);
             res.status(500).send('Error al obtener datos');

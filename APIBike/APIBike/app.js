@@ -13,7 +13,7 @@ const dataRoutes = require('./routes/dataRoutes');
 app.use('/', dataRoutes);
 
 //Puerto en el que el serveidor escuchará las peticiones
-const  puerto = 3060;
+const puerto = 3060;
 
 app.listen(puerto, ()=>{
     console.log(`Servidor escuchando en http://localhost:${puerto}`);
