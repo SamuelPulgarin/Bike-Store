@@ -120,7 +120,7 @@
   }
 
   .Follow_us {
-    margin-top: 5px;
+    margin-top: 6px;
   }
 }
 
@@ -133,6 +133,10 @@
   .Follow_us h2 {
     font-size: 25px;
     margin-top: 10px;
+  }
+
+  .Copy h5{
+    margin-top: 5px;
   }
 }
 
@@ -180,6 +184,7 @@
 
   .Copy h5 {
     font-size: 25px;
+    margin-top: 5px;
   }
 
   .Copy img {
@@ -239,12 +244,30 @@
   .Follow_us {
     margin-top: 10px;
   }
+
+  .Copy h5{
+    font-size: 20px;
+  }
 }
 
 /*IPhone XR*/
 @media (max-width:414px) {
+
+  .Follow_us h2{
+    font-size: 20px;
+    margin-top: 9px;
+  }
+
+  .Follow_us .fa-brands{
+    font-size: 25px;
+  }
+
   .Follow_us {
-    margin-top: -10px;
+    margin-top: -13px;
+  }
+
+  .Copy h5{
+    font-size: 17px;
   }
 }
 
@@ -252,6 +275,34 @@
 @media (max-width:412px) {
   .Logo img {
     height: 25vh;
+    margin-right: 50px;
+  }
+
+.Follow_us{
+  margin-right: -25px;
+}
+
+  .Follow_us h2 {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .Follow_us .fa-brands{
+    font-size: 20px;
+  }
+
+  .Copy h5{
+    font-size: 14px;
+    margin-right: -10px;
+  }
+
+  .Copy img{
+    width: 15px;
+    margin-top: 5px;
+  }
+
+  .Copy{
+    margin-top: -5px;
   }
 }
 
@@ -402,5 +453,9 @@
 
   .Copy h5{
     font-size: 11px;
+  }
+
+  .Copy img{
+    margin-top: 6px;
   }
 }
