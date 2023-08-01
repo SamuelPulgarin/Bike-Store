@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export const useFetch = () => {
 
-const [data, setData] = useState([]);
+const [data, setData] = useState([0]);
 
   const fetchData = async () => {
     var requestOptions = {

@@ -21,14 +21,13 @@ function App() {
     if(data != 0){
       console.log(data)
     }
-
   },[!data]);
+
+
 
   return (
     <>
-
-    
-
+      <h1>{data[0].nombre}</h1>
       <Router>
         <Home/>
         <Routes>

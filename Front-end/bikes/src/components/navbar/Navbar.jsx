@@ -13,20 +13,18 @@ import Carta from "../PaginaProducto/Carta";
 
 const Navbar = (props, {addMensaje}) => {
 
-  const {cate1, cate2, cate3, cate4} = props;
-
   const navigate = useNavigate();
 
   let mensaje = '';
-
+/*
   const enviarMensaje = ()=>{
     addMensaje(mensaje)
   }
-
+*/
   //const { prueba, prueba2, prueba3, prueba4} = useNavbar();
   
   const categorias = ( e )=>{
-
+/*
     switch(e.target.value){
       case "1":
         console.log(cate1)
@@ -52,7 +50,7 @@ const Navbar = (props, {addMensaje}) => {
         console.log('No hay mensaje');
       break;
     }
-
+*/
     navigate("/productos");
 
     //console.log(e?.target?.value);
@@ -83,7 +81,7 @@ const Navbar = (props, {addMensaje}) => {
                 <div className="desplegable">
                     <li><a href="#"><img src={options} alt="Hola soy una imagen" id="opcion"/></a></li>
                     <li><select id="categorias" onChange={categorias}>
-                        <option disabled="true">CATEGORIAS</option>
+                        <option disabled={true}>CATEGORIAS</option>
                         <option value={"1"}>Ruta</option>
                         <option value={"2"}>Montaña</option>
                         <option value={"3"}>hibridas</option>
