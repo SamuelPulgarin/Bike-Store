@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-export const useFetch = () => {
+export const useFetch = (url) => {
 
 const [data, setData] = useState([0]);
 
@@ -11,7 +11,7 @@ const [data, setData] = useState([0]);
       redirect: "follow",
     };
 
-    await fetch("http://localhost:3060/productos", requestOptions)
+    await fetch(`http://localhost:3060${url}`, requestOptions)
       .then((response) => response.json())
       .then((result) => setData(result))
       .catch((error) => console.log("error", error));
