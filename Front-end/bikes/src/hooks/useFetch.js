@@ -1,25 +1,41 @@
 import React, { useState } from "react";
 
 
-export const useFetch = (url) => {
+export const useFetch = (urlProduct, urlImage) => {
 
-const [data, setData] = useState([0]);
+const [dataProduct, setDataProduct] = useState([0]);
+const [dataImage, setDataImage] = useState([1]);
 
-  const fetchData = async () => {
+  const fetchDataProduct = async () => {
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+    await fetch(`http://localhost:3060${urlProduct}`, requestOptions)
+      .then((response) => response.json())
+      .then((result) => setDataProduct(result))
+      .catch((error) => console.log("erro: ", error));
+
+  };
+
+
+
+  const fetchDataImage = async() =>{
     var requestOptions = {
       method: "GET",
       redirect: "follow",
     };
 
-    await fetch(`http://localhost:3060${url}`, requestOptions)
+    await fetch(`http://localhost:3060${urlImage}`, requestOptions)
       .then((response) => response.json())
-      .then((result) => setData(result))
-      .catch((error) => console.log("error", error));
-
-  };
+      .then((result) => setDataImage(result))
+      .catch((error) => console.log("error: ", error))
+  }
 
   return {
-    fetchData,
-    data,
+    fetchDataProduct,
+    dataProduct,
+    fetchDataImage,
+    dataImage,
   };
 };
