@@ -6,6 +6,7 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+/*body{
 /*
 body{
     background-image: url('../img/fondo_login_register.jpg');
@@ -15,14 +16,28 @@ body{
     background-attachment: fixed;
     width: 100%;
     height: 100%;
+}*/
+
+/*body{
+    overflow: hidden;
+}*/
+
+.Fondo__login__register{
+    background-image: url('../img/fondo_login_register.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 714px;
+    display: flex;
+    justify-content: center;
 }
 */
 
 .Login__Register{
-    width: 100%;
-    padding: 20px;
-    margin: auto;
-    margin-top: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .contenedor__todo{
@@ -44,7 +59,7 @@ body{
 }
 
 .caja__trasera div{
-    margin: 100px 40px;
+    margin: 100px 50px;
     color: white;
     transition: all 500ms;
 }
@@ -134,19 +149,25 @@ body{
 }
 
 .Formulario__register{
-    display: none;
+   display: none;
 }
 
 /*Responsive*/
 
 @media screen and (max-width: 850px) {
+
+    .Fondo__login__register{
+        height: 760px;
+    }
+
     .Login__Register{
-        max-width: 350px;
-        height: 300px;
         flex-direction: column;
         margin: auto;
     }
-
+    .caja__trasera{
+        max-width: 380px;
+        height: 300px;
+    }
     .caja__trasera div{
         margin: 0;
         position: absolute;
