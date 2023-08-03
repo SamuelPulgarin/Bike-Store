@@ -11,41 +11,11 @@ import { useFetch } from './hooks/useFetch';
 
 function App() {
 
-  const urlProduct = '/productos';
-  const urlImage = '/imagenes';
-  const { fetchDataProduct, dataProduct, fetchDataImage, dataImage } = useFetch(urlProduct, urlImage);
-
-
-  useEffect(() => {
-
-    fetchDataProduct()
-    if (dataProduct != 0) {
-      console.log(dataProduct)
-    }
-
-    fetchDataImage()
-    if (dataImage != 1) {
-      console.log(dataImage)
-    }
-
-  }, [!dataProduct]);
-
-
-
   return (
     <>
-      {dataProduct.map((items) => {
-        return (
-          <h1 key={items.id}>{items.nombre}</h1>
-        )
-      })
-      }
-      {
-        dataImage.length > 0 && <img src={"./" + dataImage[1].ruta}/>
-      }
       
-
       <Router>
+        <Home/>
         <Routes>
           <Route path='/home' element={<Home />} />
           <Route path='/Carrito' element={<Carrito />} />
