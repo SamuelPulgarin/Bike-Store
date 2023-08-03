@@ -16,8 +16,8 @@ export const Signin_Signup = () => {
                             </div>
                             <div className="caja__trasera-register">
                                 <h3>¿Aún no tienes una cuenta?</h3>
-                                <p>Registrate para quw puedas, iniciar sesión</p>
-                                <button id='btn__iniciar-sesion'>Iniciar Sesión</button>
+                                <p>Registrate para que puedas, iniciar sesión</p>
+                                <button id='btn__iniciar-sesion'>Registrate</button>
                             </div>
                         </div>
                         {/*Formulario del login y registro*/}

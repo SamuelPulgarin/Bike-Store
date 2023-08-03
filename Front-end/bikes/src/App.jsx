@@ -5,7 +5,10 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Carrito from './pages/Carrito.jsx';
 import Navbar from './components/navbar/Navbar.jsx';
 import Productos from './pages/Productos.jsx';
+import { SignIn } from './components/SignIn/SignIn';
 import { Signin_Signup } from './components/Signin-SignUp/Signin_Signup';
+
+
 
 
 function App() {
@@ -13,15 +16,15 @@ function App() {
   return (
     <>
 
-      <Router>
+      {/*<Router>
         <Home/>
         <Routes>
           <Route path='/Carrito' element={<Carrito />} />
           <Route path='/productos' element={<Productos/>}/>
           <Route path='/perfil' element={<Signin_Signup/>} />
         </Routes>
-      </Router>
-      
+      </Router>*/}
+      <SignIn></SignIn>
     </>
 
   )
