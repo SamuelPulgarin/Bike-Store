@@ -84,14 +84,15 @@
 }
 
 .contenedor__SignIn form{
-    width: 100%;
-    padding: 70px 20px;
+    width: 400px;
+    padding: 30px 20px;
     background-color: #fff;
     position: absolute;
     border-radius: 10px;
 }
 
 .contenedor__SignIn form h2{
+    color: black;
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
@@ -99,7 +100,7 @@
 
 .contenedor__SignIn form input{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 15px;
     border: none;
     background-color: #E7E7E7;
@@ -108,9 +109,8 @@
     outline: none;
 }
 
-.contenedor__SignIn form .btn__i{
+.contenedor__SignIn form .__btn .btn__i{
     padding: 15px 40px;
-    margin-top: 40px;
     border: none;
     border-radius: 5px;
     font-size: 14px;
@@ -124,6 +124,7 @@
 .__btn{
     display: flex;
     justify-content: end;
+    margin: 0;
 }
 
 .Formulario__SigIn{
