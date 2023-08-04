@@ -47,8 +47,11 @@
 }
 
 .caja__trasera-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     color: white;
-    transition:all 500ms;
+    transition: all 500ms;
     margin: 70px 50px;
     font-size: 20px;
 }
@@ -132,12 +135,12 @@
     background-color: #262626;
     color: white;
     cursor: pointer;
-    outline: none;
+    outline: auto;
     transition: 0.5s;
     font-size: 20px;
 }
 
 .Formulario__login .container__btn button:hover{
-    background-color: #e2e2e2;
+    background-color: white;
     color: black;
 }
