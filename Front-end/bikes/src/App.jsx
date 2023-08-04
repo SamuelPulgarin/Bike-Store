@@ -6,7 +6,6 @@ import Carrito from './pages/Carrito.jsx';
 import Navbar from './components/navbar/Navbar.jsx';
 import Productos from './pages/Productos.jsx';
 import { SignIn } from './components/SignIn/SignIn';
-import { Signin_Signup } from './components/Signin-SignUp/Signin_Signup';
 
 
 
@@ -15,7 +14,6 @@ function App() {
 
   return (
     <>
-
       {/*<Router>
         <Home/>
         <Routes>

@@ -17,6 +17,12 @@
     justify-content: center;
 }
 
+.contenedor__todo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .SignIn{
     display: flex;
     justify-content: center;
@@ -29,105 +35,109 @@
     position: relative;
 }
 
-.caja__trasera__SignIn{
-    width: 100%;
-    height: 500px;
-    padding: 10px;
+.caja__trasera{
     display: flex;
     justify-content: center;
+    width: 910px;
+    height: 530px;
+    padding: 10px;
     border-radius: 10px;
     background: linear-gradient(180deg, #000 0%, rgba(111, 111, 112, 0.87) 100%);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.caja__trasera__SignIn div{
-    margin: 100px 50px;
+.caja__trasera-login{
     color: white;
-    transition: all 500ms;
+    transition:all 500ms;
+    margin: 70px 50px;
+    font-size: 20px;
 }
 
-.caja__trasera__SignIn div p,
-.caja__trasera__SignIn div button{
-    margin-top: 30px;
+.caja__trasera-login p{
+    margin-top: 25px;
 }
 
-.caja__trasera__SignIn div h3{
-    font-weight: 400;
-    font-size: 26px;
+.caja__trasera-login .container__btn{
+    display: flex;
+    justify-content: center;
 }
 
-.caja__trasera__SignIn button{
-    padding: 10px 40px;
-    color: white;
+.caja__trasera-login .container__btn button{
+    padding: 15px 135px;
+    margin-top: 70px;
     border-radius: 5px;
-    background: #262626;
-    font-weight: 600;
+    background-color: #262626;
+    color: white;
     cursor: pointer;
     outline: none;
-    transform: all 300ms;
-    border: none;
     transition: 0.5s;
+    font-size: 20px;
+    border: none;
 }
 
-.caja__trasera__SignIn button:hover{
+.caja__trasera-login .container__btn button:hover{
     background-color: white;
     color: black;
 }
 
 /*Formulario*/
 
-.contenedor__SignIn{
-    display: flex;
-    align-items: center;
-    width: 100%;
+.Container__formulario__login{
     position: relative;
-}
-
-.contenedor__SignIn form{
-    width: 400px;
-    padding: 30px 20px;
-    background-color: #fff;
-    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 560px;
+    left: 30px;
+    top: -25px;
+    width: 350px;
+    background-color: white;
     border-radius: 10px;
 }
 
-.contenedor__SignIn form h2{
-    color: black;
-    font-size: 30px;
+.Formulario__login{
+    display: flex;
+    flex-direction: column;
+}
+
+.Formulario__login h2{
+    margin: 45px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.contenedor__SignIn form input{
-    width: 100%;
+.Formulario__login input{
     margin-top: 30px;
-    padding: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 280px;
     border: none;
-    background-color: #E7E7E7;
-    border-radius: 8px;
-    font-size: 16px;
-    outline: none;
+    background-color: rgb(236, 236, 236);
 }
 
-.contenedor__SignIn form .__btn .btn__i{
+.Formulario__login input::placeholder{
+    color: #5f5f5f;
+    font-weight: normal;
+}
+
+.Formulario__login .container__btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.Formulario__login .container__btn button{
     padding: 15px 40px;
+    margin-top: 10px;
     border: none;
     border-radius: 5px;
-    font-size: 14px;
     background-color: #262626;
     color: white;
     cursor: pointer;
-    outline: auto;
+    outline: none;
     transition: 0.5s;
+    font-size: 20px;
 }
 
-.__btn{
-    display: flex;
-    justify-content: end;
-    margin: 0;
-}
-
-.Formulario__SigIn{
-    opacity: 1;
-    display: block;
+.Formulario__login .container__btn button:hover{
+    background-color: #e2e2e2;
+    color: black;
 }
