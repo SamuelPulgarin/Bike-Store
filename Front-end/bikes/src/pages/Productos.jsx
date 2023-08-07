@@ -8,7 +8,7 @@ const Productos = () => {
   return (
 
     <>
-        <Navbar cate1="Ruta" cate2="Montaña" cate3="Hibridas" cate4="BMX" addMensaje={addMensaje}/>
+        <Navbar/>
         <PaginaProducto/>
         <Carta/>
     </>
