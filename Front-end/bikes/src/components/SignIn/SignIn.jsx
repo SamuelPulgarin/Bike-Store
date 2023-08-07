@@ -7,13 +7,6 @@ export const SignIn = () => {
             <main className='Fondo__signin'>
                 <div className="contenedor__todo">
                     <div className="caja__trasera">
-                        <div className="caja__trasera-login">
-                            <h3>¿Aún no tienes una cuenta?</h3>
-                            <p>Registrate para que puedas, iniciar sesión</p>
-                            <div className="container__btn">
-                                <button>Registrate</button>
-                            </div>
-                        </div>
                         <div className="Container__formulario__login">
                             <form action="" className='Formulario__login'>
 
@@ -26,6 +19,14 @@ export const SignIn = () => {
                                 </div>
 
                             </form>
+                        </div>
+
+                        <div className="caja__trasera-login">
+                            <h3>¿Aún no tienes una cuenta?</h3>
+                            <p>Registrate para que puedas, iniciar sesión</p>
+                            <div className="container__btn">
+                                <button>Registrate</button>
+                            </div>
                         </div>
                     </div>
                 </div>

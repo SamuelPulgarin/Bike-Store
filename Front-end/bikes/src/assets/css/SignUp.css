@@ -1,11 +1,11 @@
 *{
     margin: 0;
     padding: 0;
-    text-decoration: none;
+    box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.Fondo__signin{
+.Fondo__SignUp{
     background-image: url('../img/fondo_login_register.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,25 +17,13 @@
     justify-content: center;
 }
 
-.contenedor__todo{
+.container__All{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.SignIn{
-    display: flex;
-    justify-content: center;
-}
-
-.contenedor__SignIn{
-    width: 100%;
-    max-width: 800px;
-    margin: auto;
-    position: relative;
-}
-
-.caja__trasera{
+.box__backgraound{
     display: flex;
     justify-content: center;
     width: 910px;
@@ -46,7 +34,7 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.caja__trasera-login{
+.box__backG_SignUp{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,16 +44,16 @@
     font-size: 20px;
 }
 
-.caja__trasera-login p{
+.box__backG_SignUp p{
     margin-top: 25px;
 }
 
-.caja__trasera-login .container__btn{
+.box__backG_SignUp .container__button{
     display: flex;
     justify-content: center;
 }
 
-.caja__trasera-login .container__btn button{
+.box__backG_SignUp .container__button button{
     padding: 15px 135px;
     margin-top: 70px;
     border-radius: 5px;
@@ -78,37 +66,37 @@
     border: none;
 }
 
-.caja__trasera-login .container__btn button:hover{
+.box__backG_SignUp .container__button button:hover{
     background-color: white;
     color: black;
 }
 
-/*Formulario*/
+/*Formulario registro*/
 
-.Container__formulario__login{
+.container__form_SignUp{
     position: relative;
     display: flex;
     justify-content: center;
     height: 560px;
-    left: -25px;
+    left: 15px;
     top: -25px;
     width: 350px;
     background-color: white;
     border-radius: 10px;
 }
 
-.Formulario__login{
+.Formulario__register{
     display: flex;
     flex-direction: column;
 }
 
-.Formulario__login h2{
-    margin: 45px;
+.Formulario__register h2{
+    margin: 35px;
     text-align: center;
 }
 
-.Formulario__login input{
-    margin-top: 30px;
+.Formulario__register input{
+    margin-top: 20px;
     padding: 20px;
     border-radius: 10px;
     width: 280px;
@@ -116,20 +104,19 @@
     background-color: rgb(236, 236, 236);
 }
 
-.Formulario__login input::placeholder{
+.Formulario__register input::placeholder{
     color: #5f5f5f;
     font-weight: normal;
 }
 
-.Formulario__login .container__btn{
+.Formulario__register .container__btn{
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 35px;
 }
 
-.Formulario__login .container__btn button{
+.Formulario__register .container__btn button{
     padding: 15px 40px;
-    margin-top: 10px;
     border: none;
     border-radius: 5px;
     background-color: #262626;
@@ -140,7 +127,7 @@
     font-size: 20px;
 }
 
-.Formulario__login .container__btn button:hover{
+.Formulario__register .container__btn button:hover{
     background-color: white;
     color: black;
 }
