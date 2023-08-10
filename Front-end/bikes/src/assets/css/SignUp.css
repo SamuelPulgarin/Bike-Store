@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.Fondo__SignUp{
+.Fondo__SignUp {
     background-image: url('../img/fondo_login_register.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -17,13 +17,13 @@
     justify-content: center;
 }
 
-.container__All{
+.container__All {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.box__backgraound{
+.box__backgraound {
     display: flex;
     justify-content: center;
     width: 910px;
@@ -34,7 +34,7 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.box__backG_SignUp{
+.box__backG_SignUp {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,16 +44,16 @@
     font-size: 20px;
 }
 
-.box__backG_SignUp p{
+.box__backG_SignUp p {
     margin-top: 25px;
 }
 
-.box__backG_SignUp .container__button{
+.box__backG_SignUp .container__button {
     display: flex;
     justify-content: center;
 }
 
-.box__backG_SignUp .container__button button{
+.box__backG_SignUp .container__button button {
     padding: 15px 135px;
     margin-top: 70px;
     border-radius: 5px;
@@ -66,14 +66,14 @@
     border: none;
 }
 
-.box__backG_SignUp .container__button button:hover{
+.box__backG_SignUp .container__button button:hover {
     background-color: white;
     color: black;
 }
 
 /*Formulario registro*/
 
-.container__form_SignUp{
+.container__form_SignUp {
     position: relative;
     display: flex;
     justify-content: center;
@@ -85,17 +85,17 @@
     border-radius: 10px;
 }
 
-.Formulario__register{
+.Formulario__register {
     display: flex;
     flex-direction: column;
 }
 
-.Formulario__register h2{
+.Formulario__register h2 {
     margin: 35px;
     text-align: center;
 }
 
-.Formulario__register input{
+.Formulario__register input {
     margin-top: 20px;
     padding: 20px;
     border-radius: 10px;
@@ -104,18 +104,18 @@
     background-color: rgb(236, 236, 236);
 }
 
-.Formulario__register input::placeholder{
+.Formulario__register input::placeholder {
     color: #5f5f5f;
     font-weight: normal;
 }
 
-.Formulario__register .container__btn{
+.Formulario__register .container__btn {
     display: flex;
     justify-content: center;
     margin-top: 35px;
 }
 
-.Formulario__register .container__btn button{
+.Formulario__register .container__btn button {
     padding: 15px 40px;
     border: none;
     border-radius: 5px;
@@ -127,7 +127,277 @@
     font-size: 20px;
 }
 
-.Formulario__register .container__btn button:hover{
+.Formulario__register .container__btn button:hover {
     background-color: white;
     color: black;
+}
+
+/*Responsive*/
+
+@media (max-width: 920px) {
+
+    .box__backgraound {
+        width: 770px;
+        height: 455px;
+        top: -45px;
+    }
+
+    .box__backG_SignUp {
+        margin: 70px 30px;
+        font-size: 20px;
+    }
+
+    .box__backG_SignUp p {
+        margin-top: 25px;
+        font-size: 18px;
+    }
+
+    .box__backG_SignUp .container__button button {
+        padding: 15px 95px;
+        margin-top: 70px;
+        font-size: 15px;
+    }
+
+    /*Formulario*/
+
+    .container__form_SignUp {
+        height: 485px;
+    }
+
+    .Formulario__register input {
+        margin-top: 20px;
+        padding: 15px;
+        width: 280px;
+    }
+
+    .Formulario__register .container__btn button {
+        padding: 15px 30px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 775px) {
+    .box__backgraound {
+        width: 640px;
+        height: 400px;
+        top: -45px;
+    }
+
+    .box__backG_SignUp {
+        margin: 70px 30px;
+        font-size: 20px;
+    }
+
+    .box__backG_SignUp p {
+        margin-top: 25px;
+        font-size: 18px;
+    }
+
+    .box__backG_SignUp .container__button button {
+        padding: 15px 50px;
+        margin-top: 70px;
+        font-size: 15px;
+    }
+
+    /*Formulario*/
+    .Formulario__register h2 {
+        margin: 20px;
+        text-align: center;
+    }
+
+    .container__form_SignUp {
+        height: 435px;
+        width: 300px;
+        left: -5px;
+    }
+
+    .Formulario__register input {
+        margin-top: 20px;
+        padding: 15px;
+        width: 240px;
+    }
+
+    .Formulario__register .container__btn {
+        margin-top: 25px;
+    }
+
+    .Formulario__register .container__btn button {
+        padding: 15px 30px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 645px) {
+
+    .box__backgraound {
+        width: 500px;
+        height: 370px;
+        top: -45px;
+    }
+
+    .box__backG_SignUp {
+        margin: 70px 30px;
+        font-size: 15px;
+    }
+
+    .box__backG_SignUp p {
+        margin-top: 25px;
+        font-size: 16px;
+    }
+
+    .box__backG_SignUp .container__button button {
+        padding: 10px 30px;
+        margin-top: 70px;
+        font-size: 15px;
+    }
+
+    /*Formulario*/
+    .Formulario__register h2 {
+        margin: 20px;
+        text-align: center;
+    }
+
+    .container__form_SignUp {
+        height: 405px;
+        width: 320px;
+        left: -5px;
+    }
+
+    .Formulario__register input {
+        margin-top: 15px;
+        padding: 12px;
+        width: 200px;
+    }
+
+    .Formulario__register input::placeholder {
+        font-size: 15px;
+    }
+
+    .Formulario__register .container__btn {
+        margin-top: 25px;
+    }
+
+    .Formulario__register .container__btn button {
+        padding: 12px 30px;
+        font-size: 15px;
+    }
+}
+
+/*Movil*/
+@media (max-width: 500px) {
+    .Fondo__SignUp {
+        background-image: url(../img/Fondo_movil.jpg);
+        background-size: cover;
+    }
+
+    .box__backgraound {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 350px;
+        height: 600px;
+        top: -45px;
+    }
+
+    .box__backG_SignUp {
+        margin: 50px 30px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .box__backG_SignUp .container__button button {
+        background: linear-gradient(180deg, #4e4e4e 0%, rgba(111, 111, 112, 0.87) 100%);
+        padding: 10px 30px;
+        margin-top: 25px;
+        font-size: 15px;
+    }
+
+    .box__backG_SignUp .container__button button:hover {
+        background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+        color: black;
+        outline: auto;
+    }
+
+    /*Formulario*/
+
+    .container__form_SignUp {
+        height: 365px;
+        width: 250px;
+        left: -5px;
+    }
+
+    .Formulario__register .container__btn {
+        margin: 15px;
+    }
+
+    .Formulario__register .container__btn button {
+        padding: 12px 30px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 350px) {
+    .box__backgraound {
+        align-items: center;
+        width: 270px;
+        height: 600px;
+        top: -45px;
+    }
+
+    .box__backG_SignUp {
+        margin: 50px 30px;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .box__backG_SignUp p {
+        margin-top: 25px;
+        font-size: 12px;
+    }
+
+    .box__backG_SignUp .container__button button {
+        background: linear-gradient(180deg, #4e4e4e 0%, rgba(111, 111, 112, 0.87) 100%);
+        padding: 12px 30px;
+        margin-top: 25px;
+        font-size: 12px;
+    }
+
+    .box__backG_SignUp .container__button button:hover {
+        background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
+        color: black;
+        outline: auto;
+    }
+
+    /*Formulario*/
+
+    .container__form_SignUp {
+        height: 365px;
+        width: 215px;
+        left: -5px;
+    }
+
+    .Formulario__register h2 {
+        margin: 15px;
+        text-align: center;
+    }
+
+    .Formulario__register .container__btn {
+        margin: 15px;
+    }
+
+    .Formulario__register input {
+        margin-top: 15px;
+        padding: 10px;
+        width: 170px;
+    }
+
+    .Formulario__register input::placeholder {
+        font-size: 13px;
+    }
+
+    .Formulario__register .container__btn button {
+        padding: 12px 30px;
+        font-size: 12px;
+    }
 }
