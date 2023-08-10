@@ -12,6 +12,9 @@ router.get('/imagenes', dataController.getImages);
 //usar middleware upload
 router.post('/upload-imagen', upload.single('imagen'), dataController.uploadImage)
 
+//Ruta para registro de usuarios
+router.post('/registrar', dataController.registrerUser);
+
 
 
 
