@@ -23,8 +23,8 @@ function App() {
           <Route path='/perfil' element={<Signin_Signup/>} />
         </Routes>
       </Router>
-      <SignIn></SignIn>*/}
-      <SignUp></SignUp>
+      <SignUp></SignUp>*/}
+      <SignIn></SignIn>
     </>
 
   )
