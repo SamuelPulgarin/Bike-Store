@@ -1,7 +1,27 @@
-import React from 'react'
-import '../../assets/css/SignUp.css'
+import React from 'react';
+import { useForm } from 'react-hook-form'; //Maneja estados del formulario
+import * as yup from 'yup'; // Para validaciones del formulario
+import { yupResolver } from '@hookform/resolvers/yup'; //permite integrar fácilmente el esquema de validación de yup con la librería react-hook-form
+import '../../assets/css/SignUp.css';
+
+const schema = yup.object().shape({
+    name: yup.string().required('El nombre es requerido'),
+    email: yup.string().email('El E-mail no es valido').required('El E-mail es requerido'),
+    password: yup.string().min(8, '8 caracteres minimo').required('La contraseña es requerida'),
+    confirmpassword: yup.string().min(8, '8 carcateres minimo').oneOf([yup.ref('password'), null], 'Las contraseñas deben conincidir').required('Confirmación de contraseña es requerida')
+});
+
 
 export const SignUp = () => {
+
+    const {register, handleSubmit, formState: {errors}} = useForm({
+        resolver: yupResolver(schema),
+    });
+
+    function onSubmit(DataRegister){
+        console.log(DataRegister);
+    }
+
     return (
         <>
             <main className='Fondo__SignUp'>
@@ -17,15 +37,22 @@ export const SignUp = () => {
 
                         <div className="container__form_SignUp">
                             {/*Registro*/}
-                            <form action="" className='Formulario__register'>
+                            <form onSubmit={handleSubmit(onSubmit)} className='Formulario__register'>
                                 <h2>Regístrarse</h2>
 
-                                <input type="text" placeholder='Nombre Completo' />
-                                <input type="email" placeholder='E-mail' />
-                                <input type="password" placeholder='Contraseña' />
-                                <input type="password" placeholder='Confirmar Contraseña' />
+                                <input type="text" placeholder='Nombre Completo' {...register('name')}/>
+                                <span className='error'>{errors.name?.message}</span>
+
+                                <input type="email" placeholder='E-mail' {...register('email')}/>
+                                <span className='error'>{errors.email?.message}</span>
+
+                                <input type="password" placeholder='Contraseña' {...register('password')}/>
+                                <span className='error'>{errors.password?.message}</span>
+
+                                <input type="password" placeholder='Confirmar Contraseña' {...register('confirmpassword')}/>
+                                <span className='error'>{errors.confirmpassword?.message}</span>
                                 <div className="container__btn">
-                                    <button className='btn__f'>Regístrarse</button>
+                                    <button className='btn__f' type='submit'>Regístrarse</button>
                                 </div>
                             </form>
                         </div>
