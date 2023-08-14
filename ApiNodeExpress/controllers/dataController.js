@@ -1,7 +1,7 @@
 const { Pool } = require("pg");
 const { CONFIG_BD } = require("../config/db");
 
-//aqui empieza
+//aqui empieza el sistema de logs
 const fs = require("fs");
 const path = require("path");
 
@@ -30,7 +30,7 @@ const logDirectory = path.join(__dirname, "logs");
 if (!fs.existsSync(logDirectory)) {
   fs.mkdirSync(logDirectory);
 }
-//aqui termina
+//aqui termina el sistema de logs
 /*
 // Ejemplo de uso
 try {
@@ -154,9 +154,40 @@ const registrerUser = (req, res) => {
   }
 };
 
+
+const inicioSesion = (req, res) => {
+
+  const { email, password} = req.body;
+  console.log("datos para el login: ", req.body)
+
+  //Validar que todos los campos necesarios esten presentes
+  if (!email || !password) {
+    return res.status(400).json({ error: "Falta la informacion requerida" });
+  }
+
+
+  pool.query("SELECT * FROM usuarios WHERE email = $1 AND password = $2",[email, password], (error, result) => {
+    if (error) {
+      console.error("Error al obtener los datos", error.message);
+      res.status(500).send("Error al obtener datos");
+    } else {
+      if(result.rows.length > 0){
+        return res.json({ message: "Las credenciales coinciden, usuario valido"})
+      } else{
+        return res.status(401).json({ error: "Las credenciales no coinciden, usuario invalido"})
+      }
+    }
+
+    //Verificar que el usuario ya existe y confirmar la informacio
+    
+
+  });
+};
+
 module.exports = {
   getProducts,
   uploadImage,
   getImages,
   registrerUser,
+  inicioSesion,
 };

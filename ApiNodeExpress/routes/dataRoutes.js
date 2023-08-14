@@ -15,6 +15,9 @@ router.post('/upload-imagen', upload.single('imagen'), dataController.uploadImag
 //Ruta para registro de usuarios
 router.post('/registrar', dataController.registrerUser);
 
+//Ruta para el ingreso de usuarios
+router.post('/login', dataController.inicioSesion);
+
 
 
 
