@@ -23,7 +23,7 @@ const registerUser = (req, res) => {
     }
 
     // Consultar si ya existe el ususario en la base de datos
-    pool.query('SELECT * FROM usuarios WHERE username = $1 OR email = $2', username, [username, email], (error, result) => {
+    pool.query('SELECT * FROM usuarios WHERE username = $1 OR email = $2', [username, email], (error, result) => {
         if (error) {
             console.error('Error al consultar la base de datos', error);
             return res.status(500).json({ error: 'Error al registrar el usuario', error });
@@ -35,7 +35,7 @@ const registerUser = (req, res) => {
         }
 
         //Si el usuario no existe, isertar el nuevo usuario en la base de datos
-        pool.query('INSERT INTO usuarios (usurname, email, password) VALUES ($1, $2, $3)', [username, email, password], (error) => {
+        pool.query('INSERT INTO usuarios (username, email, password) VALUES ($1, $2, $3)', [username, email, password], (error) => {
             if (error) {
                 console.error('Error al inserta el usuario en la base de datos', error);
                 return res.status(500).json({ error: 'Error al registrar el usuario' });

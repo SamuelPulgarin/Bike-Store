@@ -6,6 +6,6 @@ const dataController = require('../controllers/dataController');
 router.get('/productos', dataController.getProducts);
 
 //Ruta para registro de usuarios
-router.post('registerUser', dataController.registerUser);
+router.post('/registerUser', dataController.registerUser);
 
 module.exports = router;

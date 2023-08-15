@@ -1,8 +1,8 @@
 const CONFIG_DB = {
     user: 'postgres',
     host: 'localhost',
-    database: 'bikestore',
-    password:'1003',
+    database: 'productos',
+    password:'admin',
     port: 5432 // Puerto predeterminado de PostgresSQL
 }
 module.exports = {

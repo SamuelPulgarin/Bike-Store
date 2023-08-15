@@ -2,10 +2,11 @@ import React from 'react';
 import { useForm } from 'react-hook-form'; //Maneja estados del formulario
 import * as yup from 'yup'; // Para validaciones del formulario
 import { yupResolver } from '@hookform/resolvers/yup'; //permite integrar fácilmente el esquema de validación de yup con la librería react-hook-form
+import { useFetchPost } from '../../hooks/useFetchPost';
 import '../../assets/css/SignUp.css';
 
 const schema = yup.object().shape({
-    name: yup.string().required('El nombre es requerido'),
+    username: yup.string().required('El nombre es requerido'),
     email: yup.string().email('El E-mail no es valido').required('El E-mail es requerido'),
     password: yup.string().min(8, '8 caracteres minimo').required('La contraseña es requerida'),
     confirmpassword: yup.string().min(8, '8 carcateres minimo').oneOf([yup.ref('password'), null], 'Las contraseñas deben conincidir').required('Confirmación de contraseña es requerida')
@@ -20,6 +21,7 @@ export const SignUp = () => {
 
     function onSubmit(DataRegister){
         console.log(DataRegister);
+        
     }
 
     return (
@@ -40,8 +42,8 @@ export const SignUp = () => {
                             <form onSubmit={handleSubmit(onSubmit)} className='Formulario__register'>
                                 <h2>Regístrarse</h2>
 
-                                <input type="text" placeholder='Nombre Completo' {...register('name')}/>
-                                <span className='error'>{errors.name?.message}</span>
+                                <input type="text" placeholder='Nombre Completo' {...register('username')}/>
+                                <span className='error'>{errors.username?.message}</span>
 
                                 <input type="email" placeholder='E-mail' {...register('email')}/>
                                 <span className='error'>{errors.email?.message}</span>
