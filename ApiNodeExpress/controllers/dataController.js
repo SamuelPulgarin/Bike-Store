@@ -101,7 +101,7 @@ const registrerUser = (req, res) => {
     console.log(
       "estoy aquii wachoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"
     );
-    const { username, email, password } = req.body;
+    const { username, email, password, } = req.body;
 
     console.log("datos usuario", req.body);
 

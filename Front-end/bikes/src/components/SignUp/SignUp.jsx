@@ -2,7 +2,6 @@ import React from 'react';
 import { useForm } from 'react-hook-form'; //Maneja estados del formulario
 import * as yup from 'yup'; // Para validaciones del formulario
 import { yupResolver } from '@hookform/resolvers/yup'; //permite integrar fácilmente el esquema de validación de yup con la librería react-hook-form
-import { useFetchPost } from '../../hooks/useFetchPost';
 import '../../assets/css/SignUp.css';
 
 const schema = yup.object().shape({
@@ -20,13 +19,16 @@ export const SignUp = () => {
     });
 
     async function onSubmit(DataRegister){
+        console.log(DataRegister);
+
         try{
-            const response = await fetch('http://localhost:3060/registerUser',{
+            const response = await fetch('http://localhost:3060/registrar',{
                 method: 'POST',
                 headers: {
-                    'Contend-Type': 'applications/json'
+                    'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(DataRegister)
+                body: JSON.stringify(DataRegister),
+                mode: 'no-cors',
             });
 
             if(response.ok){
@@ -34,7 +36,7 @@ export const SignUp = () => {
                 console.log(DataRegister);
             }
             else{
-                console.log('Error al registrar el usuario');
+                console.log('Error al registrar el usuario front');
             }
         }
         catch(error){
