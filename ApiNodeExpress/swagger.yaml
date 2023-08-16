@@ -1,0 +1,112 @@
+openapi: 3.0.0
+info:
+  title: Mi API
+  version: 1.0.0
+paths:
+  /productos:
+    get:
+      summary: Obtener lista de productos
+      tags:
+        - Productos
+      description: Devuelve una lista de todos los productos disponibles.
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              example:
+                - id: 111
+                  nombre: Producto A
+                  descripcion: esto es un producto de ejemplo
+                  tipo: alguna categoria del producto
+                  talla: alguna caracteristica del producto
+                  precio: 10000
+                - id: 112
+                  nombre: Producto B
+                  descripcion: esto es otro producto de ejemplo
+                  tipo: alguna otra categoria del producto
+                  talla: alguna otra caracteristica del producto
+                  precio: 20000
+                - id: 113
+                  nombre: Producto C
+                  descripcion: esto es un ultimo producto de ejemplo
+                  tipo: alguna otra categoria del producto
+                  talla: alguna otra caracteristica del producto
+                  precio: 30000
+  /imagenes:
+    get:
+      summary: Obtener imágenes de los productos
+      tags:
+        - Imagenes
+      description: Devuelve las rutas de las imágenes de los productos.
+      responses:
+        '200':
+          description: Respuesta exitosa
+          content:
+            application/json:
+              example:
+                - ruta: uploads/imagen1.jpg
+                - ruta: uploads/imagen2.jpg
+                - ruta: uploads/imagen3.jpg
+                - ruta: uploads/imagen4.jpg
+  /upload-imagen:
+    post:
+      summary: Subir imagen de producto
+      tags:
+        - Imagenes
+      description: Sube una imagen de producto y guarda la ruta en la base de datos.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                imagen:
+                  ruta: string
+                  format: binary
+      responses:
+        '200':
+          description: Imagen subida exitosamente
+  /registrar:
+    post:
+      summary: Registrar usuario
+      tags:
+        - Usuarios
+      description: Registra un nuevo usuario en la base de datos.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '201':
+          description: Usuario registrado exitosamente
+  /login:
+    post:
+      summary: Iniciar sesión
+      tags:
+        - Usuarios
+      description: Inicia sesión de usuario y devuelve un token de acceso.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Inicio de sesión exitoso

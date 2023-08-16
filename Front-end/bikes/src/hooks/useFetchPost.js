@@ -14,6 +14,7 @@ export const useFetchPost = () => {
 
             if(response.ok){
                 console.log('Usuario resgistrado exitosamente');
+                console.log(DataRegister);
             }
             else{
                 console.log('Error al registrar el usuario');
