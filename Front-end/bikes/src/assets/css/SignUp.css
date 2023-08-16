@@ -109,7 +109,7 @@
     font-weight: normal;
 }
 
-.Formulario__login .error{
+.Formulario__register .error{
     font-size: 14px;
     padding-left: 8px;
     color: red;
