@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Carrito from './pages/Carrito.jsx';
 import Productos from './pages/Productos.jsx';
 import { Inicio_Registro } from './pages/Inicio_Registro';
-import { useFetch } from './hooks/useFetch';
 
 
 
@@ -13,9 +12,7 @@ function App() {
 
   return (
     <>
-      
       <Router>
-        <Home/>
         <Routes>
           <Route path='/home' element={<Home />} />
           <Route path='/Carrito' element={<Carrito />} />
@@ -23,7 +20,6 @@ function App() {
           <Route path='/perfil' element={<Inicio_Registro />} />
         </Routes>
       </Router>
-
     </>
 
   )
