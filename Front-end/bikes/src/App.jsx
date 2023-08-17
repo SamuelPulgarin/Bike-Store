@@ -12,9 +12,7 @@ function App() {
 
   return (
     <>
-      
       <Router>
-        
         <Routes>
           <Route path='/home' element={<Home />} />
           <Route path='/Carrito' element={<Carrito />} />
@@ -22,7 +20,6 @@ function App() {
           <Route path='/perfil' element={<Inicio_Registro />} />
         </Routes>
       </Router>
-
     </>
 
   )
