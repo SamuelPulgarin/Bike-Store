@@ -11,7 +11,7 @@ const [dataImage, setDataImage] = useState([1]);
       method: "GET",
       redirect: "follow",
     };
-    await fetch(`http://localhost:3060${urlProduct}`, requestOptions)
+    await fetch(`http://localhost:3080${urlProduct}`, requestOptions)
       .then((response) => response.json())
       .then((result) => setDataProduct(result))
       .catch((error) => console.log("erro: ", error));
@@ -26,7 +26,7 @@ const [dataImage, setDataImage] = useState([1]);
       redirect: "follow",
     };
 
-    await fetch(`http://localhost:3060${urlImage}`, requestOptions)
+    await fetch(`http://localhost:3080${urlImage}`, requestOptions)
       .then((response) => response.json())
       .then((result) => setDataImage(result))
       .catch((error) => console.log("error: ", error))
@@ -39,3 +39,9 @@ const [dataImage, setDataImage] = useState([1]);
     dataImage,
   };
 };
+
+const urlAPI = '';
+
+export const useFetchProducts = (urlProductName, urlProductPrice) =>{
+
+}
