@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form'; //Maneja estados del formulario
+import React, { useState } from 'react'; 
 import * as yup from 'yup'; // Para validaciones del formulario
 import { yupResolver } from '@hookform/resolvers/yup'; //permite integrar fácilmente el esquema de validación de yup con la librería react-hook-form
-import '../../assets/css/SignUp.css';
+import '../assets/css/SignUp.css';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form'; //Maneja estados del formulario
 
 const schema = yup.object().shape({
     username: yup.string().required('El nombre es requerido'),
