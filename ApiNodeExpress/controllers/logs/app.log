@@ -1,0 +1,48 @@
+[2023-08-09T01:09:40.976Z] ERROR: Cannot destructure property 'username' of 'req.body' as it is undefined.
+Stack: TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+    at registrerUser (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\controllers\dataController.js:104:13)
+    at Layer.handle [as handle_request] (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:47:12)
+[2023-08-09T01:26:25.076Z] ERROR: Cannot destructure property 'username' of 'req.body' as it is undefined.
+Stack: TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+    at registrerUser (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\controllers\dataController.js:104:13)
+    at Layer.handle [as handle_request] (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:47:12)
+[2023-08-09T01:27:39.698Z] ERROR: Cannot destructure property 'username' of 'req.body' as it is undefined.
+Stack: TypeError: Cannot destructure property 'username' of 'req.body' as it is undefined.
+    at registrerUser (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\controllers\dataController.js:104:13)
+    at Layer.handle [as handle_request] (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:47:12)
+[2023-08-09T02:00:02.097Z] ERROR: Este es otro error de ejemplo
+Stack: Error: Este es otro error de ejemplo
+    at registrerUser (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\controllers\dataController.js:152:11)
+    at Layer.handle [as handle_request] (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\route.js:144:13)
+    at Route.dispatch (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\route.js:114:3)
+    at Layer.handle [as handle_request] (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\PC\OneDrive\Escritorio\MiPrimerAPINodeExpress\node_modules\express\lib\router\index.js:47:12)

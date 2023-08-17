@@ -4,7 +4,9 @@ import "./assets/css/App.css";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Carrito from './pages/Carrito.jsx';
 import Productos from './pages/Productos.jsx';
-import { Inicio_Registro } from './pages/Inicio_Registro';
+import { SignIn } from './components/SignIn/SignIn';
+import { SignUp } from './components/SignUp/SignUp';
+
 
 
 
@@ -14,10 +16,11 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/home' element={<Home />} />
+          <Route path='/Home' element={<Home />} />
           <Route path='/Carrito' element={<Carrito />} />
           <Route path='/productos' element={<Productos />} />
-          <Route path='/perfil' element={<Inicio_Registro />} />
+          <Route paht='/signIn' element={<SignIn></SignIn>}/>
+          <Route path='/signUp' element={<SignUp></SignUp>}/>
         </Routes>
       </Router>
     </>
