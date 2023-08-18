@@ -11,9 +11,10 @@ import { useNavigate } from "react-router-dom";
 import Carta from "../PaginaProducto/Carta";
 
 
-const Navbar = (props, {addMensaje}) => {
+const Navbar = ({loggedin}) => {
 
   const navigate = useNavigate();
+
 
   let mensaje = '';
 /*
@@ -24,6 +25,7 @@ const Navbar = (props, {addMensaje}) => {
   //const { prueba, prueba2, prueba3, prueba4} = useNavbar();
   
   const categorias = ( e )=>{
+    
 /*
     switch(e.target.value){
       case "1":

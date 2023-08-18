@@ -35,6 +35,7 @@ export const SignIn = () => {
                 console.log(DataLogin);*/
 
                 navigate("/Home")
+
                 
             }
             else{
