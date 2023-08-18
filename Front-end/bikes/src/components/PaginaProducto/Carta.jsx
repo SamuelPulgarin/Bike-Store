@@ -30,11 +30,11 @@ const Carta = () => {
         <div className="cartas-producto">
           <div className="cartap">
             <ul>
-              {!useFetch
+              {/*!useFetch
                 ? "Cargando..."
                 : useFetch.map((dataProduct, index) => {
                     return <li key={index}>{dataProduct.nombre}</li> 
-                  })}
+                  })*/}
             </ul>
             <p>Precio: 4'930.500</p>
           </div>

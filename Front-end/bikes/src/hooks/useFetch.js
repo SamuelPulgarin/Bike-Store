@@ -40,8 +40,9 @@ const [dataImage, setDataImage] = useState([1]);
   };
 };
 
-const urlAPI = '';
+/*const urlAPI = '';
 
 export const useFetchProducts = (urlProductName, urlProductPrice) =>{
 
 }
+*/

@@ -3,7 +3,9 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useNavigate } from 'react-router-dom';
-import '../assets/css/SignIn.css'
+import '../assets/css/SignIn.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { signIn, signOut } from '../redux/loginSlides';
 
 
 const schema = yup.object().shape({
@@ -13,11 +15,17 @@ const schema = yup.object().shape({
 
 export const SignIn = () => {
 
+    //Aqui empieza el redux
+    const session = useSelector((state) => state.login.session);
+    //console.log(session)
+    const dispatch = useDispatch();
+
     const {register, handleSubmit, formState: {errors}} = useForm({
         resolver: yupResolver(schema),
     });
 
     const navigate = useNavigate();
+
 
     async function SubmitLogin(DataLogin){
         console.log(DataLogin)
@@ -35,6 +43,12 @@ export const SignIn = () => {
                 console.log(DataLogin);*/
 
                 navigate("/Home")
+
+                dispatch(signIn())
+
+                // En la acción Redux (signIn)
+                localStorage.setItem('isUserLoggedIn', 'true');
+
 
                 
             }

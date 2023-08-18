@@ -3,71 +3,42 @@ import '../../assets/css/Navbar.css';
 import { useNavbar } from "../../hooks/useNavbar";
 import carrito from "../../assets/img/agregar-carrito.png";
 import peril from "../../assets/img/sesion.png";
+import salir from "../../assets/img/logout.png";
 import logo1 from "../../assets/img/Logo-circle.png";
 import logo2 from "../../assets/img/Logo-short.png";
 import toggler from "../../assets/img/menu.png";
 import options from "../../assets/img/option.png";
 import { useNavigate } from "react-router-dom";
 import Carta from "../PaginaProducto/Carta";
+import { useSelector, useDispatch } from 'react-redux';
+import { signIn, signOut } from "../../redux/loginSlides";
 
 
-const Navbar = ({loggedin}) => {
+const Navbar = () => {
 
   const navigate = useNavigate();
 
+  //Aqui empieza el redux
+  const session = useSelector((state) => state.login.session);
+  const dispatch = useDispatch();
 
-  let mensaje = '';
-/*
-  const enviarMensaje = ()=>{
-    addMensaje(mensaje)
-  }
-*/
-  //const { prueba, prueba2, prueba3, prueba4} = useNavbar();
+  React.useEffect(() => {
+    const storedIsUserLoggedIn = localStorage.getItem('isUserLoggedIn');
+
+    if(storedIsUserLoggedIn === 'true'){
+      dispatch(signIn());
+    }else{
+      dispatch(signOut());
+    }
+
+  }, [])
+  
   
   const categorias = ( e )=>{
     
-/*
-    switch(e.target.value){
-      case "1":
-        console.log(cate1)
-        mensaje = cate1
-      break;
-
-      case "2":
-        console.log(cate2)
-        mensaje = cate2
-      break;
-
-      case "3":
-        console.log(cate3)
-        mensaje = cate3
-      break;
-
-      case "4":
-        console.log(cate4)
-        mensaje = cate4
-      break;
-
-      default:
-        console.log('No hay mensaje');
-      break;
-    }
-*/
     navigate("/productos");
-
     //console.log(e?.target?.value);
-
   }
-
-/*
-  useEffect(() => {
-    prueba,
-    prueba2,
-    prueba3,
-    prueba4.
-  }, []);
-
-*/
 
   return (
   <>
@@ -91,7 +62,7 @@ const Navbar = ({loggedin}) => {
                     </select></li>
                 </div>
                 <li><a href="/Carrito"><img src={carrito} alt="Hola soy una imagen" id="carrito"/></a></li>
-                <li><a href="/perfil"><img src={peril} alt="Hola soy una imagen" id="perfil"/></a></li>
+                <li><a href="/signUp"><img src={session ? salir : peril} alt="Hola soy una imagen" id="perfil"/></a></li>
             </ul>
         </div>
     </nav>

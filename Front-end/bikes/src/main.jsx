@@ -10,8 +10,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store} >
       <App/>
-      <SignIn/>
-      <SignUp/>
     </Provider>
   </React.StrictMode>,
 )
