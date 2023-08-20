@@ -4,6 +4,8 @@ import { yupResolver } from '@hookform/resolvers/yup'; //permite integrar fácil
 import '../assets/css/SignUp.css';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form'; //Maneja estados del formulario
+import { SuccessModal } from '../components/Modal/SuccessModal';
+
 
 const schema = yup.object().shape({
     username: yup.string().required('El nombre es requerido'),
@@ -15,11 +17,25 @@ const schema = yup.object().shape({
 
 export const SignUp = () => {
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [ModalContent, setModalContent] = useState('');
+    const [ModalTitle, setModalTitle] = useState('');
+
+    const openModal = (title, content) => {
+        setIsModalOpen(true);
+        setModalTitle(title);
+        setModalContent(content);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     const {register, handleSubmit, formState: {errors}} = useForm({
         resolver: yupResolver(schema),
     });
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
         
     
 
@@ -38,8 +54,9 @@ export const SignUp = () => {
             if(response.ok){
                 /*console.log('Usuario resgistrado exitosamente');
                 console.log(DataRegister);*/
-
-                navigate("/signIn")
+                const title = '¡Registro Exitoso!'
+                const content = 'Tu registro se ha completado correctamente.';
+                openModal(title, content);
                 
             }
             else{
@@ -92,6 +109,7 @@ export const SignUp = () => {
                     </div>
                 </div>
             </main>
+            <SuccessModal isOpen={isModalOpen} onClose={closeModal} title={ModalTitle} content={ModalContent}/>
         </>
     )
 }

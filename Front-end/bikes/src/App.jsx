@@ -6,6 +6,7 @@ import Carrito from './pages/Carrito.jsx';
 import Productos from './pages/Productos.jsx';
 import { SignUp } from './pages/SignUp';
 import { SignIn } from './pages/SignIn';
+import { SuccessModal } from './components/Modal/SuccessModal';
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/signIn' element={<SignIn/>}/>
         </Routes>
       </Router>
+      <SuccessModal></SuccessModal>
     </>
 
   )
