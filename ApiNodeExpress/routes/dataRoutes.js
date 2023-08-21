@@ -7,7 +7,7 @@ const upload = require('../multerConfig'); //importar el middleware de Multer
 router.get('/productos', dataController.getProducts);
 
 //Ruta para imagenes de los productos
-router.get('/imagenes', dataController.getImages);
+//router.get('/imagenes', dataController.getImages);
 
 //usar middleware upload
 router.post('/upload-imagen', upload.single('imagen'), dataController.uploadImage)

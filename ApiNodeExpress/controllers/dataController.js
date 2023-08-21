@@ -44,7 +44,7 @@ const pool = new Pool(CONFIG_BD);
 console.log(pool);
 
 const getProducts = (req, res) => {
-  pool.query("SELECT * FROM producto", (error, result) => {
+  pool.query("SELECT producto.*, imagenes.ruta FROM producto JOIN imagenes ON producto.id = imagenes.id;", (error, result) => {
     if (error) {
       console.error("Error al obtener los datos", error.message);
       res.status(500).send("Error al obtener datos");
@@ -54,7 +54,7 @@ const getProducts = (req, res) => {
   });
 };
 
-const getImages = (req, res) => {
+/*const getImages = (req, res) => {
   pool.query("SELECT * FROM imagenes", (error, result) => {
     if (error) {
       console.error("Error al obtener los datos", error.message);
@@ -64,6 +64,7 @@ const getImages = (req, res) => {
     }
   });
 };
+*/
 
 const uploadImage = (req, res) => {
   //verificar si se ha subido un archivo
@@ -187,7 +188,7 @@ const inicioSesion = (req, res) => {
 module.exports = {
   getProducts,
   uploadImage,
-  getImages,
+//  getImages,
   registrerUser,
   inicioSesion,
 };
