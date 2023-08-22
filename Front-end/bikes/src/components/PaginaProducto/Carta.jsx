@@ -25,8 +25,10 @@ const Carta = () => {
                 return (
                   <div className="cartap">
                     <img src={data.ruta} alt="" />
-                    <h3 key={index}>{data.nombre}</h3>
-                    <p>${data.precio}</p>
+                    <div className="cartap-info">
+                      <h5 key={index}>{data.nombre}</h5>
+                    </div>
+                    <p><b>Precio:</b> ${data.precio}</p>
                   </div>
                 );
               })}

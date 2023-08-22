@@ -7,30 +7,29 @@
 }
 
 .contenedor-cartas-producto{
-    padding-left: 320px;
+    padding-left: 21%;
     padding-top: 100px;
     color: white;
     background-image: url("../../assets/img/supra-performance-header.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center;
+    background-position: center; 
     height: 1000%;
 }
 
 .cartas-producto{
-    padding: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 90px;
+    column-gap: 90px;
+    margin-top: 30px;
 }
 
 .cartap{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    text-align: center;
     background-color: aliceblue;
     width: min-content;
     border-radius: 10px;
@@ -40,31 +39,55 @@
 
     & img{
         width: 150px;
+        border-radius: 10px;
     }
+
+    & p{
+        margin-bottom: 5px;
+        font-size: 90%;
+    }
+
 }
 
-@media screen and (max-width: 1380px){
+.cartap-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    height: 37px;
+    overflow: hidden;
+}
+
+/* @media screen and (max-width: 1380px){
 
     .contenedor-cartas-producto{
         padding-left: 260px;
     }
-}
+} */
 
-@media screen and (max-width: 1075px){
+@media screen and (max-width: 1275px){
 
     .cartas-producto{
+        column-gap: 50px;
         grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .contenedor-cartas-producto{
+        padding-left: 28%;
     }
 }
 
 @media screen and (max-width: 950px){
 
-    .contenedor-cartas-producto h1{
-        font-size: 170%;
-        
-    }
     .cartas-producto{
         grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+    }
+
+    .contenedor-cartas-producto{
+        padding-left: 38%;
     }
 }
 
