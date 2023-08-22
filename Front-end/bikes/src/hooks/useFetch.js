@@ -11,7 +11,7 @@ const [dataImage, setDataImage] = useState([1]);
       method: "GET",
       redirect: "follow",
     };
-    await fetch(`http://localhost:3080${urlProduct}`, requestOptions)
+    await fetch(`http://localhost:3060${urlProduct}`, requestOptions)
       .then((response) => response.json())
       .then((result) => setDataProduct(result))
       .catch((error) => console.log("Error en la solicitud:", error));
@@ -26,7 +26,7 @@ const [dataImage, setDataImage] = useState([1]);
       redirect: "follow",
     };
 
-    await fetch(`http://localhost:3080${urlImage}`, requestOptions)
+    await fetch(`http://localhost:3060${urlImage}`, requestOptions)
       .then((response) => response.json())
       .then((result) => setDataImage(result))
       .catch((error) => console.log("Error en la solicitud:", error))
@@ -50,7 +50,7 @@ export const useFetchProducts = (urlProductName, urlProductImg) =>{
       method: "GET",
       redirect: "follow",
     };
-    await fetch(`http://localhost:3080${urlProductName}`, requestOptions)
+    await fetch(`http://localhost:3060${urlProductName}`, requestOptions)
       .then((response) => response.json())
       .then((result) => setDataProduct(result))
       .catch((error) => console.log("Error en la solicitud: ", error));
@@ -65,7 +65,7 @@ export const useFetchProducts = (urlProductName, urlProductImg) =>{
       redirect: "follow",
     };
 
-    await fetch(`http://localhost:3080${urlProductImg}`, requestOptions)
+    await fetch(`http://localhost:3060${urlProductImg}`, requestOptions)
       .then((response) => response.json())
       .then((result) => setDataImg(result))
       .catch((error) => console.log("Error en la solicitud:", error))

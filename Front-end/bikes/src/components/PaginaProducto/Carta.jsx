@@ -7,8 +7,6 @@ const Carta = () => {
   const urlProduct = "/productos";
   const { fetchDataProduct, dataProduct } = useFetchProducts(urlProduct);
 
-  
-
   useEffect(() => {
     fetchDataProduct();
     if (dataProduct != 0) {
@@ -16,118 +14,22 @@ const Carta = () => {
     }
   }, [!dataProduct]);
 
-  const bikeId = 111;
-  const bike = dataProduct.find(dataBike => dataProduct.id === bikeId);
-
   return (
     <>
-
       <div className="contenedor-cartas-producto">
         <h1>Bicicletas {}:</h1>
         <div className="cartas-producto">
-          <div className="cartap">
-              {!dataProduct
-                ? "Cargando..."
-                : dataProduct.map((bike, index) => {
-                    return <p key={index}>{bike["111"].nombre}</p> 
-                  })}
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
-          <div className="cartap">
-            <img src={imgexample} alt="" />
-            <h3>MTB TREK SUPERCALIBER</h3>
-            <p>Precio: 4'930.500</p>
-          </div>
+          {!dataProduct
+            ? "Cargando..."
+            : dataProduct.map((data, index) => {
+                return (
+                  <div className="cartap">
+                    <img src={data.ruta} alt="" />
+                    <h3 key={index}>{data.nombre}</h3>
+                    <p>${data.precio}</p>
+                  </div>
+                );
+              })}
         </div>
       </div>
     </>
