@@ -1,25 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from '../components/navbar/Navbar';
-import PaginaProducto from '../components/PaginaProducto/PaginaProducto';
-import Carta from '../components/PaginaProducto/Carta';
-import { Loader } from '../components/Loader/Loader';
+import React, { useState, useEffect } from "react";
+import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/Footer/Footer"
+import PaginaProducto from "../components/PaginaProducto/PaginaProducto";
+import Carta from "../components/PaginaProducto/Carta";
+import { Loader } from "../components/Loader/Loader";
 
 const Productos = () => {
+  return (
+    <>
+      <Navbar />
+      <PaginaProducto />
+      <Carta />
+      <Footer/>
+    </>
+  );
+};
 
-
-
-    return (
-
-        
- <>
-                <Navbar />
-                <PaginaProducto />
-                <Carta />
-                </>
-        
-        
-
-    )
-}
-
-export default Productos
+export default Productos;

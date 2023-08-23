@@ -10,17 +10,12 @@
     padding-left: 21%;
     padding-top: 100px;
     color: white;
-    background-image: url("../../assets/img/supra-performance-header.jpg");
+    background-image: url("../../assets/img/supra-performance-header-oscurita.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center; 
     min-height: 100vh;
-}
-
-.contenedor-cartas-producto::before{
-    content: "";
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro con opacidad */
     z-index: -1;
 }
 
@@ -119,10 +114,6 @@
     .cartap{
         opacity: 1;
 
-        & h3{
-            font-size: 80%;
-        }
-
         & img{
             width: 130px;
         }
@@ -146,7 +137,7 @@
     .cartap{
         margin: 0;
 
-        & h3{
+        & h5{
             font-size: 60%;
         }
 

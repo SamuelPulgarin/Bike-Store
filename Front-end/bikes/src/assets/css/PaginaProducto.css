@@ -12,6 +12,7 @@
     padding: 50px 0px;
     background-color: #161616;
     margin-top: 20px;
+    z-index: 1;
 }
 
 .filtros{

@@ -10,13 +10,15 @@ import { SuccessModal } from "./components/Modal/SuccessModal";
 import { Loader } from "./components/Loader/Loader";
 import { useState } from "react";
 
+
 function App() {
   const [isLoader, setIsLoader] = useState(true);
-  setTimeout(() => {
-    setTimeout(() => {
-      setIsLoader(false);
-    }, 1000);
-  },);
+  useEffect(()=>{
+ setTimeout(() => {
+  setIsLoader(false);
+ }, 1000);
+  },[])
+
 
   return (
     <>
