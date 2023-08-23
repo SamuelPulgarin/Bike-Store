@@ -10,12 +10,12 @@ const Productos = () => {
 
     return (
 
-        
- <>
-                <Navbar />
-                <PaginaProducto />
-                <Carta />
-          
+
+        <>
+            <Navbar />
+            <PaginaProducto />
+            <Carta />
+
         </>
 
     )

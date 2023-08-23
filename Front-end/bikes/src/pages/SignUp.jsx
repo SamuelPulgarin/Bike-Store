@@ -76,7 +76,6 @@ export const SignUp = () => {
 
     return (
         <>
-            {isLoader ? (<Loader />) : (
                 <main className='Fondo__SignUp'>
                     <div className="container__All">
                         <div className="box__backgraound">
@@ -114,7 +113,7 @@ export const SignUp = () => {
                             </div>
                         </div>
                     </div>
-                </main>)}
+                </main>
             <SuccessModal isOpen={isModalOpen} onClose={closeModal} title={ModalTitle} content={ModalContent} />
         </>
     )

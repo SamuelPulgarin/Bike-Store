@@ -42,9 +42,7 @@ export const SignIn = () => {
             if (response.ok) {
                 /*console.log('Querido usuario bienvenido');
                 console.log(DataLogin);*/
-
                 navigate("/Home")
-
                 dispatch(signIn())
 
                 // En la acción Redux (signIn)
