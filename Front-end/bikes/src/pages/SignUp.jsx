@@ -18,13 +18,6 @@ const schema = yup.object().shape({
 
 export const SignUp = () => {
 
-    const [isLoader, setIsLoader] = useState(true);
-    useEffect(() => {
-        setTimeout(() => {
-            setIsLoader(false)
-        }, 1000);
-    });
-
     const [isModalOpen, setIsModalOpen] = useState(false); //UseState para abrir y cerrar el modal
     const [ModalContent, setModalContent] = useState(''); //UseState para manejar contenido del modal
     const [ModalTitle, setModalTitle] = useState('');
@@ -83,7 +76,6 @@ export const SignUp = () => {
 
     return (
         <>
-            {isLoader ? (<Loader />) : (
                 <main className='Fondo__SignUp'>
                     <div className="container__All">
                         <div className="box__backgraound">
@@ -121,7 +113,7 @@ export const SignUp = () => {
                             </div>
                         </div>
                     </div>
-                </main>)}
+                </main>
             <SuccessModal isOpen={isModalOpen} onClose={closeModal} title={ModalTitle} content={ModalContent} />
         </>
     )

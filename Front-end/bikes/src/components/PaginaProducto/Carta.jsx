@@ -1,5 +1,4 @@
 import "../../assets/css/Carta.css";
-import imgexample from "../../assets/img/bici-ejemplo.png";
 import React, { useEffect } from "react";
 import { useFetchProducts } from "../../hooks/useFetch";
 
