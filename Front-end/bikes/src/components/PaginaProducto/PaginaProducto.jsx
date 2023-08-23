@@ -1,11 +1,10 @@
 import React from 'react';
 import "../../assets/css/PaginaProducto.css";
-import Carta from './Carta';
+
 
 const PaginaProducto = () => {
     return (
         <>
-        
             <div className='contenedor-filtros'>
 
                 <div className='filtros'>

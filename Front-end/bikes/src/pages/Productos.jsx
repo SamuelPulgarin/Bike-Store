@@ -7,6 +7,7 @@ import { Loader } from '../components/Loader/Loader';
 const Productos = () => {
 
     const [isLoader, setIsLoader] = useState(true);
+    
     useEffect(() => {
         setTimeout(() => {
             setIsLoader(false)
@@ -23,7 +24,7 @@ const Productos = () => {
             </>)}
         </>
 
-    )
+    );
 }
 
 export default Productos

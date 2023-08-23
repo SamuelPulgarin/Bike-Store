@@ -7,26 +7,24 @@ import Footer from "../components/Footer/Footer";
 import { Loader } from '../components/Loader/Loader';
 
 export const Home = () => {
-  const [isLoader, isSetLoader] = useState(true);
-  useEffect(()=>{
-    setTimeout(() => {
-      isSetLoader(false)
-    }, 1000);
-  })
+    const [isLoader, isSetLoader] = useState(true);
 
-  return (
-    
-    <>
-      {isLoader ? <Loader/> : (
+    window.onload = () => {
+        isSetLoader(false);
+    }
+
+    return (
         <>
-          <Navbar />
-          <Banner_search />
-          <CardsCategory />
-          <Marcas />
-          <Footer />
+            {isLoader ? <Loader/> : (
+                <>
+                    <Navbar />
+                    <Banner_search />
+                    <CardsCategory />
+                    <Marcas />
+                    <Footer />
+                </>
+            )}
         </>
-      )}
-    </>
-  )
+    )
 }
 

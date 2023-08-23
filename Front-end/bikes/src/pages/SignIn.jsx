@@ -16,13 +16,13 @@ const schema = yup.object().shape({
 
 export const SignIn = () => {
 
-    const [isLoader, setIsLoader] = useState(true); //Controla estados del loader
+    // const [isLoader, setIsLoader] = useState(true); //Controla estados del loader
 
-    useEffect(() => { //Controla el tiempo y activación del loader apartir del useState
-        setTimeout(() => {
-            setIsLoader(false);
-        }, 1000); //El Tiempo se controla en milisegundos
-    });
+    // useEffect(() => { //Controla el tiempo y activación del loader apartir del useState
+    //     setTimeout(() => {
+    //         setIsLoader(false);
+    //     }, 1000); //El Tiempo se controla en milisegundos
+    // });
 
     //Aqui empieza el redux
     const session = useSelector((state) => state.login.session);
