@@ -15,7 +15,13 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center; 
-    height: 1000%;
+    min-height: 100vh;
+}
+
+.contenedor-cartas-producto::before{
+    content: "";
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro con opacidad */
+    z-index: -1;
 }
 
 .cartas-producto{
@@ -122,9 +128,13 @@
         }
 
         & p{
-            font-size: 80%;
+            font-size: 70%;
         }
-    } 
+    }
+    
+    .cartap-info{
+        height: 50px;
+    }
 
     .cartas-producto{
         row-gap: 10px;

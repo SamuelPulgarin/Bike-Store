@@ -16,14 +16,6 @@ const schema = yup.object().shape({
 
 export const SignIn = () => {
 
-    // const [isLoader, setIsLoader] = useState(true); //Controla estados del loader
-
-    // useEffect(() => { //Controla el tiempo y activación del loader apartir del useState
-    //     setTimeout(() => {
-    //         setIsLoader(false);
-    //     }, 1000); //El Tiempo se controla en milisegundos
-    // });
-
     //Aqui empieza el redux
     const session = useSelector((state) => state.login.session);
     //console.log(session)
@@ -62,7 +54,7 @@ export const SignIn = () => {
 
             }
             else {
-                console.log('Error ¿Quien es ub? Vaya a registrase');
+                console.log('Error ¿Quien es ud? Vaya a registrase');
             }
         }
         catch (error) {
@@ -72,7 +64,6 @@ export const SignIn = () => {
 
     return (
         <>
-            {isLoader ? <Loader /> : (
                 <main className='Fondo__signin'>
                     <div className="contenedor__todo">
                         <div className="caja__trasera">
@@ -106,7 +97,6 @@ export const SignIn = () => {
                         </div>
                     </div>
                 </main>
-            )}
         </>
     )
 }

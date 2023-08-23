@@ -6,25 +6,19 @@ import { Loader } from '../components/Loader/Loader';
 
 const Productos = () => {
 
-    const [isLoader, setIsLoader] = useState(true);
-    
-    useEffect(() => {
-        setTimeout(() => {
-            setIsLoader(false)
-        }, 1000);
-    });
+
 
     return (
 
-        <>
-            {isLoader ? <Loader /> : (<>
+        
+ <>
                 <Navbar />
                 <PaginaProducto />
                 <Carta />
-            </>)}
+          
         </>
 
-    );
+    )
 }
 
 export default Productos

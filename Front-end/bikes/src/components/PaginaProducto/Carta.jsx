@@ -1,5 +1,4 @@
 import "../../assets/css/Carta.css";
-import imgexample from "../../assets/img/bici-ejemplo.png";
 import React, { useEffect } from "react";
 import { useFetchProducts } from "../../hooks/useFetch";
 
@@ -28,7 +27,7 @@ const Carta = () => {
                     <div className="cartap-info">
                       <h5 key={index}>{data.nombre}</h5>
                     </div>
-                    <p><b>Precio:</b>{data.precio}</p>
+                    <p><b>Precio:</b> {data.precio}</p>
                   </div>
                 );
               })}

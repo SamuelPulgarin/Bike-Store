@@ -1,30 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import { CardsCategory } from '../components/Category-Cards/CardsCategory';
-import { Marcas } from '../components/Marcas/Marcas';
+import React, { useState, useEffect } from "react";
+import { CardsCategory } from "../components/Category-Cards/CardsCategory";
+import { Marcas } from "../components/Marcas/Marcas";
 import Navbar from "../components/navbar/Navbar.jsx";
 import Banner_search from "../components/BannerAndSearch/Banner_search";
 import Footer from "../components/Footer/Footer";
-import { Loader } from '../components/Loader/Loader';
+import { Loader } from "../components/Loader/Loader";
 
 export const Home = () => {
-    const [isLoader, isSetLoader] = useState(true);
+  const [isLoader, isSetLoader] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      isSetLoader(false);
+    }, 1000);
+  });
 
-    window.onload = () => {
-        isSetLoader(false);
-    }
-
-    return (
+  return (
+    
+    <>
+      {isLoader ? <Loader/> : (
         <>
-            {isLoader ? <Loader/> : (
-                <>
-                    <Navbar />
-                    <Banner_search />
-                    <CardsCategory />
-                    <Marcas />
-                    <Footer />
-                </>
-            )}
+          <Navbar />
+          <Banner_search />
+          <CardsCategory />
+          <Marcas />
+          <Footer />
         </>
-    )
+      )}
+    </>
+  )
 }
 
