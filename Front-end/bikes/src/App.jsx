@@ -14,21 +14,21 @@ import { Loader } from './components/Loader/Loader';
 
 function App() {
 
-  return (
-    <>
+    return (
+        <>
 
-      <Router>
-        <Routes>
-          <Route path='/Home' element={<Home />} />
-          <Route path='/Carrito' element={<Carrito />} />
-          <Route path='/productos' element={<Productos />} />
-          <Route path='/signUp' element={<SignUp/>}/>
-          <Route path='/signIn' element={<SignIn/>}/>
-        </Routes>
-      </Router> 
-    </>
+            <Router>
+                <Routes>
+                    <Route path='/Home' element={<Home />} />
+                    <Route path='/Carrito' element={<Carrito />} />
+                    <Route path='/productos' element={<Productos />} />
+                    <Route path='/signUp' element={<SignUp />} />
+                    <Route path='/signIn' element={<SignIn />} />
+                </Routes>
+            </Router>
+        </>
 
-  )
+    )
 }
 
 export default App
