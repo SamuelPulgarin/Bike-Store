@@ -88,9 +88,6 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
-                <a href="/productos">
-                    <button>boton</button>
-                </a>
             </nav>
 
             <ConfirmModal

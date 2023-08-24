@@ -71,57 +71,46 @@ export const SignUp = () => {
         }
     }
 
-    const [isLoader, setIsLoader] = useState(true);
-    useEffect(() => {
-
-        setTimeout(() => {
-            setIsLoader(false);
-        }, 1000)
-
-    }, []);
-
     return (
         <>
-            {isLoader ? <Loader /> : (
-                <main className='Fondo__SignUp'>
-                    <div className="container__All">
-                        <div className="box__backgraound">
-                            <div className="box__backG_SignUp">
-                                <h3>¿Ya tienes una cuenta?</h3>
-                                <p>Inicia sesión para entrar a la página</p>
-                                <div className="container__button">
-                                    <a href="/signIn">
-                                        <button id='btn__iniciar-sesion'>Iniciar Sesión</button>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div className="container__form_SignUp">
-                                {/*Registro*/}
-                                <form onSubmit={handleSubmit(onSubmit)} className='Formulario__register' method='POST'>
-                                    <h2>Regístrarse</h2>
-
-                                    <input type="text" name='username' placeholder='Nombre Completo' {...register('username')} />
-                                    <span className='error'>{errors.username?.message}</span>
-
-                                    <input type="email" name='email' placeholder='E-mail' {...register('email')} />
-                                    <span className='error'>{errors.email?.message}</span>
-
-                                    <input type="password" name='password' placeholder='Contraseña' {...register('password')} />
-                                    <span className='error'>{errors.password?.message}</span>
-
-                                    <input type="password" name='confirmpassword' placeholder='Confirmar Contraseña' {...register('confirmpassword')} />
-                                    <span className='error'>{errors.confirmpassword?.message}</span>
-
-                                    <div className="container__btn">
-                                        <button className='btn__f' type='submit'>Regístrarse</button>
-                                    </div>
-                                </form>
+            <main className='Fondo__SignUp'>
+                <div className="container__All">
+                    <div className="box__backgraound">
+                        <div className="box__backG_SignUp">
+                            <h3>¿Ya tienes una cuenta?</h3>
+                            <p>Inicia sesión para entrar a la página</p>
+                            <div className="container__button">
+                                <a href="/signIn">
+                                    <button id='btn__iniciar-sesion'>Iniciar Sesión</button>
+                                </a>
                             </div>
                         </div>
+
+                        <div className="container__form_SignUp">
+                            {/*Registro*/}
+                            <form onSubmit={handleSubmit(onSubmit)} className='Formulario__register' method='POST'>
+                                <h2>Regístrarse</h2>
+
+                                <input type="text" name='username' placeholder='Nombre Completo' {...register('username')} />
+                                <span className='error'>{errors.username?.message}</span>
+
+                                <input type="email" name='email' placeholder='E-mail' {...register('email')} />
+                                <span className='error'>{errors.email?.message}</span>
+
+                                <input type="password" name='password' placeholder='Contraseña' {...register('password')} />
+                                <span className='error'>{errors.password?.message}</span>
+
+                                <input type="password" name='confirmpassword' placeholder='Confirmar Contraseña' {...register('confirmpassword')} />
+                                <span className='error'>{errors.confirmpassword?.message}</span>
+
+                                <div className="container__btn">
+                                    <button className='btn__f' type='submit'>Regístrarse</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </main>
-            )}
+                </div>
+            </main>
             <SuccessModal isOpen={isModalOpen} onClose={closeModal} title={ModalTitle} content={ModalContent} />
         </>
     )

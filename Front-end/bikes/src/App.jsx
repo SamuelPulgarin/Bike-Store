@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import { Home } from "./pages/Home";
 import "./assets/css/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -7,17 +8,17 @@ import Productos from "./pages/Productos.jsx";
 import { SignUp } from "./pages/SignUp";
 import { SignIn } from "./pages/SignIn";
 import { Loader } from "./components/Loader/Loader";
-import { useState, useEffect } from "react";
+import Detalles from "./pages/Detalles";
 
 
 function App() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Simula el tiempo de carga
+        // Simula el tiempo de cargadel dom
         setTimeout(() => {
             setLoading(false);
-        }, 2000); // Cambia este valor según tus necesidades
+        }, 2000); // Cambiar este valor según las necesidades
     }, []);
 
     return (
@@ -29,24 +30,16 @@ function App() {
                 <Routes>
                     <Route path="/Home" element={<Home />} />
                     <Route path="/Carrito" element={<Carrito />} />
-                    <Route path="/productos" element={<Productos />} />
+                    <Route path="/productos" element={<Productos/>} />
                     <Route path="/signUp" element={<SignUp />} />
                     <Route path="/signIn" element={<SignIn />} />
+                    <Route path="/Detalles" element={<Detalles/>} />
                 </Routes>
             </Router>
             )}
 
         </>
     );
-    // Metodo 1
-    // const [isLoader, setIsLoader] = useState(true);
-    // useEffect(() => {
-
-    //     setTimeout(() => {
-    //         setIsLoader(false);
-    //     }, 1000);
-
-    // }, []);
 
     //Metodo 2
     // const [domLoaded, setDomLoaded] = useState(false);
