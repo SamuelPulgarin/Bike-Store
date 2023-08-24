@@ -50,8 +50,8 @@ const Navbar = () => {
 
     const navigate = useNavigate();
 
-
     const categorias = (e) => {
+        
         navigate("/productos")
     }
 
@@ -88,6 +88,9 @@ const Navbar = () => {
                         </li>
                     </ul>
                 </div>
+                <a href="/productos">
+                    <button>boton</button>
+                </a>
             </nav>
 
             <ConfirmModal
