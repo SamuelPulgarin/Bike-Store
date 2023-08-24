@@ -11,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 6rem;
+    text-align: start;
     color: white;
     background-image: url("../../assets/img/supra-performance-header-oscurita.jpg");
     background-repeat: no-repeat;
@@ -24,9 +25,10 @@
 .cartas-producto{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 90px;
-    column-gap: 90px;
+    row-gap: 12vh;
+    column-gap: 8vw;
     margin-top: 2rem;
+    margin-bottom: 5rem;
 }
 
 .cartap{
@@ -63,10 +65,18 @@
     overflow: hidden;
 }
 
+@media screen and (max-width: 1250px) {
+
+    .cartas-producto{
+        row-gap: 15vh;
+        column-gap: 100px;
+    }
+} 
+
+
 @media screen and (max-width: 1275px){
 
     .cartas-producto{
-        column-gap: 50px;
         grid-template-columns: 1fr 1fr 1fr;
     }
 
@@ -76,7 +86,7 @@
 
     .cartas-producto{
         grid-template-columns: 1fr 1fr;
-        column-gap: 10px;
+        row-gap: 10vh;
     }
 
 }
@@ -86,22 +96,19 @@
     .contenedor-cartas-producto{
         display: grid;
         justify-items: center;
-        padding: 100px 10px;
+        width: 100%;
 
         & h1{
             justify-self: start;
             margin-left: 50px;
         }
     }
-    .cartap{
-        margin: 50px;
-    }
+    
 }
 
 @media screen and (max-width: 650px) {
 
     .cartap{
-        opacity: 1;
 
         & img{
             width: 130px;
@@ -115,16 +122,11 @@
     .cartap-info{
         height: 50px;
     }
-
-    .cartas-producto{
-        row-gap: 10px;
-    }
 }
 
 @media screen and (max-width: 580px){
 
     .cartap{
-        margin: 0;
 
         & h5{
             font-size: 60%;
@@ -140,8 +142,8 @@
     }
 
     .cartas-producto{
-        row-gap: 50px;
-        column-gap: 50px;
+        row-gap: 70px;
+        column-gap: 80px;
     }
 
     .contenedor-cartas-producto{
@@ -155,7 +157,6 @@
         row-gap: 50px;
         column-gap: 30px;
         justify-items: start;
-        padding: 30px 0;
     }
 
     .contenedor-cartas-producto h1{
