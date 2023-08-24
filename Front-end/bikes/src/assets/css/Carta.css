@@ -7,8 +7,10 @@
 }
 
 .contenedor-cartas-producto{
-    padding-left: 21%;
-    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6rem;
     color: white;
     background-image: url("../../assets/img/supra-performance-header-oscurita.jpg");
     background-repeat: no-repeat;
@@ -16,7 +18,7 @@
     background-attachment: fixed;
     background-position: center; 
     min-height: 100vh;
-    z-index: -1;
+    width: 80%;
 }
 
 .cartas-producto{
@@ -24,7 +26,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 90px;
     column-gap: 90px;
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 
 .cartap{
@@ -61,13 +63,6 @@
     overflow: hidden;
 }
 
-/* @media screen and (max-width: 1380px){
-
-    .contenedor-cartas-producto{
-        padding-left: 260px;
-    }
-} */
-
 @media screen and (max-width: 1275px){
 
     .cartas-producto{
@@ -75,9 +70,6 @@
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    .contenedor-cartas-producto{
-        padding-left: 28%;
-    }
 }
 
 @media screen and (max-width: 950px){
@@ -87,9 +79,6 @@
         column-gap: 10px;
     }
 
-    .contenedor-cartas-producto{
-        padding-left: 38%;
-    }
 }
 
 @media screen and (max-width: 750px){

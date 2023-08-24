@@ -7,12 +7,11 @@
 
 .contenedor-filtros{
     height: 100%;
-    position: fixed;
-    width: 250px;
-    padding: 50px 0px;
+    width: 20%;
+    /* padding: 50px 0px; */
     background-color: #161616;
-    margin-top: 20px;
-    z-index: 1;
+    margin-top: 4rem;
+
 }
 
 .filtros{
@@ -58,12 +57,12 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 1380px) {
+/* @media screen and (max-width: 1380px) {
 
     .contenedor-filtros{
         width: 231px;
     }
-}
+} */
 
 @media screen and (max-width: 950px){
 
