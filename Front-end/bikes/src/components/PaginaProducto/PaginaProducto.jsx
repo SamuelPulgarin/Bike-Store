@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../../assets/css/PaginaProducto.css";
 import Carta from './Carta';
 
 const PaginaProducto = () => {
+    const [filter, setFilter] = useState({
+        giant: false,
+    });
+
+    const [filterData, setFilterData] = useState([]);
+
+    const handleOnCheckbox = (e) => {
+        
+    }
+
     return (
         <>
         
@@ -16,7 +26,7 @@ const PaginaProducto = () => {
                         <div className='filtro1'>
                             <h1>Marca:</h1>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox"  className='check' />
                                 <label>SCOTT</label>
                             </div>
                             <div className='label-check'>
@@ -24,7 +34,7 @@ const PaginaProducto = () => {
                                 <label>GW</label>
                             </div>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input onChange={handleOnCheckbox} type="checkbox" name='giant' value='giant' id='giant' className='check' />
                                 <label>GIANT</label>
                             </div>
                             <div className='label-check'>

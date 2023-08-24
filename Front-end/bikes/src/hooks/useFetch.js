@@ -41,7 +41,7 @@ const [dataImage, setDataImage] = useState([1]);
 };
 
 
-export const useFetchProducts = (urlProductName, urlProductImg) =>{
+export const FetchProducts = (urlProductName, urlProductImg) =>{
   const [dataProduct, setDataProduct] = useState([0]);
   const [dataImg, setDataImg] = useState([1]);
 

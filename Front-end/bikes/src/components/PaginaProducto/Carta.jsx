@@ -1,10 +1,10 @@
 import "../../assets/css/Carta.css";
 import React, { useEffect } from "react";
-import { useFetchProducts } from "../../hooks/useFetch";
+import { FetchProducts } from "../../hooks/useFetch";
 
 const Carta = () => {
   const urlProduct = "/productos";
-  const { fetchDataProduct, dataProduct } = useFetchProducts(urlProduct);
+  const { fetchDataProduct, dataProduct } = FetchProducts(urlProduct);
 
   useEffect(() => {
     fetchDataProduct();
@@ -16,12 +16,13 @@ const Carta = () => {
   return (
     <>
       <div className="contenedor-cartas-producto">
-        <h1>Bicicletas {}:</h1>
+        <h1>Bicicletas { }:</h1>
         <div className="cartas-producto">
           {!dataProduct
             ? "Cargando..."
             : dataProduct.map((data, index) => {
-                return (
+              return (
+                <>
                   <div className="cartap">
                     <img src={data.ruta} alt="" />
                     <div className="cartap-info">
@@ -29,8 +30,9 @@ const Carta = () => {
                     </div>
                     <p><b>Precio:</b> ${data.precio}</p>
                   </div>
-                );
-              })}
+                </>
+              );
+            })}
         </div>
       </div>
     </>
