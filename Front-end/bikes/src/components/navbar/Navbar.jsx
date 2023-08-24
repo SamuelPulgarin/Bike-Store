@@ -17,91 +17,88 @@ import { ConfirmModal } from "../Modal/ConfirmModal";
 
 const Navbar = () => {
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
-  const handleLogout = () => {
-    localStorage.removeItem('isUserLoggedIn');
-    dispatch(signOut());
-    closeModal();
-  }
-
-
-  const navigate = useNavigate();
-
-  //Aqui empieza el redux
-  const session = useSelector((state) => state.login.session);
-  const dispatch = useDispatch();
-
-  React.useEffect(() => {
-    const storedIsUserLoggedIn = localStorage.getItem('isUserLoggedIn');
-
-    if (storedIsUserLoggedIn === 'true') {
-      dispatch(signIn());
-    } else {
-      dispatch(signOut());
+    const handleLogout = () => {
+        localStorage.removeItem('isUserLoggedIn');
+        dispatch(signOut());
+        closeModal();
     }
 
-  }, [])
+    //Aqui empieza el redux
+    const session = useSelector((state) => state.login.session);
+    const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        const storedIsUserLoggedIn = localStorage.getItem('isUserLoggedIn');
+
+        if (storedIsUserLoggedIn === 'true') {
+            dispatch(signIn());
+        } else {
+            dispatch(signOut());
+        }
+
+    }, [])
+
+    const navigate = useNavigate();
 
 
-  const categorias = (e) => {
+    const categorias = (e) => {
+        navigate("/productos")
+    }
 
-    navigate("/productos");
-    //console.log(e?.target?.value);
-  }
+    return (
+        <>
+            <nav className="navbar">
+                <div className="logos">
+                    <a href="/home" ><img src={logo1} alt="Aqui va nuestro precioso loguito" id="logo1" /></a>
+                    <a href="/home" ><img src={logo2} alt="Aqui va nuestro precioso loguito" id="logo2" /></a>
+                </div>
+                <input type="checkbox" id="toggler" />
+                <label htmlFor="toggler"><i className="ri-menu-list"><img src={toggler} alt="toggler" /></i></label>
+                <div className="menu">
+                    <ul className="list">
+                        <div className="desplegable">
+                            <li><a href="#"><img src={options} alt="Hola soy una imagen" id="opcion" /></a></li>
+                            <li><select id="categorias" onChange={categorias}>
+                                <option disabled={true}>CATEGORIAS</option>
+                                <option value={"1"}>Ruta</option>
+                                <option value={"2"}>Montaña</option>
+                                <option value={"3"}>hibridas</option>
+                                <option value={"4"}>Bmx</option>
+                            </select></li>
+                        </div>
+                        <li><a href="/Carrito"><img src={carrito} alt="Hola soy una imagen" id="carrito" /></a></li>
+                        <li>{session ?
+                            <a onClick={openModal}>
+                                <img src={session ? salir : peril} alt="Cerrar sesión" id="perfil" />
+                            </a>
+                            :
+                            <a href="/signUp">
+                                <img src={session ? salir : peril} alt="Cerrar sesión" id="perfil" />
+                            </a>}
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
-  return (
-    <>
-      <nav className="navbar">
-        <div className="logos">
-          <a href="/home" ><img src={logo1} alt="Aqui va nuestro precioso loguito" id="logo1" /></a>
-          <a href="/home" ><img src={logo2} alt="Aqui va nuestro precioso loguito" id="logo2" /></a>
-        </div>
-        <input type="checkbox" id="toggler" />
-        <label htmlFor="toggler"><i className="ri-menu-list"><img src={toggler} alt="toggler" /></i></label>
-        <div className="menu">
-          <ul className="list">
-            <div className="desplegable">
-              <li><a href="#"><img src={options} alt="Hola soy una imagen" id="opcion" /></a></li>
-              <li><select id="categorias" onChange={categorias}>
-                <option disabled={true}>CATEGORIAS</option>
-                <option value={"1"}>Ruta</option>
-                <option value={"2"}>Montaña</option>
-                <option value={"3"}>hibridas</option>
-                <option value={"4"}>Bmx</option>
-              </select></li>
-            </div>
-            <li><a href="/Carrito"><img src={carrito} alt="Hola soy una imagen" id="carrito" /></a></li>
-            <li>{session ?
-              <a onClick={openModal}>
-                <img src={session ? salir : peril} alt="Cerrar sesión" id="perfil" />
-              </a>
-              :
-              <a href="/signUp">
-                <img src={session ? salir : peril} alt="Cerrar sesión" id="perfil" />
-              </a>}
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-      <ConfirmModal
-        title="Cerrar Sesión"
-        message="¿Seguro que deseas cerrar sesión?"
-        openModal={isModalOpen}
-        onConfirm={handleLogout}
-        onCancel={closeModal}
-      />
-    </>
-  );
+            <ConfirmModal
+                title="Cerrar Sesión"
+                message="¿Seguro que deseas cerrar sesión?"
+                openModal={isModalOpen}
+                onConfirm={handleLogout}
+                onCancel={closeModal}
+            />
+        </>
+    );
 };
 
 export default Navbar

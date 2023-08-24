@@ -38,8 +38,6 @@ export const SignUp = () => {
 
     const navigate = useNavigate();
 
-
-
     async function onSubmit(DataRegister) {
         setIsLoader(true);
         console.log(DataRegister);
@@ -71,11 +69,20 @@ export const SignUp = () => {
         finally {
             setIsLoader(false);
         }
-
     }
+
+    const [isLoader, setIsLoader] = useState(true);
+    useEffect(() => {
+
+        setTimeout(() => {
+            setIsLoader(false);
+        }, 1000)
+
+    }, []);
 
     return (
         <>
+            {isLoader ? <Loader /> : (
                 <main className='Fondo__SignUp'>
                     <div className="container__All">
                         <div className="box__backgraound">
@@ -114,6 +121,7 @@ export const SignUp = () => {
                         </div>
                     </div>
                 </main>
+            )}
             <SuccessModal isOpen={isModalOpen} onClose={closeModal} title={ModalTitle} content={ModalContent} />
         </>
     )

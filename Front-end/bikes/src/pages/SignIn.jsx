@@ -16,6 +16,16 @@ const schema = yup.object().shape({
 
 export const SignIn = () => {
 
+    const [isLoader, setIsLoader] = useState(true);
+
+    useEffect(() => {
+
+        setTimeout(() => {
+            setIsLoader(false);
+        }, 1000)
+
+    }, []);
+
     //Aqui empieza el redux
     const session = useSelector((state) => state.login.session);
     //console.log(session)
@@ -48,8 +58,6 @@ export const SignIn = () => {
                 // En la acción Redux (signIn)
                 localStorage.setItem('isUserLoggedIn', 'true');
 
-
-
             }
             else {
                 console.log('Error ¿Quien es ud? Vaya a registrase');
@@ -62,39 +70,43 @@ export const SignIn = () => {
 
     return (
         <>
-                <main className='Fondo__signin'>
-                    <div className="contenedor__todo">
-                        <div className="caja__trasera">
-                            <div className="Container__formulario__login">
-                                <form className='Formulario__login' onSubmit={handleSubmit(SubmitLogin)} method='POST'>
+            {isLoader ? <Loader /> : (
+                <>
+                    <main className='Fondo__signin'>
+                        <div className="contenedor__todo">
+                            <div className="caja__trasera">
+                                <div className="Container__formulario__login">
+                                    <form className='Formulario__login' onSubmit={handleSubmit(SubmitLogin)} method='POST'>
 
-                                    <h2>Iniciar Sesión</h2>
+                                        <h2>Iniciar Sesión</h2>
 
-                                    <input name='email' type="email" placeholder='E-mail' {...register('email')} />
-                                    <span className='error1'>{errors.email?.message}</span>
+                                        <input name='email' type="email" placeholder='E-mail' {...register('email')} />
+                                        <span className='error1'>{errors.email?.message}</span>
 
-                                    <input name='password' type="password" placeholder='Contraseña' {...register('password')} />
-                                    <span className='error1'>{errors.password?.message}</span>
+                                        <input name='password' type="password" placeholder='Contraseña' {...register('password')} />
+                                        <span className='error1'>{errors.password?.message}</span>
+
+                                        <div className="container__btn">
+                                            <button className='btn__I' >Iniciar Sesión</button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <div className="caja__trasera-login">
+                                    <h3>¿Aún no tienes una cuenta?</h3>
+                                    <p>Registrate para que puedas, iniciar sesión</p>
 
                                     <div className="container__btn">
-                                        <button className='btn__I' >Iniciar Sesión</button>
+                                        <a href="/signUp">
+                                            <button type='submit'>Registrate</button>
+                                        </a>
                                     </div>
-
-                                </form>
-                            </div>
-                            <div className="caja__trasera-login">
-                                <h3>¿Aún no tienes una cuenta?</h3>
-                                <p>Registrate para que puedas, iniciar sesión</p>
-
-                                <div className="container__btn">
-                                    <a href="/signUp">
-                                        <button type='submit'>Registrate</button>
-                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </main>
+                    </main>
+                </>
+            )}
         </>
     )
 }
