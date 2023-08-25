@@ -1,0 +1,166 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.contenedor-cartas-producto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6rem;
+    text-align: start;
+    color: white;
+    background-image: url("../../assets/img/supra-performance-header-oscurita.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center; 
+    min-height: 100vh;
+    width: 80%;
+}
+
+.cartas-producto{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 12vh;
+    column-gap: 8vw;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.cartap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    width: min-content;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 5px 5px 5px  grey;
+    cursor: pointer;
+
+    & img{
+        width: 150px;
+        border-radius: 10px;
+    }
+
+    & p{
+        margin-bottom: 5px;
+        font-size: 90%;
+    }
+
+}
+
+.cartap-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    height: 37px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 1250px) {
+
+    .cartas-producto{
+        row-gap: 15vh;
+        column-gap: 100px;
+    }
+} 
+
+
+@media screen and (max-width: 1275px){
+
+    .cartas-producto{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
+
+@media screen and (max-width: 950px){
+
+    .cartas-producto{
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10vh;
+    }
+
+}
+
+@media screen and (max-width: 750px){
+
+    .contenedor-cartas-producto{
+        display: grid;
+        justify-items: center;
+        width: 100%;
+
+        & h1{
+            justify-self: start;
+            margin-left: 50px;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 650px) {
+
+    .cartap{
+
+        & img{
+            width: 130px;
+        }
+
+        & p{
+            font-size: 70%;
+        }
+    }
+    
+    .cartap-info{
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 580px){
+
+    .cartap{
+
+        & h5{
+            font-size: 60%;
+        }
+
+        & img{
+            width: 100px;
+        }
+
+        & p{
+            font-size: 60%;
+        }
+    }
+
+    .cartas-producto{
+        row-gap: 70px;
+        column-gap: 80px;
+    }
+
+    .contenedor-cartas-producto{
+        padding: 80px 0px;
+    }
+}
+
+@media screen and (max-width: 370px){
+    
+    .cartas-producto{
+        row-gap: 50px;
+        column-gap: 30px;
+        justify-items: start;
+    }
+
+    .contenedor-cartas-producto h1{
+        font-size: 120%;
+        margin-left: 30px;   
+    }
+}
