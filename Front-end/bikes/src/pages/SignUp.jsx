@@ -39,7 +39,6 @@ export const SignUp = () => {
     const navigate = useNavigate();
 
     async function onSubmit(DataRegister) {
-        setIsLoader(true);
         console.log(DataRegister);
 
         try {
