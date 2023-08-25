@@ -11,7 +11,7 @@ const Productos = () => {
         <>
             <Navbar />
             <PaginaProducto />
-            <Carta />
+            <Carta></Carta>
         </>
 
     )

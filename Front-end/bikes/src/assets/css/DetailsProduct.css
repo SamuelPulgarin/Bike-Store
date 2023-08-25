@@ -23,11 +23,17 @@
 .container_all_details .container__details .contaier_img_details{
     outline: auto;
     box-shadow: 10px 12px 6px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 4rem;
+    transition: transform .5s
 }
 
 .img__details{
     width: 25rem;
     padding: 25px;
+}
+
+.container_all_details .container__details .contaier_img_details:hover{
+    transform: scale(1.07);
 }
 
 .container_btn_details{
@@ -71,4 +77,58 @@
 .container_info_details {
     width: 45rem;
     margin-left: 0rem;
+}
+
+/*Select*/
+
+.container_select_details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#colores{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0!important;
+    background:  #262626;
+    color: #FFF;
+    background-image: none;
+}
+
+#colores::-ms-expand{
+    display: none;
+}
+
+#colores{
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #262626;
+    overflow: hidden;
+    border-radius: .25em;
+}
+
+#colores{
+    flex: 1;
+    padding: 0 .5em;
+    color: #FFF;
+    cursor: pointer;
+}
+
+.container_select_details::after{
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #FFF;
+    cursor: pointer;
+    pointer-events: none;
+    transition: 25s all ease;
 }

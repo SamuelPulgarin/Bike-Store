@@ -28,7 +28,13 @@ export const DetailsProducts = () => {
                                 Omnis iste eum quas accusamus dolorum? At necessitatibus cumque velit saepe voluptas.</p>
                         </div>
                         <div className="container_select_details">
-                            <select name="" id=""></select>
+                            <select name="colores" id="colores">
+                                <option selected disabled>Seleccionar Color</option>
+                                <option value="Negro">Negro</option>
+                                <option value="Rojo">Rojo</option>
+                                <option value="Azul">Azul</option>
+                                <option value="Blanco">Blanco</option>
+                            </select>
                         </div>
                     </div>
                 </div>

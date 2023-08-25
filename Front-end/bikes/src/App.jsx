@@ -14,28 +14,25 @@ import Detalles from "./pages/Detalles";
 function App() {
     const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        // Simula el tiempo de cargadel dom
-        setTimeout(() => {
-            setLoading(false);
-        }, 2000); // Cambiar este valor según las necesidades
-    }, []);
+    window.onload = () => {
+        setLoading(false)
+    };
 
     return (
         <>
             {loading ? (
-            <Loader />
+                <Loader />
             ) : (
-            <Router>
-                <Routes>
-                    <Route path="/Home" element={<Home />} />
-                    <Route path="/Carrito" element={<Carrito />} />
-                    <Route path="/productos" element={<Productos/>} />
-                    <Route path="/signUp" element={<SignUp />} />
-                    <Route path="/signIn" element={<SignIn />} />
-                    <Route path="/Detalles" element={<Detalles/>} />
-                </Routes>
-            </Router>
+                <Router>
+                    <Routes>
+                        <Route path="/Home" element={<Home />} />
+                        <Route path="/Carrito" element={<Carrito />} />
+                        <Route path="/productos" element={<Productos />} />
+                        <Route path="/signUp" element={<SignUp />} />
+                        <Route path="/signIn" element={<SignIn />} />
+                        <Route path="/Detalles" element={<Detalles />} />
+                    </Routes>
+                </Router>
             )}
 
         </>
