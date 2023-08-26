@@ -6,7 +6,7 @@ export const DetailsProducts = () => {
     return (
         <>
             <div className="container_all_details">
-                <h1>Detalles Del Producto:</h1>
+
                 <div className="container__details">
                     <div className="cotiner_img_btn">
                         <div className="contaier_img_details">
