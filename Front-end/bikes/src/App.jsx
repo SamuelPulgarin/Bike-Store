@@ -11,6 +11,7 @@ import { Loader } from "./components/Loader/Loader";
 import Detalles from "./pages/Detalles";
 
 
+
 function App() {
     const [loading, setLoading] = useState(true);
 
@@ -34,7 +35,6 @@ function App() {
                     </Routes>
                 </Router>
             )}
-
         </>
     );
 
