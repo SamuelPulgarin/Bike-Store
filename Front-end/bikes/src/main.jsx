@@ -7,9 +7,7 @@ import { SignIn } from './pages/SignIn';
 import { SignUp } from './pages/SignUp';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <Provider store={store} >
       <App/>
     </Provider>
-  </React.StrictMode>,
 )
