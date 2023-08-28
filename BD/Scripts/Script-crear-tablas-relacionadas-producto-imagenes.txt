@@ -8,6 +8,7 @@ CREATE TABLE public.producto
     categoria character varying(80),
     talla character varying(80),
     marca character varying(100),
+    stock bigint NOT NULL,
     precio bigint
 );
 
