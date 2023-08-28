@@ -62,7 +62,6 @@ export const SignUp = () => {
                 },
                 body: JSON.stringify(DataRegister)
             });
-
             if (response.ok) {
                 /*console.log('Usuario resgistrado exitosamente');
                 console.log(DataRegister);*/

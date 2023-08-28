@@ -9,6 +9,7 @@ import { SignUp } from "./pages/SignUp";
 import { SignIn } from "./pages/SignIn";
 import { Loader } from "./components/Loader/Loader";
 import Detalles from "./pages/Detalles";
+import { Admin } from "./pages/Admin";
 
 
 
@@ -26,12 +27,13 @@ function App() {
             ) : (
                 <Router>
                     <Routes>
-                        <Route path="/Home" element={<Home />} />
+                        <Route path="/" element={<Home />} />
                         <Route path="/Carrito" element={<Carrito />} />
                         <Route path="/productos" element={<Productos />} />
                         <Route path="/signUp" element={<SignUp />} />
                         <Route path="/signIn" element={<SignIn />} />
                         <Route path="/Detalles" element={<Detalles />} />
+                        <Route path="/Admin" element={<Admin/>}/>
                     </Routes>
                 </Router>
             )}
