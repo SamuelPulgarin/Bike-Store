@@ -12,7 +12,7 @@ const Carta = () => {
       console.log(urlProduct);
     }
   }, [!dataProduct]);
-
+/*ja */
   return (
     <>
       <div className="contenedor-cartas-producto">

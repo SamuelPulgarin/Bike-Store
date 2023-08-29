@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../assets/css/PaginaProducto.css";
 import Carta from './Carta';
-
+/*ja */
 const PaginaProducto = () => {
     return (
         <>

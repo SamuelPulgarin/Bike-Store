@@ -1,0 +1,183 @@
+/*ja */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.overlay__confirm_modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: all 500ms;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.cofirm_modal_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 440px;
+    height: 320px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.cofirm_modal_content h2{
+    font-size: 29px;
+}
+
+.cofirm_modal_content p{
+    margin-bottom: 35px;
+    font-size: 22px;
+}
+
+.btn__cancel_modal{
+    margin: 30px 10px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF0000;
+    color: white;
+    cursor: pointer;
+    outline: auto;
+    transition: 0.5s;
+    font-size: 18px;
+}
+
+.btn__cancel_modal:hover{
+    background-color: #b10000;
+}
+
+.btn__confirm_modal{
+    margin: 30px 10px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #262626;
+    color: white;
+    cursor: pointer;
+    outline: auto;
+    transition: 0.5s;
+    font-size: 18px;
+}
+
+.btn__confirm_modal:hover{
+    background-color: #111111;
+}
+
+@media (max-width: 540px){
+    .cofirm_modal_content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 390px;
+        height: 290px;
+        border-radius: 20px;
+        background-color: #fff;
+    }
+}
+
+@media (max-width:425px){
+    .cofirm_modal_content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 300px;
+        height: 250px;
+        border-radius: 20px;
+        background-color: #fff;
+    }
+
+    .cofirm_modal_content h2 {
+        font-size: 28px;
+    }
+
+    .cofirm_modal_content p {
+        margin-bottom: 40px;
+        font-size: 17px;
+    }
+
+    .btn__cancel_modal {
+        margin: 20px 5px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        background-color: #FF0000;
+        color: white;
+        cursor: pointer;
+        outline: auto;
+        transition: 0.5s;
+        font-size: 15px;
+    }
+
+    .btn__confirm_modal {
+        margin: 20px 5px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        background-color: #262626;
+        color: white;
+        cursor: pointer;
+        outline: auto;
+        transition: 0.5s;
+        font-size: 15px;
+    }
+}
+
+@media (max-width:360px){
+    .cofirm_modal_content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 260px;
+        height: 220px;
+        border-radius: 20px;
+        background-color: #fff;
+    }
+
+    .cofirm_modal_content h2 {
+        font-size: 26px;
+    }
+
+    .cofirm_modal_content p {
+        margin-bottom: 30px;
+        font-size: 15px;
+    }
+
+    .btn__cancel_modal {
+        margin: 10px 5px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #FF0000;
+        color: white;
+        cursor: pointer;
+        outline: auto;
+        transition: 0.5s;
+        font-size: 14px;
+    }
+
+    .btn__confirm_modal {
+        margin: 10px 5px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #262626;
+        color: white;
+        cursor: pointer;
+        outline: auto;
+        transition: 0.5s;
+        font-size: 14px;
+    }
+}

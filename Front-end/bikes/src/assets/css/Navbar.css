@@ -1,0 +1,168 @@
+/*ja */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #262626;
+    padding: 5px;
+    z-index: 100;
+}
+
+.menu{
+    margin-right: 30px;
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a{
+    text-decoration: none;
+}
+
+#logo1{
+    width: 50px;
+}
+#logo2{
+    width: 200px;
+    margin-left: 0;
+}
+#carrito{
+    width: 30px;
+    margin-top: 3px;
+}
+#perfil{
+    width: 33px;
+    margin-left: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.desplegable{
+    width: 35px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+select{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+#opcion{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    pointer-events: none;
+    margin-top: 4px;
+
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+    margin-right: 10px;
+}
+
+#toggler,
+.navbar label {
+    display: none;
+}
+
+
+label img{
+    width: 30px;
+}
+
+/* APARCIENCIA DEL SELECT */
+
+.desplegable select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+ 
+.desplegable select{
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	background: transparent;
+	font-size: 1em;
+    transition: all 0.25s ease;
+    color: #262626;
+}
+ 
+.content-select select:hover{
+	background: #B1E8CD;
+}
+
+/*FIN APARIENCIA DEL SELECT */
+
+@media screen and (max-width: 600px) {
+    #logo1{
+        width: 35px;
+    }
+
+    #logo2{
+        width: 150px;
+    }
+    
+}
+
+@media screen and (max-width: 460px) {
+
+    .menu{
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+    }
+    
+    .list{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .navbar label {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+    }
+    #toggler:checked ~ .menu{
+        max-height: 100%;
+    }
+    label img{
+        margin-right: 20px;
+    }
+
+}

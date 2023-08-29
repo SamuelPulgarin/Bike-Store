@@ -5,7 +5,7 @@ import Navbar from "../components/navbar/Navbar.jsx";
 import Banner_search from "../components/BannerAndSearch/Banner_search";
 import Footer from "../components/Footer/Footer";
 import { Loader } from "../components/Loader/Loader";
-
+/*ja */
 export const Home = () => {
 
   return (
