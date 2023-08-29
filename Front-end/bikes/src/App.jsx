@@ -13,11 +13,11 @@ import { useState } from "react";
 
 function App() {
   const [isLoader, setIsLoader] = useState(true);
-  useEffect(()=>{
- setTimeout(() => {
-  setIsLoader(false);
- }, 1000);
-  },[])
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoader(false);
+    }, 1000);
+  }, [])
 
 
   return (
