@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../assets/css/DetailsProduct.css'
-import bike from '../../../uploads/1691617057955-Bicicleta Giant Propel Advanced Pro 0 AXS 23.jpg'
+import bike from '../../../uploads/1692995410871-Bicicleta Ruta Contessa Addict 35 2022.jpg'
 
 export const DetailsProducts = () => {
     return (
