@@ -1,0 +1,22 @@
+INSERT INTO public.imagenes(
+	ruta)
+	VALUES ('uploads/1692995910659-Bicicleta Scott Contessa Addict 25 2023.png'), 
+	('uploads/1692995410871-Bicicleta Ruta Contessa Addict 35 2022.jpg'), 
+	('uploads/1692995577241-Bicicleta Scott Addict 10 2022.jpg'), 
+	('uploads/1692995599492-Bicicleta Scott Addict 10 2023.jpg'), 
+	('uploads/1692995621415-Bicicleta Scott Addict 20 2023.jpg'), 
+	('uploads/1692995893452-Bicicleta Scott Contessa Active 30.jpg'), 
+	('uploads/1692995838199-Bicicleta Scott Aspect 950 2022.jpg'), 
+	('uploads/1692995818012-Bicicleta Scott Aspect 940 2022.jpg'), 
+	('uploads/1692995925236-Bicicleta Scott Contessa Scale 930 2022.jpg'), 
+	('uploads/1692995942233-Bicicleta Scott Scale 930 2023.jpg'), 
+	('uploads/1692994852641-Bicicleta MTB Spark RC World Cup 2023.jpg'), 
+	('uploads/1692995746142-Bicicleta Scott Addict RC 15 2023.jpg'), 
+	('uploads/1692995797849-Bicicleta Scott Aspect 930 2022.jpg'), 
+	('uploads/1692995857446-Bicicleta Scott Aspect 960 2022.jpg'), 
+	('uploads/1692995878284-Bicicleta Scott Contessa Active 20 2022.jpg'), 
+	('uploads/1692995656195-Bicicleta Scott Addict 30.jpg'), 
+	('uploads/1692995679898-Bicicleta Scott Addict 30 2023.jpg'), 
+	('uploads/1692995702259-Bicicleta Scott Addict 40 2023.jpg'), 
+	('uploads/1692995725372-Bicicleta Scott Addict RC 10 2023.jpg'), 
+	('uploads/1692995779906-Bicicleta Scott Addict RC 20 2023.jpg')
