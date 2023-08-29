@@ -37,8 +37,4 @@ app.listen(puerto, () =>{
 });
 
 
-
-
-
 //Guardar imagenes en la base de datos 
-

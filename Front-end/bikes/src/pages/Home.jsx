@@ -8,13 +8,14 @@ import { Loader } from "../components/Loader/Loader";
 /*ja */
 export const Home = () => {
 
-  return (
-    <>
-      <Navbar />
-      <Banner_search />
-      <CardsCategory />
-      <Marcas />
-      <Footer />
-    </>
-  );
-};
+
+    return (
+        <>
+            <Navbar />
+            <Banner_search />
+            <CardsCategory />
+            <Marcas />
+            <Footer />
+        </>
+    )
+}

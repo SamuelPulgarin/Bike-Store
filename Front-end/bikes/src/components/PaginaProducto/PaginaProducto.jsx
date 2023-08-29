@@ -5,7 +5,6 @@ import Carta from './Carta';
 const PaginaProducto = () => {
     return (
         <>
-        
             <div className='contenedor-filtros'>
 
                 <div className='filtros'>
