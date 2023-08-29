@@ -7,7 +7,7 @@ import '../assets/css/SignIn.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { signIn, signOut } from '../redux/loginSlides';
 import { Loader } from '../components/Loader/Loader';
-
+/*ja */
 
 const schema = yup.object().shape({
     email: yup.string().email('El E-mail es invalido').required('Es requerido el E-mail'),

@@ -14,7 +14,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signIn, signOut } from "../../redux/loginSlides";
 import { ConfirmModal } from "../Modal/ConfirmModal";
 
-
+/*ja */
 const Navbar = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);

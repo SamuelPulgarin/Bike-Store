@@ -5,7 +5,7 @@ import PaginaProducto from "../components/PaginaProducto/PaginaProducto";
 import Carta from "../components/PaginaProducto/Carta";
 import { Loader } from "../components/Loader/Loader";
 import "../assets/css/Productos.css";
-
+/*ja */
 const Productos = () => {
   return (
     <>

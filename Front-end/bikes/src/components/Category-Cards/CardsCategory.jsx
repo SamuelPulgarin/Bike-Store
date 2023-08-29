@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/css/cardsC.css';
 
-
+/*ja */
 export const CardsCategory = () => {
     return (
         <>

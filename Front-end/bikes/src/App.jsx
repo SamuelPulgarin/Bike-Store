@@ -10,7 +10,7 @@ import { SuccessModal } from "./components/Modal/SuccessModal";
 import { Loader } from "./components/Loader/Loader";
 import { useState } from "react";
 
-
+/*ja */
 function App() {
   const [isLoader, setIsLoader] = useState(true);
   useEffect(() => {

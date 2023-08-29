@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../assets/css/SignIn_SignUp.css'
-
+/*ja */
 export const Signin_Signup = () => {
     return (
         <>

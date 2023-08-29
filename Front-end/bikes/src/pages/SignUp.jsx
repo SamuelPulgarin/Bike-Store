@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form'; //Maneja estados del formulario
 import { SuccessModal } from '../components/Modal/SuccessModal';
 import { Loader } from '../components/Loader/Loader';
-
+/*ja */
 
 const schema = yup.object().shape({
     username: yup.string().required('El nombre es requerido'),

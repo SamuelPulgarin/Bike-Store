@@ -3,7 +3,7 @@ import '../../assets/css/ConfirmModal.css'
 
 export const ConfirmModal = ({ title, message, onCancel, onConfirm, openModal }) => {
   if (!openModal) return null;
-
+/*ja */
   return (
     <div className="overlay__confirm_modal">
       <div className="cofirm_modal_content">

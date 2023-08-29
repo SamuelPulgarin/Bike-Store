@@ -4,7 +4,7 @@ import scott from '../../assets/img/Marcas/scott.png'
 import gw from '../../assets/img/Marcas/gw.png'
 import giant from '../../assets/img/Marcas/giant.png'
 import trek from '../../assets/img/Marcas/trek.png'
-
+/*ja */
 export const Marcas = () => {
     return (
         <>

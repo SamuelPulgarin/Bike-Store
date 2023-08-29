@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../assets/CSS/Banner_search_styles.css';
 import Lupa from '../../assets/img/Lupa.png'
-
+/*ja */
 const Banner_search = () => {
     return (
         <>

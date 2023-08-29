@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+/*ja */
 
 export const useFetch = (urlProduct, urlImage) => {
 

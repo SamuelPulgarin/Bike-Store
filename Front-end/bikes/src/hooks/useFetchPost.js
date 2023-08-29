@@ -1,6 +1,6 @@
 import React from 'react';
 import { SignUp } from '../components/SignUp/SignUp';
-
+/*ja */
 export const useFetchPost = () => {
     const onSubmit = async(DataRegister) => {
         try{

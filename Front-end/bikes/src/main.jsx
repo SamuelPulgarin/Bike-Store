@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import store from "./redux/store";
 import { SignIn } from './pages/SignIn';
 import { SignUp } from './pages/SignUp';
-
+/*ja */
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store} >
