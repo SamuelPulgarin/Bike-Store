@@ -1,0 +1,12 @@
+INSERT INTO public.imagenes(
+ruta)
+VALUES('uploads/1692996139079-Bicicleta GW Lynx Rin 29 8.jpg'), 
+	('uploads/1692996222422-Bicicleta Todo Terreno Rin 29 GW Jackal 8.jpg'), 
+	('uploads/1693000897152-Bicicleta Todo Terreno Rin 29 GW Jackal.jpg'), 
+	('uploads/1692996096542-Bicicleta GW Jackal 29 LTWOO 8.png'), 
+	('uploads/1692996161153-Bicicleta Todo Terreno GW Hyena Shimano 7.png'), 
+	('uploads/1692996113824-Bicicleta GW K2 Ruta Carreras Full Shimano Sora.png'), 
+    ('uploads/1693000934744-Bicicleta de Ruta GW Flamma Shimano Tourney.jpg'), 
+    ('uploads/1692996075916-Bicicleta GW BMX Serie Cosmos.jpg'), 
+    ('uploads/1693000957490-GW BMX Lancer.jpg'), 
+    ('uploads/1693000971447-GW Balance Impulso.jpg')
