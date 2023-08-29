@@ -44,39 +44,39 @@ const PaginaProducto = () => {
                         <div className='filtro1'>
                             <h1>Marca:</h1>
                             <div className='label-check'>
-                                <input onChange={handleOnCheckbox} type="checkbox" name='scott' value='scott' id='scott' className='check' />
+                                <input onChange={handleOnCheckbox} type="checkbox" name='Scott' value='Scott' id='Scott' className='check' />
                                 <label htmlFor='scott'>SCOTT</label>
                             </div>
                             <div className='label-check'>
-                                <input onChange={handleOnCheckbox} type="checkbox" name='gw' value='gw' id='gw' className='check' />
-                                <label htmlFor='gw'>GW</label>
+                                <input onChange={handleOnCheckbox} type="checkbox" name='GW' value='GW' id='GW' className='check' />
+                                <label htmlFor='GW'>GW</label>
                             </div>
                             <div className='label-check'>
                                 <input onChange={handleOnCheckbox} type="checkbox" name='Giant' value='Giant' id='Giant' className='check' />
-                                <label htmlFor='giant'>GIANT</label>
+                                <label htmlFor='Giant'>GIANT</label>
                             </div>
                             <div className='label-check'>
-                                <input onChange={handleOnCheckbox} type="checkbox" name='trek' value='trek' id='trek' className='check' />
-                                <label htmlFor='trek'>TREK</label>
+                                <input onChange={handleOnCheckbox} type="checkbox" name='Trek' value='Trek' id='Trek' className='check' />
+                                <label htmlFor='Trek'>TREK</label>
                             </div>
                         </div>
 
                         <div className="filtro2">
                             <h1>Color:</h1>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox" name='Negro' value='Negro' id='Negro' className='check' />
                                 <label>NEGRO</label>
                             </div>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox" name='Rojo' value='Rojo' id='Rojo' className='check' />
                                 <label>ROJO</label>
                             </div>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox" name='Azul' value='Azul' id='Azul' className='check' />
                                 <label>AZUL</label>
                             </div>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox" name='Blanco' value='Blanco' id='Blanco' className='check' />
                                 <label>BLANCO</label>
                             </div>
                         </div>
@@ -84,27 +84,27 @@ const PaginaProducto = () => {
                         <div className="filtro3">
                             <h1>Talla:</h1>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox" name='XS' value='BXS' id='XS' className='check' />
                                 <label>XS</label>
                             </div>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox" name='S' value='S' id='S' className='check' />
                                 <label>S</label>
                             </div>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox" name='M' value='M' id='M' className='check' />
                                 <label>M</label>
                             </div>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox" name='L' value='L' id='L' className='check' />
                                 <label>L</label>
                             </div>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox" name='XL' value='XL' id='XL' className='check' />
                                 <label>XL</label>
                             </div>
                             <div className='label-check'>
-                                <input type="checkbox" className='check' />
+                                <input type="checkbox" name='XXL' value='XXL' id='XXL' className='check' />
                                 <label>XXL</label>
                             </div>
                         </div>
