@@ -1,0 +1,48 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box; 
+}
+
+.carousel-container{
+    display: flex;
+    justify-content: center;
+}
+
+.carousel{
+    padding: 5rem;
+    background-color: #000;
+    color: #fff;
+    height: 75vh;
+    width: 100vw;
+
+    & h2{
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+
+.box{
+    background-color: lightgreen;
+    height: 250px;
+}
+
+.box h3{
+    text-align: center;
+}
+
+.slick-slide div{
+    margin: 0 1rem;
+}
+
+.slick-dots li button:before{
+    color: #fff !important;
+}
+
+.slick-prev:before, .slick-next:before{
+    font-size: 30px !important;
+}
+
+.slick-next{
+
+}
