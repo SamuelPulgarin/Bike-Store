@@ -13,40 +13,27 @@ const Carta = () => {
       console.log(urlProduct);
     }
   }, [!dataProduct]);
-
-  const [datosFiltrados, setDatosFiltrados] = useState([]);
-
+/*ja */
   return (
     <>
       <div className="contenedor-cartas-producto">
-        <h1>Bicicletas {}:</h1>
+        <h1>Bicicletas { }:</h1>
         <div className="cartas-producto">
-          {dataProduct
-            ?  dataProduct.map((data, index) => {
+          {!dataProduct
+            ? "Cargando..."
+            : dataProduct.map((data) => {
               return (
                 <>
-                  <div className="cartap">
+                  <div className="cartap" key={data.id}>
                     <img src={data.ruta} alt="" />
                     <div className="cartap-info">
-                      <h5 key={index}>{data.nombre}</h5>
+                      <h5>{data.nombre}</h5>
                     </div>
                     <p><b>Precio:</b> ${data.precio}</p>
                   </div>
                 </>
               );
-            }): 
-            <div className="container-info-selected">
-              {datosFiltrados.map(item =>(
-                <div className="cartap">
-                <img src={item.ruta} alt="" />
-                <div className="cartap-info">
-                  <h5 key={item}>{item.nombre}</h5>
-                </div>
-                <p><b>Precio:</b> ${item.precio}</p>
-              </div>
-              ))}
-            </div>
-            }
+            })}
         </div>
       </div>
 

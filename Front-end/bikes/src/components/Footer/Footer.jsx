@@ -3,7 +3,7 @@ import "../../assets/CSS/Footer.css";
 import Logo from "../../assets/img/Logo-BikeStore.svg";
 import Copy from "../../assets/img/IconoCopy.svg";
 
-
+/*ja */
 
 const Footer = () => {
   return (

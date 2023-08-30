@@ -1,8 +1,6 @@
 import "../../assets/css/PaginaProducto.css";
 import Carta from './Carta';
-import { useState } from "react";
-import { data } from '../../Api/data';
- 
+/*ja */
 const PaginaProducto = () => {
 
     const [marcaSeleccionada, setMarcaSeleccionada] = useState({
@@ -33,7 +31,6 @@ const PaginaProducto = () => {
 
     return (
         <>
-
             <div className='contenedor-filtros'>
 
                 <div className='filtros'>
@@ -41,7 +38,7 @@ const PaginaProducto = () => {
 
                     <div className='contenedor-checks'>
 
-                        <div className='filtro1'>
+                        <div className='filtro'>
                             <h1>Marca:</h1>
                             <div className='label-check'>
                                 <input onChange={handleOnCheckbox} type="checkbox" name='Scott' value='Scott' id='Scott' className='check' />
@@ -61,27 +58,7 @@ const PaginaProducto = () => {
                             </div>
                         </div>
 
-                        <div className="filtro2">
-                            <h1>Color:</h1>
-                            <div className='label-check'>
-                                <input type="checkbox" name='Negro' value='Negro' id='Negro' className='check' />
-                                <label>NEGRO</label>
-                            </div>
-                            <div className='label-check'>
-                                <input type="checkbox" name='Rojo' value='Rojo' id='Rojo' className='check' />
-                                <label>ROJO</label>
-                            </div>
-                            <div className='label-check'>
-                                <input type="checkbox" name='Azul' value='Azul' id='Azul' className='check' />
-                                <label>AZUL</label>
-                            </div>
-                            <div className='label-check'>
-                                <input type="checkbox" name='Blanco' value='Blanco' id='Blanco' className='check' />
-                                <label>BLANCO</label>
-                            </div>
-                        </div>
-
-                        <div className="filtro3">
+                        <div className="filtro">
                             <h1>Talla:</h1>
                             <div className='label-check'>
                                 <input type="checkbox" name='XS' value='BXS' id='XS' className='check' />
@@ -106,6 +83,46 @@ const PaginaProducto = () => {
                             <div className='label-check'>
                                 <input type="checkbox" name='XXL' value='XXL' id='XXL' className='check' />
                                 <label>XXL</label>
+                            </div>
+                        </div>
+
+                        <div className="filtro">
+                            <h1>Tipo:</h1>
+                            <div className='label-check'>
+                                <input type="checkbox" className='check' />
+                                <label>RUTA</label>
+                            </div>
+                            <div className='label-check'>
+                                <input type="checkbox" className='check' />
+                                <label>MONTAÑA</label>
+                            </div>
+                            <div className='label-check'>
+                                <input type="checkbox" className='check' />
+                                <label>BMX</label>
+                            </div>
+                            <div className='label-check'>
+                                <input type="checkbox" className='check' />
+                                <label>HYBRIDAS</label>
+                            </div>
+                        </div>
+
+                        <div className="filtro">
+                            <h1>Color:</h1>
+                            <div className='label-check'>
+                                <input type="checkbox" className='check' />
+                                <label>NEGRO</label>
+                            </div>
+                            <div className='label-check'>
+                                <input type="checkbox" className='check' />
+                                <label>ROJO</label>
+                            </div>
+                            <div className='label-check'>
+                                <input type="checkbox" className='check' />
+                                <label>AZUL</label>
+                            </div>
+                            <div className='label-check'>
+                                <input type="checkbox" className='check' />
+                                <label>BLANCO</label>
                             </div>
                         </div>
 

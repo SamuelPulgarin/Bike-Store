@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
 import { Home } from "./pages/Home";
 import "./assets/css/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -6,37 +7,49 @@ import Carrito from "./pages/Carrito.jsx";
 import Productos from "./pages/Productos.jsx";
 import { SignUp } from "./pages/SignUp";
 import { SignIn } from "./pages/SignIn";
-import { SuccessModal } from "./components/Modal/SuccessModal";
 import { Loader } from "./components/Loader/Loader";
-import { useState } from "react";
+import Detalles from "./pages/Detalles";
+import { Admin } from "./pages/Admin";
 
+
+
+/*ja */
 function App() {
-  const [isLoader, setIsLoader] = useState(true);
-  setTimeout(() => {
-    setTimeout(() => {
-      setIsLoader(false);
-    }, 1000);
-  },);
+    const [loading, setLoading] = useState(true);
 
-  return (
-    <>
-      {isLoader ? (
-        <Loader />
-      ) : (
+    window.onload = () => {
+        setLoading(false)
+    };
+
+    return (
         <>
-          <Router>
-            <Routes>
-              <Route path="/Home" element={<Home />} />
-              <Route path="/Carrito" element={<Carrito />} />
-              <Route path="/productos" element={<Productos />} />
-              <Route path="/signUp" element={<SignUp />} />
-              <Route path="/signIn" element={<SignIn />} />
-            </Routes>
-          </Router>
+            {loading ? (
+                <Loader />
+            ) : (
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/Carrito" element={<Carrito />} />
+                        <Route path="/productos" element={<Productos />} />
+                        <Route path="/signUp" element={<SignUp />} />
+                        <Route path="/signIn" element={<SignIn />} />
+                        <Route path="/Detalles" element={<Detalles />} />
+                        <Route path="/Admin" element={<Admin/>}/>
+                    </Routes>
+                </Router>
+            )}
         </>
-      )}
-    </>
-  );
+    );
+
+    //Metodo 2
+    // const [domLoaded, setDomLoaded] = useState(false);
+
+    // useEffect(() => {
+    //     const timeout =setTimeout(() => {
+    //         setDomLoaded(true);
+    //     }, 2000);
+    //     return () => clearTimeout(timeout);
+    // },[])
 }
 
 export default App;

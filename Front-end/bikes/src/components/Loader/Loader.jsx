@@ -2,7 +2,7 @@ import React from 'react'
 import '../../assets/css/Loader.css'
 
 export const Loader = () => {
-    
+    /*ja */
     return (
         <>
             <div className="containder_all_loader">
@@ -13,3 +13,4 @@ export const Loader = () => {
         </>
     )
 }
+

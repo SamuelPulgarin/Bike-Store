@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-
+/*ja */
 const Carrito = () => {
+
     return (
         <>
             <Navbar />

@@ -5,7 +5,7 @@ const initialState = {
     username: "",
     email: ""
 }
-
+/*ja */
 export const userSlide = createSlice({
     name: "user",
     initialState,
