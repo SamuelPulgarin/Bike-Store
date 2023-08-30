@@ -45,12 +45,14 @@ export const Crud = () => {
                                 <td>100</td>
                                 <td>$349.900</td>
                                 <td>
-                                    <button className='btn_crud'>
-                                        <img src={Editar} alt="editar" />
-                                    </button>
-                                    <button button className='btn_crud'>
-                                        <img src={Eliminar} alt="eliminar" />
-                                    </button >
+                                    <div className="container_btns_tabla">
+                                        <button className='btn_crud'>
+                                            <img src={Editar} alt="editar" />
+                                        </button>
+                                        <button button className='btn_crud'>
+                                            <img src={Eliminar} alt="eliminar" />
+                                        </button >
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -63,12 +65,14 @@ export const Crud = () => {
                                 <td>100</td>
                                 <td>$349.900</td>
                                 <td>
-                                    <button className='btn_crud'>
-                                        <img src={Editar} alt="editar" />
-                                    </button>
-                                    <button button className='btn_crud'>
-                                        <img src={Eliminar} alt="eliminar" />
-                                    </button >
+                                    <div className="container_btns_tabla">
+                                        <button className='btn_crud'>
+                                            <img src={Editar} alt="editar" />
+                                        </button>
+                                        <button button className='btn_crud'>
+                                            <img src={Eliminar} alt="eliminar" />
+                                        </button >
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -81,12 +85,14 @@ export const Crud = () => {
                                 <td>100</td>
                                 <td>$349.900</td>
                                 <td>
-                                    <button className='btn_crud'>
-                                        <img src={Editar} alt="editar" />
-                                    </button>
-                                    <button button className='btn_crud'>
-                                        <img src={Eliminar} alt="eliminar" />
-                                    </button >
+                                    <div className="container_btns_tabla">
+                                        <button className='btn_crud'>
+                                            <img src={Editar} alt="editar" />
+                                        </button>
+                                        <button button className='btn_crud'>
+                                            <img src={Eliminar} alt="eliminar" />
+                                        </button >
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
@@ -99,12 +105,14 @@ export const Crud = () => {
                                 <td>100</td>
                                 <td>$349.900</td>
                                 <td>
-                                    <button className='btn_crud'>
-                                        <img src={Editar} alt="editar" />
-                                    </button>
-                                    <button button className='btn_crud'>
-                                        <img src={Eliminar} alt="eliminar" />
-                                    </button >
+                                    <div className="container_btns_tabla">
+                                        <button className='btn_crud'>
+                                            <img src={Editar} alt="editar" />
+                                        </button>
+                                        <button button className='btn_crud'>
+                                            <img src={Eliminar} alt="eliminar" />
+                                        </button >
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
