@@ -4,20 +4,27 @@
    box-sizing: border-box; 
 }
 
-.carousel{
+.carousel-container{
     display: flex;
-    flex-direction: column;
     justify-content: center;
+}
+
+.carousel{
     padding: 5rem;
     background-color: #000;
     color: #fff;
-    height: 100vh;
+    height: 75vh;
     width: 100vw;
+
+    & h2{
+        margin-bottom: 2rem;
+        text-align: center;
+    }
 }
 
 .box{
     background-color: lightgreen;
-    height: 300px;
+    height: 250px;
 }
 
 .box h3{
@@ -34,4 +41,8 @@
 
 .slick-prev:before, .slick-next:before{
     font-size: 30px !important;
+}
+
+.slick-next{
+
 }

@@ -44,42 +44,45 @@ export const Carrusel = () => {
 
   return (
     <>
-      <div className="carousel">
-        <h2>Carousel de prueba</h2>
+      <div className="carousel-container">
+        <div className="carousel">
+          <h2>Carousel de prueba</h2>
 
-        <Slider {...settings}>
-          <div className="box">
-            <h3>1</h3>
-          </div>
-          <div className="box">
-            <h3>2</h3>
-          </div>
-          <div className="box">
-            <h3>3</h3>
-          </div>
-          <div className="box">
-            <h3>4</h3>
-          </div>
-          <div className="box">
-            <h3>5</h3>
-          </div>
-          <div className="box">
-            <h3>6</h3>
-          </div>
-          <div className="box">
-            <h3>7</h3>
-          </div>
-          <div className="box">
-            <h3>8</h3>
-          </div>
-          <div className="box">
-            <h3>9</h3>
-          </div>
-          <div className="box">
-            <h3>10</h3>
-          </div>
-        </Slider>
+          <Slider {...settings}>
+            <div className="box">
+              <h3>1</h3>
+            </div>
+            <div className="box">
+              <h3>2</h3>
+            </div>
+            <div className="box">
+              <h3>3</h3>
+            </div>
+            <div className="box">
+              <h3>4</h3>
+            </div>
+            <div className="box">
+              <h3>5</h3>
+            </div>
+            <div className="box">
+              <h3>6</h3>
+            </div>
+            <div className="box">
+              <h3>7</h3>
+            </div>
+            <div className="box">
+              <h3>8</h3>
+            </div>
+            <div className="box">
+              <h3>9</h3>
+            </div>
+            <div className="box">
+              <h3>10</h3>
+            </div>
+          </Slider>
+        </div>
       </div>
+
     </>
   );
 };
