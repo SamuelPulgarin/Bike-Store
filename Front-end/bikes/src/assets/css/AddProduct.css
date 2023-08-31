@@ -4,26 +4,129 @@
     box-sizing: border-box;
 }
 
-.overlay_add_product{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
+.container_add_product{
     width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    transition: all 500ms;
-    z-index: 1;
-    overflow: hidden;
+    height: 100%;
+    padding: 5rem 1rem;
 }
 
-.add_product_content{
+form .container_info_product{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    width: 60rem;
-    height: 40rem;
-    border-radius: 20px;
-    background-color: #fff;
+}
+
+form .container_info_product input {
+    margin-top: 20px;
+    padding: 1.2rem;
+    border-radius: 10px;
+    width: 35rem;
+    border: none;
+    background-color: rgb(236, 236, 236);
+}
+
+form .container_info_product input::placeholder{
+    font-weight: lighter;
+}
+
+/*Container selects*/
+
+.container_add_select {
+    display: flex;
+    justify-content: space-around;
+    max-width: 35rem;
+    margin-top: 2rem;
+}
+
+/*Select AddColor*/
+
+.select_add_color select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    background: #ffffff;
+    color: #000;
+    background-image: none;
+    flex: 1;
+    padding: 0 1em;
+    cursor: pointer;
+    font-size: 1em;
+    border: 1px solid  #000;
+    border-radius: 7px;
+}
+
+.select_add_color select::-ms-expand{
+    display: none;
+}
+
+.select_add_color{
+    position: relative;
+    display: flex;
+    width: 15em;
+    height: 3em;
+    line-height: 3;
+    background: #262626;
+    overflow: hidden;
+    border-radius: 0.5em;
+}
+
+.select_add_color::after{
+    content: '\25BC';
+    color: #FFF;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background:#262626;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+
+/*Select add Talla*/
+
+.select_add_talla select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    background: #ffffff;
+    color: #000;
+    background-image: none;
+    flex: 1;
+    padding: 0 1em;
+    cursor: pointer;
+    font-size: 1em;
+    border: 1px solid  #000;
+    border-radius: 7px;
+}
+
+.select_add_talla select::-ms-expand{
+    display: none;
+}
+
+.select_add_talla{
+    position: relative;
+    display: flex;
+    width: 15em;
+    height: 3em;
+    line-height: 3;
+    background: #262626;
+    overflow: hidden;
+    border-radius: 0.5em;
+}
+
+.select_add_talla::after{
+    content: '\25BC';
+    color: #FFF;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background:#262626;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
 }

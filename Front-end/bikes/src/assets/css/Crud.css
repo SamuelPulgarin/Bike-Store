@@ -189,3 +189,18 @@ td{
         gap: 1rem;
     }
 }
+
+@media(max-width:560px){
+    .container_btn_products button {
+        margin-left: 1.5rem;
+        padding: 15px 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #262626;
+        color: white;
+        cursor: pointer;
+        outline: auto;
+        transition: 0.5s;
+        font-size: 0.7rem;
+    }
+}

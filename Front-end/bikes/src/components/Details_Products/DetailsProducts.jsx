@@ -48,7 +48,6 @@ export const DetailsProducts = () => {
                                     <option value="XXL">XXL</option>
                                 </select>
                             </div>
-
                         </div>
                     </div>
                 </div>

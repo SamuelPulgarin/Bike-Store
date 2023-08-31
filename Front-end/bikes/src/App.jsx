@@ -10,7 +10,7 @@ import { SignIn } from "./pages/SignIn";
 import { Loader } from "./components/Loader/Loader";
 import Detalles from "./pages/Detalles";
 import { Admin } from "./pages/Admin";
-import { AddProduct } from "./components/AdminView/AddProduct";
+import { Cproduct } from "./pages/Cproduct";
 
 
 
@@ -36,7 +36,7 @@ function App() {
                         <Route path="/signIn" element={<SignIn />} />
                         <Route path="/Detalles" element={<Detalles />} />
                         <Route path="/Admin" element={<Admin/>}/>
-                        <Route path="/Add" element={<AddProduct/>} />
+                        <Route path="/Add" element={<Cproduct/>} />
                     </Routes>
                 </Router>
             )}
