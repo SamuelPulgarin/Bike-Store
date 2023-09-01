@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Home } from "./pages/Home";
 import "./assets/css/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -15,10 +14,10 @@ import { Admin } from "./pages/Admin";
 
 /*ja */
 function App() {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     window.onload = () => {
-        setLoading(false)
+        setLoading(true)
     };
 
     return (

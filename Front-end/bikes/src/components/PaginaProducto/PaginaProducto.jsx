@@ -1,33 +1,11 @@
+import React, { useEffect,useState } from "react";
 import "../../assets/css/PaginaProducto.css";
-import Carta from './Carta';
+import { filter } from "../../hooks/useFilter"
+
 /*ja */
 const PaginaProducto = () => {
 
-    const [marcaSeleccionada, setMarcaSeleccionada] = useState({
-        giant: false,
-    });
     
-    const [datosFiltrados, setDatosFiltrados] = useState([]);
-    
-    const handleOnCheckbox = e => {
-        setMarcaSeleccionada({
-            ...marcaSeleccionada,
-            [e.target.value]: e.target.checked,
-        });
-    
-        if (e.target.checked) {
-            const resultadoMarca = data.filter(item => item.marca === e.target.value)
-    
-            setDatosFiltrados([
-                ...datosFiltrados,
-                resultadoMarca
-            ])
-        } else {
-            const resultadoMarca = datosFiltrados.filter(item => item.marca !== e.target.value)
-    
-            setDatosFiltrados([...resultadoMarca]);
-        }
-    }
 
     return (
         <>
@@ -41,20 +19,28 @@ const PaginaProducto = () => {
                         <div className='filtro'>
                             <h1>Marca:</h1>
                             <div className='label-check'>
-                                <input onChange={handleOnCheckbox} type="checkbox" name='Scott' value='Scott' id='Scott' className='check' />
-                                <label htmlFor='scott'>SCOTT</label>
+                                <a href="#" className='category_item' category='Scott'>
+                                <input  type="checkbox"/>
+                                <label htmlFor='Scott'>Scott</label>
+                                </a>
                             </div>
                             <div className='label-check'>
-                                <input onChange={handleOnCheckbox} type="checkbox" name='GW' value='GW' id='GW' className='check' />
+                                <a href="#" className='category_item' category='GW'>
+                                <input  type="checkbox" />
                                 <label htmlFor='GW'>GW</label>
+                                </a>
                             </div>
                             <div className='label-check'>
-                                <input onChange={handleOnCheckbox} type="checkbox" name='Giant' value='Giant' id='Giant' className='check' />
-                                <label htmlFor='Giant'>GIANT</label>
+                                <a href="#" className='category_item' category='Giant'>
+                                <input  type="checkbox" />
+                                <label htmlFor='Giant'>Giant</label>
+                                </a>
                             </div>
                             <div className='label-check'>
-                                <input onChange={handleOnCheckbox} type="checkbox" name='Trek' value='Trek' id='Trek' className='check' />
-                                <label htmlFor='Trek'>TREK</label>
+                                <a href="#" className='category_item' category='Trek'>
+                                <input  type="checkbox" />
+                                <label htmlFor='Trek'>Trek</label>
+                                </a>
                             </div>
                         </div>
 
@@ -102,7 +88,7 @@ const PaginaProducto = () => {
                             </div>
                             <div className='label-check'>
                                 <input type="checkbox" className='check' />
-                                <label>HYBRIDAS</label>
+                                <label>HiBRIDAS</label>
                             </div>
                         </div>
 
