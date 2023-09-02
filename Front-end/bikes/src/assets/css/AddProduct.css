@@ -4,10 +4,36 @@
     box-sizing: border-box;
 }
 
-.container_add_product{
+.background_add_product{
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 5rem 1rem;
+    background-image: url(../img/fondo5.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container_add_product{
+    width: 70rem;
+    height: 63rem;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+    border-radius: 1rem;
+    padding: 3rem 1rem;
+    background-color: #ffffff;
+}
+
+.container_form_add h1{
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container_form_add form{
+    display: flex;
+    justify-content: space-around;
 }
 
 form .container_info_product{
@@ -19,9 +45,20 @@ form .container_info_product input {
     margin-top: 20px;
     padding: 1.2rem;
     border-radius: 10px;
-    width: 35rem;
+    max-width: 25rem;
     border: none;
     background-color: rgb(236, 236, 236);
+}
+
+form .container_info_product input[type="number"]::-webkit-inner-spin-button,
+form .container_info_product input[type="number"]::-webkit-outer-spin-button{
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+form .container_info_product input[type="number"]{
+    appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 form .container_info_product input::placeholder{
@@ -31,15 +68,13 @@ form .container_info_product input::placeholder{
 /*Container selects*/
 
 .container_add_select {
-    display: flex;
-    justify-content: space-around;
-    max-width: 35rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 30rem;
     margin-top: 2rem;
 }
 
-/*Select AddColor*/
-
-.select_add_color select{
+.select_add select{
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -56,22 +91,23 @@ form .container_info_product input::placeholder{
     border-radius: 7px;
 }
 
-.select_add_color select::-ms-expand{
+.select_add select::-ms-expand{
     display: none;
 }
 
-.select_add_color{
+.select_add{
+    margin: 0.5rem;
     position: relative;
     display: flex;
-    width: 15em;
-    height: 3em;
+    width: 14rem;
+    height: 3rem;
     line-height: 3;
     background: #262626;
     overflow: hidden;
-    border-radius: 0.5em;
+    border-radius: 0.5rem;
 }
 
-.select_add_color::after{
+.select_add::after{
     content: '\25BC';
     color: #FFF;
     position: absolute;
@@ -84,49 +120,117 @@ form .container_info_product input::placeholder{
     transition: .25s all ease;
 }
 
-/*Select add Talla*/
+/*Textarea*/
 
-.select_add_talla select{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline: 0;
-    box-shadow: none;
-    background: #ffffff;
-    color: #000;
-    background-image: none;
-    flex: 1;
-    padding: 0 1em;
-    cursor: pointer;
-    font-size: 1em;
-    border: 1px solid  #000;
-    border-radius: 7px;
+.container_info_product label{
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
-.select_add_talla select::-ms-expand{
-    display: none;
+.container_info_product textarea {
+    max-width: 24rem;
+    max-height: 12rem;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgb(236, 236, 236);
+    outline: none;
+    padding: 1.1rem;
+    font-size: 1.1rem;
+    overflow: auto;
+    box-sizing: border-box;
+    resize: none;
 }
 
-.select_add_talla{
-    position: relative;
+/*Add IMG*/
+
+.img_add{
     display: flex;
-    width: 15em;
-    height: 3em;
-    line-height: 3;
-    background: #262626;
-    overflow: hidden;
-    border-radius: 0.5em;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.select_add_talla::after{
-    content: '\25BC';
-    color: #FFF;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 1em;
-    background:#262626;
+.container_img_add{
+    outline: auto;
+}
+
+.container_img_add img{
+    width: 25rem;
+    padding: 1rem;
+}
+
+.file-upload {
+    margin-top: 2rem;
+    display: inline-block;
+    position: relative;
+    font-size: 16px;
     cursor: pointer;
-    pointer-events: none;
-    transition: .25s all ease;
+}
+
+.img_add .file-upload input[type="file"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+input[type="file"]:hover {
+    background-color: #1b1b1b;
+}
+
+.img_add label{
+    margin-top: 25px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #262626;
+    color: white;
+    cursor: pointer;
+    outline: auto;
+    transition: 0.5s;
+    font-size: 18px;
+}
+
+.img_add label:hover{
+    background-color: #1b1b1b;
+}
+
+.img_add .container_btns_add {
+    margin-left: 5rem;
+    margin-top: 20rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container_btns_add .btn_cancel_add{
+    margin: 30px 10px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FF0000;
+    color: white;
+    cursor: pointer;
+    outline: auto;
+    transition: 0.5s;
+    font-size: 18px;
+}
+
+.container_btns_add .btn_add_product{
+    margin: 30px 10px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #262626;
+    color: white;
+    cursor: pointer;
+    outline: auto;
+    transition: 0.5s;
+    font-size: 15px;
 }
