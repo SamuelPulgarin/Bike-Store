@@ -5,6 +5,7 @@ import algo from '../../../uploads/1692995725372-Bicicleta Scott Addict RC 10 20
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { Vista } from './vista'
 
 
 export const AddProduct = () => {
@@ -12,23 +13,22 @@ export const AddProduct = () => {
     const schema = yup.object().shape({
         id: yup.number().required('Este campo es requerido'),
         nombre: yup.string().required('Este campo es requerido'),
-        imagen: yup.string()
     })
 
     const { register, handleSubmit } = useForm({
         resolver: yupResolver(schema),
     });
 
-    const [selectedImage, setSelectedImage] = useState(null);
+    // const [imagePreview, setImagePreview] = useState(null);
 
-    const handleFileChange = (e) => {
-        const file = e.target.files[0]
-        if (file) {
-            const imageUrl = URL.createObjectURL(file);
-            setSelectedImage(imageUrl);
-            console.log(imageUrl);
-        }
-    }
+    // const handleImageChange = (e) => {
+    //   const file = e.target.files[0];
+  
+    //   if (file) {
+    //     const imageUrl = URL.createObjectURL(file);
+    //     setImagePreview(imageUrl);
+    //   }
+    // };
 
     async function add(product) {
         console.log(product);
@@ -102,15 +102,15 @@ export const AddProduct = () => {
                             </div>
 
                             <div className="img_add">
-                                <div className="container_img_add">
-                                    <img src={selectedImage ? selectedImage : algo} alt="bike" />
+                                {/* <div className="container_img_add">
+                                    {imagePreview && <img src={imagePreview} alt="preview" />}
                                 </div>
 
                                 <div className="file-upload">
-                                    <input name='imagen' type="file" id="file-input" accept='image/*' onChange={handleFileChange} {...register('imagen')} />
+                                    <input name='imagen' type="file" id="file-input" accept='image/*' onChange={handleImageChange}/>
                                     <label htmlFor="file-input">Seleccionar archivo</label>
-                                </div>
-
+                                </div> */}
+                                <Vista/>
 
                                 <div className="container_btns_add">
                                     <button className='btn_cancel_add'>Cancelar</button>

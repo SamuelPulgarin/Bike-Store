@@ -11,6 +11,7 @@ import { Loader } from "./components/Loader/Loader";
 import Detalles from "./pages/Detalles";
 import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
+import { Vista } from "./components/AdminView/vista";
 
 
 
@@ -37,6 +38,7 @@ function App() {
                         <Route path="/Detalles" element={<Detalles />} />
                         <Route path="/Admin" element={<Admin/>}/>
                         <Route path="/Add" element={<Cproduct/>} />
+                        <Route path="/ver" element={<Vista/>}/>
                     </Routes>
                 </Router>
             )}

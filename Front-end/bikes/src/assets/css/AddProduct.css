@@ -154,7 +154,7 @@ form .container_info_product input::placeholder{
 }
 
 .container_img_add{
-    outline: auto;
+    outline: none;
 }
 
 .container_img_add img{
