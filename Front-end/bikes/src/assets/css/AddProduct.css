@@ -163,6 +163,7 @@ form .container_info_product input::placeholder{
 }
 
 .file-upload {
+    margin-block-end: 0rem;
     margin-top: 2rem;
     display: inline-block;
     position: relative;
@@ -209,6 +210,14 @@ input[type="file"]:hover {
     justify-content: space-around;
 }
 
+/* .container_btns_add{
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    left: 57rem;
+    top: 60rem;
+} */
+
 .container_btns_add .btn_cancel_add{
     margin: 30px 10px;
     padding: 15px 40px;
@@ -233,4 +242,9 @@ input[type="file"]:hover {
     outline: auto;
     transition: 0.5s;
     font-size: 15px;
+}
+
+.error_add{
+    color: red;
+    font-size: 0.9rem;
 }
