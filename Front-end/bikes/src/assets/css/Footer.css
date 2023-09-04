@@ -32,17 +32,30 @@
       #fcca13 100%);
 }
 
-.fa-twitter:hover {
-  color: #249ef1;
+.Follow_us .x{
+ height: 38px;
+ width: 38px;
+ margin-top: 10px;
+ background-color: transparent;
 }
 
 .fa-youtube:hover {
   color: #ff0909;
 }
 
-.Follow_us:hover i{
+.Follow_us:hover i {
   filter: blur(2px);
 }
+
+.Follow_us:hover .x {
+  filter: blur(2px);
+}
+
+
+.Follow_us .x:hover{
+  transform: translateY(-3px) scale(1.05);
+  filter: none;
+} 
 
 .Follow_us a i:hover{
   transform: translateY(-3px) scale(1.05);
