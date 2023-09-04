@@ -36,7 +36,11 @@
  height: 38px;
  width: 38px;
  margin-top: 10px;
- background-color: transparent;
+}
+
+.Follow_us .x:hover{
+  background-color: #000;
+  border-radius: 100%;
 }
 
 .fa-youtube:hover {
