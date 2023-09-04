@@ -47,7 +47,14 @@
     padding: 20px;
     transform: scale(1.8);
     cursor: pointer;
+} 
+
+.label-check a{
+    font-size: 110%;
+    color: white;
+    cursor: pointer;
 }
+
 
 @media screen and (max-width: 1250px) {
 

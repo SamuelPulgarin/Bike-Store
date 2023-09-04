@@ -19,14 +19,14 @@ const Carta = () => {
   return (
     <>
       <div className="contenedor-cartas-producto">
-        <h1>Bicicletas { }:</h1>
+        <h1>Bicicletas {}:</h1>
         <div className="cartas-producto">
           {!dataProduct
             ? "Cargando..."
             :dataProduct.map((data) => {
               return (
                 <>
-                  <div className="cartap" key={data.id} category={data.categoria}>
+                  <div className="cartap" key={data.id} category={data.marca} type={data.talla} itemType={data.categoria} typeof={data.color}>
                     <img src={data.ruta} alt="" />
                     <div className="cartap-info">
                       <h5>{data.nombre}</h5>

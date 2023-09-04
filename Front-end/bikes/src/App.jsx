@@ -14,10 +14,10 @@ import { Admin } from "./pages/Admin";
 
 /*ja */
 function App() {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     window.onload = () => {
-        setLoading(true)
+        setLoading(false)
     };
 
     return (
