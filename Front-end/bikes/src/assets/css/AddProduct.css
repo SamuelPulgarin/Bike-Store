@@ -18,7 +18,7 @@
 
 .container_add_product{
     width: 70rem;
-    height: 63rem;
+    height: 65rem;
     margin-top: 6rem;
     margin-bottom: 4rem;
     border-radius: 1rem;
@@ -70,8 +70,13 @@ form .container_info_product input::placeholder{
 .container_add_select {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
     max-width: 30rem;
     margin-top: 2rem;
+}
+
+.container_add_select .container__select .error_add{
+    padding-left: 1rem;
 }
 
 .select_add select{
@@ -247,4 +252,12 @@ input[type="file"]:hover {
 .error_add{
     color: red;
     font-size: 0.9rem;
+}
+
+.img_add .error_add{
+    margin-top: 1rem;
+}
+
+.container_info_product .error_add{
+    padding-left: 0.8rem;
 }
