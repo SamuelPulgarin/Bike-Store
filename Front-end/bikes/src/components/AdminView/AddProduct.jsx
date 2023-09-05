@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import '../../assets/css/AddProduct.css'
-import defaultImage from '../../../uploads/1692995725372-Bicicleta Scott Addict RC 10 2023.jpg'
+import defaultImage from '../../assets/img/defaul.jpg'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
