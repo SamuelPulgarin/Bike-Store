@@ -1,0 +1,27 @@
+.price-container {
+    display: grid;
+    width: 300px;
+  
+    & hr {
+      width: 200px;
+    }
+  }
+  
+  #title-cart {
+    text-align: center;
+  }
+  
+  .sesion-price-container {
+    display: grid;
+    column-gap: 30px;
+  }
+  
+  .individual-sesion-price-container {
+    display: grid;
+    width: 200px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .individual-sesion-price-container p:last-child {
+    justify-self: end;
+  }

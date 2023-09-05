@@ -1,0 +1,10 @@
+.quantity-container{
+    position: relative;
+    padding-top: 6rem;
+    margin-left: 3rem;
+    width: 100%;
+
+    & h3{
+        margin: 10px;
+    }
+}
