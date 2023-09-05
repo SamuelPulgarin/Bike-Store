@@ -5,6 +5,7 @@ import defaultImage from '../../../uploads/1692995725372-Bicicleta Scott Addict 
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { useRef } from 'react'
 
 
 
@@ -25,7 +26,7 @@ export const AddProduct = () => {
             .test('fileType', 'Formato de archivo no válido', (value) => {
                 if (!value || value.length === 0) return true;
                 return (
-                    value && ['image/jpeg', 'image/jpg','image/png'].includes(value[0].type)
+                    value && ['image/jpeg', 'image/jpg', 'image/png'].includes(value[0].type)
                 );
             }),
         categoria: yup.string().required('Seleccione una Categoria'),
@@ -50,19 +51,24 @@ export const AddProduct = () => {
     const imageFile = watch('imagen'); // Nombre del campo del input type="file"
     const [imageUrl, setImageUrl] = useState(defaultImage);
 
+    const fileInputRef = useRef(null);
+
     const handleImageChange = (e) => {
-        const file = e.target.files[0];
+        const file = e.target.files[0]; // Obtiene el archivo seleccionado
+    
         if (file) {
             const reader = new FileReader();
             reader.onload = (e) => {
-                setImageUrl(e.target.result);
-                setValue('imagen', e.target.result);
+                setImageUrl(e.target.result); // Actualiza vista previa de la imagen
             };
             reader.readAsDataURL(file);
-            console.log(file)
+    
+            // Set the value of the input using the ref
+            fileInputRef.current.value = ''; // Se limpia
+            fileInputRef.current.files = e.target.files; // inserta el valor en el input
         }
-    }
-
+    };
+    
     async function add(product) {
         console.log(product)
     }
@@ -161,8 +167,10 @@ export const AddProduct = () => {
                                         type="file"
                                         id="imageFile"
                                         accept='image/jpeg, image/jpg, image/png'
+                                        ref={fileInputRef}
                                         {...register('imagen')}
-                                        onChange={handleImageChange}/>
+                                        onChange={handleImageChange}
+                                    />
                                     <label htmlFor="file-input">Seleccionar archivo</label>
                                 </div>
                                 <span className='error_add'>{errors.imagen?.message}</span>
