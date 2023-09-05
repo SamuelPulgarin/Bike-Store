@@ -17,7 +17,9 @@ const AmountPrice = () => {
                         <p>$50.000</p>
                     </div>
                 </div>
-                <hr />
+                <div className="line-price-container">
+                    <hr />
+                </div>
                 <div className="sesion-price-container">
                     <div className="individual-sesion-price-container">
                         <p>Descuentos: </p>
@@ -28,10 +30,14 @@ const AmountPrice = () => {
                         <p>$0</p>
                     </div>
                 </div>
-                <hr />
+                <div className="line-price-container">
+                    <hr />
+                </div>
                 <h3>TOTAL: $449.000</h3>
-                <br />
-                <button>Ir a Pagar</button>
+                <div className="button-price-container">
+                    <button><b>Ir a Pagar</b></button>
+                </div>
+                
             </div>
 
         </>

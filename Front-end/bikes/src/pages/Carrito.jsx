@@ -4,6 +4,7 @@ import Footer from '../components/Footer/Footer';
 import "../assets/css/ShoppingCart.css";
 import ListProducts from '../components/Shopping_Cart/ListProducts';
 import AmountPrice from '../components/Shopping_Cart/AmountPrice';
+import CartaProducto from '../components/Shopping_Cart/CartaProducto';
 
 /*ja */
 const Carrito = () => {
@@ -12,7 +13,13 @@ const Carrito = () => {
         <>
             <Navbar />
             <ListProducts></ListProducts>
-            <AmountPrice></AmountPrice>
+            <div className="shopping-card-container">
+                <div className="shopping-carts-container">
+                    <CartaProducto></CartaProducto>
+                </div>
+                <AmountPrice></AmountPrice>
+            </div>
+
 
             
 
