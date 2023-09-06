@@ -3,51 +3,16 @@ import { useState } from 'react'
 import '../../assets/css/AddProduct.css'
 import defaultImage from '../../assets/img/defaul.jpg'
 import { useForm } from 'react-hook-form'
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
 import { useRef } from 'react'
+import useValidationAddProduct from '../../hooks/useValidationAddProduct'
 
 
 
 export const AddProduct = () => {
 
-    const schema = yup.object().shape({
-        id: yup.number()
-            .typeError('Ingrese solo numeros')
-            .integer('Ingrese numeros enteros')
-            .positive('Ingrese numeros positivios')
-            .max(9999, 'Minimos 4 caracteres')
-            .required('Este campo es requerido'),
-        nombre: yup.string().required('Este campo es requerido'),
-        imagen: yup.mixed()
-            .test('file', 'Debe seleccionar una imagen', (value) => {
-                return value && value.length > 0;
-            })
-            .test('fileType', 'Formato de archivo no válido', (value) => {
-                if (!value || value.length === 0) return true;
-                return (
-                    value && ['image/jpeg', 'image/jpg', 'image/png'].includes(value[0].type)
-                );
-            }),
-        categoria: yup.string().required('Seleccione una Categoria'),
-        marca: yup.string().required('Seleccione una Marca'),
-        color: yup.string().required('Seleccione un Color'),
-        talla: yup.string().required('Seleccione una Talla'),
-        descripcion: yup.string().required('Es necesaria una Descripción'),
-        stock: yup.number()
-            .typeError('Ingrese solo numeros')
-            .integer('El stock debe ser un numero entero')
-            .positive('El stock debe ser un numero positivo')
-            .required('Este campo es requerido'),
-        precio: yup.number()
-            .typeError('Ingrese solo numeros')
-            .positive('El precio debe ser un numero positivo')
-            .required('Este campo es requerido')
-    })
+    const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
+    const { ID, NOMBRE } = useValidationAddProduct()
 
-    const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm({
-        resolver: yupResolver(schema)
-    });
     const imageFile = watch('imagen'); // Nombre del campo del input type="file"
     const [imageUrl, setImageUrl] = useState(defaultImage);
 
@@ -55,23 +20,41 @@ export const AddProduct = () => {
 
     const handleImageChange = (e) => {
         const file = e.target.files[0]; // Obtiene el archivo seleccionado
-    
+
         if (file) {
             const reader = new FileReader();
             reader.onload = (e) => {
                 setImageUrl(e.target.result); // Actualiza vista previa de la imagen
             };
             reader.readAsDataURL(file);
-    
+
             // Set the value of the input using the ref
             fileInputRef.current.value = ''; // Se limpia
             fileInputRef.current.files = e.target.files; // inserta el valor en el input
         }
     };
-    
+
     async function add(product) {
-        console.log(product)
-    }
+        console.log(errors)
+        try {
+            const response = await fetch('http://localhost:3060/create-product', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(product)
+            });
+            if (response.ok) {
+                console.log('Producto Registrado exitosamente');
+            }
+            else {
+                console.log('Error agregar producto Front');
+            }
+        }
+        catch (error) {
+            console.error('Error del servidor', error);
+        };
+    };
 
     return (
         <>
@@ -82,11 +65,15 @@ export const AddProduct = () => {
                         <form method="POST" onSubmit={handleSubmit(add)} encType='multipart/form-data'>
                             <div className="container_info_product">
 
-                                <input type="number" name="id" placeholder="Codigo" {...register('id')} />
-                                <span className='error_add'>{errors.id?.message}</span>
+                                <input type="number" name="id" placeholder="Codigo" {...register('id', ID)} />
+                                {
+                                    errors.id && <span className='error_add'>{errors.id?.message}</span>
+                                }
 
-                                <input type="text" name="nombre" placeholder="Nombre Producto" {...register('nombre')} />
-                                <span className='error_add'>{errors.nombre?.message}</span>
+                                <input type="text" name="nombre" placeholder="Nombre Producto" {...register('nombre', NOMBRE)} />
+                                {
+                                    errors.nombre && <span className='error_add'>{errors.nombre?.message}</span>
+                                }
 
                                 <div className="container_add_select">
                                     <div className="container__select">
@@ -99,7 +86,9 @@ export const AddProduct = () => {
                                                 <option value="Hibridas">Hibridas</option>
                                             </select>
                                         </div>
-                                        <span className='error_add'>{errors.categoria?.message}</span>
+                                        {
+                                            errors.categoria && <span className='error_add'>{errors.categoria?.message}</span>
+                                        }
                                     </div>
 
                                     <div className="container__select">

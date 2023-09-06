@@ -16,10 +16,10 @@ import { Vista } from "./components/AdminView/vista";
 
 /*ja */
 function App() {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     window.onload = () => {
-        setLoading(false)
+        setLoading(true)
     };
 
     return (

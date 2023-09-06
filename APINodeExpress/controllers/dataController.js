@@ -259,6 +259,9 @@ const addProduct = async (req, res) => {
                 .json({ error: "Error al registrar el producto" });
             }
 
+
+
+            
             console.log('casi termino')
           }
         );
@@ -270,6 +273,7 @@ const addProduct = async (req, res) => {
     res.status(201).json({ message: "Imagen y producto subidos exitosamente" });
   } catch (error) {
     console.log(error);
+    res.status(500).json({error: "Error en el servidor"})
   }
 };
 
