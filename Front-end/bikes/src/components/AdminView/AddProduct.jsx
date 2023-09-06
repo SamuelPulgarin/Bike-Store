@@ -71,7 +71,25 @@ export const AddProduct = () => {
     
     async function add(product) {
         console.log(product)
-    }
+        try {
+            const response = await fetch('http://localhost:3060/create-product',{
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(product)
+            });
+            if(response.ok){
+                console.log('Producto Registrado exitosamente');
+            }
+            else{
+                console.log('Error agregar producto Front');
+            }
+        } 
+        catch (error) {
+            console.error('Error del servidor',error);
+        };
+    };
 
     return (
         <>
@@ -82,7 +100,7 @@ export const AddProduct = () => {
                         <form method="POST" onSubmit={handleSubmit(add)} encType='multipart/form-data'>
                             <div className="container_info_product">
 
-                                <input type="number" name="id" placeholder="Codigo" {...register('id')} />
+                                <input type="number" name="id" placeholder="Codigo" {...register('id',)} />
                                 <span className='error_add'>{errors.id?.message}</span>
 
                                 <input type="text" name="nombre" placeholder="Nombre Producto" {...register('nombre')} />
