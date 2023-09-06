@@ -18,6 +18,27 @@ const getProducts = (req, res) => {
   );
 };
 
+const getProductsByMarca = async(req, res) =>{
+
+  const marca = req.params.marca
+
+  try {
+    // Realiza una consulta a la base de datos para obtener el producto por su Marca
+    const product = await pool.query("SELECT * FROM producto WHERE marca = $1", [marca]);
+
+    if (product.rows.length === 0) {
+      return res.status(404).json({ error: "Producto no encontrado" });
+    }
+
+    res.status(200).json(product.rows[0]); // Devuelve los productos encontrado
+  } catch (error) {
+    console.error("Error al obtener producto por su Marca", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+
+  pool.query
+}
+
 /*const getImages = (req, res) => {
   pool.query("SELECT * FROM imagenes", (error, result) => {
     if (error) {
@@ -252,6 +273,27 @@ const addProduct = async (req, res) => {
   }
 };
 
+const deleteProduct = async(req, res) =>{
+
+  const productId = parseInt(req.params.id);
+
+  try{
+
+    //Eliminar un producto por su id en la base de datos
+    const results = await pool.query("DELETE FROM producto WHERE id = $1", [productId]);
+
+    if(results.rowCount === 1){
+      res.status(200).json({ Message: 'Producto eliminado con exito'});
+    }else {
+      res.status(404).json({Message: 'Producto no encontrado'});
+    }
+  } catch(error){
+    console.error("Error al eliminar el producto", error);
+    res.status(500).json({error: 'Algo ha ocurrido cuando se ha intentado eliminar el recurso'});
+  }
+
+}
+
 module.exports = {
   getProducts,
   uploadImage,
@@ -259,4 +301,6 @@ module.exports = {
   registrerUser,
   inicioSesion,
   addProduct,
+  getProductsByMarca,
+  deleteProduct,
 };

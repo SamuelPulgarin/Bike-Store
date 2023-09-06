@@ -5,6 +5,7 @@ const yaml = require('js-yaml');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs')
+const path = require('path');
 
 //Dependencia de json npm install body-parser
 app.use(express.json());
@@ -13,13 +14,14 @@ app.use(bodyParser.urlencoded({ extended: true })); //el middleware body-parser 
 //app.use('/', dataRoutes);
 //app.use('/getPersonas', dataRoutes);
 
-
 // Configurar CORS para permitir solicitudes desde localhost:3000
 const corsOptions = {
     origin: 'http://localhost:5173',
 };
 app.use(cors(corsOptions));
 
+// ruta estatica
+app.use(express.static(path.join(__dirname, 'uploads')));
 
 //configuracion de swagger
 const swaggerDocument = yaml.load(fs.readFileSync('./swagger.yaml', 'utf8'));
@@ -37,4 +39,8 @@ app.listen(puerto, () =>{
 });
 
 
+
+
+
 //Guardar imagenes en la base de datos 
+
