@@ -67,7 +67,7 @@
 }
 
 .container_all_details .container__details .container_info_details .precio{
-    background-color: #F4FF7B;
+    background-color: #ffbc66;
 }
 
 .container_info_details .title-description{
@@ -88,21 +88,22 @@
     margin-top: 3rem;
 }
 
-#colores{
+#colores {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     outline: 0;
     box-shadow: none;
-    border: 0!important;
-    background:  #262626;
-    color: #FFF;
+    background: #ffffff;
+    color: #000;
     background-image: none;
     flex: 1;
     padding: 0 1em;
-    color: #fff;
+    color: #000;
     cursor: pointer;
     font-size: 1em;
+    border: 1px solid  #cb7506;
+    border-radius: 7px;
 }
 
 #colores::-ms-expand{
@@ -120,21 +121,21 @@
     border-radius: 0.5em;
 }
 
-.select_color::after{
+.select_color::after {
     content: '\25BC';
     color: #FFF;
     position: absolute;
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: #262626;
+    background:#cb7506;
     cursor: pointer;
     pointer-events: none;
     transition: .25s all ease;
 }
 
 .select_color:hover::after{
-    color: #0084ff;
+    color: #000;
 }
 
 /*select tallas*/
@@ -145,15 +146,16 @@
     appearance: none;
     outline: 0;
     box-shadow: none;
-    border: 0!important;
-    background:  #262626;
-    color: #FFF;
+    background: #ffffff;
+    color: #000;
     background-image: none;
     flex: 1;
     padding: 0 1em;
-    color: #fff;
+    color: 000;
     cursor: pointer;
     font-size: 1em;
+    border: 1px solid  #cb7506;
+    border-radius: 7px;
 }
 
 #talla::-ms-expand{
@@ -178,7 +180,7 @@
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: #262626;
+    background:#cb7506;
     cursor: pointer;
     pointer-events: none;
     transition: .25s all ease;
