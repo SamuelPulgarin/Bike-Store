@@ -59,8 +59,8 @@ const Navbar = () => {
         <>
             <nav className="navbar">
                 <div className="logos">
-                    <a href="/home" ><img src={logo1} alt="Aqui va nuestro precioso loguito" id="logo1" /></a>
-                    <a href="/home" ><img src={logo2} alt="Aqui va nuestro precioso loguito" id="logo2" /></a>
+                    <a href="/" ><img src={logo1} alt="Aqui va nuestro precioso loguito" id="logo1" /></a>
+                    <a href="/" ><img src={logo2} alt="Aqui va nuestro precioso loguito" id="logo2" /></a>
                 </div>
                 <input type="checkbox" id="toggler" />
                 <label htmlFor="toggler"><i className="ri-menu-list"><img src={toggler} alt="toggler" /></i></label>
