@@ -32,23 +32,41 @@
       #fcca13 100%);
 }
 
-.fa-twitter:hover {
-  color: #249ef1;
+
+
+.logox{
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+}
+
+.logox:hover{
+  background-color: #000;
+  border-radius: 100%;
 }
 
 .fa-youtube:hover {
   color: #ff0909;
 }
 
-.Follow_us:hover i{
+ .Follow_us:hover i {
+  filter: blur(2px);
+} 
+.Follow_us:hover img{
   filter: blur(2px);
 }
 
-.Follow_us a i:hover{
+
+
+.Follow_us a  :hover{
   transform: translateY(-3px) scale(1.05);
   filter: none;
 } 
 
+.logox :hover {
+  transform: translateY(-3px) scale(1.05);
+  filter: none;
+} 
 
 
 .Follow_us {

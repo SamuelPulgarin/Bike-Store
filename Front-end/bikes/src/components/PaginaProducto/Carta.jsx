@@ -19,7 +19,7 @@ const Carta = () => {
   return (
     <>
       <div className="contenedor-cartas-producto">
-        <h1>Bicicletas {}:</h1>
+        <h1>Bicicletas {}</h1>
         <div className="cartas-producto">
           {!dataProduct
             ? "Cargando..."
