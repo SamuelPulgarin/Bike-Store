@@ -11,7 +11,7 @@ import useValidationAddProduct from '../../hooks/useValidationAddProduct'
 export const AddProduct = () => {
 
     const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
-    const { ID, NOMBRE } = useValidationAddProduct()
+    const { ID, NOMBRE, CATEGORIA, MARCA, COLOR, TALLA, DESCRIPCION, STOCK, PRECIO, IMAGEN } = useValidationAddProduct();
 
     const imageFile = watch('imagen'); // Nombre del campo del input type="file"
     const [imageUrl, setImageUrl] = useState(defaultImage);
@@ -35,7 +35,7 @@ export const AddProduct = () => {
     };
 
     async function add(product) {
-        console.log(errors)
+        console.log(product)
         try {
             const response = await fetch('http://localhost:3060/create-product', {
                 method: 'POST',
@@ -78,7 +78,7 @@ export const AddProduct = () => {
                                 <div className="container_add_select">
                                     <div className="container__select">
                                         <div className="select_add">
-                                            <select name="categoria" id="categoria_add" {...register('categoria')}>
+                                            <select name="categoria" id="categoria_add" {...register('categoria', CATEGORIA)}>
                                                 <option value="" selected disabled>Seleccionar Categoria</option>
                                                 <option value="Ruta">Ruta</option>
                                                 <option value="Montaña">Montaña</option>
@@ -93,7 +93,7 @@ export const AddProduct = () => {
 
                                     <div className="container__select">
                                         <div className="select_add">
-                                            <select name="marca" id="marca_add" {...register('marca')}>
+                                            <select name="marca" id="marca_add" {...register('marca', MARCA)}>
                                                 <option value="" selected disabled>Seleccionar Marca</option>
                                                 <option value="Scott">Scott</option>
                                                 <option value="GW">GW</option>
@@ -101,12 +101,14 @@ export const AddProduct = () => {
                                                 <option value="Trek">Trek</option>
                                             </select>
                                         </div>
-                                        <span className='error_add'>{errors.marca?.message}</span>
+                                        {
+                                            errors.marca && <span className='error_add'>{errors.marca?.message}</span>
+                                        }
                                     </div>
 
                                     <div className="container__select">
                                         <div className="select_add">
-                                            <select name="color" id="add_colores" {...register('color')}>
+                                            <select name="color" id="add_colores" {...register('color', COLOR)}>
                                                 <option value="" selected disabled>Seleccionar Color</option>
                                                 <option value="Negro">Negro</option>
                                                 <option value="Rojo">Rojo</option>
@@ -114,12 +116,14 @@ export const AddProduct = () => {
                                                 <option value="Blanco">Blanco</option>
                                             </select>
                                         </div>
-                                        <span className='error_add'>{errors.color?.message}</span>
+                                        {
+                                            errors.color && <span className='error_add'>{errors.color?.message}</span>
+                                        }
                                     </div>
 
                                     <div className="container__select">
                                         <div className="select_add">
-                                            <select name="talla" id="add_talla" {...register('talla')}>
+                                            <select name="talla" id="add_talla" {...register('talla', TALLA)}>
                                                 <option value="" selected disabled>Seleccionar Talla</option>
                                                 <option value="XS">XS</option>
                                                 <option value="S">S</option>
@@ -129,20 +133,28 @@ export const AddProduct = () => {
                                                 <option value="XXL">XXL</option>
                                             </select>
                                         </div>
-                                        <span className='error_add'>{errors.talla?.message}</span>
+                                        {
+                                            errors.talla && <span className='error_add'>{errors.talla?.message}</span>
+                                        }
                                     </div>
 
                                 </div>
 
                                 <label>Descripción:</label>
-                                <textarea name="descripcion" cols="30" rows="10" {...register('descripcion')}></textarea>
-                                <span className='error_add'>{errors.descripcion?.message}</span>
+                                <textarea name="descripcion" cols="30" rows="10" {...register('descripcion', DESCRIPCION)}></textarea>
+                                {
+                                    errors.descripcion && <span className='error_add'>{errors.descripcion?.message}</span>
+                                }
 
-                                <input type="number" name="stock" placeholder='Stock' {...register('stock')} />
-                                <span className='error_add'>{errors.stock?.message}</span>
+                                <input type="number" name="stock" placeholder='Stock' {...register('stock', STOCK)} />
+                                {
+                                    errors.stock && <span className='error_add'>{errors.stock?.message}</span>
+                                }
 
-                                <input type="number" name="precio" placeholder='Precio' {...register('precio')} />
-                                <span className='error_add'>{errors.precio?.message}</span>
+                                <input type="number" name="precio" placeholder='Precio' {...register('precio', PRECIO)} />
+                                {
+                                    errors.precio && <span className='error_add'>{errors.precio?.message}</span>
+                                }
 
                             </div>
 
@@ -157,12 +169,15 @@ export const AddProduct = () => {
                                         id="imageFile"
                                         accept='image/jpeg, image/jpg, image/png'
                                         ref={fileInputRef}
-                                        {...register('imagen')}
+                                        {...register('imagen',IMAGEN)}
                                         onChange={handleImageChange}
                                     />
                                     <label htmlFor="file-input">Seleccionar archivo</label>
                                 </div>
-                                <span className='error_add'>{errors.imagen?.message}</span>
+                                {
+                                    errors.imagen && <span className='error_add'>{errors.imagen?.message}</span>
+                                }
+
                                 <div className="container_btns_add">
                                     <button className='btn_cancel_add'>Cancelar</button>
                                     <button type='submit' className='btn_add_product'>Agregar Producto</button>
