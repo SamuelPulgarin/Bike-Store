@@ -32,6 +32,17 @@
       #fcca13 100%);
 }
 
+
+
+.logox{
+  width: 40px;
+  height: 40px;
+  margin-top: 8px;
+}
+
+.logox:hover{
+  background-color: #000;
+  border-radius: 100%;
 .Follow_us .x{
  height: 38px;
  width: 38px;
@@ -47,7 +58,10 @@
   color: #ff0909;
 }
 
-.Follow_us:hover i {
+ .Follow_us:hover i {
+  filter: blur(2px);
+} 
+.Follow_us:hover img {
   filter: blur(2px);
 }
 

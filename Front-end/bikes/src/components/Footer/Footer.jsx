@@ -3,6 +3,7 @@ import "../../assets/CSS/Footer.css";
 import Logo from "../../assets/img/Logo-BikeStore.svg";
 import Copy from "../../assets/img/IconoCopy.svg";
 import logox from "../../assets/img/Logo x.png"
+import Logox from "../../assets/img/Logo x.png"
 
 /*ja */
 
