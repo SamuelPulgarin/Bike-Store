@@ -20,6 +20,7 @@
 
 .fa-facebook:hover {
   color: #3b5999;
+  /* box-shadow:  0 0 60px #3b5999; */
 }
 
 .fa-instagram:hover {
@@ -30,9 +31,8 @@
       #c70996 0%,
       #eb0824 50%,
       #fcca13 100%);
+      /* box-shadow: 0 0 60px #c70996; */
 }
-
-
 
 .logox{
   width: 40px;
@@ -43,10 +43,12 @@
 .logox:hover{
   background-color: #000;
   border-radius: 100%;
+  /* box-shadow: 0 0 60px white; */
 }
 
 .fa-youtube:hover {
   color: #ff0909;
+  /* box-shadow: 0 0 60px #ff0909; */
 }
 
  .Follow_us:hover i {
@@ -292,6 +294,11 @@
   .Follow_us .fa-brands{
     font-size: 25px
   }
+
+  .logox{
+    width: 32px;
+    height: 32px;
+  }
 }
 
 /*IPhone XR*/
@@ -306,10 +313,6 @@
     font-size: 25px;
   }
 
-  /* .Follow_us {
-    margin-top: -13px;
-  } */
-
   .Copy h5{
     font-size: 17px;
   }
@@ -322,6 +325,10 @@
     width: 15px;
     margin-top: 8px;
   }
+  .logox{
+    width: 25px;
+    height: 25px;
+  }
 }
 
 /*Samsung Galaxy A51/71 and Facebook for Android v407 on Pixel 6*/
@@ -330,10 +337,6 @@
     height: 25vh;
     margin-right: 50px;
   }
-
-/* .Follow_us{
-  margin-right: -25px;
-} */
 
   .Follow_us h2 {
     font-size: 15px;
@@ -346,7 +349,6 @@
 
   .Copy h5{
     font-size: 14px;
-    /* margin-right: -10px; */
   }
 
   .Copy img{
@@ -395,6 +397,11 @@
 
   .Copy {
     margin-top: 7px;
+  }
+  .logox{
+    width: 30px;
+    height: 30px;
+    margin-top: 5px;
   }
 }
 
@@ -474,6 +481,10 @@
   .Copy {
     margin-top: 7px;
   }
+  .logox{
+    width: 25px;
+    height: 25px;
+  }
 }
 
 /*Samsung Galaxy S8+*/
@@ -485,6 +496,10 @@
   .Follow_us h2 {
     font-size: 18px;
     margin-top: 7px;
+  }
+  .logox{
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -517,5 +532,11 @@
 
   .Copy img{
     margin-top: 6px;
+  }
+
+  .logox{
+    width: 28px;
+    height: 28px;
+    margin-top: 2px;
   }
 }
