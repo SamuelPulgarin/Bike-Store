@@ -19,7 +19,7 @@ const Carta = () => {
   return (
     <>
       <div className="contenedor-cartas-producto">
-        <h1>Bicicletas {}:</h1>
+        <h1>Bicicletas {}</h1>
         <div className="cartas-producto">
           {!dataProduct
             ? "Cargando..."
@@ -27,7 +27,7 @@ const Carta = () => {
               return (
                 <>
                   <div className="cartap" key={data.id} category={data.marca} type={data.talla} itemType={data.categoria} typeof={data.color}>
-                    <img src={data.ruta} alt="" />
+                    <img src={data.ruta} alt="Bicicletas muy bonitas" />
                     <div className="cartap-info">
                       <h5>{data.nombre}</h5>
                     </div>

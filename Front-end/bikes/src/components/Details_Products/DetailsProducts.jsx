@@ -1,6 +1,7 @@
-import React from 'react'
+
+import "../../assets/css/DetailsProduct.css";
+import bike from "../../../uploads/1692995410871-Bicicleta Ruta Contessa Addict 35 2022.jpg";
 import '../../assets/css/DetailsProduct.css'
-import bike from '../../../uploads/1693001737344-Ãmonda SL 6.jpg'
 
 export const DetailsProducts = () => {
     return (
