@@ -39,7 +39,7 @@ const getProductsByMarca = async(req, res) =>{
 
 const getProductById = async(req, res) =>{
 
-  const id = req.params.marca
+  const id = req.params.id
 
   try{
     //Realiza una consulta a la base de datos para obtener el producto por su Marca
