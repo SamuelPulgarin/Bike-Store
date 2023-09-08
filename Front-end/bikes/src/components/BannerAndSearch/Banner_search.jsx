@@ -18,6 +18,11 @@ const Banner_search = () => {
         })
     }
 
+    const handleChange = e => {
+        setSearch(e.target.value);
+        console.log("Busqueda: " + e.target.value);
+    }
+
     useEffect(() => {
         peticiónGet();
     }, [])
@@ -27,7 +32,11 @@ const Banner_search = () => {
         <>
             <div className='Container'>
                 <div className='Search'>
-                    <input type="text" placeholder='Buscar' className='search' />
+                    <input type="text" 
+                    placeholder='Buscar' 
+                    className='search' 
+                    value={search} 
+                    onChange={handleChange}/>
                     <button id='lupa'><img src={Lupa} alt="Lupa" /></button>
                 </div>
             </div>
