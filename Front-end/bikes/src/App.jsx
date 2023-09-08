@@ -25,6 +25,7 @@ function App() {
       {loading ? (
         <Loader />
       ) : (
+
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
