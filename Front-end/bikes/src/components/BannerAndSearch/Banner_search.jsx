@@ -23,6 +23,8 @@ const Banner_search = () => {
         console.log("Busqueda: " + e.target.value);
     }
 
+   
+
     useEffect(() => {
         peticiónGet();
     }, [])
