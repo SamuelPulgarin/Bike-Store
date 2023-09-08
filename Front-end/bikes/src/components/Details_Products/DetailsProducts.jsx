@@ -1,9 +1,31 @@
-
 import "../../assets/css/DetailsProduct.css";
 import bike from "../../../uploads/1692995410871-Bicicleta Ruta Contessa Addict 35 2022.jpg";
 import '../../assets/css/DetailsProduct.css'
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 
 export const DetailsProducts = () => {
+
+    const { id } = useParams(); // Obtiene el valor de id desde la URL
+
+    // Lógica para cargar los detalles del producto con el id específico
+    useEffect(() => {
+      // Tu lógica para cargar los detalles del producto con el id
+        // Verifica si el valor de id es válido antes de realizar la solicitud GET
+    if (id) {
+        // Realiza la solicitud GET con el valor de id
+        fetch(`http://localhost:3060/get-products/${id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // Lógica para cargar los detalles del producto con el id específico
+          })
+          .catch((error) => {
+            console.error("Error al cargar los detalles del producto:", error);
+          });
+      }
+    }, [id]);
+
     return (
         <>
             <div className="container_all_details">

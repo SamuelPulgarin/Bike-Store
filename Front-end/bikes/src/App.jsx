@@ -34,7 +34,7 @@ function App() {
                         <Route path="/productos" element={<Productos />} />
                         <Route path="/signUp" element={<SignUp />} />
                         <Route path="/signIn" element={<SignIn />} />
-                        <Route path="/Detalles" element={<Detalles />} />
+                        <Route path="/Detalles/:id" element={<Detalles />} />
                         <Route path="/Admin" element={<Admin/>}/>
                         <Route path="/Add" element={<Cproduct/>} />
                         <Route path="/ver" element={<Vista/>}/>
