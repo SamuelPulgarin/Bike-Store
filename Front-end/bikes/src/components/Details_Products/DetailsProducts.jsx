@@ -1,9 +1,34 @@
-
 import "../../assets/css/DetailsProduct.css";
 // import bike from "../../../uploads/1692995410871-Bicicleta Ruta Contessa Addict 35 2022.jpg";
 import '../../assets/css/DetailsProduct.css'
+import React, { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+
 
 export const DetailsProducts = () => {
+
+    const { id } = useParams();
+    const [data, setData] = useState([]); // dentro del estado hay [] porque tiene que ser en un array porque es un objeto
+  
+    useEffect(() => {
+      if (id) {
+        fetch(`http://localhost:3060/get-products/${id}`)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(`Network response was not ok: ${response.statusText}`);
+            }
+            return response.json();
+          })
+          .then((productData) => {
+            setData(productData); // Asigna los datos a la variable data
+          })
+          .catch((error) => {
+            console.error("Error al cargar los detalles del producto:", error);
+          });
+      }
+    }, [id]);
+
     return (
         <>
             <div className="container_all_details">
@@ -18,35 +43,21 @@ export const DetailsProducts = () => {
                         </div>
                     </div>
                     <div className="container_info_details">
-                        <h1 className='title_details'>Bicicleta GW BMX Lancer</h1>
-                        <h2 className='precio'><span>Precio: $</span>349.000</h2>
+                        <h1 className='title_details'>{data.nombre}</h1>
+                        <h2 className='precio'><span>Precio: $</span>{data.precio}</h2>
                         <h2 className='title-description'>Descripción:</h2>
                         <div className="container_description">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident rerum dolore fugit in, ut iure qui enim aliquid alias aut doloribus maxime,
-                                commodi asperiores tenetur dolores a natus. Nisi, omnis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dolorum quaerat
-                                blanditiis rem quisquam minus harum magnam pariatur. Libero quo accusantium commodi exercitationem explicabo deleniti similique vero repellendus quis ipsam.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium minima est, similique voluptatum dignissimos reprehenderit cum doloribus quam.
-                                Omnis iste eum quas accusamus dolorum? At necessitatibus cumque velit saepe voluptas.</p>
+                            <p>{data.descripcion}</p>
                         </div>
                         <div className="container_select_details">
                             <div className="select_color">
                                 <select name="colores" id="colores">
-                                    <option selected disabled>Seleccionar Color</option>
-                                    <option value="Negro">Negro</option>
-                                    <option value="Rojo">Rojo</option>
-                                    <option value="Azul">Azul</option>
-                                    <option value="Blanco">Blanco</option>
+                                    {data.color && <option value={data.color}>{data.color}</option>}
                                 </select>
                             </div>
                             <div className="select_talla">
                                 <select name="talla" id="talla">
-                                    <option selected disabled>Seleccionar Talla</option>
-                                    <option value="XS">XS</option>
-                                    <option value="S">S</option>
-                                    <option value="M">M</option>
-                                    <option value="L">L</option>
-                                    <option value="Xl">XL</option>
-                                    <option value="XXL">XXL</option>
+                                    {data.talla && <option value={data.talla}>{data.talla}</option>}     
                                 </select>
                             </div>
                         </div>
