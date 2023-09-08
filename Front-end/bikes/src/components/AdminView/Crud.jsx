@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../../assets/css/Crud.css'
 import Lupa from '../../assets/img/Lupa.png'
 import Editar from '../../assets/img/Editar.png'
 import Eliminar from '../../assets/img/Eliminar.png'
+import { FetchProducts } from "../../hooks/useFetch";
+import { Link } from 'react-router-dom'
 
 export const Crud = () => {
+
+    const urlProduct = '/productos';
+    const { fetchDataProduct, dataProduct } = FetchProducts(urlProduct);
+
+    useEffect(() => {
+        fetchDataProduct();
+    }, []);
+
+    const deleteProduct = (id) =>{
+        console.log(id)
+    }
+
     return (
         <>
             <main className='container_all_crud'>
@@ -35,86 +49,30 @@ export const Crud = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>01</td>
-                                <td>Bicicleta GW BMX Lancer Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, consequatur laboriosam vel explicabo aperiam eius dicta maiores illum, ipsam, et quas similique dignissimos reiciendis at doloribus dolore hic nobis illo.</td>
-                                <td>BMX</td>
-                                <td>GW</td>
-                                <td>Azul</td>
-                                <td>S</td>
-                                <td>100</td>
-                                <td>$349.900</td>
-                                <td>
-                                    <div className="container_btns_tabla">
-                                        <button className='btn_crud'>
-                                            <img src={Editar} alt="editar" />
-                                        </button>
-                                        <button button className='btn_crud'>
-                                            <img src={Eliminar} alt="eliminar" />
-                                        </button >
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>Bicicleta GW BMX Lancer</td>
-                                <td>BMX</td>
-                                <td>GW</td>
-                                <td>Azul</td>
-                                <td>S</td>
-                                <td>100</td>
-                                <td>$349.900</td>
-                                <td>
-                                    <div className="container_btns_tabla">
-                                        <button className='btn_crud'>
-                                            <img src={Editar} alt="editar" />
-                                        </button>
-                                        <button button className='btn_crud'>
-                                            <img src={Eliminar} alt="eliminar" />
-                                        </button >
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>Bicicleta GW BMX Lancer</td>
-                                <td>BMX</td>
-                                <td>GW</td>
-                                <td>Azul</td>
-                                <td>S</td>
-                                <td>100</td>
-                                <td>$349.900</td>
-                                <td>
-                                    <div className="container_btns_tabla">
-                                        <button className='btn_crud'>
-                                            <img src={Editar} alt="editar" />
-                                        </button>
-                                        <button button className='btn_crud'>
-                                            <img src={Eliminar} alt="eliminar" />
-                                        </button >
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>01</td>
-                                <td>Bicicleta GW BMX Lancer</td>
-                                <td>BMX</td>
-                                <td>GW</td>
-                                <td>Azul</td>
-                                <td>S</td>
-                                <td>100</td>
-                                <td>$349.900</td>
-                                <td>
-                                    <div className="container_btns_tabla">
-                                        <button className='btn_crud'>
-                                            <img src={Editar} alt="editar" />
-                                        </button>
-                                        <button button className='btn_crud'>
-                                            <img src={Eliminar} alt="eliminar" />
-                                        </button >
-                                    </div>
-                                </td>
-                            </tr>
+                            {dataProduct.map((product, index) => (
+                                <tr key={index}>
+                                    <td>{product.id}</td>
+                                    <td>{product.nombre}</td>
+                                    <td>{product.categoria}</td>
+                                    <td>{product.marca}</td>
+                                    <td>{product.color}</td>
+                                    <td>{product.talla}</td>
+                                    <td>{product.stock}</td>
+                                    <td>$ {product.precio}</td>
+                                    <td>
+                                        <div className="container_btns_tabla">
+                                            <Link to={`/Add/${product.id}`}>
+                                                <button className='btn_crud'>
+                                                    <img src={Editar} alt="editar" />
+                                                </button>
+                                            </Link>
+                                            <button button className='btn_crud' onClick={() => deleteProduct(product.id)} >
+                                                <img src={Eliminar} alt="eliminar" />
+                                            </button >
+                                        </div>
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                 </div>
