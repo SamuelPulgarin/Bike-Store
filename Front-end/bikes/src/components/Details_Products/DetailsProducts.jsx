@@ -8,6 +8,27 @@ import { useState } from "react";
 
 export const DetailsProducts = () => {
 
+    /*
+    const [cart, setCart] = useState(CartContext);
+    const addToCart = ()=>{
+        setCart((currItems) =>{
+            const isItemFound = currItems.find((item) => item.id === id)
+
+            if(isItemFound){
+                return currItems.map((item) => {
+                    if(item.id === id){
+                        return {...item, quantity: item.quantity + 1}
+                    }else{
+                        return item;
+                    }
+                })
+            } else {
+                return [...currItems, {id, quantity: 1}]
+            }
+        })
+    }
+*/
+
     const { id } = useParams();
     const [data, setData] = useState([]); // dentro del estado hay [] porque tiene que ser en un array porque es un objeto
   
@@ -39,7 +60,7 @@ export const DetailsProducts = () => {
                             <img src={bike} className="img__details" alt="bicicleta" />
                         </div>
                         <div className="container_btn_details">
-                            <button>Agregar Al Carrito</button>
+                            <button onClick={() => addToCart()}>Agregar Al Carrito</button>
                         </div>
                     </div>
                     <div className="container_info_details">
