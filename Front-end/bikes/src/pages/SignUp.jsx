@@ -127,7 +127,7 @@ export const SignUp = () => {
                     </div>
                 </div>
             </main>
-            <SuccessModal isOpen={isModalOpen} onClose={closeModal} title={ModalTitle} content={ModalContent} />
+            <SuccessModal isOpen={isModalOpen} onClose={closeModal} title={ModalTitle} content={ModalContent}/>
             <ErrorModal openErrorModal={isErrorModalOpen} CloseErrorModal={closeModalError} titleError={TitleError} messageError={messageError}/>
         </>
     )

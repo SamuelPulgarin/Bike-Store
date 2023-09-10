@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ErrorModal } from "../components/Modal/ErrorModal";
 /*ja */
 
 
@@ -19,8 +20,6 @@ export const FetchProducts = (urlProductName, urlProductImg) =>{
 
   };
 
-
-
   const fetchDataImg = async() =>{
     var requestOptions = {
       method: "GET",
@@ -33,6 +32,7 @@ export const FetchProducts = (urlProductName, urlProductImg) =>{
       .catch((error) => console.log("Error en la solicitud:", error))
   }
 
+  //Detalles del producto
   const fetchDetails = async(id) =>{
     var requestOptions = {
       method: "GET",
@@ -45,12 +45,48 @@ export const FetchProducts = (urlProductName, urlProductImg) =>{
       .catch((error) => console.error("Error en la solicitud", error))
   }
 
+  //Eliminar un producto   
+//Abrir error modal
+const [isOpenErrorModal , setIsOpenErrorModal] = useState(false);
+
+const openErrorModal = () => {
+  setIsOpenErrorModal(true);
+}
+
+const closeErrorModal = () => {
+  setIsOpenErrorModal(false);
+} 
+
+  const deleteProduct = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:3060/delete-products/${id}`, {
+        method: 'DELETE',
+        headers: { "Content-Type": "application/json" },
+      });
+      if (response.ok) {
+        console.log("Producto eliminado");
+        fetchDataProduct();
+        
+      } else {
+        console.log("ERROR, Producto no Eliminado Front")
+        openErrorModal();
+      }
+    } catch (error) {
+      console.error("Hubo un error en el servidor", error);
+      openErrorModal();
+    }
+  }
+
   return {
     fetchDataProduct,
     dataProduct,
     fetchDataImg,
     dataImg,
     fetchDetails,
-    dataDetails
+    dataDetails,
+    deleteProduct,
+    isOpenErrorModal,     // Agrega estas líneas
+    openErrorModal,
+    closeErrorModal,
   };
 }
