@@ -1,8 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../assets/css/DetailsProduct.css'
 import bike from '../../../uploads/1693001737344-Ãmonda SL 6.jpg'
+import { CartContext } from '../../context/ShoppingCartContext'
 
 export const DetailsProducts = () => {
+/*
+    const [cart, setCart] = useState(CartContext);
+    const addToCart = ()=>{
+        setCart((currItems) =>{
+            const isItemFound = currItems.find((item) => item.id === id)
+
+            if(isItemFound){
+                return currItems.map((item) => {
+                    if(item.id === id){
+                        return {...item, quantity: item.quantity + 1}
+                    }else{
+                        return item;
+                    }
+                })
+            } else {
+                return [...currItems, {id, quantity: 1}]
+            }
+        })
+    }
+*/
+
     return (
         <>
             <div className="container_all_details">
@@ -13,7 +35,7 @@ export const DetailsProducts = () => {
                             <img src={bike} className="img__details" alt="bicicleta" />
                         </div>
                         <div className="container_btn_details">
-                            <button>Agregar Al Carrito</button>
+                            <button onClick={() => addToCart()}>Agregar Al Carrito</button>
                         </div>
                     </div>
                     <div className="container_info_details">

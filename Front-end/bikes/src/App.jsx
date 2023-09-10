@@ -10,6 +10,7 @@ import { Loader } from "./components/Loader/Loader";
 import Detalles from "./pages/Detalles";
 import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
+//import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 
 /*ja */
@@ -26,18 +27,20 @@ function App() {
         <Loader />
       ) : (
 
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/productos" element={<Productos />} />
-            <Route path="/Carrito" element={<Carrito />} />
-            <Route path="/signUp" element={<SignUp />} />
-            <Route path="/signIn" element={<SignIn />} />
-            <Route path="/Detalles" element={<Detalles />} />
-            <Route path="/Admin" element={<Admin />} />
-            <Route path="/Add" element={<Cproduct />} />
-          </Routes>
-        </Router>
+  //      <ShoppingCartProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/productos" element={<Productos />} />
+              <Route path="/Carrito" element={<Carrito />} />
+              <Route path="/signUp" element={<SignUp />} />
+              <Route path="/signIn" element={<SignIn />} />
+              <Route path="/Detalles" element={<Detalles />} />
+              <Route path="/Admin" element={<Admin />} />
+              <Route path="/Add" element={<Cproduct />} />
+            </Routes>
+          </Router>
+  //     </ShoppingCartProvider>
       )}
     </>
   );
