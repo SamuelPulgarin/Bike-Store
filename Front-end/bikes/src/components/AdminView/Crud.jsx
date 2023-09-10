@@ -5,19 +5,33 @@ import Editar from '../../assets/img/Editar.png'
 import Eliminar from '../../assets/img/Eliminar.png'
 import { FetchProducts } from "../../hooks/useFetch";
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { ConfirmImgModal } from '../Modal/ConfirmImgModal'
+import { ErrorModal } from "../Modal/ErrorModal";
+import { SuccessModal } from '../Modal/SuccessModal'
+
 
 export const Crud = () => {
 
     const urlProduct = '/productos';
-    const { fetchDataProduct, dataProduct } = FetchProducts(urlProduct);
+    const { fetchDataProduct, dataProduct, deleteProduct, isOpenErrorModal, openErrorModal, closeErrorModal } = FetchProducts(urlProduct);
 
     useEffect(() => {
         fetchDataProduct();
     }, []);
 
-    const deleteProduct = (id) =>{
-        console.log(id)
-    }
+    const [productIdToDelete, setProductIdToDelete] = useState(null);
+
+    //Para abrir modal
+    const [isOpenModal, setIsOpenModal] = useState(false);
+
+    const openModal = () => {
+        setIsOpenModal(true);
+    };
+
+    const closeModal = () => {
+        setIsOpenModal(false);
+    };
 
     return (
         <>
@@ -66,9 +80,13 @@ export const Crud = () => {
                                                     <img src={Editar} alt="editar" />
                                                 </button>
                                             </Link>
-                                            <button button className='btn_crud' onClick={() => deleteProduct(product.id)} >
+                                            <button className='btn_crud' onClick={() => {
+                                                setProductIdToDelete(product.id); // Guarda el id del producto a eliminar
+                                                openModal();
+                                            }}>
                                                 <img src={Eliminar} alt="eliminar" />
-                                            </button >
+                                            </button>
+
                                         </div>
                                     </td>
                                 </tr>
@@ -77,6 +95,25 @@ export const Crud = () => {
                     </table>
                 </div>
             </main>
+            <ConfirmImgModal
+                title={"Eliminar Producto"}
+                message={"¿Esta Seguro de ELIMINAR este producto?"}
+                openModal={isOpenModal}
+                onCancel={closeModal}
+                onConfirm={() => {
+                    deleteProduct(productIdToDelete); // Llama a deleteProduct con el id del producto
+                    closeModal(); // Cierra el modal después de confirmar
+                }}
+            />
+            {/* Modal de error */}
+            <ErrorModal
+                openErrorModal={isOpenErrorModal}
+                CloseErrorModal={closeErrorModal}
+                titleError="¡Error! Eliminación del Producto"
+                messageError="Hubo un error al eliminar el producto"
+            />
+
         </>
+
     )
 }
