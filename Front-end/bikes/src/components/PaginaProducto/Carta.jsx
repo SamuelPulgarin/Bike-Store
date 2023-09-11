@@ -1,6 +1,7 @@
 import "../../assets/css/Carta.css";
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { FetchProducts } from "../../hooks/useFetch";
+import { Link } from "react-router-dom";
 
 
 const Carta = () => {
@@ -14,30 +15,30 @@ const Carta = () => {
     }
   }, [!dataProduct]);
 
-  
-/*ja */
+
+  /*ja */
   return (
     <>
       <div className="contenedor-cartas-producto">
-        <h1>Bicicletas {}</h1>
+        <h1>Bicicletas { }</h1>
         <div className="cartas-producto">
           {!dataProduct
             ? "Cargando..."
-            :dataProduct.map((data) => {
+            : dataProduct.map((data) => {
               return (
-                <>
-                  <div className="cartap" key={data.id} category={data.marca} type={data.talla} itemType={data.categoria} typeof={data.color}>
+                <div className="cartap" key={data.id} category={data.marca} type={data.talla} itemType={data.categoria} typeof={data.color}>
+                  <Link to={`/Detalles/${data.id}`}>
                     <img src={data.ruta} alt="Bicicletas muy bonitas" />
                     <div className="cartap-info">
                       <h5>{data.nombre}</h5>
                     </div>
                     <p><b>Precio:</b> ${data.precio}</p>
-                  </div>
-                </>
+                  </Link>
+                </div>
               );
             })}
         </div>
-      </div> 
+      </div>
     </>
   );
 };

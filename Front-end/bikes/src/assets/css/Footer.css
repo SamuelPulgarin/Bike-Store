@@ -43,6 +43,16 @@
   background-color: #000;
   border-radius: 100%;
 }
+.Follow_us .x{
+ height: 38px;
+ width: 38px;
+ margin-top: 10px;
+}
+
+.Follow_us .x:hover{
+  background-color: #000;
+  border-radius: 100%;
+}
 
 .fa-youtube:hover {
   color: #ff0909;
@@ -51,21 +61,25 @@
  .Follow_us:hover i {
   filter: blur(2px);
 } 
-.Follow_us:hover img{
+.Follow_us:hover img {
+  filter: blur(2px);
+}
+
+.Follow_us:hover .x {
   filter: blur(2px);
 }
 
 
-
-.Follow_us a  :hover{
+.Follow_us .x:hover{
   transform: translateY(-3px) scale(1.05);
   filter: none;
 } 
 
-.logox :hover {
+.Follow_us a i:hover{
   transform: translateY(-3px) scale(1.05);
   filter: none;
 } 
+
 
 
 .Follow_us {

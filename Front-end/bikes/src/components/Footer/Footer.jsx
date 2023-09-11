@@ -2,6 +2,7 @@ import React from "react";
 import "../../assets/CSS/Footer.css";
 import Logo from "../../assets/img/Logo-BikeStore.svg";
 import Copy from "../../assets/img/IconoCopy.svg";
+import logox from "../../assets/img/Logo x.png"
 import Logox from "../../assets/img/Logo x.png"
 
 /*ja */
@@ -21,7 +22,7 @@ const Footer = () => {
             <i className="fa-brands fa-instagram"></i>
           </a>
           <a href="#">
-            <img src={Logox} alt="X" className="logox"/>
+            <img src={logox} alt="" className="x"/>
           </a>
           <a href="#">
             <i className="fa-brands fa-youtube"></i>

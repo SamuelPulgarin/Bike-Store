@@ -18,6 +18,44 @@ const getProducts = (req, res) => {
   );
 };
 
+const getProductsByMarca = async(req, res) =>{
+
+  const marca = req.params.marca
+
+  try {
+    // Realiza una consulta a la base de datos para obtener el producto por su Marca
+    const product = await pool.query("SELECT * FROM producto WHERE marca = $1", [marca]);
+
+    if (product.rows.length === 0) {
+      return res.status(404).json({ error: "Producto no encontrado" });
+    }
+
+    res.status(200).json(product.rows[0]); // Devuelve los productos encontrado
+  } catch (error) {
+    console.error("Error al obtener producto por su Marca", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+}
+
+const getProductById = async(req, res) =>{
+
+  const id = req.params.id
+
+  try{
+    //Realiza una consulta a la base de datos para obtener el producto por su Marca
+    const product = await pool.query("SELECT * FROM producto WHERE id = $1", [id]);
+
+    if(product.rows.length === 0){
+      return res.status(404).json({ error: "Producto no encontrado"});
+    }
+
+    res.status(200).json(product.rows[0]); //Devolver producto encontrado
+  } catch(error){
+    console.error("Error al obtener producto por su Id", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+}
+
 /*const getImages = (req, res) => {
   pool.query("SELECT * FROM imagenes", (error, result) => {
     if (error) {
@@ -147,9 +185,9 @@ const inicioSesion = (req, res) => {
 };
 
 const addProduct = async (req, res) => {
-  console.log("estoy aquii wachaaaaaa muchachaaaaaaaaaaaaaaaaaaaaaa");
+  console.log("estoy aquí wachaaaaaa muchachaaaaaaaaaaaaaaaaaaaaaa");
 
-  //Obtener los datos del producto
+  // Obtener los datos del producto
   const {
     id,
     nombre,
@@ -162,12 +200,13 @@ const addProduct = async (req, res) => {
     stock,
   } = req.body;
   console.log("datos producto", req.body);
+  console.log("Ruta imagen: ", req.file);
 
   // Obtener la ruta de la imagen subida
   const rutaImagen = req.file ? `uploads/${req.file.filename}` : null;
-  console.log(rutaImagen)
+  console.log(rutaImagen);
 
-  //Validar que todos los campos necesarios esten presentes
+  // Validar que todos los campos necesarios estén presentes
   if (
     !id ||
     !nombre ||
@@ -179,78 +218,81 @@ const addProduct = async (req, res) => {
     !color ||
     !stock
   ) {
-    console.log('Me desvie por aqui')
-    return res.status(400).json({ error: "Falta la informacion requerida" });
+    console.log('Me desvié por aquí');
+    return res.status(400).json({ error: "Falta la información requerida" });
   }
 
   try {
+    console.log('entre al try carajo');
 
-    //insertar imagen con id del producto
+    // Consultar si el producto ya existe en la base de datos
+    const result = await pool.query(
+      "SELECT * FROM producto WHERE id = $1 OR nombre = $2",
+      [id, nombre]
+    );
+
+    if (result.rows.length > 0) {
+      return res.status(400).json({ error: "el producto ya existe" });
+    }
+    console.log('avanzando');
+
+    // Si el producto no existe, insertar el nuevo producto en la base de datos
+    await pool.query(
+      "INSERT INTO producto (id, nombre, marca, descripcion, categoria, talla, precio, color, stock) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)",
+      [
+        id,
+        nombre,
+        marca,
+        descripcion,
+        categoria,
+        talla,
+        precio,
+        color,
+        stock,
+      ]
+    );
+
+    console.log('casi termino');
+
+    // Insertar imagen con id del producto
     if (rutaImagen) {
-      console.log('Me encuentro adentro de esto')
+      console.log('Me encuentro adentro de esto');
       await pool.query("INSERT INTO imagenes (id, ruta) VALUES ($1, $2)", [
         id,
         rutaImagen,
       ]);
     }
 
-    console.log('entre al try carajo')
-
-    // Consultar si el producto ya existe en la base de datos
-    await pool.query(
-      "SELECT * FROM producto WHERE id = $1 OR nombre = $2",
-      [id, nombre],
-      (error, result) => {
-        if (error) {
-          console.error("Error al consultar la base de datos", error);
-          return res
-            .status(500)
-            .json({ error: "Error agregar el producto", error });
-        }
-
-        //Si el producto ya existe en la base de datos devolver un error
-        if (result.rows.length > 0) {
-          return res.status(400).json({ error: "el producto ya existe" });
-        }
-        console.log('avanzando')
-        //Si el producto no existe, insertar el nuevo producto en la base de datos
-        pool.query(
-          "INSERT INTO producto (id, nombre, marca, descripcion, categoria, talla, precio, color, stock) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)",
-          [
-            id,
-            nombre,
-            marca,
-            descripcion,
-            categoria,
-            talla,
-            precio,
-            color,
-            stock,
-          ],
-          (error) => {
-            if (error) {
-              console.error(
-                "Error al agregar el producto en la base de datos",
-                error
-              );
-              return res
-                .status(500)
-                .json({ error: "Error al registrar el producto" });
-            }
-
-            console.log('casi termino')
-          }
-        );
-      }
-    );
-
-    console.log('lo logré')
+    console.log('lo logré');
 
     res.status(201).json({ message: "Imagen y producto subidos exitosamente" });
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    res.status(500).json({ error: "Error en el servidor" });
   }
 };
+
+
+const deleteProduct = async(req, res) =>{
+
+  const productId = parseInt(req.params.id);
+
+  try{
+
+    //Eliminar un producto por su id en la base de datos
+    const results = await pool.query("DELETE FROM producto WHERE id = $1", [productId]);
+
+    if(results.rowCount === 1){
+      res.status(200).json({ Message: 'Producto eliminado con exito'});
+    }else {
+      res.status(404).json({Message: 'Producto no encontrado'});
+    }
+  } catch(error){
+    console.error("Error al eliminar el producto", error);
+    res.status(500).json({error: 'Algo ha ocurrido cuando se ha intentado eliminar el recurso'});
+  }
+
+}
 
 module.exports = {
   getProducts,
@@ -259,4 +301,7 @@ module.exports = {
   registrerUser,
   inicioSesion,
   addProduct,
+  getProductsByMarca,
+  deleteProduct,
+  getProductById,
 };

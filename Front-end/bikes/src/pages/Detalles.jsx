@@ -11,8 +11,6 @@ const Detalles = () => {
         <DetailsProducts></DetailsProducts>
         <Carrusel></Carrusel>
         <Footer></Footer>
-
-
     </>
   )
 }

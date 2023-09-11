@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../assets/css/cardsC.css';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 
@@ -11,39 +12,39 @@ export const CardsCategory = () => {
             <h2 className="titulo1">Categorías:</h2>
             <main className='main-cards'>
                 {/* categoria bicicleta ruta */}
-                <a href="/productos">
+                <Link to={"/productos"}>
                     <div className="Carta1">
                         <div className="content1">
                             <h2 className="texto1">Ruta</h2>
                         </div>
                     </div>
-                </a>
+                </Link>
 
                 {/* categoria bicicleta montaña */}
-                <a href="/productos">
+                <Link to={"/productos"}>
                     <div className="Carta2">
                         <div className="content1">
                             <h2 className="texto1">Montaña</h2>
                         </div>
                     </div>
-                </a>
+                </Link>
 
                 {/* categoria bicicleta bmx */}
-                <a href="/productos">
+                <Link to={"/productos"}>
                     <div className="Carta3">
                         <div className="content1">
                             <h2 className="texto1">BMX</h2>
                         </div>
                     </div>
-                </a>
+                </Link>
                 {/* categoria bicicleta hibrida */}
-                <a href="/productos">
+                <Link to={"/productos"}>
                     <div className="Carta4">
                         <div className="content1">
                             <h2 className="texto1">Hibridas</h2>
                         </div>
                     </div>
-                </a>
+                </Link>
             </main>
         </>
     )

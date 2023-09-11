@@ -13,6 +13,7 @@ import Carta from "../PaginaProducto/Carta";
 import { useSelector, useDispatch } from 'react-redux';
 import { signIn, signOut } from "../../redux/loginSlides";
 import { ConfirmModal } from "../Modal/ConfirmModal";
+import { Link } from 'react-router-dom';
 
 /*ja */
 const Navbar = () => {
@@ -59,15 +60,15 @@ const Navbar = () => {
         <>
             <nav className="navbar">
                 <div className="logos">
-                    <a href="/home" ><img src={logo1} alt="Aqui va nuestro precioso loguito" id="logo1" /></a>
-                    <a href="/home" ><img src={logo2} alt="Aqui va nuestro precioso loguito" id="logo2" /></a>
+                    <Link to={"/"}><img src={logo1} alt="Aqui va nuestro precioso loguito" id="logo1" /></Link>
+                    <Link to={"/"}><img src={logo2} alt="Aqui va nuestro precioso loguito" id="logo2" /></Link>
                 </div>
                 <input type="checkbox" id="toggler" />
                 <label htmlFor="toggler"><i className="ri-menu-list"><img src={toggler} alt="toggler" /></i></label>
                 <div className="menu">
                     <ul className="list">
                         <div className="desplegable">
-                            <li><a href="#"><img src={options} alt="Hola soy una imagen" id="opcion" /></a></li>
+                            <li><img src={options} alt="Hola soy una imagen" id="opcion" /></li>
                             <li><select id="categorias" onChange={categorias}>
                                 <option disabled={true}>CATEGORIAS</option>
                                 <option value={"1"}>Ruta</option>
@@ -76,15 +77,15 @@ const Navbar = () => {
                                 <option value={"4"}>Bmx</option>
                             </select></li>
                         </div>
-                        <li><a href="/Carrito"><img src={carrito} alt="Hola soy una imagen" id="carrito" /></a></li>
+                        <li><Link to={"/Carrito"}><img src={carrito} alt="Hola soy una imagen" id="carrito" /></Link></li>
                         <li>{session ?
-                            <a onClick={openModal}>
+                            <Link onClick={openModal}>
                                 <img src={session ? salir : peril} alt="Cerrar sesión" id="perfil" />
-                            </a>
+                            </Link>
                             :
-                            <a href="/signUp">
+                            <Link to={"/signUp"}>
                                 <img src={session ? salir : peril} alt="Cerrar sesión" id="perfil" />
-                            </a>}
+                            </Link>}
                         </li>
                     </ul>
                 </div>

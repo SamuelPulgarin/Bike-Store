@@ -7,6 +7,7 @@ import '../assets/css/SignIn.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { signIn, signOut } from '../redux/loginSlides';
 import { Loader } from '../components/Loader/Loader';
+import { Link } from 'react-router-dom';
 /*ja */
 
 const schema = yup.object().shape({
@@ -85,9 +86,9 @@ export const SignIn = () => {
                             <p>Registrate para que puedas, iniciar sesión</p>
 
                             <div className="container__btn">
-                                <a href="/signUp">
+                                <Link to={"/signUp"}>
                                     <button type='submit'>Registrate</button>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
