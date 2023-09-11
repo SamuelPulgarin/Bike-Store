@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ErrorModal } from "../components/Modal/ErrorModal";
+import { ModalDelete } from "../components/Modal/ModalDelete";
 /*ja */
 
 
@@ -57,6 +58,18 @@ const closeErrorModal = () => {
   setIsOpenErrorModal(false);
 } 
 
+//Abrir ModalDelete
+const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
+
+const openModalDelete = () => {
+  setIsOpenDeleteModal(true);
+}
+
+const closeModalDelete = () => {
+  setIsOpenDeleteModal(false);
+}
+
+
   const deleteProduct = async (id) => {
     try {
       const response = await fetch(`http://localhost:3060/delete-products/${id}`, {
@@ -66,6 +79,7 @@ const closeErrorModal = () => {
       if (response.ok) {
         console.log("Producto eliminado");
         fetchDataProduct();
+        openModalDelete();
         
       } else {
         console.log("ERROR, Producto no Eliminado Front")
@@ -85,8 +99,11 @@ const closeErrorModal = () => {
     fetchDetails,
     dataDetails,
     deleteProduct,
-    isOpenErrorModal,     // Agrega estas líneas
+    isOpenErrorModal, 
     openErrorModal,
     closeErrorModal,
+    isOpenDeleteModal,
+    openModalDelete,
+    closeModalDelete
   };
 }

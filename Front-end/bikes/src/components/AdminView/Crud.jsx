@@ -8,13 +8,21 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { ConfirmImgModal } from '../Modal/ConfirmImgModal'
 import { ErrorModal } from "../Modal/ErrorModal";
-import { SuccessModal } from '../Modal/SuccessModal'
+import { ModalDelete } from '../Modal/ModalDelete'
 
 
 export const Crud = () => {
 
     const urlProduct = '/productos';
-    const { fetchDataProduct, dataProduct, deleteProduct, isOpenErrorModal, openErrorModal, closeErrorModal } = FetchProducts(urlProduct);
+    const { fetchDataProduct,
+        dataProduct,
+        deleteProduct,
+        isOpenErrorModal,
+        openErrorModal,
+        closeErrorModal,
+        isOpenDeleteModal,
+        openModalDelete,
+        closeModalDelete } = FetchProducts(urlProduct);
 
     useEffect(() => {
         fetchDataProduct();
@@ -112,7 +120,13 @@ export const Crud = () => {
                 titleError="¡Error! Eliminación del Producto"
                 messageError="Hubo un error al eliminar el producto"
             />
-
+            {/*Modal delete*/}
+           <ModalDelete
+                deleteOpen={isOpenDeleteModal}
+                deleteClose={closeModalDelete}
+                titleDelete="Eliminación Exitosa"
+                contentDelete="El producto a sido eliminado con ¡Exito!"
+           /> 
         </>
 
     )
