@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form'; //Maneja estados del formulario
 import { SuccessModal } from '../components/Modal/SuccessModal';
 import { ErrorModal } from '../components/Modal/ErrorModal';
+import { Link } from 'react-router-dom';
 
 
 const schema = yup.object().shape({
@@ -96,9 +97,9 @@ export const SignUp = () => {
                             <h3>¿Ya tienes una cuenta?</h3>
                             <p>Inicia sesión para entrar a la página</p>
                             <div className="container__button">
-                                <a href="/signIn">
+                                <Link to={"/signIn"}>
                                     <button id='btn__iniciar-sesion'>Iniciar Sesión</button>
-                                </a>
+                                </Link>
                             </div>
                         </div>
 

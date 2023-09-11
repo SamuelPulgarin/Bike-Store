@@ -1,12 +1,20 @@
 import "../../assets/css/DetailsProduct.css";
-// import bike from "../../../uploads/1692995410871-Bicicleta Ruta Contessa Addict 35 2022.jpg";
+import bike from "../../../uploads/1694023151381-BicicletaGiantRevoltAdvancedPro123.jpg";
 import '../../assets/css/DetailsProduct.css'
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/carritoSlice";
+import { useSelector } from 'react-redux';
 
 
 export const DetailsProducts = () => {
+
+    //redux
+    const dispatch = useDispatch();
+    const cartItems = useSelector((state) => state.carrito.items);
+    console.log(cartItems);
 
     /*
     const [cart, setCart] = useState(CartContext);
@@ -28,6 +36,12 @@ export const DetailsProducts = () => {
         })
     }
 */
+    const handleAddToCart = ()=>{
+        
+        if(data){
+            dispatch(addToCart(JSON.stringify({data})));
+        }
+    }
 
     const { id } = useParams();
     const [data, setData] = useState([]); // dentro del estado hay [] porque tiene que ser en un array porque es un objeto
@@ -60,7 +74,7 @@ export const DetailsProducts = () => {
                             <img src={bike} className="img__details" alt="bicicleta" />
                         </div>
                         <div className="container_btn_details">
-                            <button onClick={() => addToCart()}>Agregar Al Carrito</button>
+                            <button onClick={handleAddToCart}>Agregar Al Carrito</button>
                         </div>
                     </div>
                     <div className="container_info_details">

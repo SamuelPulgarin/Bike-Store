@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "../../assets/css/CartaProducto.css";
-// import Example from "../../../uploads/1692994852641-BicicletaMTBSparkRCWorldCup2023.jpg"
+import Example from "../../../uploads/1694211030597-BicicletaGiantPropelAdvancedPro0AXS23.jpg";
 
 const CartaProducto = () => {
   
