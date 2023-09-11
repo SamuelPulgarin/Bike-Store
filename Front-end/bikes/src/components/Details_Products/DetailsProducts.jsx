@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "../../assets/css/DetailsProduct.css";
-import bike from "../../../uploads/1692995410871-Bicicleta Ruta Contessa Addict 35 2022.jpg";
+// import bike from "../../../uploads/1692995410871-Bicicleta Ruta Contessa Addict 35 2022.jpg";
 import { FetchProducts } from "../../hooks/useFetch";
 
 export const DetailsProducts = () => {
