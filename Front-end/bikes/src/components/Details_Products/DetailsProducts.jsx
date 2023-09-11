@@ -39,7 +39,7 @@ export const DetailsProducts = () => {
     const handleAddToCart = ()=>{
         
         if(data){
-            dispatch(addToCart(JSON.stringify({data})));
+            dispatch(addToCart({ data }));
         }
     }
 
