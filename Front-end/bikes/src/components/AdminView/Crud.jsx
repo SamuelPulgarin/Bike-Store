@@ -52,7 +52,9 @@ export const Crud = () => {
                         </button>
                     </div>
                     <div className="container_btn_products">
-                        <button>Agregar Productos</button>
+                        <a href="/Add">
+                            <button>Agregar Productos</button>
+                        </a>
                     </div>
                 </div>
                 <div className="container_table_crud">

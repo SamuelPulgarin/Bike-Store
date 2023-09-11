@@ -37,6 +37,7 @@ function App() {
                         <Route path="/Detalles/:id" element={<Detalles />} />
                         <Route path="/Admin" element={<Admin/>}/>
                         <Route path="/Add/:id" element={<Cproduct/>} />
+                        <Route path="/Add" element={<Cproduct/>} />
                         <Route path="/ver" element={<Vista/>}/>
                     </Routes>
                 </Router>

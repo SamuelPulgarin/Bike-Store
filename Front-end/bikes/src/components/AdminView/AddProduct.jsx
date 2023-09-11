@@ -35,26 +35,38 @@ export const AddProduct = () => {
     };
 
     async function add(product) {
-        console.log(product)
         try {
+            const formData = new FormData();
+
+            // Agrega cada campo del producto al FormData
+            formData.append('id', product.id);
+            formData.append('nombre', product.nombre);
+            formData.append('marca', product.marca);
+            formData.append('descripcion', product.descripcion);
+            formData.append('categoria', product.categoria);
+            formData.append('talla', product.talla);
+            formData.append('precio', product.precio);
+            formData.append('color', product.color);
+            formData.append('stock', product.stock);
+
+            // Agrega el archivo de imagen
+            formData.append('imagen', product.imagen);
+
             const response = await fetch('http://localhost:3060/create-product', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(product)
+                body: formData, // Utiliza el FormData en lugar de JSON.stringify
             });
+
             if (response.ok) {
                 console.log('Producto Registrado exitosamente');
+            } else {
+                console.log('Error al agregar el producto en el Frontend');
             }
-            else {
-                console.log('Error agregar producto Front');
-            }
-        }
-        catch (error) {
+        } catch (error) {
             console.error('Error del servidor', error);
-        };
-    };
+        }
+    }
+
 
     return (
         <>
@@ -62,7 +74,7 @@ export const AddProduct = () => {
                 <div className="container_add_product">
                     <div className="container_form_add">
                         <h1>Agregar Producto</h1>
-                        <form method="POST" onSubmit={handleSubmit(add)} encType='multipart/form-data'>
+                        <form method="POST" onSubmit={handleSubmit(add)}  enctype="multipart/form-data">
                             <div className="container_info_product">
 
                                 <input type="number" name="id" placeholder="Codigo" {...register('id', ID)} />
@@ -168,8 +180,8 @@ export const AddProduct = () => {
                                         type="file"
                                         id="imageFile"
                                         accept='image/jpeg, image/jpg, image/png'
-                                        ref={fileInputRef}
-                                        {...register('imagen',IMAGEN)}
+                                   
+                                        {...register('imagen', IMAGEN)}
                                         onChange={handleImageChange}
                                     />
                                     <label htmlFor="file-input">Seleccionar archivo</label>
