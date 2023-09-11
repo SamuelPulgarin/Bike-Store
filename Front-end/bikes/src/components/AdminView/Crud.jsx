@@ -13,6 +13,7 @@ import { ModalDelete } from '../Modal/ModalDelete'
 
 export const Crud = () => {
 
+
     const urlProduct = '/productos';
     const { fetchDataProduct,
         dataProduct,

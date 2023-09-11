@@ -5,14 +5,46 @@ import defaultImage from '../../assets/img/defaul.jpg'
 import { useForm } from 'react-hook-form'
 import { useRef } from 'react'
 import useValidationAddProduct from '../../hooks/useValidationAddProduct'
+import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 
 
 
 export const AddProduct = () => {
-
     const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
     const { ID, NOMBRE, CATEGORIA, MARCA, COLOR, TALLA, DESCRIPCION, STOCK, PRECIO, IMAGEN } = useValidationAddProduct();
+    const { id } = useParams();
+    const [data, setData] = useState([]);
 
+    useEffect(() => {
+        if (id) {
+            fetch(`http://localhost:3060/get-products/${id}`)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then((productData) => {
+                    setData(productData); // Asigna los datos a la variable data
+                    // Llena los campos del formulario con los datos del producto
+                    setValue('id', productData.id);
+                    setValue('nombre', productData.nombre);
+                    setValue('categoria', productData.categoria);
+                    setValue('marca', productData.marca);
+                    setValue('color', productData.color);
+                    setValue('talla', productData.talla);
+                    setValue('descripcion', productData.descripcion);
+                    setValue('stock', productData.stock);
+                    setValue('precio', productData.precio);
+                })
+                .catch((error) => {
+                    console.error("Error al cargar los detalles del producto:", error);
+                });
+        }
+    }, [id, setValue]);
+
+    
     const imageFile = watch('imagen'); // Nombre del campo del input type="file"
     const [imageUrl, setImageUrl] = useState(defaultImage);
 
@@ -28,12 +60,12 @@ export const AddProduct = () => {
             };
             reader.readAsDataURL(file);
 
-            // Set the value of the input using the ref
             fileInputRef.current.value = ''; // Se limpia
             fileInputRef.current.files = e.target.files; // inserta el valor en el input
         }
     };
 
+    // Funcion para agregar producto
     async function add(product) {
         try {
             const formData = new FormData();
