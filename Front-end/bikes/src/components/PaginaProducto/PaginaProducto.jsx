@@ -1,7 +1,7 @@
 import React, { useEffect} from "react";
 import "../../assets/css/PaginaProducto.css";
-import { filterBrand } from "../../hooks/useFilter"
-import { filterSizes } from "../../hooks/useFilter";
+import { filterBrandAndSize } from "../../hooks/useFilter"
+// import { filterBrand } from "../../hooks/useFilter";
 import { filterType } from "../../hooks/useFilter";
 import { filterColor } from "../../hooks/useFilter";
 
@@ -9,12 +9,12 @@ import { filterColor } from "../../hooks/useFilter";
 const PaginaProducto = () => {
 
         useEffect(() => {
-          filterBrand();
+            filterBrandAndSize();   
         }, []);
 
-        useEffect(() => {
-            filterSizes();
-        }, []);
+        // useEffect(() => {
+        //     filterBrand();
+        // }, []);
 
         useEffect(() => {
             filterType();
