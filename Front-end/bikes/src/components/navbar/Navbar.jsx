@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import '../../assets/css/Navbar.css';
 import { useNavbar } from "../../hooks/useNavbar";
-import carrito from "../../assets/img/agregar-carrito.png";
+import carrito from "../../assets/img/shopping-cart.png";
 import peril from "../../assets/img/sesion.png";
 import salir from "../../assets/img/logout.png";
 import logo1 from "../../assets/img/Logo-circle.png";
@@ -36,7 +36,14 @@ const Navbar = () => {
 
     //Aqui empieza el redux
     const session = useSelector((state) => state.login.session);
+    const cartItems = useSelector((state) => state.carrito.items);
     const dispatch = useDispatch();
+
+    useEffect(()=>{
+
+        setCantidad(cartItems.length);
+
+    },[cartItems])
 
     React.useEffect(() => {
         const storedIsUserLoggedIn = localStorage.getItem('isUserLoggedIn');
@@ -55,6 +62,9 @@ const Navbar = () => {
         
         navigate("/productos")
     }
+
+    const [cantidad, setCantidad] = useState(0);
+
 
     return (
         <>
@@ -77,7 +87,12 @@ const Navbar = () => {
                                 <option value={"4"}>Bmx</option>
                             </select></li>
                         </div>
-                        <li><Link to={"/Carrito"}><img src={carrito} alt="Hola soy una imagen" id="carrito" /></Link></li>
+                        <li>
+                            <div className="productos-carrito-container">
+                                <Link to={"/Carrito"}><img src={carrito} alt="Hola soy una imagen" id="carrito" /></Link>
+                                <input type="text" value={cantidad} id="cantidad-producto-carrito"/>
+                            </div>
+                        </li>
                         <li>{session ?
                             <Link onClick={openModal}>
                                 <img src={session ? salir : peril} alt="Cerrar sesión" id="perfil" />
