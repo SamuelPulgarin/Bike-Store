@@ -7,7 +7,6 @@ const ListProducts = () => {
 
   //redux
   const cartItems = useSelector((state) => state.carrito.items);
-  console.log(cartItems);
 
   useEffect(() => {
     setCantidad(cartItems.length);
