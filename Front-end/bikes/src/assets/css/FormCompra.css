@@ -1,0 +1,144 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.all_container_form_info_buy{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding-top: 5rem;
+    background-image: url(../img/fondo5.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.container_form_info_buy{
+    width: 80rem;
+    box-shadow: 6px 6px 5px #999999;
+    background-color: #FFF;
+    border-radius: 1rem;
+    
+}
+
+.Form_info_buy{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Form_info_buy input{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 45rem;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    transition: all 2s; 
+}
+
+.Form_info_buy input::placeholder{
+    font-weight: lighter;
+}
+
+.name_lastname input{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 21.5rem;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    transition: all 2s;
+}
+
+.name_lastname input::placeholder{
+    font-weight: lighter;
+}
+
+.container_select-input{
+    display: flex;
+    justify-content: start;
+}
+
+.container_select_buy{
+    margin: 1rem;
+    position: relative;
+    display: flex;
+    width: 15rem;
+    height: 3rem;
+    line-height: 3;
+    background: #262626;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    transition: all 1s;
+}
+
+.container_select_buy::after{
+    content: '\25BC';
+    color: #FFF;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background:#262626;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+    transition: all 1s;
+}
+
+.container_select_buy select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    background: #ffffff;
+    color: #000;
+    background-image: none;
+    flex: 1;
+    padding: 0 1em;
+    cursor: pointer;
+    font-size: 1em;
+    border: 1px solid  #000;
+    border-radius: 7px;
+    transition: all 1s;
+}
+
+.container_select_buy select::-ms-expand{
+    display: none;
+}
+
+.container_select-input input[type="number"]::-webkit-inner-spin-button,
+.container_select-input input[type="number"]::-webkit-outer-spin-button{
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.container_select-input input{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 28rem;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    transition: all 2s;
+}
+
+.container_select-input input::placeholder{
+    font-weight: lighter;
+}
+.container_departamento_ciudad input{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 21.5rem;
+    border: none;
+    background-color: rgb(236, 236, 236);
+    transition: all 2s;
+}

@@ -10,7 +10,7 @@ import { Loader } from "./components/Loader/Loader";
 import Detalles from "./pages/Detalles";
 import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
-import { Vista } from "./components/AdminView/vista";
+import { ComfirBuy } from "./pages/ComfirBuy";
 
 
 
@@ -38,7 +38,7 @@ function App() {
                         <Route path="/Admin" element={<Admin/>}/>
                         <Route path="/Add/:id" element={<Cproduct/>} />
                         <Route path="/Add" element={<Cproduct/>} />
-                        <Route path="/ver" element={<Vista/>}/>
+                        <Route path="/ComfirmBuy" element={<ComfirBuy/>} />
                     </Routes>
                 </Router>
             )}
