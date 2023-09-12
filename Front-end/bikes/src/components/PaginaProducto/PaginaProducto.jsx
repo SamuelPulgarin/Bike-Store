@@ -1,6 +1,7 @@
-import React, { useEffect} from "react";
+import React, { useEffect,} from "react";
 import "../../assets/css/PaginaProducto.css";
 import { filterBrandSizeColorAndType } from "../../hooks/useFilter"
+
 
 /*ja */
 const PaginaProducto = () => {

@@ -1,5 +1,8 @@
 import $ from 'jquery';
 
+
+ 
+
 export const filterBrandSizeColorAndType = () => {
 
     // Arrays para rastrear las marcas, tallas, colores y tipos seleccionados
@@ -8,19 +11,12 @@ export const filterBrandSizeColorAndType = () => {
     const selectedColors = [];
     const selectedTypes = [];
 
-    function updateBrandFilters() {
-        const selectedCategories = selectedBrands;
-        const brandFilteredProducts = filterByCategory(selectedCategories);
-        brandFilteredProducts.show();
-    }
-
-
     $(document).ready(function () {
         // Filtro de marca
         $('.category_item').click(function () {
             var catProduct = $(this).attr('category');
             toggleFilter(selectedBrands, catProduct);
-            
+
         });
 
         // Filtro de talla
@@ -60,6 +56,7 @@ export const filterBrandSizeColorAndType = () => {
 
             // Muestra los elementos que cumplen con todos los filtros
             intersection.show();
+            
         }
 
         // Función para alternar la selección en los arrays de filtros
