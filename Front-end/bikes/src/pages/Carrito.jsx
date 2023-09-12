@@ -14,7 +14,7 @@ const Carrito = () => {
             <Navbar />
             <ListProducts></ListProducts>
             <div className="shopping-card-container">
-                <div className="shopping-carts-container">
+                <div className="shopping-carts-container"> 
                     <CartaProducto></CartaProducto>
                 </div>
                 <AmountPrice></AmountPrice>

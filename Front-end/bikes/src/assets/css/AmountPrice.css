@@ -51,7 +51,7 @@
       background-color: #FF7A30;
       color: white;
       cursor: pointer;
-      outline: auto;
+      outline: none;
       transition: 0.5s;
       font-size: 100%;
     }
