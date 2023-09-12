@@ -1,7 +1,6 @@
 import React, { useEffect} from "react";
 import "../../assets/css/PaginaProducto.css";
 import { filterBrandSizeColorAndType } from "../../hooks/useFilter"
-// import { filterBrand } from "../../hooks/useFilter";
 
 /*ja */
 const PaginaProducto = () => {
@@ -9,10 +8,6 @@ const PaginaProducto = () => {
         useEffect(() => {
             filterBrandSizeColorAndType();   
         }, []);
-
-        // useEffect(() =>{
-        //     filterBrand();
-        // },[])
     
 
     return (
@@ -123,25 +118,25 @@ const PaginaProducto = () => {
                         <div className="filtro">
                             <h1>Color:</h1>
                             <div className='label-check'>
-                            <a href="#" className='color_item' typeof='Negro'>
+                            <a href="#" className='color_item' color='Negro'>
                                 <input type="checkbox" className='check' />
                                 <label>NEGRO</label>
                             </a>
                             </div>
                             <div className='label-check'>
-                            <a href="#" className='color_item' typeof='Rojo'>
+                            <a href="#" className='color_item' color='Rojo'>
                                 <input type="checkbox" className='check' />
                                 <label>ROJO</label>
                             </a>
                             </div>
                             <div className='label-check'>
-                            <a href="#" className='color_item' typeof='Azul'>
+                            <a href="#" className='color_item' color='Azul'>
                                 <input type="checkbox" className='check' />
                                 <label>AZUL</label>
                             </a>
                             </div>
                             <div className='label-check'>
-                            <a href="#" className='color_item' typeof='Blanco'>
+                            <a href="#" className='color_item' color='Blanco'>
                                 <input type="checkbox" className='check' />
                                 <label>BLANCO</label>
                             </a>

@@ -1,47 +1,6 @@
 import $ from 'jquery';
 
 
-export const filterBrand = () => {
-    // Array para rastrear las categorías seleccionadas
-    const selectedCategories = [];
-    
-    $(document).ready(function () {
-        $('.category_item').click(function () {
-            var catProduct = $(this).attr('category');
-            
-            // Verifica si la categoría ya está seleccionada
-            const index = selectedCategories.indexOf(catProduct);
-            if (index === -1) {
-                // Si no está seleccionada, agrégala al array
-                selectedCategories.push(catProduct);
-            } else {
-                // Si ya está seleccionada, quítala del array
-                selectedCategories.splice(index, 1);
-            }
-
-            // Filtra los elementos según las categorías seleccionadas
-            if (selectedCategories.length === 0) {
-                // Si no hay categorías seleccionadas, muestra todos los elementos
-                $(`.cartap`).show();
-            } else {
-                // Oculta todos los elementos
-                $(`.cartap`).hide();
-                // Muestra los elementos relacionados con las categorías seleccionadas
-                selectedCategories.forEach(category => {
-                    $(`.cartap[category="${category}"]`).show();
-                });
-            }
-        });
-
-        $(`.cartap`).click(function () {
-            // Restablece todos los filtros cuando se hace clic en un elemento con clase "cartap"
-            $(`.cartap`).show();
-            selectedCategories.length = 0; // Borra las categorías seleccionadas
-        });
-    });
-};
-
-
 export const filterBrandSizeColorAndType = () => {
     // Arrays para rastrear las marcas, tallas, colores y tipos seleccionados
     const selectedBrands = [];
@@ -119,6 +78,7 @@ export const filterBrandSizeColorAndType = () => {
                     $(`.cartap[type="${type}"]`).show();
                 });
             }
+            updateBrandFilters();
         });
 
         $(`.cartap`).click(function () {
@@ -128,41 +88,79 @@ export const filterBrandSizeColorAndType = () => {
         });
     });
 
-    //Acumulación de las colores
-    // $(document).ready(function () {
-    //     $('.color_item').click(function () {
-    //         var colorProduct = $(this).attr('typeof');
+    //Acumulación de las tipos
+    $(document).ready(function () {
+        $('.type_item').click(function () {
+            var typeProduct = $(this).attr('itemType');
             
-    //         // Verifica si la categoría ya está seleccionada
-    //         const index = selectedColors.indexOf(colorProduct);
-    //         if (index === -1) {
-    //             // Si no está seleccionada, agrégala al array
-    //             selectedColors.push(colorProduct);
-    //         } else {
-    //             // Si ya está seleccionada, quítala del array
-    //             selectedColors.splice(index, 1);
-    //         }
+            // Verifica si la categoría ya está seleccionada
+            const index = selectedTypes.indexOf(typeProduct);
+            if (index === -1) {
+                // Si no está seleccionada, agrégala al array
+                selectedTypes.push(typeProduct);
+            } else {
+                // Si ya está seleccionada, quítala del array
+                selectedTypes.splice(index, 1);
+            }
 
-    //         // Filtra los elementos según las categorías seleccionadas
-    //         if (selectedColors.length === 0) {
-    //             // Si no hay categorías seleccionadas, muestra todos los elementos
-    //             $(`.cartap`).show();
-    //         } else {
-    //             // Oculta todos los elementos
-    //             $(`.cartap`).hide();
-    //             // Muestra los elementos relacionados con las categorías seleccionadas
-    //             selectedColors.forEach(typeof => {
-    //                 $(`.cartap[typeof="${typeof}"]`).show();
-    //             });
-    //         }
-    //     });
+            // Filtra los elementos según las categorías seleccionadas
+            if (selectedTypes.length === 0) {
+                // Si no hay categorías seleccionadas, muestra todos los elementos
+                $(`.cartap`).show();
+            } else {
+                // Oculta todos los elementos
+                $(`.cartap`).hide();
+                // Muestra los elementos relacionados con las categorías seleccionadas
+                selectedTypes.forEach(itemType => {
+                    $(`.cartap[itemType="${itemType}"]`).show();
+                });
+            }
+            updateBrandFilters();
+        });
 
-    //     $(`.cartap`).click(function () {
-    //         // Restablece todos los filtros cuando se hace clic en un elemento con clase "cartap"
-    //         $(`.cartap`).show();
-    //         selectedSizes.length = 0; // Borra las categorías seleccionadas
-    //     });
-    // });
+        $(`.cartap`).click(function () {
+            // Restablece todos los filtros cuando se hace clic en un elemento con clase "cartap"
+            $(`.cartap`).show();
+            selectedTypes.length = 0; // Borra las categorías seleccionadas
+        });
+    });
+
+    //Acumulación de colores
+    $(document).ready(function () {
+        $('.color_item').click(function () {
+            var colorProduct = $(this).attr('color');
+            
+            // Verifica si la categoría ya está seleccionada
+            const index = selectedColors.indexOf(colorProduct);
+            if (index === -1) {
+                // Si no está seleccionada, agrégala al array
+                selectedColors.push(colorProduct);
+            } else {
+                // Si ya está seleccionada, quítala del array
+                selectedColors.splice(index, 1);
+            }
+
+            // Filtra los elementos según las categorías seleccionadas
+            if (selectedColors.length === 0) {
+                // Si no hay categorías seleccionadas, muestra todos los elementos
+                $(`.cartap`).show();
+            } else {
+                // Oculta todos los elementos
+                $(`.cartap`).hide();
+                // Muestra los elementos relacionados con las categorías seleccionadas
+                selectedColors.forEach(color => {
+                    $(`.cartap[color="${color}"]`).show();
+                });
+            }
+             updateBrandFilters();
+        });
+
+        $(`.cartap`).click(function () {
+            // Restablece todos los filtros cuando se hace clic en un elemento con clase "cartap"
+            $(`.cartap`).show();
+            selectedColors.length = 0; // Borra las categorías seleccionadas
+        });
+    });
 
 
     $(document).ready(function () {
@@ -222,7 +220,7 @@ export const filterBrandSizeColorAndType = () => {
         function filterByColor(selectedColors) {
             return selectedColors.length === 0 ?
                 $(`.cartap`) :
-                $(`.cartap[typeof="${selectedColors.join(' ')}"]`);
+                $(`.cartap[color="${selectedColors.join(' ')}"]`);
         }
 
         // Función para filtrar por tipo de bicicleta
@@ -232,38 +230,31 @@ export const filterBrandSizeColorAndType = () => {
                 $(`.cartap[itemType="${selectedBikeTypes.join(' ')}"]`);
         }
 
-        // function updateBrandFilters() {
-        //     const selectedCategories = selectedBrands;
-        //     const brandFilteredProducts = filterByCategory(selectedCategories);
-        //     brandFilteredProducts.show();
-        // }
+        //Filtros de marca
+        $('.category_item').click(function () {
+            var catProduct = $(this).attr('category');
+            toggleFilter(selectedBrands, catProduct);
+        });
 
-        // Filtro de marca
-            // $('.category_item').click(function () {
-            //     var catProduct = $(this).attr('category');
-            //     toggleFilter(selectedBrands, catProduct);
-            //     updateBrandFilters();
-            // });
 
-        
+        //Filtros de talla
+        $('.size_item').click(function () {
+            var sizeProduct = $(this).attr('type');
+            toggleFilter(selectedSizes, sizeProduct);
+        });
 
-        // Filtro de talla
-        // $('.size_item').click(function () {
-        //     var sizeProduct = $(this).attr('type');
-        //     toggleFilter(selectedSizes, sizeProduct);
-            
-        // });
+
+        //Filtros de tipo
+        $('.type_item').click(function () {
+            var typeProduct = $(this).attr('color');
+            toggleFilter(selectedTypes, typeProduct);
+        });
+
 
         // Filtro de color
         $('.color_item').click(function () {
-            var colorProduct = $(this).attr('typeof');
+            var colorProduct = $(this).attr('color');
             toggleFilter(selectedColors, colorProduct);
-        });
-
-        // Filtro de tipo de bicicleta
-        $('.type_item').click(function () {
-            var typeProduct = $(this).attr('itemType');
-            toggleFilter(selectedTypes, typeProduct);
         });
 
         // Restablecer todos los filtros cuando se hace clic en un elemento con clase "cartap"
