@@ -1,28 +1,18 @@
 import React, { useEffect} from "react";
 import "../../assets/css/PaginaProducto.css";
-import { filterBrandAndSize } from "../../hooks/useFilter"
+import { filterBrandSizeColorAndType } from "../../hooks/useFilter"
 // import { filterBrand } from "../../hooks/useFilter";
-import { filterType } from "../../hooks/useFilter";
-import { filterColor } from "../../hooks/useFilter";
 
 /*ja */
 const PaginaProducto = () => {
 
         useEffect(() => {
-            filterBrandAndSize();   
+            filterBrandSizeColorAndType();   
         }, []);
 
-        // useEffect(() => {
+        // useEffect(() =>{
         //     filterBrand();
-        // }, []);
-
-        useEffect(() => {
-            filterType();
-        }, []);
-
-        useEffect(() => {
-            filterColor();
-        }, []);
+        // },[])
     
 
     return (
