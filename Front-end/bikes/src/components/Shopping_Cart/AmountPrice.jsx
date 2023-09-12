@@ -1,7 +1,29 @@
-import React from 'react'
-import "../../assets/css/AmountPrice.css"
+import React, { useState } from 'react'
+import "../../assets/css/AmountPrice.css";
+import { useSelector } from 'react-redux';
 
 const AmountPrice = () => {
+
+    const convertPriceToNumber = (priceString) => {
+        // Remueve el signo de dólar, comas y puntos, y convierte la cadena en un número entero
+        const numericPrice = parseInt(priceString.replace(/\$|\.|,/g, ''), 10);
+        // Divide por 100 para eliminar los dos últimos ceros
+        return numericPrice / 100;
+      };
+
+    //redux
+    const cartItems = useSelector((state) => state.carrito.items);
+
+    // Calcula el precio total usando reduce y la función de conversión
+    const totalPrice = cartItems.reduce((total, item) => {
+        if (item.data) {
+          return total + convertPriceToNumber(item.data.precio);
+        }
+        return total;
+      }, 0);  
+    const sent = 50000;
+
+
     return (
         <>
             <div className="price-container">
@@ -10,11 +32,11 @@ const AmountPrice = () => {
 
                     <div className="individual-sesion-price-container">
                         <p>Subtotal: </p>
-                        <p>$399.000</p>
+                        <p>{totalPrice.toLocaleString()}</p>
                     </div>
                     <div className="individual-sesion-price-container">
                         <p>Envio: </p>
-                        <p>$50.000</p>
+                        <p>{sent.toLocaleString()}</p>
                     </div>
                 </div>
                 <div className="line-price-container">
@@ -33,7 +55,7 @@ const AmountPrice = () => {
                 <div className="line-price-container">
                     <hr />
                 </div>
-                <h3>TOTAL: $449.000</h3>
+                <h3>TOTAL: {(totalPrice + sent).toLocaleString()}</h3>
                 <div className="button-price-container">
                     <button><b>Ir a Pagar</b></button>
                 </div>

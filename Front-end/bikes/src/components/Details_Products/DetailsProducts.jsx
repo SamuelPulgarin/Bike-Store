@@ -37,8 +37,12 @@ export const DetailsProducts = () => {
     }
 */
     const handleAddToCart = ()=>{
+
+        const foundItem = cartItems.find(item => parseInt(item.data.id, 10) === parseInt(data.id, 10));
         
-        if(data){
+        if(foundItem){
+            alert('Este producto ya se encuentra agregado al carrito de compras');
+        }else{
             dispatch(addToCart({ data }));
         }
     }
