@@ -1,5 +1,5 @@
 import "../../assets/css/DetailsProduct.css";
-import bike from "../../../uploads/1694023151381-BicicletaGiantRevoltAdvancedPro123.jpg";
+import bike from "../../../uploads/1694392860882-BicicletaGiantRevoltAdvancedPro123.jpg";
 import '../../assets/css/DetailsProduct.css'
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";

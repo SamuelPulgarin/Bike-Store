@@ -15,16 +15,16 @@ const Footer = () => {
         </div>
         <div className="Follow_us">
           <h2>SIGUENOS EN</h2>
-          <a href="#">
+          <a href="https://www.facebook.com/bikestoreSCR" target="_blank">
             <i className="fa-brands fa-facebook"></i>
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/bikestore96/" target="_blank">
             <i className="fa-brands fa-instagram"></i>
           </a>
           <a href="#">
             <img src={logox} alt="" className="x"/>
           </a>
-          <a href="#">
+          <a href="https://www.youtube.com/channel/UCGTK5deG0RjqqaLfu0vmUCg" target="_blank">
             <i className="fa-brands fa-youtube"></i>
           </a>
         </div>
