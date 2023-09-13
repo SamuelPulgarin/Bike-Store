@@ -1,10 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-.all_container_form_info_buy{
+.all_container_form_info_buy {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -24,37 +24,37 @@
     border-radius: 1rem;
 }
 
-.Form_info_buy{
+.Form_info_buy {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.Form_info_buy h2{
+.Form_info_buy h2 {
     margin: 2rem;
 }
 
-.name_lastname{
+.name_lastname {
     display: flex;
     justify-content: center;
 }
 
-.Form_info_buy input{
+.Form_info_buy input {
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
     width: 45rem;
     border: none;
     background-color: rgb(236, 236, 236);
-    transition: all 2s; 
+    transition: all 2s;
 }
 
-.Form_info_buy input::placeholder{
+.Form_info_buy input::placeholder {
     font-weight: lighter;
 }
 
-.name_lastname input{
+.name_lastname input {
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
@@ -64,16 +64,16 @@
     transition: all 2s;
 }
 
-.name_lastname input::placeholder{
+.name_lastname input::placeholder {
     font-weight: lighter;
 }
 
-.container_select-input{
+.container_select-input {
     display: flex;
     justify-content: start;
 }
 
-.container_select_buy{
+.container_select_buy {
     margin: 1rem;
     position: relative;
     display: flex;
@@ -86,21 +86,21 @@
     transition: all 1s;
 }
 
-.container_select_buy::after{
+.container_select_buy::after {
     content: '\25BC';
     color: #FFF;
     position: absolute;
     top: 0;
     right: 0;
     padding: 0 1em;
-    background:#262626;
+    background: #262626;
     cursor: pointer;
     pointer-events: none;
     transition: .25s all ease;
     transition: all 1s;
 }
 
-.container_select_buy select{
+.container_select_buy select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -113,22 +113,22 @@
     padding: 0 1em;
     cursor: pointer;
     font-size: 1em;
-    border: 1px solid  #000;
+    border: 1px solid #000;
     border-radius: 7px;
     transition: all 1s;
 }
 
-.container_select_buy select::-ms-expand{
+.container_select_buy select::-ms-expand {
     display: none;
 }
 
 .container_select-input input[type="number"]::-webkit-inner-spin-button,
-.container_select-input input[type="number"]::-webkit-outer-spin-button{
+.container_select-input input[type="number"]::-webkit-outer-spin-button {
     appearance: none;
     -webkit-appearance: none;
 }
 
-.container_select-input input{
+.container_select-input input {
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
@@ -138,11 +138,11 @@
     transition: all 2s;
 }
 
-.container_select-input input::placeholder{
+.container_select-input input::placeholder {
     font-weight: lighter;
 }
 
-.container_departamento_ciudad input{
+.container_departamento_ciudad input {
     margin: 1rem;
     padding: 1rem;
     border-radius: 10px;
@@ -159,7 +159,7 @@
     justify-content: end;
 }
 
-.container_btn_form_buy button{
+.container_btn_form_buy button {
     padding: 15px 135px;
     border-radius: 5px;
     background-color: #262626;
@@ -171,22 +171,480 @@
     border: none;
 }
 
-.container_btn_form_buy button:hover{
+.container_btn_form_buy button:hover {
     background-color: #1f1f1f;
 }
 
-.container_departamento_ciudad{
+.container_departamento_ciudad {
     display: flex;
     justify-content: center;
 }
 
 /*Estilos de las estiquetas span errors */
-.acomodar_inputs{
+.acomodar_inputs {
     display: flex;
     flex-direction: column;
 }
 
-.acomodar_inputs .error{
+.acomodar_inputs .error {
     color: red;
     padding-left: 1.5rem;
+}
+
+/*Responsi*/
+
+@media (max-width: 1110px) {
+    .container_form_info_buy {
+        padding: 2rem;
+        margin: 2rem;
+        background-color: #FFF;
+        border-radius: 1rem;
+    }
+
+    .Form_info_buy input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 40rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .name_lastname input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 19rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_select-input input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 23rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_departamento_ciudad input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 19rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+}
+
+@media (max-width:1020px) {
+    .container_select_buy select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        background: #ffffff;
+        color: #000;
+        background-image: none;
+        flex: 1;
+        padding: 0 1em;
+        cursor: pointer;
+        font-size: 0.8em;
+        border: 1px solid #000;
+        border-radius: 7px;
+        transition: all 1s;
+    }
+
+    .container_select_buy {
+        margin: 1rem;
+        position: relative;
+        display: flex;
+        width: 12rem;
+        height: 2.9rem;
+        line-height: 3;
+        background: #262626;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        transition: all 1s;
+    }
+
+    .Form_info_buy input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 29rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .name_lastname .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 13.5rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_departamento_ciudad .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 13.5rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_select-input .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 15rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+}
+
+@media (max-width: 860px){
+    .container_select_buy select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        background: #ffffff;
+        color: #000;
+        background-image: none;
+        flex: 1;
+        padding: 0 0.8em;
+        cursor: pointer;
+        font-size: 0.5em;
+        border: 1px solid #000;
+        border-radius: 7px;
+        transition: all 1s;
+    }
+
+    .container_select_buy {
+        margin: 1rem;
+        position: relative;
+        display: flex;
+        width: 9rem;
+        height: 2.9rem;
+        line-height: 3;
+        background: #262626;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        transition: all 1s;
+    }
+
+    .Form_info_buy input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 21rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .name_lastname .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 10rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_select-input .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 10rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_departamento_ciudad .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 10rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_btn_form_buy button {
+        padding: 15px 50px;
+        border-radius: 5px;
+        background-color: #262626;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        transition: 0.5s;
+        font-size: 20px;
+        border: none;
+    }
+}
+
+@media (max-width: 700px){
+    .name_lastname {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Form_info_buy input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 15rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .name_lastname .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 15rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_select-input .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 15rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_select-input {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container_departamento_ciudad {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container_departamento_ciudad .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 15rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_select_buy {
+        margin: 1rem;
+        position: relative;
+        display: flex;
+        width: 15rem;
+        height: 3rem;
+        line-height: 3;
+        background: #262626;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        transition: all 1s;
+    }
+    
+    .container_select_buy::after {
+        content: '\25BC';
+        color: #FFF;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0 1em;
+        background: #262626;
+        cursor: pointer;
+        pointer-events: none;
+        transition: .25s all ease;
+        transition: all 1s;
+    }
+    
+    .container_select_buy select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        background: #ffffff;
+        color: #000;
+        background-image: none;
+        flex: 1;
+        padding: 0 1em;
+        cursor: pointer;
+        font-size: 1em;
+        border: 1px solid #000;
+        border-radius: 7px;
+        transition: all 1s;
+    }
+}
+
+@media (max-width: 540px){
+    .container_form_info_buy {
+        padding: 0.5rem;
+        margin: 2rem;
+        background-color: #FFF;
+        border-radius: 1rem;
+    }
+
+    .container_select_buy select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: 0;
+        box-shadow: none;
+        background: #ffffff;
+        color: #000;
+        background-image: none;
+        flex: 1;
+        padding: 0 0.8em;
+        cursor: pointer;
+        font-size: 0.5em;
+        border: 1px solid #000;
+        border-radius: 7px;
+        transition: all 1s;
+    }
+
+    .container_select_buy {
+        margin: 1rem;
+        position: relative;
+        display: flex;
+        width: 9rem;
+        height: 2.5rem;
+        line-height: 3;
+        background: #262626;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        transition: all 1s;
+    }
+
+    .container_select_buy::after {
+        content: '\25BC';
+        color: #FFF;
+        position: absolute;
+        top: -5px;
+        right: 0;
+        padding: 0rem 1em;
+        background: #262626;
+        cursor: pointer;
+        pointer-events: none;
+        transition: .25s all ease;
+        transition: all 1s;
+    }
+
+    .Form_info_buy input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 10rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .Form_info_buy input::placeholder{
+        font-size: 0.7rem;
+    }
+
+    .name_lastname .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 10rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_select-input .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 10rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_departamento_ciudad .acomodar_inputs input {
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        width: 10rem;
+        border: none;
+        background-color: rgb(236, 236, 236);
+        transition: all 2s;
+    }
+
+    .container_btn_form_buy button {
+        padding: 12px 45px;
+        border-radius: 5px;
+        background-color: #262626;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        transition: 0.5s;
+        font-size: 15px;
+        border: none;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .container_form_info_buy {
+        width: 12rem;
+        padding: 0rem;
+        margin: 1rem;
+        margin-bottom: 4rem;
+        background-color: #FFF;
+        border-radius: 1rem;
+    }
+
+    .acomodar_inputs .error {
+        font-size: 0.8rem;
+        color: red;
+        padding-left: 1.5rem;
+    }
+
+    .Form_info_buy h2 {
+        margin: 1.5rem;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .container_btn_form_buy button {
+        padding: 10px 35px;
+        border-radius: 5px;
+        background-color: #262626;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        transition: 0.5s;
+        font-size: 13px;
+        border: none;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
 }
