@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from "react";
 import "../../assets/css/PaginaProducto.css";
 import { filterBrandSizeColorAndType } from "../../hooks/useFilter"
+
 import $ from 'jquery';
 
 
@@ -10,7 +11,7 @@ const PaginaProducto = () => {
         useEffect(() => {
             filterBrandSizeColorAndType();   
         }, []);
-
+    
         const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [selectedTypes, setSelectedTypes] = useState([]);
@@ -79,7 +80,6 @@ const PaginaProducto = () => {
     // Habilita o deshabilita otros checkboxes de color
     $('.checkColor').not(event.target).prop('disabled', isChecked);
   };
-    
 
     return (
         <>
