@@ -16,22 +16,21 @@
   color: white;
   font-size: 20px;
   margin: 10px;
+ 
 }
 
 .fa-facebook:hover {
   color: #3b5999;
-  /* box-shadow:  0 0 60px #3b5999; */
 }
 
 .fa-instagram:hover {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(135deg,
+  background-image: linear-gradient(135deg, 
       #c70996 0%,
       #eb0824 50%,
       #fcca13 100%);
-      /* box-shadow: 0 0 60px #c70996; */
 }
 
 .logox{
@@ -43,7 +42,6 @@
 .logox:hover{
   background-color: #000;
   border-radius: 100%;
-  /* box-shadow: 0 0 60px white; */
 }
 .Follow_us .x{
  height: 38px;
@@ -58,7 +56,6 @@
 
 .fa-youtube:hover {
   color: #ff0909;
-  /* box-shadow: 0 0 60px #ff0909; */
 }
 
  .Follow_us:hover i {

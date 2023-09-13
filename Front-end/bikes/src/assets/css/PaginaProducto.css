@@ -43,7 +43,25 @@
     margin: 0px 20px;
 }
 
-.check{
+.checkBrands{
+    padding: 20px;
+    transform: scale(1.8);
+    cursor: pointer;
+} 
+
+.checkSize{
+    padding: 20px;
+    transform: scale(1.8);
+    cursor: pointer;
+} 
+
+.checkType{
+    padding: 20px;
+    transform: scale(1.8);
+    cursor: pointer;
+} 
+
+.checkColor{
     padding: 20px;
     transform: scale(1.8);
     cursor: pointer;
