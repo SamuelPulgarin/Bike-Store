@@ -19,7 +19,7 @@
 .container_add_product{
     transition: all 1s;
     width: 70rem;
-    height: 65rem;
+    height: 70rem;
     margin-top: 6rem;
     margin-bottom: 4rem;
     border-radius: 1rem;
@@ -230,13 +230,11 @@ input[type="file"]:hover {
     justify-content: space-around;
 }
 
-/* .container_btns_add{
+ .container_btns_add{
+    width: 100%;
     display: flex;
-    justify-content: space-around;
-    position: absolute;
-    left: 57rem;
-    top: 60rem;
-} */
+    justify-content: flex-end
+} 
 
 .container_btns_add .btn_cancel_add{
     margin: 30px 10px;
@@ -374,10 +372,9 @@ input[type="file"]:hover {
     }
 
     .img_add .container_btns_add {
-        margin-left: 5rem;
+        padding-right: 2rem;
+        margin-left: 2rem;
         margin-top: 35rem;
-        display: flex;
-        justify-content: space-around;
     }
 
     .container_btns_add .btn_cancel_add {
