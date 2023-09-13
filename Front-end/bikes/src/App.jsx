@@ -10,7 +10,8 @@ import { Loader } from "./components/Loader/Loader";
 import Detalles from "./pages/Detalles";
 import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
-//import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import { ComfirBuy } from "./pages/ComfirBuy";
+
 
 
 /*ja */
@@ -21,29 +22,28 @@ function App() {
     setLoading(false);
   };
 
-  return (
-    <>
-      {loading ? (
-        <Loader />
-      ) : (
-
-  //      <ShoppingCartProvider>
-          <Router>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/productos" element={<Productos />} />
-              <Route path="/Carrito" element={<Carrito />} />
-              <Route path="/signUp" element={<SignUp />} />
-              <Route path="/signIn" element={<SignIn />} />
-              <Route path="/Detalles/:id" element={<Detalles />} />
-              <Route path="/Admin" element={<Admin />} />
-              <Route path="/Add" element={<Cproduct />} />
-            </Routes>
-          </Router>
-  //     </ShoppingCartProvider>
-      )}
-    </>
-  );
+    return (
+        <>
+            {loading ? (
+                <Loader />
+            ) : (
+                <Router>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/Carrito" element={<Carrito />} />
+                        <Route path="/productos" element={<Productos />} />
+                        <Route path="/signUp" element={<SignUp />} />
+                        <Route path="/signIn" element={<SignIn />} />
+                        <Route path="/Detalles/:id" element={<Detalles />} />
+                        <Route path="/Admin" element={<Admin/>}/>
+                        <Route path="/Add/:id" element={<Cproduct/>} />
+                        <Route path="/Add" element={<Cproduct/>} />
+                        <Route path="/ComfirmBuy" element={<ComfirBuy/>} />
+                    </Routes>
+                </Router>
+            )}
+        </>
+    );
 
   //Metodo 2
   // const [domLoaded, setDomLoaded] = useState(false);
