@@ -11,7 +11,7 @@ import { useEffect } from 'react'
 
 
 export const AddProduct = () => {
-    const { register, handleSubmit, setValue, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, setValue, formState: { errors } } = useForm();
     const { ID, NOMBRE, CATEGORIA, MARCA, COLOR, TALLA, DESCRIPCION, STOCK, PRECIO, IMAGEN } = useValidationAddProduct();
     const { id } = useParams();
     const [data, setData] = useState([]);
@@ -44,60 +44,61 @@ export const AddProduct = () => {
         }
     }, [id, setValue]);
 
-    
-    const imageFile = watch('imagen'); // Nombre del campo del input type="file"
-    const [imageUrl, setImageUrl] = useState(defaultImage);
 
-    const fileInputRef = useRef(null);
+    // const imageFile = watch('imagen'); // Nombre del campo del input type="file"
+    // const [imageUrl, setImageUrl] = useState(defaultImage);
 
-    const handleImageChange = (e) => {
-        const file = e.target.files[0]; // Obtiene el archivo seleccionado
+    // const fileInputRef = useRef(null);
 
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                setImageUrl(e.target.result); // Actualiza vista previa de la imagen
-            };
-            reader.readAsDataURL(file);
+    // const handleImageChange = (e) => {
+    //     const file = e.target.files[0]; // Obtiene el archivo seleccionado
 
-            fileInputRef.current.value = ''; // Se limpia
-            fileInputRef.current.files = e.target.files; // inserta el valor en el input
-        }
-    };
+    //     if (file) {
+    //         const reader = new FileReader();
+    //         reader.onload = (e) => {
+    //             setImageUrl(e.target.result); // Actualiza vista previa de la imagen
+    //         };
+    //         reader.readAsDataURL(file);
+
+    //         fileInputRef.current.value = ''; // Se limpia
+    //         fileInputRef.current.files = e.target.files; // inserta el valor en el input
+    //     }
+    // };
 
     // Funcion para agregar producto
-    async function add(product) {
+    const handleImageChange = (e) => {
+        const selectedImage = e.target.files[0];
+        setValue('imagen', selectedImage);
+    }
+
+    const add = async (data) => {
         try {
             const formData = new FormData();
-
-            // Agrega cada campo del producto al FormData
-            formData.append('id', product.id);
-            formData.append('nombre', product.nombre);
-            formData.append('marca', product.marca);
-            formData.append('descripcion', product.descripcion);
-            formData.append('categoria', product.categoria);
-            formData.append('talla', product.talla);
-            formData.append('precio', product.precio);
-            formData.append('color', product.color);
-            formData.append('stock', product.stock);
-
-            // Agrega el archivo de imagen
-            formData.append('imagen', product.imagen);
+            formData.append('id', data.id);
+            formData.append('nombre', data.nombre);
+            formData.append('categoria', data.categoria);
+            formData.append('marca', data.marca);
+            formData.append('color', data.color);
+            formData.append('talla', data.talla);
+            formData.append('descripcion', data.descripcion);
+            formData.append('stock', data.stock);
+            formData.append('precio', data.precio);
+            formData.append('imagen', data.imagen);
 
             const response = await fetch('http://localhost:3060/create-product', {
                 method: 'POST',
-                body: formData, // Utiliza el FormData en lugar de JSON.stringify
+                body: formData,
             });
 
             if (response.ok) {
                 console.log('Producto Registrado exitosamente');
             } else {
-                console.log('Error al agregar el producto en el Frontend');
+                console.log('Error al agregar producto');
             }
         } catch (error) {
             console.error('Error del servidor', error);
         }
-    }
+    };
 
 
     return (
@@ -106,7 +107,7 @@ export const AddProduct = () => {
                 <div className="container_add_product">
                     <div className="container_form_add">
                         <h1>Agregar Producto</h1>
-                        <form method="POST" onSubmit={handleSubmit(add)}  enctype="multipart/form-data">
+                        <form method="POST" onSubmit={handleSubmit(add)} enctype="multipart/form-data">
                             <div className="container_info_product">
 
                                 <input type="number" name="id" placeholder="Codigo" {...register('id', ID)} />
@@ -204,16 +205,14 @@ export const AddProduct = () => {
 
                             <div className="img_add">
                                 <div className="container_img_add">
-                                    {imageUrl && <img src={imageUrl} alt="Vista previa de la imagen" />}
+                                    {/* {imageUrl && <img src={imageUrl} alt="Vista previa de la imagen" />} */}
                                 </div>
                                 <div className="file-upload">
                                     <input
-                                        name='imagen'
                                         type="file"
                                         id="imageFile"
                                         accept='image/jpeg, image/jpg, image/png'
-                                   
-                                        {...register('imagen', IMAGEN)}
+                                        {...register('imagen')}
                                         onChange={handleImageChange}
                                     />
                                     <label htmlFor="file-input">Seleccionar archivo</label>

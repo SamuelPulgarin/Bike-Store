@@ -17,18 +17,26 @@
     background-attachment: fixed;
 }
 
-.container_form_info_buy{
-    width: 80rem;
-    box-shadow: 6px 6px 5px #999999;
+.container_form_info_buy {
+    padding: 3rem;
+    margin: 3rem;
     background-color: #FFF;
     border-radius: 1rem;
-    
 }
 
 .Form_info_buy{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.Form_info_buy h2{
+    margin: 2rem;
+}
+
+.name_lastname{
+    display: flex;
     justify-content: center;
 }
 
@@ -133,6 +141,7 @@
 .container_select-input input::placeholder{
     font-weight: lighter;
 }
+
 .container_departamento_ciudad input{
     margin: 1rem;
     padding: 1rem;
@@ -141,4 +150,43 @@
     border: none;
     background-color: rgb(236, 236, 236);
     transition: all 2s;
+}
+
+.container_btn_form_buy {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.container_btn_form_buy button{
+    padding: 15px 135px;
+    border-radius: 5px;
+    background-color: #262626;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+    font-size: 20px;
+    border: none;
+}
+
+.container_btn_form_buy button:hover{
+    background-color: #1f1f1f;
+}
+
+.container_departamento_ciudad{
+    display: flex;
+    justify-content: center;
+}
+
+/*Estilos de las estiquetas span errors */
+.acomodar_inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.acomodar_inputs .error{
+    color: red;
+    padding-left: 1.5rem;
 }
