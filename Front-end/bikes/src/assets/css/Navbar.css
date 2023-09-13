@@ -37,7 +37,7 @@
     margin-left: 0;
 }
 #carrito{
-    width: 30px;
+    width: 33px;
     margin-top: 3px;
 }
 #perfil{
@@ -98,6 +98,23 @@
 
 label img{
     width: 30px;
+}
+
+.productos-carrito-container{
+    position: relative;
+
+    & #cantidad-producto-carrito{
+        position: absolute;
+        top: 2px;
+        right: -3px;
+        border-radius: 100%;
+        width: 17px;
+        height: 17px;
+        text-align: center;
+        font-size: 80%;
+        pointer-events: none;
+
+    }
 }
 
 /* APARCIENCIA DEL SELECT */
