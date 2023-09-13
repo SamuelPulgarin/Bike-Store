@@ -26,7 +26,7 @@ const Carta = () => {
             ? "Cargando..."
             : dataProduct.map((data) => {
               return (
-                <div className="cartap" key={data.id} category={data.marca} type={data.talla} itemType={data.categoria} typeof={data.color}>
+                <div className="cartap" key={data.id} category={data.marca} type={data.talla} itemType={data.categoria} color={data.color}>
                   <Link to={`/Detalles/${data.id}`}>
                     <img src={data.ruta} alt="Bicicletas muy bonitas" />
                     <div className="cartap-info">
