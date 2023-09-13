@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../assets/css/CartaProducto.css";
-import Example from "../../../uploads/1694211030597-BicicletaGiantPropelAdvancedPro0AXS23.jpg";
+import Example from "../../../uploads/1694393355971-BicicletaGiantPropelAdvancedPro0AXS23.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import { ProductNotFoundInCart } from "./ProductNotFoundInCart";
 import { ButtomContinueBuy } from "./ButtomContinueBuy";
