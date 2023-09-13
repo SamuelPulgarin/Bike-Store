@@ -4,6 +4,10 @@ import { useSelector } from 'react-redux';
 
 const AmountPrice = () => {
 
+
+    //redux
+    const cartItems = useSelector((state) => state.carrito.items);
+
     const convertPriceToNumber = (priceString) => {
         // Remueve el signo de dólar, comas y puntos, y convierte la cadena en un número entero
         const numericPrice = parseInt(priceString.replace(/\$|\.|,/g, ''), 10);
@@ -11,16 +15,15 @@ const AmountPrice = () => {
         return numericPrice / 100;
       };
 
-    //redux
-    const cartItems = useSelector((state) => state.carrito.items);
-
     // Calcula el precio total usando reduce y la función de conversión
     const totalPrice = cartItems.reduce((total, item) => {
         if (item.data) {
-          return total + convertPriceToNumber(item.data.precio);
+          return (total + convertPriceToNumber(item.data.precio)) * parseInt(item.data.cantidad);
         }
         return total;
       }, 0);  
+
+    //Coste del envío
     const sent = 50000;
 
 
@@ -31,7 +34,7 @@ const AmountPrice = () => {
                 <div className="sesion-price-container">
 
                     <div className="individual-sesion-price-container">
-                        <p>Subtotal: </p>
+                        <p>Acumulado: </p>
                         <p>{totalPrice.toLocaleString()}</p>
                     </div>
                     <div className="individual-sesion-price-container">

@@ -16,7 +16,7 @@ const carritoSlice = createSlice({
 
         // Reducer para eliminar un producto del carrito
         removeItemFromCart: (state, action) => {
-            
+
             const itemIdToRemove = action.payload; // Debe ser el ID o identificador único del producto a eliminar
             state.items = state.items.filter(item => parseInt(item.data.id, 10) !== itemIdToRemove);
             //console.log(itemIdToRemove);
@@ -35,17 +35,29 @@ const carritoSlice = createSlice({
                 
             });
             */
-            
+
         },
 
         // Reducer para vaciar completamente el carrito
         clearCart: (state) => {
             state.items = [];
         },
-    },
 
+        updateStock: (state, action) => {
+            const { id, cantidad } = action.payload;
+            // Encuentra el elemento correspondiente en el estado y actualiza su stock
+            const itemToUpdate = state.items.find(item => item.data.id === id);
+
+            if (itemToUpdate) {
+                // Actualiza el stock en el objeto data existente
+                itemToUpdate.data.cantidad = cantidad;
+
+            }
+
+        },
+    }
 })
 
-export const { addToCart, removeItemFromCart, clearCart } = carritoSlice.actions;
+export const { addToCart, removeItemFromCart, clearCart, updateStock } = carritoSlice.actions;
 export default carritoSlice.reducer;
 
