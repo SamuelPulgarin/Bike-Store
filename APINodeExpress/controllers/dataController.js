@@ -294,6 +294,53 @@ const deleteProduct = async(req, res) =>{
 
 }
 
+const updateProduct = async(req, res) => {
+
+  const productId = parseInt(req.params.id);
+
+  const { nombre, marca, talla, color, descripcion, categoria, precio, stock, imagen } = req.body;
+  const rutaImagen = req.file ? req.file : null;
+
+  if( !nombre || !marca || !talla || !color || !descripcion || !categoria || !precio || !stock){
+
+    res.status(400).json ({ error: "Falta la informacion requerida"})
+  }
+
+  try{
+
+    //Verifica si el producto existe
+    const productExist = await pool.query(
+      'SELECT * FROM producto WHERE = $1', [productId]
+    );
+
+    if(productExist.rowCount === 0){
+      return res.status(404).json({ error: "Producto no encontrado" });
+    }
+
+    //Realizar la actualizacion del producto
+    await pool.query(
+        'UPDATE producto SET nombre = $1, marca = $2, talla = $3, color = $4, descripcion = $5, categoria = $6, precio = $7; stock = $8 WHERE id = $9', 
+        [nombre, marca, talla, color, descripcion, categoria, precio, stock, productId]
+    );
+
+    //Si hay una imagen, se actualizara la ruta en la tabla imagenes
+    if(rutaImagen){
+        await pool.query('UPDATE imagenes SET ruta = $1 WHERE id = $2', [rutaImagen, productId])
+    }
+
+    res.status(200).json({ message: "Producto e imagen actualizado correctamente"});
+
+  } catch(error){
+
+    console.error('Error al actualizar el producto', error);
+    res.status(500).json({ error: "Error interno en el servidor"})
+  }
+
+
+
+
+}
+
 module.exports = {
   getProducts,
   uploadImage,
@@ -304,4 +351,5 @@ module.exports = {
   getProductsByMarca,
   deleteProduct,
   getProductById,
+  updateProduct,
 };
