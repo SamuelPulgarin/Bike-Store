@@ -3,6 +3,8 @@ import { useState } from "react";
 import "../../assets/css/AddProduct.css";
 import defaultImage from "../../assets/img/defaul.jpg";
 import useValidationAddProductos from "../../hooks/useValidationAddProductos";
+import { ErrorModal } from "../Modal/ErrorModal";
+import { ModalExitoCrud } from "../Modal/ModalExitoCrud"
 
 export const AddProduct = () => {
     const [id, setId] = useState("");
@@ -19,9 +21,25 @@ export const AddProduct = () => {
 
     const { errors, validateForm } = useValidationAddProductos();
 
-    // const [imageUrl, setImageUrl] = useState(defaultImage);
+    const [isModalError, setIsModalError] = useState(false); //Abrir Modal Error
 
-    // const fileInputRef = useRef(null);
+    const openErrorModal = () => {
+        setIsModalError(true);
+    };
+
+    const closeModalError = () => {
+        setIsModalError(false);
+    };
+
+    const { isModalCorrect, setIsModalCorrect } = useState(false);
+
+    const openModalCorrect = () => {
+        setIsModalCorrect(true);
+    };
+
+    const closeModalCorrect = () => {
+        setIsModalCorrect(false);
+    }
 
     const handleImageChange = (e) => {
         const selectedImage = e.target.files[0];
@@ -29,7 +47,7 @@ export const AddProduct = () => {
         if (selectedImage) {
           const reader = new FileReader();
           reader.onload = (e) => {
-            setImagePreview(e.target.result); // Update image preview
+            setImagePreview(e.target.result); // Actualiza imagen preview
           };
           reader.readAsDataURL(selectedImage);
         } else {
@@ -80,11 +98,14 @@ export const AddProduct = () => {
 
                 if (response.ok) {
                     console.log("Producto Registrado exitosamente");
+                    openModalCorrect();
                 } else {
                     console.log("Error agregar producto Front");
+                    openErrorModal();
                 }
             } catch (error) {
                 console.error("Error del servidor", error);
+                openErrorModal();
             }
         } else {
             // Form is not valid, do not submit
@@ -252,6 +273,18 @@ export const AddProduct = () => {
                     </div>
                 </div>
             </main>
+            <ModalExitoCrud 
+            isOpen={isModalCorrect}
+            onClose={closeModalCorrect}
+            title="¡Exito!"
+            content="Producto añadido Correctamente"
+            />
+            <ErrorModal 
+            openErrorModal={isModalError}
+            CloseErrorModal={closeModalError}
+            titleError="¡Error! Al agregar Producto"
+            messageError="Ha ocurrido un error al agregar el Producto."
+            />
         </>
     );
 };
