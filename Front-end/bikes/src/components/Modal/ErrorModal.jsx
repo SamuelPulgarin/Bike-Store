@@ -22,7 +22,7 @@ export const ErrorModal = ({openErrorModal, CloseErrorModal, titleError, message
                     <p>{messageError}</p>
                     
                         <button onClick={CloseErrorModal} className='btn_continuar_error_modal'>Continuar</button>
-                    
+
                 </div>
             </div>
         </>

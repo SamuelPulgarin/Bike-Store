@@ -16,26 +16,6 @@ export const DetailsProducts = () => {
     const cartItems = useSelector((state) => state.carrito.items);
     console.log(cartItems);
 
-    /*
-    const [cart, setCart] = useState(CartContext);
-    const addToCart = ()=>{
-        setCart((currItems) =>{
-            const isItemFound = currItems.find((item) => item.id === id)
-
-            if(isItemFound){
-                return currItems.map((item) => {
-                    if(item.id === id){
-                        return {...item, quantity: item.quantity + 1}
-                    }else{
-                        return item;
-                    }
-                })
-            } else {
-                return [...currItems, {id, quantity: 1}]
-            }
-        })
-    }
-*/
     const handleAddToCart = ()=>{
 
         const foundItem = cartItems.find(item => parseInt(item.data.id, 10) === parseInt(data.id, 10));
