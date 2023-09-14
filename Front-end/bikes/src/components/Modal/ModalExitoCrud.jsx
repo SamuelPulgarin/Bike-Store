@@ -4,7 +4,7 @@ import '../../assets/css/Modal.css'
 import MarcaVerificacion from '../../assets/img/MarcaVerificacion.png'
 import Close from '../../assets/img/close.png'
 
-export const SuccessModal = ({ isOpen, onClose, title, content }) => {
+export const ModalExitoCrud = ({ isOpen, onClose, title, content }) => {
     if (!isOpen) return null;
     const navigate = useNavigate();
 

@@ -11,6 +11,8 @@ import Detalles from "./pages/Detalles";
 import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
 import { ComfirBuy } from "./pages/ComfirBuy";
+import { Uproduct } from "./pages/Uproduct";
+
 
 
 
@@ -36,7 +38,7 @@ function App() {
                         <Route path="/signIn" element={<SignIn />} />
                         <Route path="/Detalles/:id" element={<Detalles />} />
                         <Route path="/Admin" element={<Admin/>}/>
-                        <Route path="/Add/:id" element={<Cproduct/>} />
+                        <Route path="/Update/:identificador" element={<Uproduct/>}/>
                         <Route path="/Add" element={<Cproduct/>} />
                         <Route path="/ComfirmBuy" element={<ComfirBuy/>} />
                     </Routes>

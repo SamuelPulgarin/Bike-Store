@@ -4,7 +4,8 @@ import "../../assets/css/AddProduct.css";
 import defaultImage from "../../assets/img/defaul.jpg";
 import useValidationAddProductos from "../../hooks/useValidationAddProductos";
 import { ErrorModal } from "../Modal/ErrorModal";
-import { ModalExitoCrud } from "../Modal/ModalExitoCrud"
+import { ModalExitoCrud } from "../Modal/ModalExitoCrud";
+
 
 export const AddProduct = () => {
     const [id, setId] = useState("");
@@ -31,7 +32,7 @@ export const AddProduct = () => {
         setIsModalError(false);
     };
 
-    const { isModalCorrect, setIsModalCorrect } = useState(false);
+    const [ isModalCorrect, setIsModalCorrect ] = useState(false);
 
     const openModalCorrect = () => {
         setIsModalCorrect(true);
@@ -73,8 +74,7 @@ export const AddProduct = () => {
             imagen,
         };
 
-        if (validateForm(formData)) {
-            // Si el formulario es válido, procede con el envío.
+        if (validateForm(formData)) {  // Si el formulario es válido, procede con el envío.
 
             const formData = new FormData();
             formData.append("id", id);

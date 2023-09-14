@@ -519,10 +519,11 @@ input[type="file"]:hover {
     }
 
     .img_add .container_btns_add {
+        padding: 0;
         margin-left: 0rem;
         margin-top: 5rem;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
     }
 
     .img_add {

@@ -86,7 +86,7 @@ export const Crud = () => {
                                     <td>$ {product.precio}</td>
                                     <td>
                                         <div className="container_btns_tabla">
-                                            <Link to={`/Add/${product.id}`}>
+                                            <Link to={`/Update/${product.id}`}>
                                                 <button className='btn_crud'>
                                                     <img src={Editar} alt="editar" />
                                                 </button>
