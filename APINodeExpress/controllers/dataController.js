@@ -43,7 +43,7 @@ const getProductById = async(req, res) =>{
 
   try{
     //Realiza una consulta a la base de datos para obtener el producto por su Marca
-    const product = await pool.query("SELECT * FROM producto WHERE id = $1", [id]);
+    const product = await pool.query("SELECT producto.*, imagenes.ruta FROM producto JOIN imagenes ON producto.id = imagenes.id WHERE producto.id = $1", [id]);
 
     if(product.rows.length === 0){
       return res.status(404).json({ error: "Producto no encontrado"});
