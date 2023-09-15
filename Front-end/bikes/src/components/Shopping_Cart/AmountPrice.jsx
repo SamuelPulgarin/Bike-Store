@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../../assets/css/AmountPrice.css";
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const AmountPrice = () => {
 
+    const [cantidad, setCantidad] = useState(0);
 
     //redux
     const cartItems = useSelector((state) => state.carrito.items);
@@ -25,6 +27,14 @@ const AmountPrice = () => {
 
     //Coste del envío
     const sent = 50000;
+
+      useEffect(() =>{
+         setCantidad(cartItems.length)
+      }, [cartItems])
+
+
+      console.log(cantidad)
+
 
 
     return (
@@ -60,7 +70,13 @@ const AmountPrice = () => {
                 </div>
                 <h3>TOTAL: {(totalPrice + sent).toLocaleString()}</h3>
                 <div className="button-price-container">
-                    <button><b>Ir a Pagar</b></button>
+                    {
+                        cantidad > 0 ? (
+                            <Link to={"/ComfirmBuy"}><button><b>Ir a Pagar</b></button></Link>
+                        ) 
+                        : 
+                        ( <button><b>Ir a Pagar</b></button>)
+                    }
                 </div>
                 
             </div>
