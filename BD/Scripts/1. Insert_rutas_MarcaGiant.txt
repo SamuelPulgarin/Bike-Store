@@ -1,0 +1,22 @@
+INSERT INTO public.imagenes(
+	ruta) /*Bicicletas Giant*/
+	VALUES ('uploads/1694392860882-BicicletaGiantRevoltAdvancedPro123.jpg'), 
+	('uploads/1694393000166-BicicletaGiantReign123.jpg'), 
+	('uploads/1694393076768-BicicletaGiantXtcAdvancedSl29123.jpg'), 
+	('uploads/1694393194879-BicicletaGiantTcrAdvancedProDisc1-AR23.jpg'), 
+	('uploads/1694393251237-BicicletaGiantPropelAdvanced223.jpg'), 
+	('uploads/1694393355971-BicicletaGiantPropelAdvancedPro0AXS23.jpg'), 
+	('uploads/1694393408096-BicicletaGiantTcrAdvancedDisc1+PC23.jpg'), 
+	('uploads/1694393452202-BicicletaGiantContendSL2Disc223.jpg'), 
+	('uploads/1694393590612-BicicletaGiantRevolt223.jpg'), 
+	('uploads/1694393621036-BicicletaGiantRevolt123.jpg'), 
+	('uploads/1694393715629-BicicletaGiantFathom29222.jpg'), 
+	('uploads/1694393749733-BicicletaGiantContend123.jpg'), 
+	('uploads/1694393841818-BicicletaGiantSCR123.jpg'), 
+	('uploads/1694393858700-BicicletaGiantSCR223.jpg'), 
+	('uploads/1694394008013-BicicletaGiantTranceXAdvancedPro29223.jpg'), 
+	('uploads/1694394130478-BicicletaGiantPropelAdvanced123.jpg'), 
+	('uploads/1694394241781-BicicletaGiantPropelAdvancedPro123.jpg'), 
+	('uploads/1694394387197-BicicletaGiantTranceX29223.jpg'),
+	('uploads/1694394408672-BicicletaGiantTranceX29123.jpg'),
+	('uploads/1694394449417-BicicletaGiantStance29122.jpg');
