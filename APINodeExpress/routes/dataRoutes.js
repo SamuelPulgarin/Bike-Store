@@ -31,6 +31,9 @@ router.post('/create-product', upload.single('imagen'), dataController.addProduc
 //Ruta para eliminar productos por su id
 router.delete("/delete-products/:id", dataController.deleteProduct);
 
+//Ruta para actualizar la informacion de un producto
+router.put("/update-product/:id", dataController.updateProduct );
+
 
 
 

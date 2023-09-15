@@ -41,6 +41,7 @@ export const DetailsProducts = () => {
           })
           .then((productData) => {
             setData(productData); // Asigna los datos a la variable data
+            console.log(data)
           })
           .catch((error) => {
             console.error("Error al cargar los detalles del producto:", error);
@@ -55,7 +56,7 @@ export const DetailsProducts = () => {
                 <div className="container__details">
                     <div className="cotiner_img_btn">
                         <div className="contaier_img_details">
-                            <img src={bike} className="img__details" alt="bicicleta" />
+                            <img src={`../../${data.ruta}`} className="img__details" alt="bicicleta" />
                         </div>
                         <div className="container_btn_details">
                             <button onClick={handleAddToCart}>Agregar Al Carrito</button>
