@@ -1,7 +1,6 @@
 import $ from 'jquery';
 
 
- 
 
 export const filterBrandSizeColorAndType = () => {
 
@@ -10,6 +9,7 @@ export const filterBrandSizeColorAndType = () => {
     const selectedSizes = [];
     const selectedColors = [];
     const selectedTypes = [];
+
 
     $(document).ready(function () {
         // Filtro de marca
@@ -56,7 +56,6 @@ export const filterBrandSizeColorAndType = () => {
 
             // Muestra los elementos que cumplen con todos los filtros
             intersection.show();
-
         }
 
         // Función para alternar la selección en los arrays de filtros
@@ -110,3 +109,5 @@ export const filterBrandSizeColorAndType = () => {
 
     });
 };
+
+export default filterBrandSizeColorAndType
