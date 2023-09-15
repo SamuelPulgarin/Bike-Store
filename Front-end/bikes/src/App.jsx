@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { Home } from "./pages/Home";
 import "./assets/css/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -10,6 +10,7 @@ import { Loader } from "./components/Loader/Loader";
 import Detalles from "./pages/Detalles";
 import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
+import { SearchResultsPage } from '../src/components/cloneHome/SearchResultsPage'
 //import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 
@@ -38,6 +39,8 @@ function App() {
               <Route path="/Detalles/:id" element={<Detalles />} />
               <Route path="/Admin" element={<Admin />} />
               <Route path="/Add" element={<Cproduct />} />
+              <Route exact path="/" component={Home} />
+              <Route path="/search-results" component={SearchResultsPage} />
             </Routes>
           </Router>
   //     </ShoppingCartProvider>
