@@ -56,6 +56,10 @@ export const filterBrandSizeColorAndType = () => {
 
             // Muestra los elementos que cumplen con todos los filtros
             intersection.show();
+
+            if(intersection.length === 0){
+                alert('No se encontraron productos con estas características');
+            }
         }
 
         // Función para alternar la selección en los arrays de filtros
@@ -110,4 +114,3 @@ export const filterBrandSizeColorAndType = () => {
     });
 };
 
-export default filterBrandSizeColorAndType
