@@ -1,0 +1,12 @@
+INSERT INTO public.imagenes(
+	ruta) /*Bicicletas Trek*/
+	VALUES ('uploads/1694400405599-BICICLETADEMONTAÃAMARLIN52022.jpg'), 
+	('uploads/1694400430015-BICICLETADERUTADOMANEAL2-2022.jpg'), 
+	('uploads/1694400453745-BICICLETADEMONTAÑAPROCALIBER9.5–2023.jpg'), 
+	('uploads/1694400551950-FX1.png'), 
+	('uploads/1694400625793-DualSportGen5.png'), 
+	('uploads/1694400654053-DualSport3Gen5.png'), 
+	('uploads/1694400678750-ÃmondaSL7.png'), 
+	('uploads/1694400787659-ÃmondaSL6.png'), 
+	('uploads/1694400803033-TopFuel8GXAXS tipoT.png'), 
+	('uploads/1694400829525-FuelExe5.png');
