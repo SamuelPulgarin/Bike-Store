@@ -2,7 +2,7 @@ const CONFIG_BD = {
     user: 'postgres',
     host: 'localhost',
     database: 'productos',
-    password: '12345',
+    password: 'admin',
     port: 5432 //puerto predeterminado de PostgreSQL
 }
 

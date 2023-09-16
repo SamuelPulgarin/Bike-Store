@@ -298,8 +298,13 @@ const updateProduct = async(req, res) => {
 
   const productId = parseInt(req.params.id);
 
-  const { nombre, marca, talla, color, descripcion, categoria, precio, stock, imagen } = req.body;
-  const rutaImagen = req.file ? req.file : null;
+  const { nombre, marca, talla, color, descripcion, categoria, precio, stock } = req.body;
+
+  const { filename, mimetype, size } = req.file;
+  const rutaImagen = req.file ?`uploads/${filename}`: null;
+  
+
+  console.log(req.body);
 
   if( !nombre || !marca || !talla || !color || !descripcion || !categoria || !precio || !stock){
 
@@ -310,7 +315,7 @@ const updateProduct = async(req, res) => {
 
     //Verifica si el producto existe
     const productExist = await pool.query(
-      'SELECT * FROM producto WHERE = $1', [productId]
+      'SELECT * FROM producto WHERE id = $1', [productId]
     );
 
     if(productExist.rowCount === 0){
@@ -319,7 +324,7 @@ const updateProduct = async(req, res) => {
 
     //Realizar la actualizacion del producto
     await pool.query(
-        'UPDATE producto SET nombre = $1, marca = $2, talla = $3, color = $4, descripcion = $5, categoria = $6, precio = $7; stock = $8 WHERE id = $9', 
+        'UPDATE producto SET nombre = $1, marca = $2, talla = $3, color = $4, descripcion = $5, categoria = $6, precio = $7, stock = $8 WHERE id = $9', 
         [nombre, marca, talla, color, descripcion, categoria, precio, stock, productId]
     );
 
