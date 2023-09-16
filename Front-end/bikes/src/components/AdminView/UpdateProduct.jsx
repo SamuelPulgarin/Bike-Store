@@ -9,7 +9,7 @@ export const UpdateProduct = () => {
 
     const { identificador } = useParams();
 
-
+    const [respuesa, setRespuesta] = useState([]);
     const [nombre, setNombre] = useState("");
     const [marca, setMarca] = useState("");
     const [talla, setTalla] = useState("");
@@ -32,21 +32,24 @@ export const UpdateProduct = () => {
                     return response.json();
                 })
                 .then((productData) => {
-                    setNombre(productData.nombre);
-                    setMarca(productData.marca);
-                    setTalla(productData.talla);
-                    setColor(productData.color);
-                    setDescripcion(productData.descripcion);
-                    setCategoria(productData.categoria);
-                    setPrecio(productData.precio);
-                    setStock(productData.stock);
-                    setImagePreview(productData.imagen || defaultImage);
+                    console.log(productData)
+                    setRespuesta(productData)
+                    // setNombre(productData.nombre);
+                    // setMarca(productData.marca);
+                    // setTalla(productData.talla);
+                    // setColor(productData.color);
+                    // setDescripcion(productData.descripcion);
+                    // setCategoria(productData.categoria);
+                    // setPrecio(productData.precio);
+                    // setStock(productData.stock);
+                    // setImagePreview(`../../${productData.ruta}`);
                 })
                 .catch((error) => {
                     console.error("Error al cargar los detalles del producto:", error);
                 });
         }
     }, [identificador])
+
 
 
     const { errors, validateForm } = useValidationUpdate();
@@ -87,23 +90,30 @@ export const UpdateProduct = () => {
         console.log(formData);
 
         if (validateForm(formData)) { // Si el formulario es válido, procede con el envío.
-            try {
-                const response = await fetch(`http://localhost:3060/update-product/${identificador}`, {
-                    method: "PUT",
-                    body: formData,
-                })
-                if (response.ok) {
-                    console.log("Producto actualizado correctamente");
-                }
-                else {
-                    console.log("ERROR, Producto no actualizado");
-                }
-            }
-            catch (error) {
-                console.error("Error del servidor", error)
-            }
+            // try {
+            //     const response = await fetch(`http://localhost:3060/update-product/${identificador}`, {
+            //         method: "PUT",
+            //         body: formData,
+            //     })
+            //     if (response.ok) {
+            //         console.log("Producto actualizado correctamente");
+            //     }
+            //     else {
+            //         console.log("ERROR, Producto no actualizado");
+            //     }
+            // }
+            // catch (error) {
+            //     console.error("Error del servidor", error)
+            // }
         }
     }
+    if(respuesa){
+        setNombre(respuesa.nombre);
+    }
+
+
+
+    
 
 
 

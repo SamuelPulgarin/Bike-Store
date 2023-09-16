@@ -39,6 +39,4 @@ router.put("/update-product/:id", dataController.updateProduct );
 
 
 
-
-
 module.exports = router;

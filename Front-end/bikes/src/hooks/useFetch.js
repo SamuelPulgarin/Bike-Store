@@ -21,7 +21,7 @@ export const FetchProducts = (urlProductName, urlProductImg) =>{
 
   };
 
-  const fetchDataImg = async() =>{
+  const fetchDataImg = async () =>{
     var requestOptions = {
       method: "GET",
       redirect: "follow",

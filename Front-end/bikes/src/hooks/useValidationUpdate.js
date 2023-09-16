@@ -7,31 +7,31 @@ const useValidationUpdate = () => {
     const validateForm = (formData) => {
       const newErrors = {};
   
-      if (formData.nombre.trim() === "") {
+      if (!formData.nombre || formData.nombre.trim() === "") {
         newErrors.nombre = "El nombre es requerido";
       }
 
-      if(formData.marca.trim() === "") {
+      if(!formData.marca || formData.marca.trim() === "") {
         newErrors.marca = "Este campo es requerido"
       }
 
-      if(formData.categoria.trim() === "") {
+      if(!formData.categoria || formData.categoria.trim() === "") {
         newErrors.categoria = "Este campo es requerido" 
       }
 
-      if(formData.color.trim() === ""){
+      if(!formData.color || formData.color.trim() === ""){
         newErrors.color = "Este campo es requerido"
       }
 
-      if(formData.color.trim() === ""){
+      if(!formData.talla || formData.talla.trim() === ""){
         newErrors.talla = "Este campo es requerido"
       }
 
-      if (formData.descripcion.trim() === "") {
+      if (!formData.descripcion || formData.descripcion.trim() === "") {
         newErrors.descripcion = "La descripción es requerida"
       }
 
-      if(formData.stock.trim() === "") {
+      if(!formData.stock || formData.stock.trim() === "") {
         newErrors.stock = "Este campo es requerido"
       }
       else {
@@ -41,7 +41,7 @@ const useValidationUpdate = () => {
         }
       }
 
-      if(formData.precio.trim() === "") {
+      if(!formData.precio || formData.precio.trim() === "") {
         newErrors.precio = "Este campo es requerido"
       }
       else {

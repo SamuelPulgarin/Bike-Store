@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true })); //el middleware body-parser 
 
 // Configurar CORS para permitir solicitudes desde localhost:3000
 const corsOptions = {
-    origin: 'http://localhost:5173',
+    origin: '*',
 };
 app.use(cors(corsOptions));
 
