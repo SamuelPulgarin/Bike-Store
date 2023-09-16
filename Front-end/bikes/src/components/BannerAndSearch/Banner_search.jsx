@@ -1,45 +1,44 @@
-import React from 'react';
 import '../../assets/CSS/Banner_search_styles.css';
 import Lupa from '../../assets/img/Lupa.png'
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-/*ja */
+import React, { useState } from 'react';
+// import { useHistory } from 'react-router-dom';
+
 const Banner_search = () => {
 
-    const [bikes, setBikes] = useState([]);
-    const [search, setSearch] = useState("");
+    const [search, setSearch] = useState('');
+    // const history = useHistory(); // Instancia useHistory para redirección
 
-    const peticiónGet = async() => {
-        await axios.get("http://localhost:3060")
-        .then(response => {
-            console.log(response.data)
-        }).catch(error => {
-            console.log(error)
-        })
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSearch = () => {
+    // Redirige a la página de resultados de búsqueda con el término de búsqueda como parámetro
+    history.push(`/search-results?query=${encodeURIComponent(search)}`);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      // Si se presiona Enter, realiza la búsqueda
+      handleSearch();
     }
-
-    const handleChange = e => {
-        setSearch(e.target.value);
-        console.log("Busqueda: " + e.target.value);
-    }
-
-   
-
-    useEffect(() => {
-        peticiónGet();
-    }, [])
-
+  };
 
     return (
         <>
-            <div className='Container'>
-                <div className='Search'>
-                    <input type="text" 
-                    placeholder='Buscar' 
-                    className='search' 
-                    value={search} 
-                    onChange={handleChange}/>
-                    <button id='lupa'><img src={Lupa} alt="Lupa" /></button>
+            <div className="Container">
+                <div className="Search">
+                    <input
+                        type="text"
+                        placeholder="Buscar"
+                        className="search"
+                        value={search}
+                        onChange={handleChange}
+                        onKeyPress={handleKeyPress}
+                    />
+                    <button id="lupa" onClick={handleSearch}>
+                        <img src={Lupa} alt="Lupa" />
+                    </button>
                 </div>
             </div>
         </>

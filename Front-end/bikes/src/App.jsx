@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import { Home } from "./pages/Home";
 import "./assets/css/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -10,6 +10,8 @@ import { Loader } from "./components/Loader/Loader";
 import Detalles from "./pages/Detalles";
 import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
+import { SearchResultsPage } from '../src/components/cloneHome/SearchResultsPage'
+//import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { ComfirBuy } from "./pages/ComfirBuy";
 import { Uproduct } from "./pages/Uproduct";
 
@@ -41,7 +43,9 @@ function App() {
                         <Route path="/Update/:identificador" element={<Uproduct/>}/>
                         <Route path="/Add" element={<Cproduct/>} />
                         <Route path="/ComfirmBuy" element={<ComfirBuy/>} />
-                    </Routes>
+                      <Route exact path="/" component={Home} />
+              <Route path="/search-results" component={SearchResultsPage} />
+            </Routes>
                 </Router>
             )}
         </>

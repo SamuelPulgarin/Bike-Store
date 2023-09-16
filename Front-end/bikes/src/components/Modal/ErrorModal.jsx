@@ -8,7 +8,7 @@ export const ErrorModal = ({openErrorModal, CloseErrorModal, titleError, message
     
     return (
         <>
-            <div className="overlay_error_modal">
+            <div className="overlay_error_modal" id='ErrorModal'>
                 <div className="ErrorModal-content">
                     <div className="container_btn_close_modal_error">
                         <button onClick={CloseErrorModal} className='btn_close_modal_error'>

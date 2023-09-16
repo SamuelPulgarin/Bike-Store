@@ -1,25 +1,24 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import "../../assets/css/PaginaProducto.css";
-import { filterBrandSizeColorAndType } from "../../hooks/useFilter"
+import { filterBrandSizeColorAndType } from '../../hooks/useFilter'
+import $ from 'jquery'
 
-import $ from 'jquery';
-
-
-/*ja */
 const PaginaProducto = () => {
-
-        useEffect(() => {
-            filterBrandSizeColorAndType();   
-        }, []);
-    
-        const [selectedBrands, setSelectedBrands] = useState([]);
+  const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+
+  useEffect(() => {
+    filterBrandSizeColorAndType();
+  }, [])
+
+  
 
   // Manejar cambios en los checkboxes de marca
   const handleBrandChange = (event) => {
-    const catProduct = event.target.getAttribute('category');
+    const catProduct = event.target.getAttribute("category");
     const isChecked = event.target.checked;
 
     // Actualiza el estado de la marca seleccionada
@@ -30,12 +29,13 @@ const PaginaProducto = () => {
     }
 
     // Habilita o deshabilita otros checkboxes de marca
-    $('.checkBrands').not(event.target).prop('disabled', isChecked);
+    $(".checkBrands").not(event.target).prop("disabled", isChecked);
+    
   };
 
   // Manejar cambios en los checkboxes de talla
   const handleSizeChange = (event) => {
-    const sizeProduct = event.target.getAttribute('type');
+    const sizeProduct = event.target.getAttribute("type");
     const isChecked = event.target.checked;
 
     // Actualiza el estado de la talla seleccionada
@@ -46,12 +46,13 @@ const PaginaProducto = () => {
     }
 
     // Habilita o deshabilita otros checkboxes de talla
-    $('.checkSize').not(event.target).prop('disabled', isChecked);
+    $(".checkSize").not(event.target).prop("disabled", isChecked);
+
   };
 
-  // Manejar cambios en los checkboxes de tipo
+//   // Manejar cambios en los checkboxes de tipo
   const handleTypeChange = (event) => {
-    const typeProduct = event.target.getAttribute('itemType');
+    const typeProduct = event.target.getAttribute("itemType");
     const isChecked = event.target.checked;
 
     // Actualiza el estado del tipo seleccionado
@@ -62,12 +63,13 @@ const PaginaProducto = () => {
     }
 
     // Habilita o deshabilita otros checkboxes de tipo
-    $('.checkType').not(event.target).prop('disabled', isChecked);
+    $(".checkType").not(event.target).prop("disabled", isChecked);
+
   };
 
   // Manejar cambios en los checkboxes de color
   const handleColorChange = (event) => {
-    const colorProduct = event.target.getAttribute('color');
+    const colorProduct = event.target.getAttribute("color");
     const isChecked = event.target.checked;
 
     // Actualiza el estado del color seleccionado
@@ -78,149 +80,217 @@ const PaginaProducto = () => {
     }
 
     // Habilita o deshabilita otros checkboxes de color
-    $('.checkColor').not(event.target).prop('disabled', isChecked);
+    $(".checkColor").not(event.target).prop("disabled", isChecked);
+
   };
 
-    return (
-        <>
-            <div className='contenedor-filtros'>
+  return (
+    <>
+      <div className="contenedor-filtros">
+        <div className="filtros">
+          <h1>Filtros</h1>
 
-                <div className='filtros'>
-                    <h1>Filtros</h1>
-
-                    <div className='contenedor-checks'>
-
-                        <div className='filtro'>
-                            <h1>Marca:</h1>
-                            <div className='label-check'>
-                                <a href="#" className='category_item' category='Scott'>
-                                <input  type="checkbox" className="checkBrands" onChange={handleBrandChange}/>
-                                <label>Scott</label>
-                                </a>
-                            </div>
-                            <div className='label-check'>
-                                <a href="#" className='category_item' category='GW'>
-                                <input  type="checkbox" className="checkBrands" onChange={handleBrandChange}/>
-                                <label>GW</label>
-                                </a>
-                            </div>
-                            <div className='label-check'>
-                                <a href="#" className='category_item' category='Giant'>
-                                <input type="checkbox" className="checkBrands" onChange={handleBrandChange}/>
-                                <label>Giant</label>
-                                </a>
-                            </div>
-                            <div className='label-check'>
-                                <a href="#" className='category_item' category='Trek'>
-                                <input  type="checkbox" className="checkBrands" onChange={handleBrandChange}/>
-                                <label>Trek</label>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="filtro">
-                            <h1>Talla:</h1>
-                            <div className='label-check'>
-                            <a href="#" className='size_item' type='XS'>
-                                <input type="checkbox" className='checkSize' onChange={handleSizeChange}/>
-                                <label>XS</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='size_item' type='S'>
-                                <input type="checkbox" className='checkSize' onChange={handleSizeChange}/>
-                                <label>S</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='size_item' type='M'>
-                                <input type="checkbox" className='checkSize' onChange={handleSizeChange}/>
-                                <label>M</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='size_item' type='L'>
-                                <input type="checkbox" className='checkSize' onChange={handleSizeChange}/>
-                                <label>L</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='size_item' type='XL'>
-                                <input type="checkbox" className='checkSize' onChange={handleSizeChange}/>
-                                <label>XL</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='size_item' type='XXL'>
-                                <input type="checkbox" className='checkSize' onChange={handleSizeChange}/>
-                                <label>XXL</label>
-                            </a>
-                            </div>
-                        </div>
-
-                        <div className="filtro">
-                            <h1>Tipo:</h1>
-                            <div className='label-check'>
-                            <a href="#" className='type_item' itemType='Ruta'>
-                                <input type="checkbox" className='checkType' onChange={handleTypeChange}/>
-                                <label>RUTA</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='type_item' itemType='Montaña'>
-                                <input type="checkbox" className='checkType' onChange={handleTypeChange}/>
-                                <label>MONTAÑA</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='type_item' itemType='BMX'>
-                                <input type="checkbox" className='checkType' onChange={handleTypeChange}/>
-                                <label>BMX</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='type_item' itemType='Híbrida'>
-                                <input type="checkbox" className='checkType' onChange={handleTypeChange}/>
-                                <label>HiBRIDAS</label>
-                            </a>
-                            </div>
-                        </div>
-
-                        <div className="filtro">
-                            <h1>Color:</h1>
-                            <div className='label-check'>
-                            <a href="#" className='color_item' color='Negro'>
-                                <input type="checkbox" className='checkColor' onChange={handleColorChange}/>
-                                <label>NEGRO</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='color_item' color='Rojo'>
-                                <input type="checkbox" className='checkColor' onChange={handleColorChange}/>
-                                <label>ROJO</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='color_item' color='Azul'>
-                                <input type="checkbox" className='checkColor' onChange={handleColorChange}/>
-                                <label>AZUL</label>
-                            </a>
-                            </div>
-                            <div className='label-check'>
-                            <a href="#" className='color_item' color='Blanco'>
-                                <input type="checkbox" className='checkColor' onChange={handleColorChange}/>
-                                <label>BLANCO</label>
-                            </a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
+          <div className="contenedor-checks">
+            <div className="filtro">
+              <h1>Marca:</h1>
+              <div className="label-check">
+                <a href="#" className="category_item" category="Scott">
+                  <input
+                    type="checkbox"
+                    className="checkBrands"
+                    onChange={handleBrandChange}
+                  />
+                  <label>Scott</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="category_item" category="GW">
+                  <input
+                    type="checkbox"
+                    className="checkBrands"
+                    onChange={handleBrandChange}
+                  />
+                  <label>GW</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="category_item" category="Giant">
+                  <input
+                    type="checkbox"
+                    className="checkBrands"
+                    onChange={handleBrandChange}
+                  />
+                  <label>Giant</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="category_item" category="Trek">
+                  <input
+                    type="checkbox"
+                    className="checkBrands"
+                    onChange={handleBrandChange}
+                  />
+                  <label>Trek</label>
+                </a>
+              </div>
             </div>
-        </>
-    )
-}
 
-export default PaginaProducto
+            <div className="filtro">
+              <h1>Talla:</h1>
+              <div className="label-check">
+                <a href="#" className="size_item" type="XS">
+                  <input
+                    type="checkbox"
+                    className="checkSize"
+                    onChange={handleSizeChange}
+                  />
+                  <label>XS</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="size_item" type="S">
+                  <input
+                    type="checkbox"
+                    className="checkSize"
+                    onChange={handleSizeChange}
+                  />
+                  <label>S</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="size_item" type="M">
+                  <input
+                    type="checkbox"
+                    className="checkSize"
+                    onChange={handleSizeChange}
+                  />
+                  <label>M</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="size_item" type="L">
+                  <input
+                    type="checkbox"
+                    className="checkSize"
+                    onChange={handleSizeChange}
+                  />
+                  <label>L</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="size_item" type="XL">
+                  <input
+                    type="checkbox"
+                    className="checkSize"
+                    onChange={handleSizeChange}
+                  />
+                  <label>XL</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="size_item" type="XXL">
+                  <input
+                    type="checkbox"
+                    className="checkSize"
+                    onChange={handleSizeChange}
+                  />
+                  <label>XXL</label>
+                </a>
+              </div>
+            </div>
+
+            <div className="filtro">
+              <h1>Tipo:</h1>
+              <div className="label-check">
+                <a href="#" className="type_item" itemType="Ruta">
+                  <input
+                    type="checkbox"
+                    className="checkType"
+                    onChange={handleTypeChange}
+                  />
+                  <label>RUTA</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="type_item" itemType="Montaña">
+                  <input
+                    type="checkbox"
+                    className="checkType"
+                    onChange={handleTypeChange}
+                  />
+                  <label>MONTAÑA</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="type_item" itemType="BMX">
+                  <input
+                    type="checkbox"
+                    className="checkType"
+                    onChange={handleTypeChange}
+                  />
+                  <label>BMX</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="type_item" itemType="Híbrida">
+                  <input
+                    type="checkbox"
+                    className="checkType"
+                    onChange={handleTypeChange}
+                  />
+                  <label>HiBRIDAS</label>
+                </a>
+              </div>
+            </div>
+
+            <div className="filtro">
+              <h1>Color:</h1>
+              <div className="label-check">
+                <a href="#" className="color_item" color="Negro">
+                  <input
+                    type="checkbox"
+                    className="checkColor"
+                    onChange={handleColorChange}
+                  />
+                  <label>NEGRO</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="color_item" color="Rojo">
+                  <input
+                    type="checkbox"
+                    className="checkColor"
+                    onChange={handleColorChange}
+                  />
+                  <label>ROJO</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="color_item" color="Azul">
+                  <input
+                    type="checkbox"
+                    className="checkColor"
+                    onChange={handleColorChange}
+                  />
+                  <label>AZUL</label>
+                </a>
+              </div>
+              <div className="label-check">
+                <a href="#" className="color_item" color="Blanco">
+                  <input
+                    type="checkbox"
+                    className="checkColor"
+                    onChange={handleColorChange}
+                  />
+                  <label>BLANCO</label>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default PaginaProducto;
