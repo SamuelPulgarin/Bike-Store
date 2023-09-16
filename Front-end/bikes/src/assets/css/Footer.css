@@ -70,7 +70,7 @@
 }
 
 
-.Follow_us .x:hover{
+.Follow_us .logox:hover{
   transform: translateY(-3px) scale(1.05);
   filter: none;
 } 
@@ -236,6 +236,10 @@
   .FooterContain {
     height: fit-content;
   }
+
+  .logox{
+    margin-top: 10px;
+  }
 }
 
 /*IPad Mini*/
@@ -283,12 +287,12 @@
     height: 30vh;
   }
 
-  /* .Follow_us {
-    margin-top: -15px;
-  } */
-
   .Copy h5{
     font-size: 19px;
+  }
+
+  .logox{
+    margin-top:8px;
   }
 }
 
@@ -339,6 +343,7 @@
   .logox{
     width: 25px;
     height: 25px;
+    margin-top: 11px;
   }
 }
 
@@ -369,6 +374,10 @@
 
   .Copy{
     margin-top: -5px;
+  }
+
+  .logox{
+    margin-top: 8px;
   }
 }
 

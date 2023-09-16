@@ -7,8 +7,9 @@ import Footer from "../components/Footer/Footer";
 import { Loader } from "../components/Loader/Loader";
 
 
-export const Home = () => {
 
+
+export const Home = () => {
 
     return (
         <>
