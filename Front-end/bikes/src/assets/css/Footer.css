@@ -70,7 +70,7 @@
 }
 
 
-.Follow_us .x:hover{
+.Follow_us .logox:hover{
   transform: translateY(-3px) scale(1.05);
   filter: none;
 } 
