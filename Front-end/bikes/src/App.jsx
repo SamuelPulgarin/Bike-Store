@@ -16,8 +16,6 @@ import { ComfirBuy } from "./pages/ComfirBuy";
 import { Uproduct } from "./pages/Uproduct";
 
 
-
-
 /*ja */
 function App() {
   const [loading, setLoading] = useState(true);
