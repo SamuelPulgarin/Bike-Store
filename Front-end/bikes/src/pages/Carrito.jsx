@@ -19,10 +19,9 @@ const Carrito = () => {
                 </div>
                 <AmountPrice></AmountPrice>
             </div>
-
-
-            
-
+            <div className="container-aislador-footer">
+                <Footer/>
+            </div>
         </>
     )
 }

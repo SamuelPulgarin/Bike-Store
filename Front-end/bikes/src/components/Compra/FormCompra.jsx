@@ -1,9 +1,14 @@
 import React from 'react'
 import '../../assets/css/FormCompra.css'
 import { useForm } from 'react-hook-form'
-import useValidationInfoClient from '../../hooks/useValidationInfoClient'
+import useValidationInfoClient from '../../hooks/useValidationInfoClient';
+import { useSelector } from 'react-redux';
 
 const FormCompra = () => {
+
+    const cartItems = useSelector((state) => state.carrito.items)
+
+    console.log(cartItems)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const {
