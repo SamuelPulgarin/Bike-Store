@@ -3,8 +3,7 @@ import '../../assets/css/FacturaPDF.css'
 import { PDFViewer, Document, Page, Text, View, StyleSheet, Image } from "@react-pdf/renderer";
 import logo from '../../assets/img/Logo-circle.png'
 import bikestore from '../../assets/img/Logo-short.png'
-
-
+import { useSelector } from 'react-redux';
 
 
 const styles = StyleSheet.create({
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
     logo: {
         width: '40px',
         height: 'auto',
-        marginLeft: '10px', // Espacio entre las imágenes
+        marginLeft: '10px',
     },
     marca: {
         position: 'absolute',
@@ -282,6 +281,9 @@ const styles = StyleSheet.create({
 
 export const FacturaPDF = () => {
 
+    const facturaData = useSelector((state) => state.factura.dataFactura);
+    console.log(facturaData)
+
     const currentDate = new Date();
     const formattedDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`;
 
@@ -298,11 +300,11 @@ export const FacturaPDF = () => {
                             <View style={styles.bodyFactura}>
                                 <View>
                                     <Text style={styles.client}>
-                                        Ricardo Polania Rubiano
+                                        {facturaData[0].dataClient.Nombre} {facturaData[0].dataClient.Apellidos}
                                     </Text>
 
                                     <Text style={styles.documento}>
-                                        CC 1016713467
+                                        {facturaData[0].dataClient.TipoDocumento} {facturaData[0].dataClient.Documento}
                                     </Text>
 
                                     <Text style={styles.refe}>
@@ -339,22 +341,22 @@ export const FacturaPDF = () => {
 
                                 <View>
                                     <Text style={styles.nombreInfe}>
-                                        Ricardo Polania Rubiano
+                                        {facturaData[0].dataClient.Nombre} {facturaData[0].dataClient.Apellidos}
                                     </Text>
                                     <Text style={styles.docuInfe}>
-                                        CC 1016713467
+                                        {facturaData[0].dataClient.TipoDocumento} {facturaData[0].dataClient.Documento}
                                     </Text>
                                     <Text style={styles.telefono}>
                                         Telefono:
                                     </Text>
                                     <Text style={styles.numeroTelefono}>
-                                        3205781997
+                                        {facturaData[0].dataClient.Telefono}
                                     </Text>
                                     <Text style={styles.acoEmail}>
                                         Email:
                                     </Text>
                                     <Text style={styles.email}>
-                                        rpolaniarubiano@gmail.com
+                                        {facturaData[0].dataClient.email}
                                     </Text>
                                     <Text style={styles.DateFactu}>
                                         Fecha de Facturación:
