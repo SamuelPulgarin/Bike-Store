@@ -41,9 +41,9 @@ function App() {
                         <Route path="/Update/:identificador" element={<Uproduct/>}/>
                         <Route path="/Add" element={<Cproduct/>} />
                         <Route path="/ComfirmBuy" element={<ComfirBuy/>} />
-                      <Route exact path="/" component={Home} />
-              <Route path="/search-results" component={SearchResultsPage} />
-            </Routes>
+                        <Route path="/pdf" element={<FacturaPDF/>}/>
+                        <Route path="/search-results" component={SearchResultsPage} />
+                    </Routes>
                 </Router>
             )}
         </>

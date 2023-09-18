@@ -1,14 +1,18 @@
 import React from 'react'
 import '../../assets/css/FormCompra.css'
 import { useForm } from 'react-hook-form'
-import useValidationInfoClient from '../../hooks/useValidationInfoClient';
-import { useSelector } from 'react-redux';
+import useValidationInfoClient from '../../hooks/useValidationInfoClient'
+import { useDispatch, useSelector } from 'react-redux'
+import { setFactura } from '../../redux/dataFactureSlice'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 const FormCompra = () => {
 
-    const cartItems = useSelector((state) => state.carrito.items)
-
-    console.log(cartItems)
+    //redux
+    const dispatch = useDispatch();
+    //const reduxDataClient = useSelector((state) => state.factura.dataFactura)
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const {
@@ -23,11 +27,21 @@ const FormCompra = () => {
         CIUDAD,
         DETALLES_DIRECCION,
         DIRECCION, } = useValidationInfoClient()
+    
+    const [formData, setFormData] = useState({});
+    const navigate = useNavigate()
 
     function infoClientPago(dataClient) {
+        setFormData(dataClient); // Almacena los datos del formulario en el estado local
+
+        // Despacha la acción para guardar los datos de la factura en Redux
+        dispatch(setFactura({dataClient}));
         console.log(dataClient)
+        navigate('/pdf')
     }
 
+
+    
     return (
         <>
             <main className='all_container_form_info_buy'>
@@ -55,8 +69,8 @@ const FormCompra = () => {
                                 <div className="container_select_buy">
                                     <select name="TipoDocumento" {...register('TipoDocumento', TIPO_DOCUMENTO)}>
                                         <option value="" selected disabled>Seleccione Documento</option>
-                                        <option value="Targeta Identidad">TI</option>
-                                        <option value="Cedula">CC</option>
+                                        <option value="TI">TI</option>
+                                        <option value="CC">CC</option>
                                     </select>
                                 </div>
                                 {
@@ -65,7 +79,7 @@ const FormCompra = () => {
                             </div>
 
                             <div className="acomodar_inputs">
-                                <input type="number" placeholder='Documento' {...register('Documento', DOCUMENTO)} />
+                                <input type="number" name='Documento' placeholder='Documento' {...register('Documento', DOCUMENTO)} />
                                 {
                                     errors.Documento && <span className='error'>{errors.Documento?.message}</span>
                                 }
@@ -87,7 +101,7 @@ const FormCompra = () => {
                             </div>
 
                             <div className="acomodar_inputs">
-                                <input type="number" placeholder='Telefono' {...register('Telefono', TELEFONO)} />
+                                <input type="number" name='Telefono' placeholder='Telefono' {...register('Telefono', TELEFONO)} />
                                 {
                                     errors.Telefono && <span className='error'>{errors.Telefono?.message}</span>
                                 }
@@ -96,7 +110,7 @@ const FormCompra = () => {
                         </div>
 
                         <div className="acomodar_inputs">
-                            <input type="email" placeholder='E-mail' {...register('email', EMAIL)} />
+                            <input type="email" name='email' placeholder='E-mail' {...register('email', EMAIL)} />
                             {
                                 errors.email && <span className='error'>{errors.email?.message}</span>
                             }
