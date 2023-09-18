@@ -2,6 +2,8 @@ import React from 'react'
 import '../../assets/css/FormCompra.css'
 import { useForm } from 'react-hook-form'
 import useValidationInfoClient from '../../hooks/useValidationInfoClient'
+import { useState } from 'react'
+
 
 const FormCompra = () => {
 
@@ -18,11 +20,12 @@ const FormCompra = () => {
         CIUDAD,
         DETALLES_DIRECCION,
         DIRECCION, } = useValidationInfoClient()
-
+    
+    
     function infoClientPago(dataClient) {
-        console.log(dataClient)
+        setFormData(dataClient);
     }
-
+    
     return (
         <>
             <main className='all_container_form_info_buy'>

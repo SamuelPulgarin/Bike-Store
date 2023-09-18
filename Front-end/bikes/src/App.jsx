@@ -12,7 +12,7 @@ import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
 import { ComfirBuy } from "./pages/ComfirBuy";
 import { Uproduct } from "./pages/Uproduct";
-
+import { FacturaPDF } from "./components/Compra/FacturaPDF";
 
 
 
@@ -41,6 +41,7 @@ function App() {
                         <Route path="/Update/:identificador" element={<Uproduct/>}/>
                         <Route path="/Add" element={<Cproduct/>} />
                         <Route path="/ComfirmBuy" element={<ComfirBuy/>} />
+                        <Route path="/pdf" element={<FacturaPDF/>}/>
                     </Routes>
                 </Router>
             )}
