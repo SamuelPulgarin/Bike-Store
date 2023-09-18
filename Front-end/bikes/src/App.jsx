@@ -14,6 +14,7 @@ import { SearchResultsPage } from '../src/components/cloneHome/SearchResultsPage
 //import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { ComfirBuy } from "./pages/ComfirBuy";
 import { Uproduct } from "./pages/Uproduct";
+import { FacturaPDF } from "./components/Compra/FacturaPDF";
 
 
 /*ja */

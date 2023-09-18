@@ -16,6 +16,7 @@ export const UpdateProduct = () => {
     const [categoria, setCategoria] = useState("");
     const [precio, setPrecio] = useState("");
     const [stock, setStock] = useState("");
+    const [newStock, setNewStock] = useState("");
     const [imagen, setImagen] = useState(null);
     const [imagePreview, setImagePreview] = useState(defaultImage);
 
@@ -89,11 +90,12 @@ export const UpdateProduct = () => {
         formData.append("categoria", categoria);
         formData.append("precio", precio);
         formData.append("stock", stock);
+        formData.append("NewStock", newStock);
         if (imagen) {
             formData.append("imagen", imagen);
         }
 
-    //Para depurar errores y confirmar informacion
+        //Para depurar errores y confirmar informacion
         // console.log(
         //     nombre, marca, talla, color, descripcion, categoria, precio, stock, imagen
         // )
@@ -235,7 +237,7 @@ export const UpdateProduct = () => {
                                 ></textarea>
                                 <span className="error_add">{errors.descripcion}</span>
 
-
+                                <label> Stock Actual:</label>
                                 <input
                                     type="number"
                                     name="stock"
@@ -244,6 +246,14 @@ export const UpdateProduct = () => {
                                     value={stock}
                                 />
                                 <span className="error_add">{errors.stock}</span>
+
+                                <label>Nuevo Stock</label>
+                                <input
+                                    type="number"
+                                    name="NewStock"
+                                    placeholder="Nuevo Stock"
+                                    onChange={(e) => setNewStock(e.target.value)}
+                                />
 
 
                                 <input
