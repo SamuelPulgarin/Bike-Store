@@ -1,12 +1,13 @@
 import '../../assets/CSS/Banner_search_styles.css';
 import Lupa from '../../assets/img/Lupa.png'
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
+import { useNavigateSearch } from '../../hooks/useSearch';
 
 const Banner_search = () => {
 
     const [search, setSearch] = useState('');
-    // const history = useHistory(); // Instancia useHistory para redirección
+    const { navigate, searchBicycles } = useNavigateSearch();
+    
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -14,7 +15,7 @@ const Banner_search = () => {
 
   const handleSearch = () => {
     // Redirige a la página de resultados de búsqueda con el término de búsqueda como parámetro
-    history.push(`/search-results?query=${encodeURIComponent(search)}`);
+    searchBicycles(search);
   };
 
   const handleKeyPress = (e) => {

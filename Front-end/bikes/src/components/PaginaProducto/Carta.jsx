@@ -1,5 +1,5 @@
 import "../../assets/css/Carta.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FetchProducts } from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Carta = ({ searchQuery }) => {
   const urlProduct = "/productos";
   const { fetchDataProduct, dataProduct } = FetchProducts(urlProduct);
-  const [filteredBikes, setFilteredBikes] = useState([]);
+  
 
   useEffect(() => {
     fetchDataProduct();
@@ -16,21 +16,8 @@ const Carta = ({ searchQuery }) => {
     }
   }, [!dataProduct]);
 
-  // useEffect(() => {
-  //   // Filtra las bicicletas según el término de búsqueda
-  //   const filtered = dataProduct.filter((bike) => {
-  //     const searchValue = searchQuery.toLowerCase();
-  //     return (
-  //       bike.nombre.toLowerCase().includes(searchValue) ||
-  //       bike.marca.toLowerCase().includes(searchValue) ||
-  //       bike.categoria.toLowerCase().includes(searchValue)
-  //     );
-  //   });
-  //   setFilteredBikes(filtered);
-  // }, [searchQuery, dataProduct]);
+  
 
-
-  /*ja */
   return (
     <>
       <div className="contenedor-cartas-producto">
@@ -55,6 +42,17 @@ const Carta = ({ searchQuery }) => {
       </div>
     </>
   );
+};
+
+export const DataProduct = () => {
+  const urlProduct = "/productos";
+  const { fetchDataProduct, dataProduct } = FetchProducts(urlProduct);
+
+  useEffect(() => {
+    fetchDataProduct();
+  }, []);
+
+  return dataProduct;
 };
 
 export default Carta;

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { ErrorModal } from "../components/Modal/ErrorModal";
-/*ja */
+import { useState } from "react";
+
 
 
 export const FetchProducts = (urlProductName, urlProductImg) =>{
-  const [dataProduct, setDataProduct] = useState([0]);
+  const [dataProduct, setDataProduct] = useState([]);
   const [dataImg, setDataImg] = useState([1]);
   const [dataDetails, setDataDetails] = useState([2]);
 

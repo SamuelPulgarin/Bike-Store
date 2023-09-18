@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Home } from "./pages/Home";
 import "./assets/css/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -10,13 +10,16 @@ import { Loader } from "./components/Loader/Loader";
 import Detalles from "./pages/Detalles";
 import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
-import { SearchResultsPage } from '../src/components/cloneHome/SearchResultsPage'
+import { SearchResultsPage } from './components/SearchResults/SearchResultsPage'
+import { DataProduct } from "./components/PaginaProducto/Carta"
+
 //import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 
 /*ja */
 function App() {
   const [loading, setLoading] = useState(true);
+  const dataProduct = DataProduct();
 
   window.onload = () => {
     setLoading(false);
@@ -40,15 +43,19 @@ function App() {
               <Route path="/Admin" element={<Admin />} />
               <Route path="/Add" element={<Cproduct />} />
               <Route exact path="/" component={Home} />
-              <Route path="/search-results" component={SearchResultsPage} />
+              <Route path="/search-results" element={<SearchResultsPage dataProduct={dataProduct} />} />
             </Routes>
           </Router>
   //     </ShoppingCartProvider>
       )}
     </>
   );
+}
 
-  //Metodo 2
+export default App;
+
+
+//Metodo 2
   // const [domLoaded, setDomLoaded] = useState(false);
 
   // useEffect(() => {
@@ -57,6 +64,3 @@ function App() {
   //     }, 2000);
   //     return () => clearTimeout(timeout);
   // },[])
-}
-
-export default App;
