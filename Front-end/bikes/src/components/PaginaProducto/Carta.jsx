@@ -33,7 +33,7 @@ const Carta = ({ searchQuery }) => {
                     <div className="cartap-info">
                       <h5>{data.nombre}</h5>
                     </div>
-                    <p><b>Precio:</b> ${data.precio}</p>
+                    <p><b>Precio:</b> {data.precio}</p>
                   </Link>
                 </div>
               );

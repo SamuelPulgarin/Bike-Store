@@ -26,7 +26,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     row-gap: 12vh;
-    column-gap: 8vw;
+    column-gap: 5vw;
     margin-top: 2rem;
     margin-bottom: 5rem;
 }
@@ -41,15 +41,25 @@
     color: black;
     box-shadow: 5px 5px 5px  grey;
     cursor: pointer;
+     width: 280px;
+     height: 360px; 
 
     & img{
-        width: 150px;
+        width: 280px;
         border-radius: 10px;
     }
 
     & p{
         margin-bottom: 5px;
-        font-size: 90%;
+        font-size: 1.1rem;
+    }
+
+    & h5{
+        font-size: 1rem;
+    }
+
+    & .cartap-info{
+        margin-top: 30px;
     }
 
 }
