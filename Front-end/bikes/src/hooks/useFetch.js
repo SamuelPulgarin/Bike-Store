@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ErrorModal } from "../components/Modal/ErrorModal";
 import { ModalDelete } from "../components/Modal/ModalDelete";
 /*ja */
-import { useState } from "react";
 
 
 

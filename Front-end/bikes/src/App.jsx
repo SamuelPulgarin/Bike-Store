@@ -57,30 +57,7 @@ function App() {
 
 export default App;
 
-    return (
-        <>
-            {loading ? (
-                <Loader />
-            ) : (
-                <Router>
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/Carrito" element={<Carrito />} />
-                        <Route path="/productos" element={<Productos />} />
-                        <Route path="/signUp" element={<SignUp />} />
-                        <Route path="/signIn" element={<SignIn />} />
-                        <Route path="/Detalles/:id" element={<Detalles />} />
-                        <Route path="/Admin" element={<Admin/>}/>
-                        <Route path="/Update/:identificador" element={<Uproduct/>}/>
-                        <Route path="/Add" element={<Cproduct/>} />
-                        <Route path="/ComfirmBuy" element={<ComfirBuy/>} />
-                        <Route path="/pdf" element={<FacturaPDF/>}/>
-                        <Route path="/search-results" component={SearchResultsPage} />
-                    </Routes>
-                </Router>
-            )}
-        </>
-    );
+
 
 //Metodo 2
   // const [domLoaded, setDomLoaded] = useState(false);
