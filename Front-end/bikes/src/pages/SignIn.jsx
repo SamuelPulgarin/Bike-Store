@@ -17,6 +17,8 @@ const schema = yup.object().shape({
 
 export const SignIn = () => {
 
+    const [data, setData] = useState([]);
+
     //Aqui empieza el redux
     const session = useSelector((state) => state.login.session);
     //console.log(session)
@@ -43,11 +45,27 @@ export const SignIn = () => {
             if (response.ok) {
                 /*console.log('Querido usuario bienvenido');
                 console.log(DataLogin);*/
-                navigate("/Home")
-                dispatch(signIn())
 
+                try{
+
+                    await fetch(`http://localhost:3060/getUserByEmail/${DataLogin.email}`)
+                        .then((reresponse) => {
+                        return reresponse.json();
+                    })
+                    .then((productData) => {
+                        setData(productData); // Asigna los datos a la variable data
+                        console.log(productData.username)
+                    })
+
+                } catch(error){
+                    console.error('Algo ha ocurrido', error);
+                }
+
+                navigate("/")
+                dispatch(signIn())
                 // En la acción Redux (signIn)
                 localStorage.setItem('isUserLoggedIn', 'true');
+
 
             }
             else {

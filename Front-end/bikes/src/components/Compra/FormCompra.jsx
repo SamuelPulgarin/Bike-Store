@@ -9,13 +9,22 @@ const FormCompra = () => {
     const actualizarStock = async ({ productoId, cantidad }) => {
 
         try {
-            const response = await fetch('');
+            const response = await fetch('http://localhost:3060/buy-complete', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    productoId,
+                    cantidad
+                })
+            });
 
             if (response.ok) {
-                console.log("Producto Registrado exitosamente");
+                console.log("Actualizaciones exitosas");
                 openModalCorrect();
             } else {
-                console.log("Error agregar producto Front");
+                console.log("Error actualizar FRONT-END");
                 openErrorModal();
             }
 
