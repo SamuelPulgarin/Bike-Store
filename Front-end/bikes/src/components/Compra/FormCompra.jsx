@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../assets/css/FormCompra.css'
 import { useForm } from 'react-hook-form'
 import useValidationInfoClient from '../../hooks/useValidationInfoClient';
 import { useSelector } from 'react-redux';
 
 const FormCompra = () => {
+
+    const actualizarStock = async ({ productoId, cantidad }) => {
+
+        try {
+            const response = await fetch('');
+
+            if (response.ok) {
+                console.log("Producto Registrado exitosamente");
+                openModalCorrect();
+            } else {
+                console.log("Error agregar producto Front");
+                openErrorModal();
+            }
+
+        } catch (error) {
+
+            console.error('Error en el servidor: ', error)
+        }
+    }
 
     const cartItems = useSelector((state) => state.carrito.items)
 
@@ -34,7 +53,7 @@ const FormCompra = () => {
                 <div className="container_form_info_buy">
                     <form method="POST" className='Form_info_buy' onSubmit={handleSubmit(infoClientPago)}>
                         <h2>Tus Datos:</h2>
-                        
+
                         <div className="name_lastname">
                             <div className='acomodar_inputs'>
                                 <input type="text" name='Nombre' placeholder='Nombre' {...register('Nombre', NOMBRE)} />
