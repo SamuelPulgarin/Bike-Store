@@ -1,10 +1,238 @@
-/*ja */
 * {
-  padding: 0;
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
+.searchContainer {
+  height: 100%;
+  background-image: url("../../assets/img/supra-performance-header-oscurita.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.searchContainer h2 {
+  color: white;
+  padding: 90px 20px;
+}
+
+.results h1 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  margin-left: 250%;
+  text-align: center;
+  flex-direction: column;
+  margin-top: -20px;
+}
+
+.results {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 12vh;
+  column-gap: 8vw;
+  margin-left: 5%;
+  margin-top: 79px
+}
+
+.results h1 {
+  margin-top: -20px;
+}
+
+.FooterContain {
+  height: 60vh;
+}
+
+.Follow_us h2 {
+  height: 4vh;
+}
+
+
+.cartap {
+  margin-bottom: 25px;
+}
+
+
+
+/*Responsive*/
+
+@media screen and (max-width: 1275px) {
+
+  .results {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: 100px;
+  }
+
+}
+
+@media screen and (max-width: 1250px) {
+
+  .results {
+    row-gap: 15vh;
+    column-gap: 100px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+
+  .results {
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 5vh;
+    margin-left: 60px;
+    margin-top: -5px;
+  }
+
+  .cartap {
+    margin-bottom: 40px;
+  }
+
+  .Copy {
+    margin-top: 7px;
+  }
+
+}
+
+@media screen and (max-width: 750px) {
+
+  .searchContainer {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+
+    & h1 {
+      justify-self: start;
+      margin-left: 50px;
+    }
+  }
+
+}
+
+@media screen and (max-width: 650px) {
+
+  .cartap {
+
+    & img {
+      width: 130px;
+    }
+
+    & p {
+      font-size: 70%;
+    }
+  }
+
+  .cartap-info {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+
+  .cartap {
+
+    & h5 {
+      font-size: 60%;
+    }
+
+    & img {
+      width: 100px;
+    }
+
+    & p {
+      font-size: 60%;
+    }
+  }
+
+  .results {
+    row-gap: 50px;
+    column-gap: 80px;
+    margin-left: 10px;
+    margin-top: 30px;
+  }
+
+  .searchContainer {
+    padding: 80px 0px;
+  }
+
+  .searchContainer h2 {
+    padding: 20px 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+
+  .searchContainer h2 {
+    padding: 30px 20px;
+    margin-right: 5px;
+    margin-top: -20px;
+  }
+
+  .cartap {
+
+    & h5 {
+      font-size: 60%;
+    }
+
+    & img {
+      width: 100px;
+    }
+
+    & p {
+      font-size: 60%;
+    }
+  }
+
+  .results {
+    row-gap: 40px;
+    column-gap: 80px;
+    margin-right: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .searchContainer {
+    padding: 80px 0px;
+  }
+}
+
+
+@media screen and (max-width: 370px) {
+
+  .results {
+    row-gap: 50px;
+    column-gap: 60px;
+    justify-items: start;
+    margin-top: 20px;
+  }
+
+  .searchContainer h2 {
+    padding: 30px;
+    margin-top: -30px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+
+  .results {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10vh;
+    row-gap: 50px;
+    column-gap: 30px;
+    justify-items: start;
+    margin-top: 20px;
+  }
+
+  .searchContainer h2 {
+    padding: 30px;
+    margin-top: -30px;
+  }
+}
+
+/*Estilos footer */
 
 .FooterContain {
   background-color: #262626;
@@ -16,7 +244,7 @@
   color: white;
   font-size: 20px;
   margin: 10px;
- 
+
 }
 
 .fa-facebook:hover {
@@ -27,29 +255,30 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(135deg, 
+  background-image: linear-gradient(135deg,
       #c70996 0%,
       #eb0824 50%,
       #fcca13 100%);
 }
 
-.logox{
+.logox {
   width: 40px;
   height: 40px;
   margin-top: 8px;
 }
 
-.logox:hover{
+.logox:hover {
   background-color: #000;
   border-radius: 100%;
 }
-.Follow_us .logox{
- height: 38px;
- width: 38px;
- margin-top: 10px;
+
+.Follow_us .logox {
+  height: 38px;
+  width: 38px;
+  margin-top: 10px;
 }
 
-.Follow_us .x:hover{
+.Follow_us .x:hover {
   background-color: #000;
   border-radius: 100%;
 }
@@ -58,9 +287,10 @@
   color: #ff0909;
 }
 
- .Follow_us:hover i {
+.Follow_us:hover i {
   filter: blur(2px);
-} 
+}
+
 .Follow_us:hover img {
   filter: blur(2px);
 }
@@ -70,21 +300,22 @@
 }
 
 
-.Follow_us .logox:hover{
+.Follow_us .logox:hover {
   transform: translateY(-3px) scale(1.05);
   filter: none;
-} 
+}
 
-.Follow_us a i:hover{
+.Follow_us a i:hover {
   transform: translateY(-3px) scale(1.05);
   filter: none;
-} 
+}
 
 
 
 .Follow_us {
   display: flex;
   justify-content: center;
+
 }
 
 .Follow_us h2 {
@@ -119,11 +350,11 @@
 @media (max-width: 1920px) {
   .Logo img {
     width: 70%;
-    height: 35vh;
+    /* height: 35vh; */
   }
 
   .Follow_us {
-    margin-top: 10px;
+    margin-top: -1px
   }
 
   .Follow_us .fa-brands {
@@ -177,7 +408,7 @@
     margin-top: 10px;
   }
 
-  .Copy h5{
+  .Copy h5 {
     margin-top: 5px;
   }
 }
@@ -190,7 +421,7 @@
   }
 
   .Follow_us {
-    margin-top: -5px;
+    margin-top: 10px;
   }
 
   .Follow_us .fa-brands {
@@ -205,6 +436,16 @@
   .Copy h5 {
     font-size: 26px;
   }
+
+  .Follow_us .logox {
+    height: 41px;
+    width: 41px;
+    margin-top: 10px;
+  }
+
+  /* .Container_error_notFound{
+
+  } */
 }
 
 /*IPad Air*/
@@ -237,8 +478,26 @@
     height: fit-content;
   }
 
-  .logox{
+  .Follow_us .logox {
+    height: 43px;
+    width: 46px;
     margin-top: 10px;
+  }
+
+  .Copy {
+    margin-top: 5px;
+  }
+
+  .Follow_us {
+    margin-top: -19px;
+  }
+
+  .Container_error_notFound{
+    margin-top: 162px;
+    display: flex;
+    margin-left: -68px;
+    font-size: 22px;
+    justify-content: center;
   }
 }
 
@@ -254,7 +513,7 @@
   }
 
   .Follow_us {
-    margin-top: 10px;
+    margin-top: 12px;
   }
 
   .Follow_us .fa-brands {
@@ -267,7 +526,7 @@
   }
 
   .Copy {
-    margin-top: 10px;
+    margin-top: 11px;
   }
 
   .Copy h5 {
@@ -276,6 +535,17 @@
 
   .Copy img {
     width: 20px;
+  }
+
+  .Follow_us .logox {
+    height: 43px;
+    width: 46px;
+    margin-top: 8px;
+  }
+
+  .Container_error_notFound{
+    margin-top: 175px;
+    margin-left: -85px;
   }
 }
 
@@ -287,30 +557,30 @@
     height: 30vh;
   }
 
-  .Copy h5{
+  .Copy h5 {
     font-size: 19px;
   }
 
-  .logox{
-    margin-top:8px;
+  .logox {
+    margin-top: 8px;
   }
 }
 
-@media (max-width:450px){
-  .Copy h5{
+@media (max-width:450px) {
+  .Copy h5 {
     font-size: 17px;
   }
 
-  .Follow_us h2{
+  .Follow_us h2 {
     font-size: 19px;
     margin-top: 8px;
   }
 
-  .Follow_us .fa-brands{
+  .Follow_us .fa-brands {
     font-size: 25px
   }
 
-  .logox{
+  .logox {
     width: 32px;
     height: 32px;
   }
@@ -319,31 +589,42 @@
 /*IPhone XR*/
 @media (max-width:414px) {
 
-  .Follow_us h2{
+  .Follow_us h2 {
     font-size: 20px;
     margin-top: 9px;
   }
 
-  .Follow_us .fa-brands{
+  .Follow_us {
+    margin-top: -23px;
+  }
+
+  .Follow_us .fa-brands {
     font-size: 25px;
   }
 
-  .Copy h5{
+  .Copy h5 {
     font-size: 17px;
   }
 
-  .Logo img{
+  .Logo img {
     margin-left: 50px;
+
   }
 
-  .Copy img{
+  .Copy img {
     width: 15px;
     margin-top: 8px;
   }
-  .logox{
-    width: 25px;
-    height: 25px;
-    margin-top: 11px;
+
+  .Follow_us .logox {
+    height: 30px;
+    width: 30px;
+    margin-top: 8px;
+  }
+
+  .Container_error_notFound{
+    margin-top: 77px;
+    margin-left: 65px;
   }
 }
 
@@ -359,25 +640,35 @@
     margin-top: 10px;
   }
 
-  .Follow_us .fa-brands{
+  .Follow_us .fa-brands {
     font-size: 20px;
   }
 
-  .Copy h5{
+  .Copy h5 {
     font-size: 14px;
   }
 
-  .Copy img{
+  .Copy img {
     width: 15px;
     margin-top: 5px;
   }
 
-  .Copy{
+  .Copy {
     margin-top: -5px;
   }
 
-  .logox{
-    margin-top: 8px;
+  .Follow_us .logox {
+    height: 26px;
+    width: 26px;
+    margin-top: 7px;
+  }
+
+  .Follow_us {
+    margin-top: -18px;
+  }
+
+  .Container_error_notFound{
+    margin-top: 153px;
   }
 }
 
@@ -418,17 +709,23 @@
   .Copy {
     margin-top: 7px;
   }
-  .logox{
-    width: 30px;
+
+  .Follow_us .logox {
     height: 30px;
-    margin-top: 5px;
+    width: 30px;
+    margin-top: 6px;
+  }
+
+  .Container_error_notFound{
+    margin-top: 123px;
+    margin-left: 50px;
   }
 }
 
 /*IPhone 12 Pro*/
 @media (max-width: 390px) {
   .FooterContain {
-    height: fit-content;
+    height: 29vh;
   }
 
   .Logo img {
@@ -437,7 +734,7 @@
   }
 
   .Follow_us {
-    margin-top: 10px;
+    margin-top: 3px;
   }
 
   .Follow_us .fa-brands {
@@ -460,7 +757,18 @@
   }
 
   .Copy {
-    margin-top: 7px;
+    margin-top: 5px;
+  }
+
+  .Follow_us .logox {
+    height: 29px;
+    width: 30px;
+    margin-top: 6px;
+  }
+
+  .Container_error_notFound{
+    margin-top: 124px;
+    margin-left: 50px;
   }
 }
 
@@ -501,9 +809,19 @@
   .Copy {
     margin-top: 7px;
   }
-  .logox{
-    width: 25px;
-    height: 25px;
+
+  .Follow_us .logox {
+    height: 28px;
+    width: 28px;
+    margin-top: 3px;
+  }
+
+  .results h1 {
+    margin-top: 14px;
+  }
+
+  .Container_error_notFound{
+   margin-left: 45px; 
   }
 }
 
@@ -517,9 +835,15 @@
     font-size: 18px;
     margin-top: 7px;
   }
-  .logox{
-    width: 30px;
-    height: 30px;
+
+  .Follow_us .logox {
+    height: 28px;
+    width: 28px;
+    margin-top: 6px;
+  }
+
+  .Container_error_notFound{
+    margin-left: 40px;
   }
 }
 
@@ -532,8 +856,9 @@
     height: 20vh;
   }
 
-  .Follow_us{
-    margin-left:-20px;
+  .Follow_us {
+    margin-left: 11px;
+    margin-top: 9px
   }
 
   .Follow_us .fa-brands {
@@ -545,18 +870,18 @@
     margin-top: 8px;
   }
 
-  .Copy h5{
+  .Copy h5 {
     font-size: 11px;
     margin-left: -5px;
   }
 
-  .Copy img{
+  .Copy img {
     margin-top: 6px;
   }
 
-  .logox{
+  .Follow_us .logox {
+    height: 25px;
     width: 28px;
-    height: 28px;
-    margin-top: 2px;
+    margin-top: 4px;
   }
 }
