@@ -395,6 +395,14 @@
   .Follow_us {
     margin-top: 6px;
   }
+
+  .Follow_us {
+    margin-top: 8px;
+  }
+
+  .results h1 {
+    margin-top: -19px;
+  }
 }
 
 /*Nest Hub*/
@@ -410,6 +418,22 @@
 
   .Copy h5 {
     margin-top: 5px;
+  }
+
+  .Container_error_notFound {
+    font-size: 12px;
+    margin-left: 163px;
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  .results {
+    margin-top: 23px;
+  }
+
+  .Follow_us {
+    margin-top: 3px;
   }
 }
 
@@ -443,9 +467,14 @@
     margin-top: 10px;
   }
 
-  /* .Container_error_notFound{
+  .Container_error_notFound {
+    margin-top: 402px;
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    margin-left: -49px;
+  }
 
-  } */
 }
 
 /*IPad Air*/
@@ -492,12 +521,12 @@
     margin-top: -19px;
   }
 
-  .Container_error_notFound{
+  .Container_error_notFound {
     margin-top: 162px;
     display: flex;
-    margin-left: -68px;
+    margin-left: 210px;
     font-size: 22px;
-    justify-content: center;
+    justify-content: flex-end;
   }
 }
 
@@ -543,9 +572,12 @@
     margin-top: 8px;
   }
 
-  .Container_error_notFound{
-    margin-top: 175px;
-    margin-left: -85px;
+  .Container_error_notFound {
+    margin-top: 177px;
+    margin-left: -20px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -563,6 +595,10 @@
 
   .logox {
     margin-top: 8px;
+  }
+
+  .Container_error_notFound {
+    margin-left: 120px;
   }
 }
 
@@ -622,8 +658,8 @@
     margin-top: 8px;
   }
 
-  .Container_error_notFound{
-    margin-top: 77px;
+  .Container_error_notFound {
+    margin-top: 82px;
     margin-left: 65px;
   }
 }
@@ -667,8 +703,8 @@
     margin-top: -18px;
   }
 
-  .Container_error_notFound{
-    margin-top: 153px;
+  .Container_error_notFound {
+    margin-top: 174px;
   }
 }
 
@@ -716,8 +752,8 @@
     margin-top: 6px;
   }
 
-  .Container_error_notFound{
-    margin-top: 123px;
+  .Container_error_notFound {
+    margin-top: 125px;
     margin-left: 50px;
   }
 }
@@ -766,8 +802,8 @@
     margin-top: 6px;
   }
 
-  .Container_error_notFound{
-    margin-top: 124px;
+  .Container_error_notFound {
+    margin-top: 147px;
     margin-left: 50px;
   }
 }
@@ -820,8 +856,8 @@
     margin-top: 14px;
   }
 
-  .Container_error_notFound{
-   margin-left: 45px; 
+  .Container_error_notFound {
+    margin-left: 45px;
   }
 }
 
@@ -842,7 +878,7 @@
     margin-top: 6px;
   }
 
-  .Container_error_notFound{
+  .Container_error_notFound {
     margin-left: 40px;
   }
 }
@@ -883,5 +919,10 @@
     height: 25px;
     width: 28px;
     margin-top: 4px;
+  }
+
+  .Container_error_notFound {
+    font-size: 13px;
+    margin-left: 5px;
   }
 }
