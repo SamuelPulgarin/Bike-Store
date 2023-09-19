@@ -31,8 +31,9 @@ const Banner_search = () => {
                 <div className="Search">
                     <input
                         type="text"
-                        placeholder="Buscar"
+                        placeholder="Busca en Bike Store"
                         className="search"
+                        autocomplete='off'
                         value={search}
                         onChange={handleChange}
                         onKeyPress={handleKeyPress}

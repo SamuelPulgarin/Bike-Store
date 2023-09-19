@@ -442,6 +442,10 @@
     width: 41px;
     margin-top: 10px;
   }
+
+  /* .Container_error_notFound{
+
+  } */
 }
 
 /*IPad Air*/
@@ -487,6 +491,14 @@
   .Follow_us {
     margin-top: -19px;
   }
+
+  .Container_error_notFound{
+    margin-top: 162px;
+    display: flex;
+    margin-left: -68px;
+    font-size: 22px;
+    justify-content: center;
+  }
 }
 
 /*IPad Mini*/
@@ -529,6 +541,11 @@
     height: 43px;
     width: 46px;
     margin-top: 8px;
+  }
+
+  .Container_error_notFound{
+    margin-top: 175px;
+    margin-left: -85px;
   }
 }
 
@@ -604,6 +621,11 @@
     width: 30px;
     margin-top: 8px;
   }
+
+  .Container_error_notFound{
+    margin-top: 77px;
+    margin-left: 65px;
+  }
 }
 
 /*Samsung Galaxy A51/71 and Facebook for Android v407 on Pixel 6*/
@@ -643,6 +665,10 @@
 
   .Follow_us {
     margin-top: -18px;
+  }
+
+  .Container_error_notFound{
+    margin-top: 153px;
   }
 }
 
@@ -689,6 +715,11 @@
     width: 30px;
     margin-top: 6px;
   }
+
+  .Container_error_notFound{
+    margin-top: 123px;
+    margin-left: 50px;
+  }
 }
 
 /*IPhone 12 Pro*/
@@ -733,6 +764,11 @@
     height: 29px;
     width: 30px;
     margin-top: 6px;
+  }
+
+  .Container_error_notFound{
+    margin-top: 124px;
+    margin-left: 50px;
   }
 }
 
@@ -784,8 +820,8 @@
     margin-top: 14px;
   }
 
-  Container_error_notFound{
-    
+  .Container_error_notFound{
+   margin-left: 45px; 
   }
 }
 
@@ -804,6 +840,10 @@
     height: 28px;
     width: 28px;
     margin-top: 6px;
+  }
+
+  .Container_error_notFound{
+    margin-left: 40px;
   }
 }
 
