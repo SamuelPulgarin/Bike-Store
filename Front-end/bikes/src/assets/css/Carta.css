@@ -28,7 +28,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 5vh;
-  column-gap: 5vw;
+  column-gap: 5vh;
   margin-top: 2rem;
   margin-bottom: 5rem;
 }

@@ -17,7 +17,7 @@
 
 .searchContainer h2 {
   color: white;
-  padding: 90px 20px;
+  padding: 80px 20px;
 }
 
 .results h1 {
@@ -35,9 +35,9 @@
 .results {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  row-gap: 12vh;
-  column-gap: 8vw;
-  margin-left: 5%;
+  row-gap: 15vh;
+  column-gap: -1vw;
+  margin-left: 100px;
   margin-top: 79px
 }
 
@@ -56,6 +56,7 @@
 
 .cartap {
   margin-bottom: 25px;
+  margin-top: -90px;
 }
 
 
@@ -74,8 +75,17 @@
 @media screen and (max-width: 1250px) {
 
   .results {
-    row-gap: 15vh;
-    column-gap: 100px;
+    row-gap: 10vh;
+    column-gap: -1px;
+    margin-left: 110px;
+  }
+
+  .cartap{
+    margin-top: -40px;
+  }
+
+  .Follow_us{
+    margin-top: 4px;
   }
 }
 
