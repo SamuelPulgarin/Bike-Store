@@ -7,6 +7,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/carritoSlice";
 import { useSelector } from 'react-redux';
+import { getMarca } from "../../redux/carouselSlide";
 
 
 export const DetailsProducts = () => {
@@ -14,39 +15,45 @@ export const DetailsProducts = () => {
     //redux
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.carrito.items);
+    const carousel = useSelector((state) => state.carousel.dato);
     console.log(cartItems);
 
-    const handleAddToCart = ()=>{
+    const handleAddToCart = () => {
 
         const foundItem = cartItems.find(item => parseInt(item.data.id, 10) === parseInt(data.id, 10));
-        
-        if(foundItem){
+
+        if (foundItem) {
             alert('Este producto ya se encuentra agregado al carrito de compras');
-        }else{
+        } else {
             dispatch(addToCart({ data }));
         }
     }
 
     const { id } = useParams();
     const [data, setData] = useState([]); // dentro del estado hay [] porque tiene que ser en un array porque es un objeto
-  
+
     useEffect(() => {
-      if (id) {
-        fetch(`http://localhost:3060/get-products/${id}`)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error(`Network response was not ok: ${response.statusText}`);
-            }
-            return response.json();
-          })
-          .then((productData) => {
-            setData(productData); // Asigna los datos a la variable data
-            console.log(data)
-          })
-          .catch((error) => {
-            console.error("Error al cargar los detalles del producto:", error);
-          });
-      }
+        if (id) {
+            fetch(`http://localhost:3060/get-products/${id}`)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.json();
+                })
+                .then((productData) => {
+                    setData(productData); // Asigna los datos a la variable data
+
+                    console.log(data);
+
+                    console.log(productData.marca);
+                    
+                    dispatch(getMarca(productData.marca));
+                })
+                .catch((error) => {
+                    console.error("Error al cargar los detalles del producto:", error);
+                });
+        }
     }, [id]);
 
     return (
@@ -77,7 +84,7 @@ export const DetailsProducts = () => {
                             </div>
                             <div className="select_talla">
                                 <select name="talla" id="talla">
-                                    {data.talla && <option value={data.talla}>{data.talla}</option>}     
+                                    {data.talla && <option value={data.talla}>{data.talla}</option>}
                                 </select>
                             </div>
                         </div>

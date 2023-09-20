@@ -47,6 +47,9 @@ function App() {
               <Route path="/Add" element={<Cproduct />} />
               <Route exact path="/" component={Home} />
               <Route path="/search-results" element={<SearchResultsPage dataProduct={dataProduct} />} />
+              <Route path="/Update/:identificador" element={<Uproduct/>}/>
+              <Route path="/ComfirmBuy" element={<ComfirBuy/>} />
+              <Route path="/pdf" element={<FacturaPDF/>}/>
             </Routes>
           </Router>
   //     </ShoppingCartProvider>

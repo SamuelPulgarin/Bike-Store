@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../assets/css/Carousel.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { FetchProducts } from "../../hooks/useFetch";
 
 //Fundamentales que no estan en la documentacion
 import Slider from "react-slick";
+import { useSelector } from "react-redux";
 
 export const Carrusel = () => {
+
+  //redux
+  const carousel = useSelector((state) => state.carousel.dato);
+  console.log(carousel);
+
+  const { carouselItems, dataCarousel} = FetchProducts(carousel);
+
+  useEffect(() =>{
+
+    carouselItems();
+    if(dataCarousel != 3){
+      console.log(dataCarousel);
+    }
+    console.log(dataCarousel)
+
+  }, [dataCarousel])
+
   var settings = {
     dots: true,
     infinite: false,
