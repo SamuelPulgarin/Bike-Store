@@ -28,6 +28,20 @@ export const Crud = () => {
     useEffect(() => {
         fetchDataProduct();
     }, []);
+    const [searchTerm, setSearchTerm] = useState(''); // Estado para el término de búsqueda
+
+    // Función para manejar cambios en el input de búsqueda
+    const handleSearch = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
+    // Filtrar productos cuando cambie el término de búsqueda
+    const filteredProducts = dataProduct && dataProduct.length > 0
+    ? dataProduct.filter((product) =>
+        product && product.nombre && product.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+    : [];
+
 
     const [productIdToDelete, setProductIdToDelete] = useState(null);
 
@@ -47,7 +61,11 @@ export const Crud = () => {
             <main className='container_all_crud'>
                 <div className="container_search_btn">
                     <div className="container_search_crud">
-                        <input type="search" name="search" placeholder='Bucar' />
+                        <input 
+                            type="search" 
+                            name="search" 
+                            placeholder='Bucar' value={searchTerm}
+                            onChange={handleSearch} />
                         <button>
                             <img src={Lupa} alt="search" />
                         </button>
@@ -74,7 +92,7 @@ export const Crud = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {dataProduct.map((product, index) => (
+                            {filteredProducts.map((product, index) => (
                                 <tr key={index}>
                                     <td>{product.id}</td>
                                     <td>{product.nombre}</td>
