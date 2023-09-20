@@ -8,6 +8,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signIn, signOut } from '../redux/loginSlides';
 import { Loader } from '../components/Loader/Loader';
 import { Link } from 'react-router-dom';
+import { addUser } from '../redux/userSlides';
+
 /*ja */
 
 const schema = yup.object().shape({
@@ -17,10 +19,9 @@ const schema = yup.object().shape({
 
 export const SignIn = () => {
 
-    const [data, setData] = useState([]);
-
     //Aqui empieza el redux
     const session = useSelector((state) => state.login.session);
+    const { username, email } = useSelector((state) => state.user);
     //console.log(session)
     const dispatch = useDispatch();
 
@@ -29,6 +30,11 @@ export const SignIn = () => {
     });
 
     const navigate = useNavigate();
+
+    useEffect(() =>{
+        console.log(username, email)
+        console.log(session)
+    },[])
 
 
     async function SubmitLogin(DataLogin) {
@@ -53,8 +59,13 @@ export const SignIn = () => {
                         return reresponse.json();
                     })
                     .then((productData) => {
-                        setData(productData); // Asigna los datos a la variable data
-                        console.log(productData.username)
+                        const user = {
+                            username: productData.username,
+                            email: productData.email
+                        };
+                        //console.log(productData.username)
+                        dispatch(addUser(user));
+
                     })
 
                 } catch(error){

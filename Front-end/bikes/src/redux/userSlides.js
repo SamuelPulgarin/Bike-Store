@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    name: "",
     username: "",
     email: ""
 }
@@ -11,8 +10,7 @@ export const userSlide = createSlice({
     initialState,
     reducers: {
         addUser: (state, action) =>{
-            const {name, username, email} = action.payload;
-            state.name = name;
+            const {username, email} = action.payload;
             state.username = username;
             state.email = email;
 

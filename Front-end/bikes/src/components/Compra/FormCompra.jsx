@@ -6,7 +6,11 @@ import { useSelector } from 'react-redux';
 
 const FormCompra = () => {
 
-    const actualizarStock = async ({ productoId, cantidad }) => {
+    //Redux
+    const { username, email } = useSelector((state) => state.user);
+
+    //Funcion para realizar el proceso de compra
+    const actualizarStock = async ({ productId, cantidad, precio }) => {
 
         try {
             const response = await fetch('http://localhost:3060/buy-complete', {
@@ -15,17 +19,19 @@ const FormCompra = () => {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    productoId,
-                    cantidad
+                    productId,
+                    cantidad,
+                    precio,
+                    email
                 })
             });
 
             if (response.ok) {
                 console.log("Actualizaciones exitosas");
-                openModalCorrect();
+                //openModalCorrect();
             } else {
                 console.log("Error actualizar FRONT-END");
-                openErrorModal();
+                //openErrorModal();
             }
 
         } catch (error) {
@@ -53,7 +59,12 @@ const FormCompra = () => {
         DIRECCION, } = useValidationInfoClient()
 
     function infoClientPago(dataClient) {
-        console.log(dataClient)
+        //console.log(dataClient)
+        cartItems.forEach((item) => {
+            const { id, cantidad, precio } = item.data;
+            actualizarStock({ productId: id, cantidad, precio });
+        });
+
     }
 
     return (
