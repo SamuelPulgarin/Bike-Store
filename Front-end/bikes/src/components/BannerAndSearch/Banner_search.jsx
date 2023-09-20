@@ -33,7 +33,6 @@ const Banner_search = () => {
                         type="text"
                         placeholder="Busca en Bike Store"
                         className="search"
-                        autocomplete='off'
                         value={search}
                         onChange={handleChange}
                         onKeyPress={handleKeyPress}

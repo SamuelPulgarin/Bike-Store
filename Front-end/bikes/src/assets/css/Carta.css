@@ -1,188 +1,291 @@
 /*ja */
 
-*{
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
-.contenedor-cartas-producto{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 6rem;
-    text-align: start;
-    color: white;
-    background-image: url("../../assets/img/supra-performance-header-oscurita.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center; 
-    min-height: 100vh;
-    width: 80%;
+.contenedor-cartas-producto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6rem;
+  text-align: start;
+  color: white;
+  background-image: url("../../assets/img/supra-performance-header-oscurita.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  width: 80%;
 }
 
-.cartas-producto{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    row-gap: 12vh;
-    column-gap: 5vw;
-    margin-top: 2rem;
-    margin-bottom: 5rem;
+.cartas-producto {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 5vh;
+  column-gap: 5vw;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
 }
 
-.cartap{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: aliceblue;
-    width: min-content;
+.cartap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aliceblue;
+  width: min-content;
+  border-radius: 10px;
+  color: black;
+  box-shadow: 5px 5px 5px grey;
+  cursor: pointer;
+  width: 195px;
+
+  & img {
+    width: 195px;
     border-radius: 10px;
-    color: black;
-    box-shadow: 5px 5px 5px  grey;
-    cursor: pointer;
-     width: 280px;
-     height: 360px; 
+  }
 
-    & img{
-        width: 280px;
-        border-radius: 10px;
-    }
+  & p {
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
 
-    & p{
-        margin-bottom: 5px;
-        font-size: 1.1rem;
-    }
+  & h5 {
+    font-size: 15px;
+  }
 
-    & h5{
-        font-size: 1rem;
-    }
-
-    & .cartap-info{
-        margin-top: 30px;
-    }
-
-}
-
-.cartap-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    text-align: center;
-    height: 37px;
-    overflow: hidden;
-}
-
-.cartap-info h5{
-    color:black;
+  & .cartap-info {
     margin-top: 5px;
+  }
+}
+
+.cartap-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  text-align: center;
+  height: 37px;
+  overflow: hidden;
+}
+
+.cartap-info h5 {
+  color: black;
+  margin-top: 5px;
 }
 
 .cartap p {
-    color: black;
-    text-align: center;
-    margin-top: 15px;
+  color: black;
+  text-align: center;
+  margin-top: 15px;
 }
 
+@media screen and (max-width: 1275px) {
+  .cartas-producto {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .contenedor-cartas-producto h1{
+    margin-left: 10px;
+  }
+}
 
 @media screen and (max-width: 1250px) {
+  .cartas-producto {
+    row-gap: 5vh;
+    column-gap: 40px;
+  }
+}
 
-    .cartas-producto{
-        row-gap: 15vh;
-        column-gap: 100px;
+@media screen and (max-width: 950px) {
+  .cartas-producto {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1vh;
+    column-gap: 60px;
+  }
+
+  .cartap {
+
+    width: 260px;
+
+    & a img{
+        width: 260px;
     }
-} 
 
-
-@media screen and (max-width: 1275px){
-
-    .cartas-producto{
-        grid-template-columns: 1fr 1fr 1fr;
+    & a p {
+        font-size: 17px;
     }
+  }
+
+  .cartap-info{
+
+    & h5{
+        font-size: 17px;
+        margin-top: -3px;
+    }
+  }
 
 }
 
-@media screen and (max-width: 950px){
+@media screen and (max-width: 830px){
 
-    .cartas-producto{
-        grid-template-columns: 1fr 1fr;
-        row-gap: 10vh;
-    }
+    .cartap{
+        width: 230px;
 
-}
-
-@media screen and (max-width: 750px){
-
-    .contenedor-cartas-producto{
-        display: grid;
-        justify-items: center;
-        width: 100%;
-
-        & h1{
-            justify-self: start;
-            margin-left: 50px;
+        & a img{
+            width: 230px;
         }
     }
-    
+}
+
+@media screen and (max-width: 770px){
+    .cartap{
+
+        width: 200px;
+
+        & a img {
+            width: 200px;
+        }
+
+        & a p{
+            font-size: 15px;
+        }
+    }
+
+    .cartap-info h5{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+  .contenedor-cartas-producto {
+    display: grid;
+    justify-items: center;
+    width: 100%;
+
+    & h1 {
+      justify-self: start;
+      margin-left: 50px;
+    }
+  }
 }
 
 @media screen and (max-width: 650px) {
-
-    .cartap{
-
-        & img{
-            width: 130px;
-        }
-
-        & p{
-            font-size: 70%;
-        }
+  .cartap {
+    & img {
+      width: 200px;
     }
-    
-    .cartap-info{
-        height: 50px;
+
+    & p {
+      font-size: 70%;
+    }
+  }
+
+  .cartap-info {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .cartap {
+    width: 300px;
+    height: 360px;
+
+    & a img {
+      width: 300px;
+    }
+
+    & a p {
+        font-size: 21px;
+        margin-top: -5px;
+    }
+
+  }
+  .cartap-info {
+    margin-top: 25px;
+    font-size: 31px;
+  }
+
+
+  .cartas-producto {
+    row-gap: 8px;
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor-cartas-producto {
+    padding: 70px 0px;
+  }
+}
+
+@media screen and (max-width:420px){
+    .cartap{
+        height: 395px;
     }
 }
 
-@media screen and (max-width: 580px){
-
+@media screen and (max-width: 395px){
     .cartap{
 
-        & h5{
-            font-size: 60%;
-        }
+        width: 280px;
 
-        & img{
-            width: 100px;
-        }
-
-        & p{
-            font-size: 60%;
+        & a img {
+            width: 280px;
         }
     }
 
-    .cartas-producto{
-        row-gap: 70px;
-        column-gap: 80px;
-    }
-
-    .contenedor-cartas-producto{
-        padding: 80px 0px;
+    .cartap-info h5 {
+        margin-top: -13px;
     }
 }
 
-@media screen and (max-width: 370px){
-    
-    .cartas-producto{
-        row-gap: 50px;
-        column-gap: 30px;
-        justify-items: start;
+@media screen and (max-width:380px){
+    .cartap{
+        width: 255px;
+        height: 345px;
+
+        & a img{
+            width: 255px;
+        }
+    }
+}
+
+@media screen and (max-width: 370px) {
+  .cartas-producto {
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor-cartas-producto h1 {
+    font-size: 30px;
+  }
+
+  .contenedor-cartas-producto{
+    padding: 60px 20px;
+  }
+
+  .cartap {
+    width: 200px;
+    height: 260px;
+
+    & a img {
+      width: 200px;
     }
 
-    .contenedor-cartas-producto h1{
-        font-size: 120%;
-        margin-left: 30px;   
+    .cartap-info {
+      margin-top: -20px;
+      font-size: 25px;
     }
+
+    & a p {
+        font-size: 15px;
+        margin-top: -1px;
+    }
+
+  }
 }
