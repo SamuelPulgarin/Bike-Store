@@ -129,12 +129,27 @@ const styles = StyleSheet.create({
 
 });
 
+const convertPriceToNumber = (priceString) => {
+    // Remueve el signo de dólar, comas y puntos, y convierte la cadena en un número entero
+    const numericPrice = parseInt(priceString.replace(/\$|\.|,/g, ''), 10);
+    // Divide por 100 para eliminar los dos últimos ceros
+    return numericPrice / 100;
+};
+
 export const FacturaPDF = () => {
 
     const facturaData = useSelector((state) => state.factura.dataFactura);
     const cartItems = useSelector((state) => state.carrito.items);
     console.log(facturaData)
     console.log(cartItems)
+
+    // Calcula el precio total usando reduce y la función de conversión
+    const totalPrice = cartItems.reduce((total, item) => {
+        if (item.data) {
+            return (total + convertPriceToNumber(item.data.precio)) * parseInt(item.data.cantidad, 10);
+        }
+        return total;
+    }, 0);
 
     const currentDate = new Date();
     const formattedDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`;
@@ -176,41 +191,27 @@ export const FacturaPDF = () => {
 
                                     <View style={styles.cotenidoProductos}>
                                         <Text style={styles.principal}>Productos:</Text>
-                                        <View style={styles.product}>
-                                            <View style={styles.contendor2}>
-                                                <Text style={styles.prin}>Bicicleta GW</Text>
-                                                <Text style={styles.prin}>ID 123</Text>
+
+                                        {cartItems.map((item, index) => (
+                                            <View style={styles.product} key={index}>
+                                                <View style={styles.contendor2}>
+                                                    <Text style={styles.prin}>
+                                                        {item.data.nombre}
+                                                    </Text>
+                                                    <Text style={styles.prin}>
+                                                        ID: {item.data.id}
+                                                    </Text>
+                                                </View>
+                                                <Text style={styles.secun}>
+                                                    Cantidad: {item.data.cantidad}
+                                                </Text>
+                                                <Text style={styles.secun}>
+                                                    Precio: {item.data.precio}
+                                                </Text>
+                                                <View style={styles.lineapeque} />
                                             </View>
-                                            <Text style={styles.secun}>Cantidad: 1</Text>
-                                            <Text style={styles.secun}>Precio: $ 1.000.000</Text>
-                                            <View style={styles.lineapeque}></View>
-
-                                        </View>
-                                        <View style={styles.product}>
-                                            <View style={styles.contendor2}>
-                                                <Text style={styles.prin}>Bicicleta GW</Text>
-                                                <Text style={styles.prin}>ID 123</Text>
-                                            </View>
-                                            <Text style={styles.secun}>Cantidad: 1</Text>
-                                            <Text style={styles.secun}>Precio: $ 1.000.000</Text>
-                                            <View style={styles.lineapeque}></View>
-
-                                        </View>
-                                        <View style={styles.product}>
-                                            <View style={styles.contendor2}>
-                                                <Text style={styles.prin}>Bicicleta GW</Text>
-                                                <Text style={styles.prin}>ID 123</Text>
-                                            </View>
-                                            <Text style={styles.secun}>Cantidad: 1</Text>
-                                            <Text style={styles.secun}>Precio: $ 1.000.000</Text>
-                                            <View style={styles.lineapeque}></View>
-
-                                        </View>
-            
-
+                                        ))}
                                     </View>
-
-
 
                                     <View style={styles.FooterPro}>
                                         <View style={styles.linea1}>
@@ -249,6 +250,14 @@ export const FacturaPDF = () => {
                                             </Text>
                                             <Text style={styles.secudario}>
                                                 {formattedDate}
+                                            </Text>
+                                        </View>
+                                        <View style={styles.contendor2}>
+                                            <Text style={styles.principal}>
+                                                Precio Total:
+                                            </Text>
+                                            <Text style={styles.principal}>
+                                                ${totalPrice.toFixed(2)}
                                             </Text>
                                         </View>
                                         <View style={styles.fondoImg}>
