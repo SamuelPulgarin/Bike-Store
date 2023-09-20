@@ -8,6 +8,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signIn, signOut } from '../redux/loginSlides';
 import { Loader } from '../components/Loader/Loader';
 import { Link } from 'react-router-dom';
+import { addUser } from '../redux/userSlides';
+
 /*ja */
 
 const schema = yup.object().shape({
@@ -19,6 +21,7 @@ export const SignIn = () => {
 
     //Aqui empieza el redux
     const session = useSelector((state) => state.login.session);
+    const { username, email } = useSelector((state) => state.user);
     //console.log(session)
     const dispatch = useDispatch();
 
@@ -27,6 +30,11 @@ export const SignIn = () => {
     });
 
     const navigate = useNavigate();
+
+    useEffect(() =>{
+        console.log(username, email)
+        console.log(session)
+    },[])
 
 
     async function SubmitLogin(DataLogin) {
@@ -43,11 +51,32 @@ export const SignIn = () => {
             if (response.ok) {
                 /*console.log('Querido usuario bienvenido');
                 console.log(DataLogin);*/
-                navigate("/Home")
-                dispatch(signIn())
 
+                try{
+
+                    await fetch(`http://localhost:3060/getUserByEmail/${DataLogin.email}`)
+                        .then((reresponse) => {
+                        return reresponse.json();
+                    })
+                    .then((productData) => {
+                        const user = {
+                            username: productData.username,
+                            email: productData.email
+                        };
+                        //console.log(productData.username)
+                        dispatch(addUser(user));
+
+                    })
+
+                } catch(error){
+                    console.error('Algo ha ocurrido', error);
+                }
+
+                navigate("/")
+                dispatch(signIn())
                 // En la acción Redux (signIn)
                 localStorage.setItem('isUserLoggedIn', 'true');
+
 
             }
             else {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../assets/css/FormCompra.css'
 import { useForm } from 'react-hook-form'
 import useValidationInfoClient from '../../hooks/useValidationInfoClient'
@@ -9,6 +9,40 @@ import { useNavigate } from 'react-router-dom'
 
 
 const FormCompra = () => {
+
+    //Redux
+    const { username, email } = useSelector((state) => state.user);
+
+    //Funcion para realizar el proceso de compra
+    const actualizarStock = async ({ productId, cantidad, precio }) => {
+
+        try {
+            const response = await fetch('http://localhost:3060/buy-complete', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    productId,
+                    cantidad,
+                    precio,
+                    email
+                })
+            });
+
+            if (response.ok) {
+                console.log("Actualizaciones exitosas");
+                //openModalCorrect();
+            } else {
+                console.log("Error actualizar FRONT-END");
+                //openErrorModal();
+            }
+
+        } catch (error) {
+
+            console.error('Error en el servidor: ', error)
+        }
+    }
 
     //redux
     const dispatch = useDispatch();
@@ -36,8 +70,13 @@ const FormCompra = () => {
 
         // Despacha la acción para guardar los datos de la factura en Redux
         dispatch(setFactura({dataClient}));
-        console.log(dataClient)
+        //console.log(dataClient)
+        cartItems.forEach((item) => {
+            const { id, cantidad, precio } = item.data;
+            actualizarStock({ productId: id, cantidad, precio });
+        });
         navigate('/pdf')
+
     }
 
 
@@ -48,7 +87,7 @@ const FormCompra = () => {
                 <div className="container_form_info_buy">
                     <form method="POST" className='Form_info_buy' onSubmit={handleSubmit(infoClientPago)}>
                         <h2>Tus Datos:</h2>
-                        
+
                         <div className="name_lastname">
                             <div className='acomodar_inputs'>
                                 <input type="text" name='Nombre' placeholder='Nombre' {...register('Nombre', NOMBRE)} />
