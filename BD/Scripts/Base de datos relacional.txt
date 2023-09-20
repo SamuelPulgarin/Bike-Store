@@ -1,0 +1,79 @@
+CREATE SEQUENCE giant START 111;
+
+-- Tabla Producto
+CREATE TABLE producto (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(50),
+    categoria VARCHAR(100),
+    precio MONEY,
+    talla VARCHAR(10),
+    descripcion TEXT,
+    marca VARCHAR(100),
+    color VARCHAR(20),
+    stock BIGINT,
+    cantidad INT DEFAULT 1, 
+    estado VARCHAR (30) DEFAULT 'habilitado'
+);
+
+
+-- Tabla Imágenes
+CREATE TABLE imagenes (
+    id integer NOT NULL DEFAULT nextval('giant'::regclass) PRIMARY KEY,
+    ruta VARCHAR(255),
+    id_producto INT REFERENCES producto(id)
+);
+
+
+-- Tabla Cliente
+CREATE TABLE cliente (
+    id_usuario SERIAL PRIMARY KEY,
+    email VARCHAR(100),
+    username VARCHAR(100),
+    password VARCHAR(255)
+);
+
+-- Tabla Proveedores
+CREATE TABLE Proveedores (
+    id SERIAL PRIMARY KEY,
+    email VARCHAR(100),
+    username VARCHAR(100),
+    password VARCHAR(255)
+);
+    
+
+-- Tabla ventas
+CREATE TABLE ventas (
+    id SERIAL PRIMARY KEY,
+    id_producto INT REFERENCES producto(id),
+    id_cliente INT REFERENCES Cliente(id_usuario),
+    precio MONEY,
+    cantidad BIGINT,
+    fecha_venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- Tabla Compras
+CREATE TABLE compras (
+    id SERIAL PRIMARY KEY,
+    id_producto INT REFERENCES producto(id),
+    id_proveedores INT REFERENCES Proveedores(id),
+    fecha_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    cantidad BIGINT,
+    precio MONEY,
+    total MONEY GENERATED ALWAYS AS (precio * cantidad) STORED
+);
+
+-- Tabla Stock
+CREATE TABLE stock (
+    codigo SERIAL PRIMARY KEY,
+    inventario_inicial BIGINT,
+    fecha_inventario_inicial DATE,
+    entradas BIGINT,
+    id_entrada INT REFERENCES compras(id),
+    salidas BIGINT,
+    id_salida INT REFERENCES ventas(id),
+    saldo BIGINT GENERATED ALWAYS AS ((inventario_inicial + entradas) - salidas) STORED
+);
+    
+    
+    
