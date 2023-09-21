@@ -72,7 +72,7 @@ export const SearchResultsPage = ({ dataProduct }) => {
                     <h5>{data.nombre}</h5>
                   </div>
                   <p>
-                    <b>Precio:</b> ${data.precio}
+                    <b>Precio:</b> {data.precio}
                   </p>
                 </Link>
               </div>
