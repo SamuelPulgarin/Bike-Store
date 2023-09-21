@@ -36,7 +36,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 15vh;
-  column-gap: -1vw;
+  column-gap: -2px;
   margin-left: 100px;
   margin-top: 79px
 }
@@ -47,6 +47,8 @@
 
 .FooterContain {
   height: 60vh;
+  position: relative;
+  bottom: 0;
 }
 
 .Follow_us h2 {
@@ -83,9 +85,11 @@
   .cartap{
     margin-top: -40px;
   }
+}
 
+@media screen and (max-width: 1030px){
   .Follow_us{
-    margin-top: 4px;
+    margin-top: 5px;
   }
 }
 
@@ -94,7 +98,7 @@
   .results {
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 5vh;
-    margin-left: 60px;
+    margin-left: 30px;
     margin-top: -5px;
   }
 
@@ -106,6 +110,9 @@
     margin-top: 7px;
   }
 
+  .Logo{
+    height: 35vh;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -145,6 +152,8 @@
 
   .cartap {
 
+    margin-top: 20px;
+    height: 56vh;
     & h5 {
       font-size: 60%;
     }
@@ -163,6 +172,7 @@
     column-gap: 80px;
     margin-left: 10px;
     margin-top: 30px;
+    grid-template-columns: 1fr;
   }
 
   .searchContainer {
@@ -184,6 +194,7 @@
 
   .cartap {
 
+    margin-top: 20px;
     & h5 {
       font-size: 60%;
     }
@@ -201,7 +212,7 @@
     row-gap: 40px;
     column-gap: 80px;
     margin-right: 20px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .searchContainer {
@@ -209,11 +220,35 @@
   }
 }
 
+@media screen and (max-width: 430px){
+  .cartap{
+    height: 44vh;
+  }
+
+  .Logo{
+    height: 21vh;
+  }
+
+  .Follow_us{
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .Logo{
+    height: 23vh;
+  }
+
+  /* .Follow_us{
+    margin-top: 30px;
+  } */
+}
+
 
 @media screen and (max-width: 370px) {
 
   .results {
-    row-gap: 50px;
+    row-gap: 5px;
     column-gap: 60px;
     justify-items: start;
     margin-top: 20px;
@@ -223,12 +258,28 @@
     padding: 30px;
     margin-top: -30px;
   }
+
+  .cartap{
+    height: 40vh;
+
+    & a p{
+      margin-top: 20px;
+    }
+  }
+
+  .cartap-info h5{
+    margin-top: 18px;
+  }
+
+  .Logo{
+    height: 22vh;
+  }
 }
 
 @media screen and (max-width: 300px) {
 
   .results {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     row-gap: 10vh;
     row-gap: 50px;
     column-gap: 30px;
@@ -239,6 +290,14 @@
   .searchContainer h2 {
     padding: 30px;
     margin-top: -30px;
+  }
+
+  .cartap-info h5{
+    margin-top: 10px;
+  }
+
+  .Logo{
+    height: 20vh;
   }
 }
 
