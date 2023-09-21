@@ -168,6 +168,7 @@
 
 /*Nest Hub*/
 @media (max-width: 1024px) {
+
   .Follow_us .fa-brands {
     font-size: 35px;
   }
@@ -194,7 +195,7 @@
   }
 
   .Follow_us {
-    margin-top: 12px;
+    margin-top: 11px;
   }
 
   .Follow_us .fa-brands {
@@ -381,10 +382,6 @@
   .logox {
     margin-top: 8px;
   }
-
-  .Follow_us {
-    margin-top: -17px;
-  }
 }
 
 /*Pixel 5*/
@@ -469,9 +466,6 @@
     margin-top: 8px;
   }
 
-  .Copy {
-    margin-top: 7px;
-  }
 }
 
 /*IPhone SE*/

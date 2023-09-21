@@ -27,9 +27,9 @@
 .cartas-producto {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  row-gap: 14vh;
+  row-gap: 15vh;
   column-gap: 8vh;
-  margin-top: 8rem;
+  margin-top: 10rem;
   margin-bottom: 5rem;
 }
 

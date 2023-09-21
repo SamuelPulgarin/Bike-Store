@@ -36,7 +36,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   row-gap: 15vh;
-  column-gap: -1vw;
+  column-gap: -2px;
   margin-left: 100px;
   margin-top: 79px
 }
@@ -47,6 +47,8 @@
 
 .FooterContain {
   height: 60vh;
+  position: relative;
+  bottom: 0;
 }
 
 .Follow_us h2 {
@@ -59,9 +61,20 @@
   margin-top: -90px;
 }
 
+.Container_error_notFound h1{
+  text-align: center;
+  margin-left: 470px;
+}
+
 
 
 /*Responsive*/
+
+@media screen and (max-width: 1290px){
+  .Container_error_notFound h1{
+    margin-left: 450px;
+  }
+}
 
 @media screen and (max-width: 1275px) {
 
@@ -83,9 +96,15 @@
   .cartap{
     margin-top: -40px;
   }
+}
 
+@media screen and (max-width: 1030px){
   .Follow_us{
-    margin-top: 4px;
+    margin-top: 5px;
+  }
+
+  .Container_error_notFound h1 {
+    margin-left: 170px;
   }
 }
 
@@ -94,7 +113,7 @@
   .results {
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 5vh;
-    margin-left: 60px;
+    margin-left: 30px;
     margin-top: -5px;
   }
 
@@ -106,6 +125,21 @@
     margin-top: 7px;
   }
 
+  .Logo{
+    height: 35vh;
+  }
+}
+
+@media screen and (max-width: 840px){
+  .Container_error_notFound h1 {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 780px){
+  .Container_error_notFound h1 {
+    margin-left: 280px;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -145,6 +179,8 @@
 
   .cartap {
 
+    margin-top: 20px;
+    height: 56vh;
     & h5 {
       font-size: 60%;
     }
@@ -163,6 +199,7 @@
     column-gap: 80px;
     margin-left: 10px;
     margin-top: 30px;
+    grid-template-columns: 1fr;
   }
 
   .searchContainer {
@@ -171,6 +208,11 @@
 
   .searchContainer h2 {
     padding: 20px 20px;
+  }
+
+  .Container_error_notFound h1 {
+    margin-left: -130px;
+    font-size: 30px;
   }
 }
 
@@ -184,6 +226,7 @@
 
   .cartap {
 
+    margin-top: 20px;
     & h5 {
       font-size: 60%;
     }
@@ -201,7 +244,7 @@
     row-gap: 40px;
     column-gap: 80px;
     margin-right: 20px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .searchContainer {
@@ -209,11 +252,40 @@
   }
 }
 
+@media screen and (max-width: 430px){
+  .cartap{
+    height: 44vh;
+  }
+
+  .Logo{
+    height: 21vh;
+  }
+
+  .Follow_us{
+    height: 40px;
+  }
+
+  .Container_error_notFound h1 {
+    margin-left: -40px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .Logo{
+    height: 23vh;
+  }
+
+  .cartap{
+    height: 53vh;
+  }
+
+}
+
 
 @media screen and (max-width: 370px) {
 
   .results {
-    row-gap: 50px;
+    row-gap: 5px;
     column-gap: 60px;
     justify-items: start;
     margin-top: 20px;
@@ -223,12 +295,28 @@
     padding: 30px;
     margin-top: -30px;
   }
+
+  .cartap{
+    height: 40vh;
+
+    & a p{
+      margin-top: 20px;
+    }
+  }
+
+  .cartap-info h5{
+    margin-top: 18px;
+  }
+
+  .Logo{
+    height: 22vh;
+  }
 }
 
 @media screen and (max-width: 300px) {
 
   .results {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     row-gap: 10vh;
     row-gap: 50px;
     column-gap: 30px;
@@ -239,6 +327,19 @@
   .searchContainer h2 {
     padding: 30px;
     margin-top: -30px;
+  }
+
+  .cartap-info h5{
+    margin-top: 10px;
+  }
+
+  .Logo{
+    height: 20vh;
+  }
+
+  .Container_error_notFound h1 {
+    font-size: 18px;
+    margin-left: 20px;
   }
 }
 
@@ -454,6 +555,10 @@
     height: 250px;
   }
 
+  .Logo{
+    height: 20vh;
+  }
+
   .Follow_us {
     margin-top: 10px;
   }
@@ -482,7 +587,7 @@
     font-size: 23px;
     display: flex;
     justify-content: center;
-    margin-left: -49px;
+    margin-left:120px;
   }
 
 }
@@ -514,13 +619,13 @@
   }
 
   .FooterContain {
-    height: fit-content;
+    height: 42vh;
   }
 
   .Follow_us .logox {
     height: 43px;
     width: 46px;
-    margin-top: 10px;
+    margin-top: 11px;
   }
 
   .Copy {
@@ -528,7 +633,7 @@
   }
 
   .Follow_us {
-    margin-top: -19px;
+    margin-top: 140px;
   }
 
   .Container_error_notFound {
@@ -543,16 +648,16 @@
 /*IPad Mini*/
 @media (max-width:768px) {
   .FooterContain {
-    height: fit-content;
+    height: 36vh;
   }
 
   .Logo img {
     width: 70%;
-    height: 26vh;
+    height: 24vh;
   }
 
   .Follow_us {
-    margin-top: 12px;
+    margin-top: 50px;
   }
 
   .Follow_us .fa-brands {
@@ -599,6 +704,10 @@
     height: 30vh;
   }
 
+  .Logo {
+    height: 30vh;
+  }
+
   .Copy h5 {
     font-size: 19px;
   }
@@ -641,7 +750,7 @@
   }
 
   .Follow_us {
-    margin-top: -23px;
+    margin-top: 15px;
   }
 
   .Follow_us .fa-brands {
@@ -654,7 +763,7 @@
 
   .Logo img {
     margin-left: 50px;
-
+    height: 24vh;
   }
 
   .Copy img {
@@ -672,13 +781,29 @@
     margin-top: 82px;
     margin-left: 65px;
   }
+
+  .FooterContain{
+    height: 37vh;
+  }
+
+  .Logo{
+    height: 25vh;
+  }
 }
 
 /*Samsung Galaxy A51/71 and Facebook for Android v407 on Pixel 6*/
 @media (max-width:412px) {
   .Logo img {
-    height: 25vh;
+    height: 22vh;
     margin-right: 50px;
+  }
+
+  .Logo{
+    height: 21vh;
+  }
+
+  .FooterContain {
+    height: 30vh;
   }
 
   .Follow_us h2 {
@@ -710,7 +835,7 @@
   }
 
   .Follow_us {
-    margin-top: -18px;
+    margin-top: 17px;
   }
 
   .Container_error_notFound {
@@ -779,8 +904,12 @@
     height: 20vh;
   }
 
+  .Logo{
+    height: 21vh;
+  }
+
   .Follow_us {
-    margin-top: 3px;
+    margin-top: -5px;
   }
 
   .Follow_us .fa-brands {
@@ -803,8 +932,8 @@
   }
 
   .Copy {
-    margin-top: 5px;
-  }
+    margin-top: 1px;
+}
 
   .Follow_us .logox {
     height: 29px;
@@ -821,8 +950,8 @@
 /*IPhone SE*/
 @media (max-width: 375px) {
   .FooterContain {
-    height: fit-content;
-  }
+    height: 36vh;
+}
 
   .Logo img {
     width: 80%;
@@ -891,6 +1020,14 @@
   .Container_error_notFound {
     margin-left: 40px;
   }
+
+  .Follow_us{
+    margin-top: 35px;
+  }
+
+  .Logo img {
+    height: 25vh;
+  }
 }
 
 /*Galaxy Fold*/
@@ -899,12 +1036,12 @@
     margin: 0 auto;
     display: block;
     width: 100%;
-    height: 20vh;
+    height: 23vh;
   }
 
   .Follow_us {
     margin-left: 11px;
-    margin-top: 9px
+    margin-top: 35px
   }
 
   .Follow_us .fa-brands {
@@ -934,5 +1071,9 @@
   .Container_error_notFound {
     font-size: 13px;
     margin-left: 5px;
+  }
+
+  .FooterContain{
+    height: 36vh;
   }
 }
