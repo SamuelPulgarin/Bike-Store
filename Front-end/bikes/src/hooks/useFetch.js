@@ -9,6 +9,7 @@ export const FetchProducts = (urlProductName, urlProductImg) =>{
   const [dataProduct, setDataProduct] = useState([]);
   const [dataImg, setDataImg] = useState([1]);
   const [dataDetails, setDataDetails] = useState([2]);
+  const [dataCarousel, setDataCarousel] = useState([3]);
 
   const fetchDataProduct = async () => {
     var requestOptions = {
@@ -92,6 +93,21 @@ const closeModalDelete = () => {
     }
   }
 
+  const carouselItems = async(marca) =>{
+
+    if (marca != undefined) {
+      var requestOptions = {
+        method: "GET",
+        redirect: "follow",
+      };
+  
+      await fetch(`http://localhost:3060/productos/${marca}`, requestOptions)
+        .then((response) => response.json())
+        .then((data) => setDataCarousel(data))
+        .catch((err) => console.error('Error en la solicitud: ', err));
+    }
+  } 
+
   return {
     fetchDataProduct,
     dataProduct,
@@ -105,6 +121,9 @@ const closeModalDelete = () => {
     closeErrorModal,
     isOpenDeleteModal,
     openModalDelete,
-    closeModalDelete
+    closeModalDelete,
+
+    carouselItems,
+    dataCarousel
   };
 }

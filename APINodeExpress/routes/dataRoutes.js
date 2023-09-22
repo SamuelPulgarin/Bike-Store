@@ -6,8 +6,11 @@ const upload = require('../multerConfig'); //importar el middleware de Multer
 //Ruta para traer todos los productos
 router.get('/productos', dataController.getProducts);
 
+//Ruta para traer un cliente por su correo
+router.get("/getUserByEmail/:email", dataController.getUserByEmail);
+
 //Ruta para traer los productos por marca
-router.get('/productos/marca', dataController.getProductsByMarca);
+router.get('/producto/:marca', dataController.getProductsByMarca);
 
 //Ruta para traer los productos por su Id
 router.get('/get-products/:id', dataController.getProductById);
@@ -35,6 +38,7 @@ router.delete("/delete-products/:id", dataController.deleteProduct);
 router.put("/update-product/:id", upload.single('imagen'), dataController.updateProduct );
 
 //Ruta para culminar proceso de compras
+router.post("/buy-complete", dataController.buy);
 
 
 

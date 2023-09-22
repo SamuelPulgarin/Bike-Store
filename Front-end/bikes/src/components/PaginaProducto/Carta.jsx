@@ -14,6 +14,10 @@ const Carta = ({ searchQuery }) => {
     }
   }, [!dataProduct]);
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <div className="contenedor-cartas-producto">
@@ -22,27 +26,18 @@ const Carta = ({ searchQuery }) => {
           {!dataProduct
             ? "Cargando..."
             : dataProduct.map((data) => {
-                return (
-                  <div
-                    className="cartap"
-                    key={data.id}
-                    category={data.marca}
-                    type={data.talla}
-                    itemType={data.categoria}
-                    color={data.color}
-                  >
-                    <Link to={`/Detalles/${data.id}`}>
-                      <img src={data.ruta} alt="Bicicletas muy bonitas" />
-                      <div className="cartap-info">
-                        <h5>{data.nombre}</h5>
-                      </div>
-                      <p>
-                        <b>Precio:</b> {data.precio}
-                      </p>
-                    </Link>
-                  </div>
-                );
-              })}
+              return (
+                <div className="cartap" key={data.id} category={data.marca} type={data.talla} itemType={data.categoria} color={data.color}>
+                  <Link to={`/Detalles/${data.id}`} onClick={scrollToTop}>
+                    <img src={data.ruta} alt="Bicicletas muy bonitas" />
+                    <div className="cartap-info">
+                      <h5>{data.nombre}</h5>
+                    </div>
+                    <p><b>Precio:</b> {data.precio}</p>
+                  </Link>
+                </div>
+              );
+            })}
         </div>
       </div>
     </>

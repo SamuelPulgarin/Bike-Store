@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../../assets/css/FormCompra.css'
 import { useForm } from 'react-hook-form'
 import useValidationInfoClient from '../../hooks/useValidationInfoClient'
@@ -11,6 +11,7 @@ const FormCompra = () => {
 
     //Redux
     const { username, email } = useSelector((state) => state.user);
+    const cartItems = useSelector((state) => state.carrito.items);
 
     //Funcion para realizar el proceso de compra
     const actualizarStock = async ({ productId, cantidad, precio }) => {
