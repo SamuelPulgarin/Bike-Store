@@ -1,48 +1,239 @@
-*{
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box; 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.carousel-container{
+.carousel-container {
     display: flex;
     justify-content: center;
 }
 
-.carousel{
+.carousel {
     padding: 5rem;
     background-color: #000;
     color: #fff;
     height: 75vh;
     width: 100vw;
 
-    & h2{
+    & h2 {
         margin-bottom: 2rem;
         text-align: center;
     }
 }
 
-.box{
-    background-color: lightgreen;
-    height: 250px;
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    width: min-content;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 5px 5px 5px grey;
+    cursor: pointer;
+    width: 195px;
+
+    & img {
+        width: 195px;
+        border-radius: 10px;
+        height: 170px;
+    }
+
+    & p {
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
+
+    & h5 {
+        font-size: 15px;
+    }
+
+    & .cartap-info {
+        margin-top: 5px;
+    }
 }
 
-.box h3{
+.cartap-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    justify-content: center;
+    text-align: center;
+    height: 37px;
+    overflow: hidden;
 }
 
-.slick-slide div{
+.cartap-info h5 {
+    color: black;
+    margin-top: 5px;
+}
+
+.box p {
+    color: black;
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+.slick-slide div {
     margin: 0 1rem;
 }
 
-.slick-dots li button:before{
+.slick-dots li button:before {
     color: #fff !important;
 }
 
-.slick-prev:before, .slick-next:before{
+.slick-prev:before,
+.slick-next:before {
     font-size: 30px !important;
 }
 
-.slick-next{
+@media screen and (max-width: 1200px) {
 
+    .carousel {
+        height: 90vh;
+    }
+}
+
+/* @media screen and (max-width: 950px) {
+    .box {
+
+        width: 260px;
+
+        & a img {
+            width: 260px;
+        }
+
+        & a p {
+            font-size: 17px;
+        }
+    }
+
+    .cartap-info {
+
+        & h5 {
+            font-size: 17px;
+            margin-top: -3px;
+        }
+    }
+} */
+
+@media screen and (max-width: 830px) {
+
+    .box {
+        width: 160px;
+
+        & a img {
+            width: 160px;
+            height: 145px;
+        }
+
+        & a p {
+            font-size: 13px;
+        }
+
+        .cartap-info h5 {
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+
+    .box {
+        width: 140px;
+
+        & a img {
+            width: 130px;
+            height: 125px;
+        }
+
+        & a p {
+            font-size: 10px;
+        }
+
+        .cartap-info h5 {
+            font-size: 12px;
+        }
+    }
+}
+
+/* @media screen and (max-width: 650px) {
+    .cartap {
+        & img {
+            width: 200px;
+        }
+
+        & p {
+            font-size: 70%;
+        }
+    }
+
+    .cartap-info {
+        height: 50px;
+    }
+} */
+
+/* @media screen and (max-width: 580px) {
+    .cartap {
+        width: 300px;
+        height: 360px;
+
+        & a img {
+            width: 300px;
+        }
+
+        & a p {
+            font-size: 21px;
+            margin-top: -5px;
+        }
+
+    }
+
+    .cartap-info {
+        margin-top: 25px;
+        font-size: 31px;
+    }
+} */
+
+@media screen and (max-width:550px) {
+
+    .box {
+        width: 120px;
+
+        & a img {
+            width: 120px;
+            height: 125px;
+        }
+
+        & a p {
+            font-size: 9px;
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+
+        .cartap-info h5 {
+            margin: 0;
+            font-size: 10px;
+        }
+
+        & .cartap-info {
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 460px) {
+
+    .carousel {
+        padding: 4rem;
+        height: 75vh;
+        width: 100vw;
+    }
+
+    .slick-dots {
+        bottom: -60px !important;
+    }
 }
