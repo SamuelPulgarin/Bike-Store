@@ -16,7 +16,7 @@ export const Carrusel = () => {
 
   //redux
   const marca = useSelector((state) => state.carousel.dato);
-  console.log(marca);
+  //console.log(marca);
 
   useEffect(() => {
 
@@ -29,7 +29,7 @@ export const Carrusel = () => {
           if (result !== null) {
             //console.log(result);
             setDataCarousel(result);
-            console.log(dataCarousel);
+            //console.log(dataCarousel);
           }
         })
         .catch((err) => console.error('Error al intentar traer los productos: ', err))

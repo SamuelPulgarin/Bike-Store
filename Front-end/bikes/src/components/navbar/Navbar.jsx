@@ -31,6 +31,7 @@ const Navbar = () => {
     const handleLogout = () => {
         localStorage.removeItem('isUserLoggedIn');
         dispatch(signOut());
+        localStorage.removeItem('authUser');
         closeModal();
     }
 

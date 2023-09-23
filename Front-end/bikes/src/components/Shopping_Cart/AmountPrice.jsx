@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import "../../assets/css/AmountPrice.css";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom/dist';
 
 const AmountPrice = () => {
+
+    const navigate = useNavigate();
 
     const [cantidad, setCantidad] = useState(0);
 
@@ -33,7 +36,29 @@ const AmountPrice = () => {
       }, [cartItems])
 
 
-      console.log(cantidad)
+    const goToBuy = () => {
+        let authUser = JSON.parse(localStorage.getItem('authUser'));
+
+//Condicion: obtener un array de las propiedades del objeto y luego verificar la longitud de ese array.
+        if(cantidad === 0){
+
+            alert('Aun no tienes productos agregados a tu carrito');
+
+        }else{
+
+            if(authUser !== null && typeof authUser === 'object'){
+
+                if(Object.keys(authUser).length > 0){
+
+                    navigate("/ComfirmBuy")
+                }
+            }else{
+
+                alert('Inicie sesion para continuar con la compra');
+                navigate("/signIn")
+            }
+        }
+    }
 
 
 
@@ -70,15 +95,9 @@ const AmountPrice = () => {
                 </div>
                 <h3>TOTAL: {(totalPrice + sent).toLocaleString()}</h3>
                 <div className="button-price-container">
-                    {
-                        cantidad > 0 ? (
-                            <Link to={"/ComfirmBuy"}><button><b>Ir a Pagar</b></button></Link>
-                        ) 
-                        : 
-                        ( <button><b>Ir a Pagar</b></button>)
-                    }
+
+                    <button onClick={goToBuy}><b>Ir a Pagar</b></button>
                 </div>
-                
             </div>
 
         </>
