@@ -27,9 +27,9 @@
 .cartas-producto {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  row-gap: 15vh;
-  column-gap: 8vh;
-  margin-top: 10rem;
+  row-gap: 18vh;
+  column-gap: 9vh;
+  margin-top: 8rem;
   margin-bottom: 5rem;
 }
 
@@ -132,6 +132,13 @@
 
 }
 
+@media screen and (max-width: 910px){
+  .cartas-producto{
+    row-gap: 11vh;
+    margin-top: 90px;
+  }
+}
+
 @media screen and (max-width: 830px){
 
     .cartap{
@@ -219,6 +226,24 @@
 
   .contenedor-cartas-producto {
     padding: 70px 0px;
+  }
+}
+
+@media screen and (max-width:510px){
+  .cartap-info h5 {
+    margin-top: -35px;
+  }
+  
+  .cartap{
+
+    /* height: 65vh; */
+    & a p{
+      margin-top: -25px;
+    }
+  }
+
+  .cartas-producto{
+    margin-top: 20px;
   }
 }
 
