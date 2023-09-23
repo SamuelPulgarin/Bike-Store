@@ -16,7 +16,7 @@ export const UpdateProduct = () => {
     const [categoria, setCategoria] = useState("");
     const [precio, setPrecio] = useState("");
     const [stock, setStock] = useState("");
-    const [newStock, setNewStock] = useState("");
+    const [NewStock, setNewStock] = useState("");
     const [imagen, setImagen] = useState(null);
     const [imagePreview, setImagePreview] = useState(defaultImage);
 
@@ -90,11 +90,10 @@ export const UpdateProduct = () => {
         formData.append("categoria", categoria);
         formData.append("precio", precio);
         formData.append("stock", stock);
-        formData.append("NewStock", newStock);
+        formData.append("NewStock", NewStock);
         if (imagen) {
             formData.append("imagen", imagen);
         }
-
         //Para depurar errores y confirmar informacion
         // console.log(
         //     nombre, marca, talla, color, descripcion, categoria, precio, stock, imagen
