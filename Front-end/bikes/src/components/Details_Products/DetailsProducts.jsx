@@ -26,6 +26,7 @@ export const DetailsProducts = () => {
             alert('Este producto ya se encuentra agregado al carrito de compras');
         } else {
             dispatch(addToCart({ data }));
+            alert('Producto agregado al carrito');
         }
     }
 

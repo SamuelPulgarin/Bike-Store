@@ -19,6 +19,10 @@ const schema = yup.object().shape({
 
 export const SignIn = () => {
 
+    //Objeto que contendra datos del usuario
+    let user = {}
+
+
     //Aqui empieza el redux
     const session = useSelector((state) => state.login.session);
     const { username, email } = useSelector((state) => state.user);
@@ -32,9 +36,11 @@ export const SignIn = () => {
     const navigate = useNavigate();
 
     useEffect(() =>{
-        console.log(username, email)
-        console.log(session)
-    },[])
+        
+        // const comprobante = JSON.parse(localStorage.getItem('authUser'));
+        // console.log(comprobante)
+
+    },[user])
 
 
     async function SubmitLogin(DataLogin) {
@@ -59,12 +65,15 @@ export const SignIn = () => {
                         return reresponse.json();
                     })
                     .then((productData) => {
-                        const user = {
+                        user = {
                             username: productData.username,
                             email: productData.email
                         };
                         //console.log(productData.username)
                         dispatch(addUser(user));
+                        
+                        //Guardar datos en el localeStorage
+                        localStorage.setItem('authUser', JSON.stringify(user));
 
                     })
 
