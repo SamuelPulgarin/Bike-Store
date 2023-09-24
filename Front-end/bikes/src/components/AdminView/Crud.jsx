@@ -101,7 +101,7 @@ export const Crud = () => {
                                     <td>{product.color}</td>
                                     <td>{product.talla}</td>
                                     <td>{product.stock}</td>
-                                    <td>$ {product.precio}</td>
+                                    <td>{product.precio}</td>
                                     <td>
                                         <div className="container_btns_tabla">
                                             <Link to={`/Update/${product.id}`}>

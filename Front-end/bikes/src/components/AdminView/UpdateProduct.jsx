@@ -4,8 +4,32 @@ import "../../assets/css/AddProduct.css";
 import defaultImage from "../../assets/img/defaul.jpg";
 import useValidationUpdate from '../../hooks/useValidationUpdate';
 import { useParams } from 'react-router-dom';
+import { ModalExitoCrud } from '../Modal/ModalExitoCrud';
+import { ErrorModal } from '../Modal/ErrorModal';
 
 export const UpdateProduct = () => {
+
+    //Modal Exito
+    const [isOpen, setIsOpen] = useState(false);
+
+    const openModalExito = () => {
+        setIsOpen(true);
+    }
+
+    const closeModalExito = () => {
+        setIsOpen(false);
+    }
+
+    //Error Modal
+    const [isOpenError, setIsOpenError] = useState(false);
+
+    const openErrorModal = () => {
+        setIsOpenError(true);
+    }
+
+    const CloseErrorModal = () => {
+        setIsOpenError(false);
+    }
 
     const { identificador } = useParams();
     const [nombre, setNombre] = useState("");
@@ -110,13 +134,16 @@ export const UpdateProduct = () => {
             })
             if (response.ok) {
                 console.log("Producto actualizado correctamente");
+                openModalExito()
             }
             else {
                 console.log("ERROR, Producto no actualizado");
+                openErrorModal()
             }
         }
         catch (error) {
             console.error("Error del servidor", error)
+            openErrorModal()
         }
         //        }
     }
@@ -246,7 +273,7 @@ export const UpdateProduct = () => {
                                 />
                                 <span className="error_add">{errors.stock}</span>
 
-                                <label>Nuevo Stock</label>
+                                <label>Adicionar Stock:</label>
                                 <input
                                     type="number"
                                     name="NewStock"
@@ -291,6 +318,18 @@ export const UpdateProduct = () => {
                     </div>
                 </div>
             </main>
+            <ModalExitoCrud
+            isOpen={isOpen}
+            onClose={closeModalExito}
+            title="¡Exito!"
+            content="Producto actualizado Correctamente"
+            />
+            <ErrorModal 
+            openErrorModal={isOpenError}
+            CloseErrorModal={CloseErrorModal}
+            titleError="¡Error! Al actualizar Producto"
+            messageError="Ha ocurrido un error al actualizar el Producto."
+            />
         </>
     )
 }
