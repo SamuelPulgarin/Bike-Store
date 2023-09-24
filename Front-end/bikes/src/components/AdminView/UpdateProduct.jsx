@@ -277,7 +277,7 @@ export const UpdateProduct = () => {
                                 <input
                                     type="number"
                                     name="NewStock"
-                                    placeholder="Nuevo Stock"
+                                    placeholder="Adicionar Stock"
                                     onChange={(e) => setNewStock(e.target.value)}
                                 />
 
