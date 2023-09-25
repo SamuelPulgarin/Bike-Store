@@ -90,7 +90,7 @@
   .cartas-producto {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .contenedor-cartas-producto h1{
+  .contenedor-cartas-producto h1 {
     margin-left: 10px;
   }
 }
@@ -110,63 +110,58 @@
   }
 
   .cartap {
-
     width: 260px;
 
-    & a img{
-        width: 260px;
+    & a img {
+      width: 260px;
     }
 
     & a p {
-        font-size: 17px;
+      font-size: 17px;
     }
   }
 
-  .cartap-info{
-
-    & h5{
-        font-size: 17px;
-        margin-top: -3px;
+  .cartap-info {
+    & h5 {
+      font-size: 17px;
+      margin-top: -3px;
     }
   }
-
 }
 
-@media screen and (max-width: 910px){
-  .cartas-producto{
+@media screen and (max-width: 910px) {
+  .cartas-producto {
     row-gap: 11vh;
     margin-top: 90px;
   }
 }
 
-@media screen and (max-width: 830px){
+@media screen and (max-width: 830px) {
+  .cartap {
+    width: 230px;
 
-    .cartap{
-        width: 230px;
-
-        & a img{
-            width: 230px;
-        }
+    & a img {
+      width: 230px;
     }
+  }
 }
 
-@media screen and (max-width: 770px){
-    .cartap{
+@media screen and (max-width: 770px) {
+  .cartap {
+    width: 200px;
 
-        width: 200px;
-
-        & a img {
-            width: 200px;
-        }
-
-        & a p{
-            font-size: 15px;
-        }
+    & a img {
+      width: 200px;
     }
 
-    .cartap-info h5{
-        font-size: 14px;
+    & a p {
+      font-size: 15px;
     }
+  }
+
+  .cartap-info h5 {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -208,16 +203,14 @@
     }
 
     & a p {
-        font-size: 21px;
-        margin-top: -5px;
+      font-size: 21px;
+      margin-top: -5px;
     }
-
   }
   .cartap-info {
     margin-top: 25px;
     font-size: 31px;
   }
-
 
   .cartas-producto {
     row-gap: 8px;
@@ -229,54 +222,60 @@
   }
 }
 
-@media screen and (max-width:510px){
+@media screen and (max-width: 510px) {
   .cartap-info h5 {
-    margin-top: -35px;
+    margin-top: -13px;
   }
-  
-  .cartap{
 
-    /* height: 65vh; */
-    & a p{
-      margin-top: -25px;
+  .cartap {
+
+    & a img{
+      height: 38vh;
+    }
+
+    & a {
+      margin-top: 10px;
+    }
+
+    & a p {
+      margin-top: -7px;
     }
   }
 
-  .cartas-producto{
+  .cartas-producto {
     margin-top: 20px;
   }
 }
 
-@media screen and (max-width:420px){
-    .cartap{
-        height: 395px;
-    }
+@media screen and (max-width: 420px) {
+  .cartap {
+    height: 395px;
+  }
 }
 
-@media screen and (max-width: 395px){
-    .cartap{
+@media screen and (max-width: 395px) {
+  .cartap {
+    width: 280px;
 
-        width: 280px;
-
-        & a img {
-            width: 280px;
-        }
+    & a img {
+      width: 280px;
     }
+  }
 
-    .cartap-info h5 {
-        margin-top: -13px;
-    }
+  .cartap-info h5 {
+    margin-top: -13px;
+  }
 }
 
-@media screen and (max-width:380px){
-    .cartap{
-        width: 255px;
-        height: 345px;
+@media screen and (max-width: 380px) {
+  .cartap {
+    width: 255px;
+    height: 345px;
 
-        & a img{
-            width: 255px;
-        }
+    & a img {
+      width: 255px;
     }
+  }
 }
 
 @media screen and (max-width: 370px) {
@@ -290,7 +289,7 @@
     font-size: 30px;
   }
 
-  .contenedor-cartas-producto{
+  .contenedor-cartas-producto {
     padding: 60px 20px;
   }
 
@@ -308,9 +307,8 @@
     }
 
     & a p {
-        font-size: 15px;
-        margin-top: -1px;
+      font-size: 15px;
+      margin-top: -1px;
     }
-
   }
 }
