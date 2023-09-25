@@ -26,12 +26,10 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(
-    135deg,
-    #c70996 0%,
-    #eb0824 50%,
-    #fcca13 100%
-  );
+  background-image: linear-gradient(135deg,
+      #c70996 0%,
+      #eb0824 50%,
+      #fcca13 100%);
 }
 
 .logox {
@@ -44,6 +42,7 @@
   background-color: #000;
   border-radius: 100%;
 }
+
 .Follow_us .logox {
   height: 38px;
   width: 38px;
@@ -62,6 +61,7 @@
 .Follow_us:hover i {
   filter: blur(2px);
 }
+
 .Follow_us:hover img {
   filter: blur(2px);
 }
@@ -144,7 +144,7 @@
   }
 
   .FooterContain {
-    height: fit-content;
+    height: 100%;
   }
 }
 
@@ -187,7 +187,10 @@
 /*Surface Pro 7*/
 @media (max-width: 912px) {
 
-  
+  .FooterContain{
+    height: 100%;
+  }
+
   .Logo Img {
     width: 700px;
     height: 250px;
@@ -238,7 +241,7 @@
   }
 
   .FooterContain {
-    height: fit-content;
+    height: 100%;
   }
 
   .logox {
@@ -249,7 +252,7 @@
 /*IPad Mini*/
 @media (max-width: 768px) {
   .FooterContain {
-    height: 36vh;
+    height: 100%;
   }
 
   .Logo img {
@@ -342,6 +345,7 @@
     width: 15px;
     margin-top: 8px;
   }
+
   .logox {
     width: 25px;
     height: 25px;
@@ -351,6 +355,11 @@
 
 /*Samsung Galaxy A51/71 and Facebook for Android v407 on Pixel 6*/
 @media (max-width: 412px) {
+
+  .FooterContain {
+    height: 100%;
+  }
+
   .Logo img {
     height: 25vh;
     margin-right: 50px;
@@ -386,7 +395,7 @@
 /*Pixel 5*/
 @media (max-width: 393px) {
   .FooterContain {
-    height: fit-content;
+    height: 100%;
   }
 
   .Logo {
@@ -424,6 +433,7 @@
   .Copy {
     margin-top: 7px;
   }
+
   .logox {
     width: 30px;
     height: 30px;
@@ -434,7 +444,7 @@
 /*IPhone 12 Pro*/
 @media (max-width: 390px) {
   .FooterContain {
-    height: 33vh;
+    height: 100%;
   }
 
   .Logo img {
@@ -469,7 +479,7 @@
 /*IPhone SE*/
 @media (max-width: 375px) {
   .FooterContain {
-    height: fit-content;
+    height: 100%;
   }
 
   .Logo img {
@@ -507,6 +517,7 @@
   .Copy {
     margin-top: 7px;
   }
+
   .logox {
     width: 25px;
     height: 25px;
@@ -523,6 +534,7 @@
     font-size: 18px;
     margin-top: 7px;
   }
+
   .logox {
     width: 30px;
     height: 30px;
@@ -541,6 +553,11 @@
 
 /*Galaxy Fold*/
 @media (max-width: 280px) {
+
+  .FooterContain {
+    height: 100%;
+  }
+
   .Logo img {
     margin: 0 auto;
     display: block;

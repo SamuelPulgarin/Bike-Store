@@ -27,7 +27,7 @@
 .cartas-producto {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  row-gap: 18vh;
+  row-gap: 15vh;
   column-gap: 9vh;
   margin-top: 8rem;
   margin-bottom: 5rem;
@@ -86,6 +86,13 @@
   margin-top: 15px;
 }
 
+@media screen and (max-width: 1290px){
+  .cartas-producto{
+    row-gap: 14vh;
+    column-gap: 6vh;
+  }
+}
+
 @media screen and (max-width: 1275px) {
   .cartas-producto {
     grid-template-columns: 1fr 1fr 1fr;
@@ -97,15 +104,16 @@
 
 @media screen and (max-width: 1250px) {
   .cartas-producto {
-    row-gap: 5vh;
-    column-gap: 40px;
+    row-gap: 8vh;
+    column-gap: 10vh;
+    margin-top: 80px;
   }
 }
 
 @media screen and (max-width: 950px) {
   .cartas-producto {
     grid-template-columns: 1fr 1fr;
-    row-gap: 1vh;
+    row-gap: 3vh;
     column-gap: 60px;
   }
 
@@ -144,6 +152,10 @@
       width: 230px;
     }
   }
+
+  .cartas-producto{
+    row-gap: 5vh;
+  }
 }
 
 @media screen and (max-width: 770px) {
@@ -161,6 +173,10 @@
 
   .cartap-info h5 {
     font-size: 14px;
+  }
+
+  .cartas-producto{
+    row-gap: 5vh;
   }
 }
 
@@ -195,16 +211,16 @@
 
 @media screen and (max-width: 580px) {
   .cartap {
-    width: 300px;
-    height: 360px;
+    width: 250px;
+    height: 48vh;
 
     & a img {
-      width: 300px;
+      width: 250px;
     }
 
     & a p {
       font-size: 21px;
-      margin-top: -5px;
+      margin-top: 10px;
     }
   }
   .cartap-info {
@@ -215,6 +231,7 @@
   .cartas-producto {
     row-gap: 8px;
     grid-template-columns: 1fr;
+    margin-top: 25px;
   }
 
   .contenedor-cartas-producto {
@@ -249,19 +266,28 @@
 
 @media screen and (max-width: 420px) {
   .cartap {
-
+    width: 260px;
     & a img {
-      height: 35vh;
+      width: 260px;
+      height: 25vh;
+      margin-top: -10px;
     }
+
+    & a p {
+      margin-top: 20px;
+    }
+  }
+
+  .cartap-info h5 {
+    margin-top: 5px;
   }
 }
 
 @media screen and (max-width: 395px) {
   .cartap {
-    width: 280px;
-
+    width: 240px;
     & a img {
-      width: 280px;
+      width: 240px;
     }
   }
 
@@ -305,7 +331,7 @@
     }
 
     .cartap-info {
-      margin-top: -20px;
+      margin-top: -10px;
       font-size: 25px;
     }
 
