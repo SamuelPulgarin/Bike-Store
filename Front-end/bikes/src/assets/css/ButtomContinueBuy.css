@@ -14,3 +14,18 @@
 #buttom-continue-buy:hover{
     background-color: #D9D9D9;
 }
+
+@media screen and (max-width: 1180px){
+    
+    #buttom-continue-buy{
+        margin-top: 0px;
+        padding: 0;
+        margin-left: 0;
+    }
+
+    .buttom-continue-buy-container{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+}

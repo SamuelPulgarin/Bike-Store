@@ -1,10 +1,14 @@
 .quantity-container{
     position: relative;
     padding-top: 6rem;
-    margin-left: 3rem;
+    padding-left: 5rem;
     width: 100%;
 
     & h3{
         margin: 10px;
     }
 }
+
+/* @media screen and (max-width: 1180px){
+
+} */

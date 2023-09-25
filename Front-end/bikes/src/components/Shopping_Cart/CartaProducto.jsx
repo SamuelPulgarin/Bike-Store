@@ -54,7 +54,7 @@ const CartaProducto = () => {
 
             <div className="product-cart-container" key={item.data.id}>
               <div className="image-product-cart-container">
-                <img src={Example} alt="Imagen de una biclicleta" />
+                <img src={`../../../${Example}`} alt="Imagen de una biclicleta" />
               </div>
               <div className="details-product-cart-container">
                 <h3>{item.data.nombre}</h3>
@@ -86,7 +86,9 @@ const CartaProducto = () => {
         )
       })}
 
-      <ButtomContinueBuy />
+      <div className="buttom-continue-buy-container">
+        <ButtomContinueBuy />
+      </div>
     </>
   );
 };
