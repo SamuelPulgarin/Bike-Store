@@ -180,7 +180,7 @@
   .cartap {
 
     margin-top: 20px;
-    height: 56vh;
+    height: 50vh;
     & h5 {
       font-size: 60%;
     }
@@ -254,7 +254,7 @@
 
 @media screen and (max-width: 430px){
   .cartap{
-    height: 44vh;
+    height: 40vh;
   }
 
   .Logo{
@@ -276,7 +276,11 @@
   }
 
   .cartap{
-    height: 53vh;
+    height: 47vh;
+
+    & a img {
+      height: 30vh;
+    }
   }
 
 }
@@ -487,8 +491,8 @@
     margin-top: 10px;
   }
 
-  .FooterContain {
-    height: fit-content;
+  .FooterContain{
+    height: 100%;
   }
 }
 
@@ -590,6 +594,10 @@
     margin-left:120px;
   }
 
+  .FooterContain{
+    height: 100%;
+  }
+
 }
 
 /*IPad Air*/
@@ -597,7 +605,7 @@
   .Logo img {
     width: 70%;
     margin-top: -20px;
-    height: 35vh;
+    height: 33vh;
   }
 
   .Follow_us .fa-brands {
@@ -618,8 +626,8 @@
     width: 20px;
   }
 
-  .FooterContain {
-    height: 42vh;
+  .FooterContain{
+    height: 100%;
   }
 
   .Follow_us .logox {
@@ -647,8 +655,8 @@
 
 /*IPad Mini*/
 @media (max-width:768px) {
-  .FooterContain {
-    height: 36vh;
+  .FooterContain{
+    height: 100%;
   }
 
   .Logo img {
@@ -705,7 +713,7 @@
   }
 
   .Logo {
-    height: 30vh;
+    height: 25vh;
   }
 
   .Copy h5 {
@@ -783,11 +791,11 @@
   }
 
   .FooterContain{
-    height: 37vh;
+    height: 100%;
   }
 
   .Logo{
-    height: 25vh;
+    height: 22vh;
   }
 }
 
@@ -802,8 +810,8 @@
     height: 21vh;
   }
 
-  .FooterContain {
-    height: 30vh;
+  .FooterContain{
+    height: 100%;
   }
 
   .Follow_us h2 {
@@ -845,8 +853,8 @@
 
 /*Pixel 5*/
 @media (max-width:393px) {
-  .FooterContain {
-    height: fit-content;
+  .FooterContain{
+    height: 100%;
   }
 
   .Logo img {
@@ -895,8 +903,8 @@
 
 /*IPhone 12 Pro*/
 @media (max-width: 390px) {
-  .FooterContain {
-    height: 29vh;
+  .FooterContain{
+    height: 100%;
   }
 
   .Logo img {
@@ -949,9 +957,9 @@
 
 /*IPhone SE*/
 @media (max-width: 375px) {
-  .FooterContain {
-    height: 36vh;
-}
+  .FooterContain{
+    height: 100%;
+  }
 
   .Logo img {
     width: 80%;
@@ -1074,6 +1082,6 @@
   }
 
   .FooterContain{
-    height: 36vh;
+    height: 100%;
   }
 }
