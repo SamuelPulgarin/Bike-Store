@@ -10,8 +10,12 @@ import { useState } from 'react'
 
 const FormCompra = () => {
 
+    const authUser = JSON.parse(localStorage.getItem('authUser'));
+    let email = authUser.email;
+
+
     //Redux
-    const { username, email } = useSelector((state) => state.user);
+    //const { username, email } = useSelector((state) => state.user);
     const cartItems = useSelector((state) => state.carrito.items);
 
     //Funcion para realizar el proceso de compra
