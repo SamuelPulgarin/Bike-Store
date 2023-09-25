@@ -168,7 +168,6 @@
 
 /*Nest Hub*/
 @media (max-width: 1024px) {
-
   .Follow_us .fa-brands {
     font-size: 35px;
   }
@@ -182,13 +181,15 @@
     margin-top: 5px;
   }
 
-  .Follow_us{
+  .Follow_us {
     margin-top: 4px;
   }
 }
 
 /*Surface Pro 7*/
 @media (max-width: 912px) {
+
+  
   .Logo Img {
     width: 700px;
     height: 250px;
@@ -250,7 +251,7 @@
 /*IPad Mini*/
 @media (max-width: 768px) {
   .FooterContain {
-    height: fit-content;
+    height: 36vh;
   }
 
   .Logo img {
@@ -260,7 +261,7 @@
 
   .Follow_us {
     margin-top: 13px;
-}
+  }
 
   .Follow_us .fa-brands {
     font-size: 35px;
@@ -390,7 +391,7 @@
     height: fit-content;
   }
 
-  .Logo{
+  .Logo {
     height: 24vh;
   }
 
@@ -465,7 +466,6 @@
     width: 12px;
     margin-top: 8px;
   }
-
 }
 
 /*IPhone SE*/
@@ -479,7 +479,7 @@
     height: 29vh;
   }
 
-  .Logo{
+  .Logo {
     height: 27vh;
   }
 
@@ -552,7 +552,7 @@
 
   .Follow_us {
     margin-left: -20px;
-    margin-top: 11px
+    margin-top: 11px;
   }
 
   .Follow_us .fa-brands {
