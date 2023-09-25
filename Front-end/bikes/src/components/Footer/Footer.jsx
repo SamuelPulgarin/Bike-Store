@@ -20,8 +20,8 @@ const Footer = () => {
         <a href="https://www.instagram.com/bikestore96/" target="_blank">
           <i className="fa-brands fa-instagram"></i>
         </a>
-        <a href="#">
-          <img src={logox} alt="Logo x de Twitter" className="logox" />
+        <a href="https://twitter.com/BikeStorescr">
+          <img src={logox} alt="Logo x de Twitter" className="logox" target="_blank"/>
         </a>
         <a
           href="https://www.youtube.com/channel/UCGTK5deG0RjqqaLfu0vmUCg"
