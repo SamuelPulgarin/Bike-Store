@@ -249,7 +249,10 @@
 
 @media screen and (max-width: 420px) {
   .cartap {
-    height: 395px;
+
+    & a img {
+      height: 35vh;
+    }
   }
 }
 
@@ -309,6 +312,15 @@
     & a p {
       font-size: 15px;
       margin-top: -1px;
+    }
+  }
+}
+
+@media screen and (max-width: 290px){
+  .cartap{
+     
+    & a img{
+      height: 24vh;
     }
   }
 }
