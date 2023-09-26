@@ -3,6 +3,8 @@ import "../../assets/css/AmountPrice.css";
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom/dist';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AmountPrice = () => {
 
@@ -38,11 +40,13 @@ const AmountPrice = () => {
 
     const goToBuy = () => {
         let authUser = JSON.parse(localStorage.getItem('authUser'));
+        localStorage.setItem('carritoData', JSON.stringify(cartItems));
+        console.log(JSON.parse(localStorage.getItem('carritoData')))
 
 //Condicion: obtener un array de las propiedades del objeto y luego verificar la longitud de ese array.
         if(cantidad === 0){
 
-            alert('Aun no tienes productos agregados a tu carrito');
+            toast.error('Aun no tienes productos agregados a tu carrito', { position: "top-center" });
 
         }else{
 
@@ -53,9 +57,10 @@ const AmountPrice = () => {
                     navigate("/ComfirmBuy")
                 }
             }else{
-
-                alert('Inicie sesion para continuar con la compra');
-                navigate("/signIn")
+                toast.error('Debes iniciar sesión para continuar', { position: "top-center" });
+                setTimeout(() => {
+                    navigate("/signIn");
+                }, 3000);
             }
         }
     }
@@ -99,7 +104,7 @@ const AmountPrice = () => {
                     <button onClick={goToBuy}><b>Ir a Pagar</b></button>
                 </div>
             </div>
-
+            <ToastContainer />
         </>
     )
 }

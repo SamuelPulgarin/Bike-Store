@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/carritoSlice";
 import { useSelector } from 'react-redux';
 import { getMarca } from "../../redux/carouselSlide";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const DetailsProducts = () => {
@@ -23,10 +25,11 @@ export const DetailsProducts = () => {
         const foundItem = cartItems.find(item => parseInt(item.data.id, 10) === parseInt(data.id, 10));
 
         if (foundItem) {
-            alert('Este producto ya se encuentra agregado al carrito de compras');
+            toast.error('Este producto ya se encuentra agregado al carrito de compras', { position: "top-center" });
         } else {
             dispatch(addToCart({ data }));
-            alert('Producto agregado al carrito');
+            // Almacena los datos del carrito en localStorage
+            toast.success('Producto agregado al carrito', { position: "top-center" });
         }
     }
 
@@ -92,6 +95,7 @@ export const DetailsProducts = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </>
     )
 }

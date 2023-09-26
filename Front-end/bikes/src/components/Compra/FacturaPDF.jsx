@@ -4,7 +4,11 @@ import { PDFViewer, Document, Page, Text, View, StyleSheet, Image } from "@react
 import logo from '../../assets/img/Logo-circle.png'
 import bikestore from '../../assets/img/Logo-short.png'
 import { useSelector } from 'react-redux';
-import { flushSync } from "react-dom";
+import { useDispatch } from "react-redux";
+import carritoSlice from "../../redux/carritoSlice";
+import dataFactureSlice from "../../redux/dataFactureSlice";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 const styles = StyleSheet.create({
@@ -59,7 +63,6 @@ const styles = StyleSheet.create({
         width: '100%',
         display: "flex",
         flexDirection: 'column',
-
     },
     contendor2: {
         flexDirection: 'row', // Para que los elementos se coloquen en fila
@@ -126,7 +129,6 @@ const styles = StyleSheet.create({
         margin: '10px 10px'
     }
 
-
 });
 
 const convertPriceToNumber = (priceString) => {
@@ -138,18 +140,19 @@ const convertPriceToNumber = (priceString) => {
 
 export const FacturaPDF = () => {
 
-    const facturaData = useSelector((state) => state.factura.dataFactura);
-    const cartItems = useSelector((state) => state.carrito.items);
-    console.log(facturaData)
-    console.log(cartItems)
+    const dataStorageForm = JSON.parse(localStorage.getItem('facturaData'));
+    console.log(dataStorageForm);
+    const dataCarrito = JSON.parse(localStorage.getItem('carritoData'));
+    console.log(dataCarrito);
 
     // Calcula el precio total usando reduce y la función de conversión
-    const totalPrice = cartItems.reduce((total, item) => {
+    const totalPrice = dataCarrito.reduce((total, item) => {
         if (item.data) {
-            return (total + convertPriceToNumber(item.data.precio)) * parseInt(item.data.cantidad, 10);
+            return (total + convertPriceToNumber(item.data.precio)) * parseInt(item.data.cantidad);
         }
         return total;
     }, 0);
+
 
     const currentDate = new Date();
     const formattedDate = `${currentDate.getDate()}/${currentDate.getMonth() + 1}/${currentDate.getFullYear()}`;
@@ -169,10 +172,10 @@ export const FacturaPDF = () => {
                                     <View style={styles.contenidoSup}>
                                         <View style={styles.contendor2}>
                                             <Text style={styles.principal}>
-                                                {facturaData[0].dataClient.Nombre} {facturaData[0].dataClient.Apellidos}
+                                                {dataStorageForm.Nombre} {dataStorageForm.Apellidos}
                                             </Text>
                                             <Text style={styles.principal}>
-                                                {facturaData[0].dataClient.TipoDocumento} {facturaData[0].dataClient.Documento}
+                                                {dataStorageForm.TipoDocumento} {dataStorageForm.Documento}
                                             </Text>
                                         </View>
                                         <View style={styles.contendor2}>
@@ -191,8 +194,7 @@ export const FacturaPDF = () => {
 
                                     <View style={styles.cotenidoProductos}>
                                         <Text style={styles.principal}>Productos:</Text>
-
-                                        {cartItems.map((item, index) => (
+                                        {dataCarrito.map((item, index) => (
                                             <View style={styles.product} key={index}>
                                                 <View style={styles.contendor2}>
                                                     <Text style={styles.prin}>
@@ -220,28 +222,28 @@ export const FacturaPDF = () => {
 
                                         <View style={styles.contendor2}>
                                             <Text style={styles.principal}>
-                                                {facturaData[0].dataClient.Nombre} {facturaData[0].dataClient.Apellidos}
+                                                {dataStorageForm.Nombre} {dataStorageForm.Apellidos}
                                             </Text>
                                             <Text style={styles.principal}>
-                                                {facturaData[0].dataClient.TipoDocumento} {facturaData[0].dataClient.Documento}
+                                                {dataStorageForm.TipoDocumento} {dataStorageForm.Documento}
                                             </Text>
                                         </View>
                                         <View style={styles.contendor2}>
                                             <Text style={styles.secudario}>Telefono celular:</Text>
                                             <Text style={styles.secudario}>
-                                                +57 {facturaData[0].dataClient.Telefono}
+                                                +57 {dataStorageForm.Telefono}
                                             </Text>
                                         </View>
                                         <View style={styles.contendor2}>
                                             <Text style={styles.secudario}>Email:</Text>
                                             <Text style={styles.secudario}>
-                                                {facturaData[0].dataClient.email}
+                                                {dataStorageForm.email}
                                             </Text>
                                         </View>
                                         <View style={styles.contendor2}>
                                             <Text style={styles.secudario}>Dirección:</Text>
                                             <Text style={styles.secudario}>
-                                                {facturaData[0].dataClient.Direccion}
+                                                {dataStorageForm.Direccion}
                                             </Text>
                                         </View>
                                         <View style={styles.contendor2}>
