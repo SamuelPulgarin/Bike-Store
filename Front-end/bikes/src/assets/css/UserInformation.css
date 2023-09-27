@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.background-image-profile-container{
+    padding-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../assets/img/bicycle-nature2.jpg');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.profile-container{
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* padding-top: 7rem; */
+    background-color: white;
+    height: 500px;
+    width: 90vw;
+    border-radius: 10px;
+    opacity: 97%;
+
+
+
+
+    & img{
+        width: 250px;
+    }
+
+    & h2{
+        margin-top: 10px;
+    }
+
+}
+
+
+.profile-welcome-container{
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    margin-left: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.profile-options-container{
+    width: 70%;
+}
+
+
+.profile-information-container{
+    display: flex;
+    justify-content: space-evenly;
+    transition: all 1s;
+
+    & input{
+            margin-top: 20px;
+            padding: 1.2rem;
+            width: 60vh;
+            border-radius: 10px;
+            max-width: 25rem;
+            border: none;
+            background-color: rgb(236, 236, 236);
+            transition: all 2s;
+    }
+
+    & input::placeholder{
+        font-weight: lighter;
+    }
+
+    & label{
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        transition: all 1s;
+    }
+
+    & .profile-small-information-container{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.profile-edit-information-container{
+
+    display: flex;
+    justify-content: center;
+    gap: 10vw;
+    margin-top: 4rem;
+
+    & #profile-edit-information-button-container{
+        padding: 13px 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: #262626;
+        color: white;
+        cursor: pointer;
+        outline: none;
+        transition: 0.5s;
+        font-size: 100%;
+        text-align: center;
+    }
+
+    & #profile-singout-button-container{
+        padding: 13px 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(201, 0, 0);
+        color: white;
+        cursor: pointer;
+        outline: none;
+        transition: 0.5s;
+        font-size: 100%;
+        text-align: center;
+    }
+}
+
+.history-user-container{
+
+    background-color: white;
+    margin-top: 2rem;
+    width: 60vw;
+    margin-bottom: 3rem;
+    border-radius: 10px;
+
+    & .history-user-title-container{
+        margin-top: 2rem;
+    
+        & h1{
+            text-align: center;
+        }
+    }
+
+    & .history-user-list-container{
+        margin-bottom: 2rem;
+    }
+
+}
+
+

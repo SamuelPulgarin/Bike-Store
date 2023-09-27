@@ -12,11 +12,13 @@ import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
 import { SearchResultsPage } from './components/SearchResults/SearchResultsPage'
 import { DataProduct } from "./components/PaginaProducto/Carta"
-
+import { Perfil } from "./pages/Perfil";
 //import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { ComfirBuy } from "./pages/ComfirBuy";
 import { Uproduct } from "./pages/Uproduct";
 import { FacturaPDF } from "./components/Compra/FacturaPDF";
+import { Uperfil } from "./pages/Uperfil";
+
 
 
 /*ja */
@@ -50,6 +52,8 @@ function App() {
               <Route path="/Update/:identificador" element={<Uproduct/>}/>
               <Route path="/ComfirmBuy" element={<ComfirBuy/>} />
               <Route path="/pdf" element={<FacturaPDF/>}/>
+              <Route path="/profile" element={<Perfil/>} />
+              <Route path="/Uprofile" element={<Uperfil/>} />
             </Routes>
           </Router>
   //     </ShoppingCartProvider>

@@ -3,11 +3,11 @@ import '../../assets/css/Navbar.css';
 import { useNavbar } from "../../hooks/useNavbar";
 import carrito from "../../assets/img/shopping-cart.png";
 import peril from "../../assets/img/sesion.png";
-import salir from "../../assets/img/logout.png";
 import logo1 from "../../assets/img/Logo-circle.png";
 import logo2 from "../../assets/img/Logo-short.png";
 import toggler from "../../assets/img/menu.png";
 import options from "../../assets/img/option.png";
+import salir  from "../../assets/img/profile.png";
 import { useNavigate } from "react-router-dom";
 import Carta from "../PaginaProducto/Carta";
 import { useSelector, useDispatch } from 'react-redux';
@@ -95,7 +95,7 @@ const Navbar = () => {
                             </div>
                         </li>
                         <li>{session ?
-                            <Link onClick={openModal}>
+                            <Link to={"/profile"}>
                                 <img src={session ? salir : peril} alt="Cerrar sesión" id="perfil" />
                             </Link>
                             :

@@ -48,6 +48,7 @@
   & img {
     width: 195px;
     border-radius: 10px;
+    height: 165px;
   }
 
   & p {

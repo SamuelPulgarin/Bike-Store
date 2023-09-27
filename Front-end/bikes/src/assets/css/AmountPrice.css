@@ -66,3 +66,11 @@
   .individual-sesion-price-container p:last-child {
     justify-self: end;
   }
+
+  @media screen and (max-width: 1180px){
+
+    .price-container {
+      position: relative;
+      right: 0;
+    }
+  }
