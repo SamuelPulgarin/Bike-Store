@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setFactura } from '../../redux/dataFactureSlice'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { MoldalCompraExitosa } from '../Modal/MoldalCompraExitosa'
+import { ErrorModal } from '../Modal/ErrorModal'
 
 
 const FormCompra = () => {
@@ -17,6 +19,8 @@ const FormCompra = () => {
     //Redux
     //const { username, email } = useSelector((state) => state.user);
     const cartItems = useSelector((state) => state.carrito.items);
+    console.log(cartItems)
+    
 
     //Funcion para realizar el proceso de compra
     const actualizarStock = async ({ productId, cantidad, precio }) => {
@@ -70,18 +74,44 @@ const FormCompra = () => {
     const [formData, setFormData] = useState({});
     const navigate = useNavigate()
 
-    function infoClientPago(dataClient) {
-        setFormData(dataClient); // Almacena los datos del formulario en el estado local
+    const [showModal, setShowModal] = useState(false);
 
-        // Despacha la acción para guardar los datos de la factura en Redux
-        dispatch(setFactura({dataClient}));
-        //console.log(dataClient)
+    const openModalCompra = () => {
+        setShowModal(true);
+    }
+
+    const closeModalCompra = () => {
+        setShowModal(false);
+    }
+
+    const [isErrorModal, setIsErrorModal] = useState(false);
+
+    const openModalError = () => {
+        setIsErrorModal(true);
+    }
+
+    const closeModalError = () => {
+        setIsErrorModal(false);
+    }
+
+    function infoClientPago(dataClient) {
+        setFormData(dataClient);
+    
+        dispatch(setFactura({ dataClient }));
+
+    
         cartItems.forEach((item) => {
             const { id, cantidad, precio } = item.data;
             actualizarStock({ productId: id, cantidad, precio });
         });
-        navigate('/pdf')
-
+    
+        // Verificar si el formulario está lleno y cartItems tiene productos
+        if (Object.keys(errors).length === 0 && cartItems.length > 0) {
+            openModalCompra();
+        }
+        else {
+            openModalError()
+        }
     }
 
 
@@ -200,6 +230,18 @@ const FormCompra = () => {
                     </form>
                 </div>
             </main>
+            <MoldalCompraExitosa
+            isOpen={showModal}
+            onClose={closeModalCompra}
+            title="¡Compra Exitosa!"
+            content="Gracias por su compra"
+            />
+            <ErrorModal
+            openErrorModal={isErrorModal}
+            CloseErrorModal={closeModalError}
+            titleError="¡ Error !"
+            messageError="El Carrito se encuentra vacio"
+            />
         </>
     )
 }
