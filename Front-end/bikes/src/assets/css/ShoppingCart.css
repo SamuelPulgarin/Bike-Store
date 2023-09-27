@@ -15,4 +15,23 @@
     margin-top: 30rem;
 }
 
+@media screen and (max-width: 1180px){
+
+    .shopping-card-container{
+
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        overflow: scroll;
+    }
+
+    .container-aislador-footer{
+
+        margin-top: 10rem;
+    }
+
+    
+}
+
 

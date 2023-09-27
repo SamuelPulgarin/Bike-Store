@@ -1,0 +1,48 @@
+.history-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+ 
+ .history-cart-container{
+    display: flex;
+}
+
+.history-cart-card{
+    display: flex;
+    align-items: center;
+    margin: 30px;
+    border: 2px black solid;
+    background-color: #262626;
+    color: white;
+    border-radius: 10px;
+    width: 600px;
+    padding: 5px;
+
+}
+
+.history-cart-image{
+    /* position: absolute;
+    left: 14rem; */
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+
+    & #history-img{
+        width: 100px;
+    }
+}
+
+.history-cart-details{
+    display: flex;
+    position: relative;
+}
+
+.history-cart-data-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 2rem;
+    text-align: right;
+}
