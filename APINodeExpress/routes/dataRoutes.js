@@ -37,8 +37,14 @@ router.delete("/delete-products/:id", dataController.deleteProduct);
 //Ruta para actualizar la informacion de un producto
 router.put("/update-product/:id", upload.single('imagen'), dataController.updateProduct );
 
+//Ruta para actualizar la informacion de un producto
+router.put("/update-user/:email", dataController.updateUser);
+
 //Ruta para culminar proceso de compras
 router.post("/buy-complete", dataController.buy);
+
+//Ruta para obtener el historial de compras de un usuario por su id
+router.get("/history-user/:email", dataController.getHistoryUser);
 
 
 
