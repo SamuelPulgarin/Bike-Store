@@ -31,7 +31,7 @@ export const History = () => {
                 })
                 .then((historyData) => {
                     setUserHistory(historyData);
-                    console.log(historyData);
+                    //console.log(historyData);
                 })
                 .catch((err) => console.error('Error interno en el servidor', err))
         }

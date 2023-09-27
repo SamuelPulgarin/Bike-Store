@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import image from "../../assets/img/website.png";
 import "../../assets/css/UserInformation.css";
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
 
 export const UpdateProfile = () => {
 
@@ -9,6 +10,10 @@ export const UpdateProfile = () => {
     const [email, setEmail] = useState("");
 
     const dataUser = JSON.parse(localStorage.getItem('authUser'));
+    //console.log(dataUser)
+
+    const navigate = useNavigate();
+
     useEffect(() => {
 
         if (dataUser) {
@@ -18,12 +23,46 @@ export const UpdateProfile = () => {
 
     }, [])
 
+    const update = async(e) =>{
+
+        e.preventDefault();
+
+        const formData = new FormData();
+
+        formData.append("username", username);
+        formData.append("email", email);
+
+        try {
+            const response = await fetch(`http://localhost:3060/update-user/${dataUser.email}`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    username,
+                    email
+
+                })
+            })
+            if (response.ok) {
+                console.log("Usuario actualizado correctamente");
+                navigate("/profile")
+            }
+            else {
+                console.log("ERROR, usuario no actualizado");
+
+            }
+        }
+        catch (error) {
+            console.error("Error del servidor", error)
+        }
+    }
 
     return (
         <>
             <div className='background-image-profile-update-container'>
 
-                <form method="post" className='profile-container'>
+                <form method="PUT" onSubmit={update} className='profile-container'>
 
                     <div className="welcome-container">
                         <div className="profile-welcome-container">
@@ -46,7 +85,7 @@ export const UpdateProfile = () => {
                             </div>
                         </div>
                         <div className="profile-edit-information-container">
-                            <button id='profile-edit-information-button-container'>Guardar</button>
+                            <button id='profile-edit-information-button-container' type="submit">Guardar</button>
                         </div>
                     </div>
                 </form>

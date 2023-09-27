@@ -66,6 +66,7 @@ export const SignIn = () => {
                     })
                     .then((productData) => {
                         user = {
+                            id: productData.id,
                             username: productData.username,
                             email: productData.email
                         };
