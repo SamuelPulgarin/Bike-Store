@@ -48,6 +48,7 @@
   & img {
     width: 195px;
     border-radius: 10px;
+    height: 165px;
   }
 
   & p {
@@ -211,11 +212,11 @@
 
 @media screen and (max-width: 580px) {
   .cartap {
-    width: 250px;
+    width: 300px;
     height: 48vh;
 
     & a img {
-      width: 250px;
+      width: 300px;
     }
 
     & a p {
@@ -331,7 +332,7 @@
     }
 
     .cartap-info {
-      margin-top: -10px;
+      margin-top: -12px;
       font-size: 25px;
     }
 
