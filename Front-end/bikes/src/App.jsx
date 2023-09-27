@@ -17,6 +17,7 @@ import { Perfil } from "./pages/Perfil";
 import { ComfirBuy } from "./pages/ComfirBuy";
 import { Uproduct } from "./pages/Uproduct";
 import { FacturaPDF } from "./components/Compra/FacturaPDF";
+import { Uperfil } from "./pages/Uperfil";
 
 
 
@@ -52,6 +53,7 @@ function App() {
               <Route path="/ComfirmBuy" element={<ComfirBuy/>} />
               <Route path="/pdf" element={<FacturaPDF/>}/>
               <Route path="/profile" element={<Perfil/>} />
+              <Route path="/Uprofile" element={<Uperfil/>} />
             </Routes>
           </Router>
   //     </ShoppingCartProvider>
