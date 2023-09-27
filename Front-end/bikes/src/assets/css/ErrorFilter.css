@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#error-modal {
+    display: none;
+    position: fixed;
+   
+  }
+
+.overlay_error_modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1vh;
+    height: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms;
+    margin-top: 14vh;
+    margin-left: 80vh;
+}
+
+.ErrorModal-content{
+    width: 350px;
+    height: 83vh;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.container_img_errorModal img{
+    width: 225px;
+    margin: 10px;
+}
+
+.ErrorModal-content h2,p{
+    margin-top: 10px;
+}
+
+.ErrorModal-content h2{
+    font-size: 28px;
+}
+
+.ErrorModal-content p{
+    font-size: 18px;
+}
+
+.btn_continuar_error_modal{
+    margin-top: 25px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #262626;
+    color: white;
+    cursor: pointer;
+    outline: auto;
+    transition: 0.5s;
+    font-size: 18px;
+}
+
+.container_btn_close_modal_error{
+    padding-top: 5px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: end;
+}
+
+.btn-close-error-modal {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.btn_close_modal_error:hover{
+    background-color: #dddddd;
+}
+
+.btn-close-error-modal img{
+    width: 30px;
+}
+
+/*Responsive*/
+
+@media (max-width:430px){
+    .ErrorModal-content{
+        width: 330px;
+        height: 500px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+        text-align: center;
+    }
+
+    .container_img_errorModal img{
+        width: 180px;
+        margin: 10px;
+    }
+
+    .ErrorModal-content h2{
+        font-size: 25px;
+    }
+
+    .ErrorModal-content p{
+        font-size: 16px;
+    }
+
+    .btn_continuar_error_modal{
+        margin-top: 40px;
+        padding: 12px 40px;
+        border: none;
+        border-radius: 5px;
+        background-color: #262626;
+        color: white;
+        cursor: pointer;
+        outline: auto;
+        transition: 0.5s;
+        font-size: 17px;
+    }
+}

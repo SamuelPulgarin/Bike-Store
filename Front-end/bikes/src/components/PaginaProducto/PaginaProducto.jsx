@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "../../assets/css/PaginaProducto.css";
-import { filterBrandSizeColorAndType } from '../../hooks/useFilter'
-import $ from 'jquery'
-
+import { filterBrandSizeColorAndType } from "../../hooks/useFilter";
+import $ from "jquery";
+import "../../assets/css/ErrorFilter.css";
+import Close from "../../assets/img/close.png";
+import Warning from "../../assets/img/Warning.png";
+import { useNavigateToProductos } from "../../hooks/useProducts";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
 const PaginaProducto = () => {
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState([]);
   const [selectedTypes, setSelectedTypes] = useState([]);
   const [selectedColors, setSelectedColors] = useState([]);
-  const [isErrorModalOpen, setIsErrorModalOpen] = useState(false);
+  const navigateToProductos = useNavigateToProductos();
 
   useEffect(() => {
     filterBrandSizeColorAndType();
-  }, [])
-
-  
+  }, []);
 
   // Manejar cambios en los checkboxes de marca
   const handleBrandChange = (event) => {
@@ -30,7 +32,6 @@ const PaginaProducto = () => {
 
     // Habilita o deshabilita otros checkboxes de marca
     $(".checkBrands").not(event.target).prop("disabled", isChecked);
-    
   };
 
   // Manejar cambios en los checkboxes de talla
@@ -47,10 +48,9 @@ const PaginaProducto = () => {
 
     // Habilita o deshabilita otros checkboxes de talla
     $(".checkSize").not(event.target).prop("disabled", isChecked);
-
   };
 
-//   // Manejar cambios en los checkboxes de tipo
+  //   // Manejar cambios en los checkboxes de tipo
   const handleTypeChange = (event) => {
     const typeProduct = event.target.getAttribute("itemType");
     const isChecked = event.target.checked;
@@ -64,7 +64,6 @@ const PaginaProducto = () => {
 
     // Habilita o deshabilita otros checkboxes de tipo
     $(".checkType").not(event.target).prop("disabled", isChecked);
-
   };
 
   // Manejar cambios en los checkboxes de color
@@ -81,15 +80,61 @@ const PaginaProducto = () => {
 
     // Habilita o deshabilita otros checkboxes de color
     $(".checkColor").not(event.target).prop("disabled", isChecked);
+  };
+  const resetFilters = () => {
+    // Restablecer los filtros aquí
+    setSelectedBrands([]);
+    setSelectedSizes([]);
+    setSelectedTypes([]);
+    setSelectedColors([]);
+    $(".checkBrands, .checkSize, .checkColor, .checkType").prop(
+      "checked",
+      false
+    );
+    filterBrandSizeColorAndType(); // Vuelve a aplicar los filtros
+  };
 
+  const handleContinueErrorModal = () => {
+    $("#error-modal").hide();
+    resetFilters();
+    navigateToProductos();
   };
 
   return (
     <>
+      <div className="overlay_error_modal" id="error-modal">
+        <div className="ErrorModal-content">
+          <div className="container_btn_close_modal_error">
+            <button
+              className="btn-close-error-modal"
+              id="btn-close-error-modal"
+            >
+              <Link to="/productos">
+                <img src={Close} alt="close" />
+              </Link>
+            </button>
+          </div>
+          <div className="container_img_errorModal">
+            <img src={Warning} alt="Imagen de error" />
+          </div>
+          <h2>¡Error!</h2>
+          <p>No se encontraron productos con estas características</p>
+
+          <Link to="/productos">
+            <button
+              className="btn_continuar_error_modal"
+              id="btn-continuar-error-modal"
+              onClick={handleContinueErrorModal}
+            >
+              Continuar
+            </button>
+          </Link>
+        </div>
+      </div>
+
       <div className="contenedor-filtros">
         <div className="filtros">
           <h1>Filtros</h1>
-
           <div className="contenedor-checks">
             <div className="filtro">
               <h1>Marca:</h1>
@@ -289,6 +334,7 @@ const PaginaProducto = () => {
           </div>
         </div>
       </div>
+      <Outlet />
     </>
   );
 };

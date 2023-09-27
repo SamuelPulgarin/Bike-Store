@@ -12,6 +12,7 @@ import { Admin } from "./pages/Admin";
 import { Cproduct } from "./pages/Cproduct";
 import { SearchResultsPage } from './components/SearchResults/SearchResultsPage'
 import { DataProduct } from "./components/PaginaProducto/Carta"
+import PaginaProducto from "../src/components/PaginaProducto/PaginaProducto";
 
 //import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { ComfirBuy } from "./pages/ComfirBuy";
@@ -47,6 +48,7 @@ function App() {
               <Route path="/Add" element={<Cproduct />} />
               <Route exact path="/" component={Home} />
               <Route path="/search-results" element={<SearchResultsPage dataProduct={dataProduct} />} />
+              <Route path="/productos" element={<PaginaProducto />} />
             </Routes>
           </Router>
   //     </ShoppingCartProvider>
