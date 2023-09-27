@@ -21,37 +21,35 @@ export const UpdateProfile = () => {
 
     return (
         <>
-            <div className='background-image-profile-container'>
+            <div className='background-image-profile-update-container'>
 
-                <div className="profile-container">
+                <form method="post" className='profile-container'>
 
-                        <div className="welcome-container">
-                            <div className="profile-welcome-container">
-                                <img src={image} alt="Perfil" />
-                                <h2>¡Bienvenido {dataUser.username}!</h2>
+                    <div className="welcome-container">
+                        <div className="profile-welcome-container">
+                            <img src={image} alt="Perfil" />
+                            <h2>¡Bienvenido {dataUser.username}!</h2>
+                        </div>
+                    </div>
+
+                    <div className="profile-options-container">
+                        <div className="profile-information-container">
+
+                            <div className="profile-small-information-container">
+                                <label htmlFor="username">Nombre de Usuario:</label>
+                                <input type="text" name='username' value={username} onChange={(e) => setUsername(e.target.value)} />
+                            </div>
+
+                            <div className="profile-small-information-container">
+                                <label htmlFor="email">Correo Electronico:</label>
+                                <input type="text" name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
                             </div>
                         </div>
-
-                        <div className="profile-options-container">
-                            <div className="profile-information-container">
-
-                                <div className="profile-small-information-container">
-                                    <label htmlFor="username">Nombre de Usuario:</label>
-                                    <input type="text" name='username' value={username} onChange={(e) => setUsername(e.target.value)} />
-                                </div>
-
-                                <div className="profile-small-information-container">
-                                    <label htmlFor="email">Correo Electronico:</label>
-                                    <input type="text" name='email' value={email} onChange={(e) => setEmail(e.target.value)} />
-                                </div>
-                            </div>
-                            <div className="profile-edit-information-container">
-                                <button id='profile-edit-information-button-container'>Guardar</button>
-                            </div>
+                        <div className="profile-edit-information-container">
+                            <button id='profile-edit-information-button-container'>Guardar</button>
                         </div>
-
-
-                </div>
+                    </div>
+                </form>
             </div>
         </>
     )

@@ -54,7 +54,7 @@ export const UserInformation = () => {
             <div className='background-image-profile-container'>
 
 
-                <div className="profile-container">
+                <form className='profile-container'>
 
                     <div className="welcome-container">
                         <div className="profile-welcome-container">
@@ -81,7 +81,7 @@ export const UserInformation = () => {
                             <button id='profile-singout-button-container' onClick={openModalConfirm}>Cerrar Sesion</button>
                         </div>
                     </div>
-                </div>
+                </form>
 
                 <div className="history-user-container">
 

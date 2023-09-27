@@ -44,5 +44,58 @@
     flex-direction: column;
     align-items: flex-start;
     margin-left: 2rem;
-    text-align: right;
+    text-align: left;
+}
+
+@media screen and (max-width: 950px){
+
+    .history-cart-card{
+        display: flex;
+        align-items: center;
+        margin: 30px;
+        border: 2px black solid;
+        background-color: #262626;
+        color: white;
+        border-radius: 10px;
+        width: 400px;
+        padding: 5px;
+    }
+
+    .history-cart-data-container{
+        font-size: 80%;
+    }
+
+    .history-cart-image{
+    
+        & #history-img{
+            width: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 650px){
+
+    .history-cart-data-container{
+
+        font-size: 50%;
+        margin-left: 1rem;
+    }
+
+    .history-cart-image{
+
+        margin: 0;
+    
+        & #history-img{
+            width: 50px;
+        }
+    }
+
+    .history-cart-card{
+        width: 220px;
+    }
+}
+
+@media screen and (max-width: 380px){
+
+    
 }
