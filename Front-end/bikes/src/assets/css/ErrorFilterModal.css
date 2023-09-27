@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#error-modal {
+  display: none;
+  position: fixed;
+}
+
+.overlay_error_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1vh;
+  height: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 500ms;
+  margin-top: 20vh;
+  margin-left: 80vh;
+}
+
+.ErrorModal-content {
+  width: 350px;
+  height: 68vh;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.container_img_errorModal img {
+  width: 225px;
+  margin: 10px;
+}
+
+.ErrorModal-content h2,
+p {
+  margin-top: 10px;
+}
+
+.ErrorModal-content h2 {
+  font-size: 28px;
+}
+
+.ErrorModal-content p {
+  font-size: 18px;
+}
+
+.container_btn_close_modal_error {
+  padding-top: 5px;
+  padding-right: 5px;
+  display: flex;
+  justify-content: end;
+}
+
+.btn-close-error-modal {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn_close_modal_error:hover {
+  background-color: #dddddd;
+}
+
+.btn-close-error-modal img {
+  width: 30px;
+}
+
+/*Responsive*/
+
+@media screen and (max-width: 1290px){
+  .overlay_error_modal{
+    margin-left: 70vh;
+    margin-top: 15vh;
+  }
+
+  .ErrorModal-content{
+    height: 55vh;
+  }
+}
+
+@media screen and (max-width:1030px){
+  .overlay_error_modal{
+    margin-left: 70vh;
+    margin-top: 20vh;
+  }
+
+  .ErrorModal-content{
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width:920px){
+  .overlay_error_modal{
+    margin-left: 29vh;
+    margin-top: 12vh;
+  }
+
+  .ErrorModal-content{
+    height: 32vh;
+  }
+}
+
+@media screen and (max-width:830px){
+  .overlay_error_modal{
+    margin-left: 29vh;
+    margin-top: 15vh;
+  }
+
+  .ErrorModal-content{
+    height: 35vh;
+  }
+}
+
+@media screen and (max-width: 770px){
+  .ErrorModal-content{
+    height: 40vh;
+  }
+
+  .overlay_error_modal{
+    margin-left: 31vh;
+    margin-top: 20vh;
+  }
+}
+
+@media (max-width: 430px) {
+  .ErrorModal-content {
+    width: 330px;
+    height: 500px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+
+  .container_img_errorModal img {
+    width: 180px;
+    margin: 10px;
+  }
+
+  .ErrorModal-content h2 {
+    font-size: 25px;
+  }
+
+  .ErrorModal-content p {
+    font-size: 16px;
+  }
+}

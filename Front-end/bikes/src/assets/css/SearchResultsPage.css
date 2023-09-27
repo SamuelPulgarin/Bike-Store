@@ -74,6 +74,10 @@
   .Container_error_notFound h1{
     margin-left: 450px;
   }
+
+  .cartap-info h5{
+    margin-top: -3px;
+  }
 }
 
 @media screen and (max-width: 1275px) {
@@ -106,6 +110,10 @@
   .Container_error_notFound h1 {
     margin-left: 170px;
   }
+
+  .cartap-info h5{
+    margin-top: -5px;
+  }
 }
 
 @media screen and (max-width: 950px) {
@@ -128,11 +136,19 @@
   .Logo{
     height: 35vh;
   }
+
+  .cartap-info h5{
+    margin-top: -1px;
+  }
 }
 
 @media screen and (max-width: 840px){
   .Container_error_notFound h1 {
     margin-left: 40px;
+  }
+
+  .cartap-info h5{
+    margin-top: -3px;
   }
 }
 
@@ -180,13 +196,14 @@
   .cartap {
 
     margin-top: 20px;
-    height: 50vh;
+    height: 44vh;
     & h5 {
       font-size: 60%;
     }
 
     & img {
       width: 100px;
+      height: 210px;
     }
 
     & p {
@@ -254,7 +271,11 @@
 
 @media screen and (max-width: 430px){
   .cartap{
-    height: 40vh;
+    height: 36vh;
+
+    & a img {
+      height: 23vh;
+    }
   }
 
   .Logo{
@@ -276,7 +297,7 @@
   }
 
   .cartap{
-    height: 47vh;
+    height: 44vh;
 
     & a img {
       height: 30vh;
@@ -301,7 +322,7 @@
   }
 
   .cartap{
-    height: 40vh;
+    height: 42vh;
 
     & a p{
       margin-top: 20px;
@@ -344,6 +365,14 @@
   .Container_error_notFound h1 {
     font-size: 18px;
     margin-left: 20px;
+  }
+
+  .cartap{
+    height: 39vh;
+
+    & a img{
+      height: 25vh;
+    }
   }
 }
 
