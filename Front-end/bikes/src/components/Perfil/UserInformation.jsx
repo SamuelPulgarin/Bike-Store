@@ -4,15 +4,49 @@ import "../../assets/css/UserInformation.css";
 import { useEffect } from 'react';
 import { History } from './History';
 import { useNavigate } from 'react-router-dom';
+import { ConfirmModal } from '../Modal/ConfirmModal';
+import { useDispatch } from 'react-redux';
+import { signIn, signOut } from '../../redux/loginSlides';
 
 export const UserInformation = () => {
 
     const dataUser = JSON.parse(localStorage.getItem('authUser'));
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    
 
     const redirect = ()=>{
         
         navigate("/Uprofile");
+    }
+
+    const [isOpenConfirm,  setIsOpenComfirm] = useState(false);
+
+    const openModalConfirm = () => {
+        setIsOpenComfirm(true);
+    }
+
+    const closeModalConnfrim = () => {
+        setIsOpenComfirm(false);
+    }
+
+    React.useEffect(() => {
+        const storedIsUserLoggedIn = localStorage.getItem('isUserLoggedIn');
+
+        if (storedIsUserLoggedIn === 'true') {
+            dispatch(signIn());
+        } else {
+            dispatch(signOut());
+        }
+
+    }, [])
+
+    const handleLogout = () => {
+        localStorage.removeItem('isUserLoggedIn');
+        dispatch(signOut());
+        localStorage.removeItem('authUser');
+        closeModalConnfrim();
+        navigate("/")
     }
 
     return (
@@ -44,7 +78,7 @@ export const UserInformation = () => {
                         </div>
                         <div className="profile-edit-information-container">
                             <button id='profile-edit-information-button-container' onClick={redirect}>Editar Perfil</button>
-                            <button id='profile-singout-button-container'>Cerrar Sesion</button>
+                            <button id='profile-singout-button-container' onClick={openModalConfirm}>Cerrar Sesion</button>
                         </div>
                     </div>
                 </div>
@@ -60,6 +94,13 @@ export const UserInformation = () => {
                    </div>
                 </div>
             </div>
+            <ConfirmModal
+            title="Cerrar Sesión"
+            message="¿Estas seguro de cerrar sesión?"
+            onCancel={closeModalConnfrim}
+            onConfirm={handleLogout}
+            openModal={isOpenConfirm}
+            />
         </>
     )
 }
