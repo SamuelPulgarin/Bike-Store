@@ -63,7 +63,13 @@
 
 .Container_error_notFound h1{
   text-align: center;
-  margin-left: 470px;
+  margin: 0;
+}
+
+.Container_error_notFound{
+    position: absolute;
+    right: 0;
+    left: 0;
 }
 
 

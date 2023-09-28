@@ -15,6 +15,8 @@ const FormCompra = () => {
     const authUser = JSON.parse(localStorage.getItem('authUser'));
     let email = authUser.email;
 
+    //const dataStorageForm = JSON.parse(localStorage.getItem('facturaData'));
+
 
     //Redux
     //const { username, email } = useSelector((state) => state.user);
@@ -98,6 +100,8 @@ const FormCompra = () => {
         setFormData(dataClient);
     
         dispatch(setFactura({ dataClient }));
+
+        localStorage.setItem('facturaData', JSON.stringify(dataClient));
 
     
         cartItems.forEach((item) => {

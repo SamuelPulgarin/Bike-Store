@@ -81,7 +81,7 @@ const Navbar = () => {
                         <div className="desplegable">
                             <li><img src={options} alt="Hola soy una imagen" id="opcion" /></li>
                             <li><select id="categorias" onChange={categorias}>
-                                <option disabled={true}>CATEGORIAS</option>
+                                <option>CATEGORIAS</option>
                                 <option value={"1"}>Ruta</option>
                                 <option value={"2"}>Montaña</option>
                                 <option value={"3"}>hibridas</option>
