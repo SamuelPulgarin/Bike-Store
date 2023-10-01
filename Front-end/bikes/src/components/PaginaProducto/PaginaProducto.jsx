@@ -100,10 +100,9 @@ const PaginaProducto = () => {
 
   return (
     <>
-      <div className="overlay_error_modal" id="error-modal">
-        <div className="ErrorModal-content">
-          <div className="container_btn_close_modal_error"></div>
-          <div className="container_img_errorModal">
+      <div className="container_error_modal" id="error-modal">
+        <div className="content_ErrorModal">
+          <div className="container_errorModal_img">
             <img src={Warning} alt="Imagen de error" />
           </div>
           <h2>¡Error!</h2>

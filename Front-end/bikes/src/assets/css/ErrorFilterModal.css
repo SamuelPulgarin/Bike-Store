@@ -9,7 +9,7 @@
   position: fixed;
 }
 
-.overlay_error_modal {
+.container_error_modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -23,7 +23,7 @@
   margin-left: 80vh;
 }
 
-.ErrorModal-content {
+.content_ErrorModal {
   width: 350px;
   height: 68vh;
   background-color: #fff;
@@ -33,21 +33,21 @@
   text-align: center;
 }
 
-.container_img_errorModal img {
+.container_errorModal_img img {
   width: 225px;
   margin: 10px;
 }
 
-.ErrorModal-content h2,
+.content_ErrorModal h2,
 p {
   margin-top: 10px;
 }
 
-.ErrorModal-content h2 {
+.content_ErrorModal h2 {
   font-size: 28px;
 }
 
-.ErrorModal-content p {
+.content_ErrorModal p {
   font-size: 18px;
 }
 
@@ -79,62 +79,62 @@ p {
 /*Responsive*/
 
 @media screen and (max-width: 1290px){
-  .overlay_error_modal{
+  .container_error_modal{
     margin-left: 70vh;
     margin-top: 15vh;
   }
 
-  .ErrorModal-content{
+  .content_ErrorModal{
     height: 55vh;
   }
 }
 
 @media screen and (max-width:1030px){
-  .overlay_error_modal{
+  .container_error_modal{
     margin-left: 70vh;
     margin-top: 20vh;
   }
 
-  .ErrorModal-content{
+  .content_ErrorModal{
     height: 70vh;
   }
 }
 
 @media screen and (max-width:920px){
-  .overlay_error_modal{
+  .container_error_modal{
     margin-left: 29vh;
     margin-top: 12vh;
   }
 
-  .ErrorModal-content{
+  .content_ErrorModal{
     height: 32vh;
   }
 }
 
 @media screen and (max-width:830px){
-  .overlay_error_modal{
+  .container_error_modal{
     margin-left: 29vh;
     margin-top: 15vh;
   }
 
-  .ErrorModal-content{
+  .content_ErrorModal{
     height: 35vh;
   }
 }
 
 @media screen and (max-width: 770px){
-  .ErrorModal-content{
+  .content_ErrorModal{
     height: 40vh;
   }
 
-  .overlay_error_modal{
+  .container_error_modal{
     margin-left: 31vh;
     margin-top: 20vh;
   }
 }
 
 @media (max-width: 430px) {
-  .ErrorModal-content {
+  .content_ErrorModal {
     width: 330px;
     height: 500px;
     background-color: #fff;
@@ -144,16 +144,16 @@ p {
     text-align: center;
   }
 
-  .container_img_errorModal img {
+  .container_errorModal_img img {
     width: 180px;
     margin: 10px;
   }
 
-  .ErrorModal-content h2 {
+  .content_ErrorModal h2 {
     font-size: 25px;
   }
 
-  .ErrorModal-content p {
+  .content_ErrorModal p {
     font-size: 16px;
   }
 }
