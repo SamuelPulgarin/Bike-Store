@@ -1,6 +1,5 @@
 import React, { useState} from "react";
 import { Home } from "./pages/Home";
-import "./assets/css/App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Carrito from "./pages/Carrito.jsx";
 import Productos from "./pages/Productos.jsx";
