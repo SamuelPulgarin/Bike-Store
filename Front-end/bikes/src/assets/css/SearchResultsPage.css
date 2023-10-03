@@ -51,26 +51,9 @@
   margin-top: -90px;
 }
 
-.Container_error_notFound h1 {
-  text-align: center;
-  margin-left: 470px;
-}
-
 /*Responsive*/
 
-@media screen and (max-width: 1930px) {
-  .Container_error_notFound h1 {
-    margin-left: 68vh;
-    font-size: 4vh;
-    margin-top: 20px;
-  }
-}
-
 @media screen and (max-width: 1290px) {
-  .Container_error_notFound h1 {
-    margin-left: 450px;
-  }
-
   .cartap-info h5 {
     margin-top: -3px;
   }
@@ -100,16 +83,18 @@
     margin-top: 5px;
   }
 
-  .Container_error_notFound h1 {
-    margin-left: 170px;
-  }
-
   .cartap-info h5 {
     margin-top: -5px;
   }
+
 }
 
 @media screen and (max-width: 950px) {
+  .searchContainer {
+    height: 111vh;
+  }
+
+
   .results {
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 5vh;
@@ -135,18 +120,14 @@
 }
 
 @media screen and (max-width: 840px) {
-  .Container_error_notFound h1 {
-    margin-left: 40px;
-  }
-
   .cartap-info h5 {
     margin-top: -3px;
   }
 }
 
-@media screen and (max-width: 780px) {
-  .Container_error_notFound h1 {
-    margin-left: 280px;
+@media screen and (max-width:770px){
+  .searchContainer{
+    width: 75vh;
   }
 }
 
@@ -211,11 +192,8 @@
 
   .searchContainer h2 {
     padding: 20px 20px;
-  }
-
-  .Container_error_notFound h1 {
-    margin-left: -130px;
-    font-size: 30px;
+    font-size: 17px;
+    margin-left: -60vh;
   }
 }
 
@@ -254,6 +232,15 @@
 }
 
 @media screen and (max-width: 430px) {
+
+  .searchContainer{
+    height: 179vh;
+  }
+
+  .searchContainer h2{
+    margin-left: -56vh;
+    font-size: 25px;
+  }
   .cartap {
     height: 36vh;
 
@@ -270,9 +257,7 @@
     height: 40px;
   }
 
-  .Container_error_notFound h1 {
-    margin-left: -40px;
-  }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -286,6 +271,10 @@
     & a img {
       height: 30vh;
     }
+  }
+
+  .searchContainer h2{
+    font-size: 20px;
   }
 }
 
@@ -329,9 +318,14 @@
     margin-top: 20px;
   }
 
+  .searchContainer{
+    height: 179vh;
+  }
+
   .searchContainer h2 {
     padding: 30px;
     margin-top: -30px;
+    font-size: 18px;
   }
 
   .cartap-info h5 {
@@ -340,11 +334,6 @@
 
   .Logo {
     height: 20vh;
-  }
-
-  .Container_error_notFound h1 {
-    font-size: 18px;
-    margin-left: 20px;
   }
 
   .cartap {
@@ -542,14 +531,6 @@
     margin-top: 5px;
   }
 
-  .Container_error_notFound {
-    font-size: 12px;
-    margin-left: 163px;
-    display: flex;
-    justify-content: center;
-    margin-top: 2px;
-  }
-
   .results {
     margin-top: 23px;
   }
@@ -591,14 +572,6 @@
     height: 41px;
     width: 41px;
     margin-top: 10px;
-  }
-
-  .Container_error_notFound {
-    margin-top: 402px;
-    font-size: 23px;
-    display: flex;
-    justify-content: center;
-    margin-left: 120px;
   }
 
   .FooterContain {
@@ -649,14 +622,6 @@
   .Follow_us {
     margin-top: 140px;
   }
-
-  .Container_error_notFound {
-    margin-top: 162px;
-    display: flex;
-    margin-left: 210px;
-    font-size: 22px;
-    justify-content: flex-end;
-  }
 }
 
 /*IPad Mini*/
@@ -700,14 +665,6 @@
     width: 46px;
     margin-top: 8px;
   }
-
-  .Container_error_notFound {
-    margin-top: 177px;
-    margin-left: -20px;
-    font-size: 15px;
-    display: flex;
-    justify-content: center;
-  }
 }
 
 /*Surface Duo*/
@@ -727,10 +684,6 @@
 
   .logox {
     margin-top: 8px;
-  }
-
-  .Container_error_notFound {
-    margin-left: 120px;
   }
 }
 
@@ -789,11 +742,6 @@
     margin-top: 8px;
   }
 
-  .Container_error_notFound {
-    margin-top: 82px;
-    margin-left: 65px;
-  }
-
   .FooterContain {
     height: 100%;
   }
@@ -849,10 +797,6 @@
   .Follow_us {
     margin-top: 17px;
   }
-
-  .Container_error_notFound {
-    margin-top: 174px;
-  }
 }
 
 /*Pixel 5*/
@@ -897,11 +841,6 @@
     height: 30px;
     width: 30px;
     margin-top: 6px;
-  }
-
-  .Container_error_notFound {
-    margin-top: 125px;
-    margin-left: 50px;
   }
 }
 
@@ -952,11 +891,6 @@
     width: 30px;
     margin-top: 6px;
   }
-
-  .Container_error_notFound {
-    margin-top: 147px;
-    margin-left: 50px;
-  }
 }
 
 /*IPhone SE*/
@@ -1006,10 +940,6 @@
   .results h1 {
     margin-top: 14px;
   }
-
-  .Container_error_notFound {
-    margin-left: 45px;
-  }
 }
 
 /*Samsung Galaxy S8+*/
@@ -1027,10 +957,6 @@
     height: 28px;
     width: 28px;
     margin-top: 6px;
-  }
-
-  .Container_error_notFound {
-    margin-left: 40px;
   }
 
   .Follow_us {
@@ -1078,11 +1004,6 @@
     height: 25px;
     width: 28px;
     margin-top: 4px;
-  }
-
-  .Container_error_notFound {
-    font-size: 13px;
-    margin-left: 5px;
   }
 
   .FooterContain {
