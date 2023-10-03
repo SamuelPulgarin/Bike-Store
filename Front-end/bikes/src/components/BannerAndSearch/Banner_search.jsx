@@ -14,7 +14,7 @@ const Banner_search = () => {
   };
 
   const handleSearch = () => {
-    // Redirige a la página de resultados de búsqueda con el término de búsqueda como parámetro
+     // Redirige a la página de resultados de búsqueda con el término de búsqueda como parámetro
     searchBicycles(search);
   };
 
