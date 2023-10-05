@@ -1,8 +1,8 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import '../../assets/css/Modal.css'
-import MarcaVerificacion from '../../assets/img/MarcaVerificacion.png'
-import Close from '../../assets/img/close.png'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import MarcaVerificacionx from '../../assets/img/MarcaVerificacion.png';
+import Closex from '../../assets/img/close.png';
+import '../../assets/css/Modal.css';
 
 export const ModalExitoCrud = ({ isOpen, onClose, title, content }) => {
     if (!isOpen) return null;
@@ -14,11 +14,11 @@ export const ModalExitoCrud = ({ isOpen, onClose, title, content }) => {
                 <div className="modal-content">
                     <div className="container_btn_close">
                         <button onClick={onClose} className='btn__close'>
-                            <img src={Close} alt="close" />
+                            <img src={Closex} alt="close" />
                         </button>
                     </div>
                     <div className="container__img_modal">
-                        <img src={MarcaVerificacion} alt="success" />
+                        <img src={MarcaVerificacionx} alt="success" />
                     </div>
                     <h2>{title}</h2>
                     <p>{content}</p>
