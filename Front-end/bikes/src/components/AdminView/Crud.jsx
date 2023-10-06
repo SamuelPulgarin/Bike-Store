@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import '../../assets/css/Crud.css'
-import Lupa from '../../assets/img/Lupa.png'
 import Editar from '../../assets/img/Editar.png'
 import Eliminar from '../../assets/img/Eliminar.png'
 import { FetchProducts } from "../../hooks/useFetch";
@@ -66,9 +65,6 @@ export const Crud = () => {
                             name="search" 
                             placeholder='Bucar' value={searchTerm}
                             onChange={handleSearch} />
-                        <button>
-                            <img src={Lupa} alt="search" />
-                        </button>
                     </div>
                     <div className="container_btn_products">
                         <a href="/Add">
